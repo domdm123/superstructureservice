@@ -65,6 +65,16 @@ export default function Footer() {
                 <MapPin size={15} className="text-[#4a9ebb] flex-shrink-0" />
                 Serving Canterbury, Kent &amp; Surrounding Villages
               </span>
+              <a
+                href="https://www.instagram.com/superstructureservices"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow us on Instagram"
+                className="inline-flex items-center gap-2 text-gray-300 hover:text-[#4a9ebb] transition-colors text-sm w-fit"
+              >
+                <Instagram size={18} className="text-[#4a9ebb]" />
+                Follow us on Instagram
+              </a>
             </div>
           </div>
 
@@ -145,15 +155,6 @@ export default function Footer() {
             <Link href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
             <Link href="/services" className="hover:text-gray-300 transition-colors">Services</Link>
             <Link href="/projects" className="hover:text-gray-300 transition-colors">Projects</Link>
-            <a
-              href="https://www.instagram.com/superstructureservices"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-gray-400 hover:text-[#4a9ebb] transition-colors"
-            >
-              <Instagram size={17} />
-            </a>
           </div>
         </div>
       </div>
