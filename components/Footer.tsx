@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
@@ -6,6 +9,7 @@ import { AREAS } from "@/lib/areas";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const [phoneRevealed, setPhoneRevealed] = useState(false);
 
   return (
     <footer className="bg-[#111111] text-white">
@@ -29,13 +33,23 @@ export default function Footer() {
               across Kent with quality craftsmanship and transparent service.
             </p>
             <div className="flex flex-col gap-3 text-sm">
-              <a
-                href={`tel:${PHONE.replace(/\s/g, "")}`}
-                className="flex items-center gap-2 text-gray-400 hover:text-[#4a9ebb] transition-colors"
-              >
-                <Phone size={14} />
-                {PHONE}
-              </a>
+              {phoneRevealed ? (
+                <a
+                  href={`tel:${PHONE.replace(/\s/g, "")}`}
+                  className="flex items-center gap-2 text-[#4a9ebb] font-semibold transition-all"
+                >
+                  <Phone size={14} />
+                  {PHONE}
+                </a>
+              ) : (
+                <button
+                  onClick={() => setPhoneRevealed(true)}
+                  className="flex items-center gap-2 bg-[#c9a84c] hover:bg-[#b8953f] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors"
+                >
+                  <Phone size={14} />
+                  Show Phone Number
+                </button>
+              )}
               <a
                 href={`mailto:${EMAIL}`}
                 className="flex items-center gap-2 text-gray-400 hover:text-[#4a9ebb] transition-colors"

@@ -9,6 +9,7 @@ import { SERVICES, PHONE } from "@/lib/services";
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [phoneRevealed, setPhoneRevealed] = useState(false);
 
   return (
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
@@ -18,13 +19,23 @@ export default function Header() {
           <span className="hidden sm:block text-gray-400 tracking-wide text-xs uppercase">
             Builders &amp; Contractors · Canterbury &amp; Kent
           </span>
-          <a
-            href={`tel:${PHONE.replace(/\s/g, "")}`}
-            className="flex items-center gap-2 hover:text-[#4a9ebb] transition-colors font-semibold"
-          >
-            <Phone size={13} />
-            {PHONE}
-          </a>
+          {phoneRevealed ? (
+            <a
+              href={`tel:${PHONE.replace(/\s/g, "")}`}
+              className="flex items-center gap-2 text-[#4a9ebb] font-semibold transition-all"
+            >
+              <Phone size={13} />
+              {PHONE}
+            </a>
+          ) : (
+            <button
+              onClick={() => setPhoneRevealed(true)}
+              className="flex items-center gap-2 bg-[#c9a84c] hover:bg-[#b8953f] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors"
+            >
+              <Phone size={13} />
+              Show Phone Number
+            </button>
+          )}
         </div>
       </div>
 
