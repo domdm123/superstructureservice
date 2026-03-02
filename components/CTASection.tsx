@@ -5,12 +5,14 @@ interface CTASectionProps {
   heading?: string;
   subheading?: string;
   dark?: boolean;
+  ctaSubject?: string;
 }
 
 export default function CTASection({
   heading = "Ready to Start Your Project?",
   subheading = "Get a free, no-obligation quote from Canterbury's most trusted builders, serving Kent and surrounding villages.",
   dark = false,
+  ctaSubject = "Free Quote Enquiry - Superstructure Services",
 }: CTASectionProps) {
   return (
     <section className="relative overflow-hidden py-24 px-4 bg-[#0d1b2e]">
@@ -48,7 +50,7 @@ export default function CTASection({
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`}
+            href={`mailto:${EMAIL}?subject=${encodeURIComponent(ctaSubject)}`}
             className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all shadow-lg shadow-[#1e3a5f]/40 hover:shadow-xl hover:shadow-[#1e3a5f]/50 hover:-translate-y-0.5 text-base border border-[#4a9ebb]/20"
           >
             Get a Free Quote <ArrowRight size={18} />

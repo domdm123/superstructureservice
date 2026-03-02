@@ -202,6 +202,7 @@ export default async function AreaPage({ params }: Props) {
       <CTASection
         heading={`Get a Free Quote in ${area.name}`}
         subheading={`Our Canterbury-based team is ready to help with any building project in ${area.name}. Contact us today for a free, no-obligation quote.`}
+        ctaSubject={`Building Services enquiry in ${area.name} - Superstructure Services`}
       />
     </>
   );

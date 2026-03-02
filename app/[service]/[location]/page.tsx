@@ -361,6 +361,7 @@ export default async function ServiceLocationPage({ params }: Props) {
       <CTASection
         heading={`Start Your ${service.shortName} Project in ${area.name}`}
         subheading={`Contact our Canterbury-based team today for a free, no-obligation quote. We cover ${area.name} and all of ${area.county}.`}
+        ctaSubject={`${service.name} in ${area.name} - Superstructure Services`}
       />
     </>
   );

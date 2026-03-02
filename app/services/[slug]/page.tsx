@@ -188,6 +188,7 @@ export default async function ServicePage({ params }: Props) {
       <CTASection
         heading={`Ready for Your ${service.shortName} Project?`}
         subheading={`Contact our Canterbury-based team today for a free, no-obligation quote on your ${service.shortName.toLowerCase()} project anywhere in Kent.`}
+        ctaSubject={`${service.name} enquiry - Superstructure Services`}
       />
     </>
   );
