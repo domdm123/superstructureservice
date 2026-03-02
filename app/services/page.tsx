@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SERVICES, DOMAIN } from "@/lib/services";
 import CTASection from "@/components/CTASection";
+import { playfair } from "@/app/layout";
 
 export const metadata: Metadata = {
   title: "Building Services in Canterbury & Kent | All Services",
@@ -46,7 +47,7 @@ export default function ServicesPage() {
       {/* Photo card grid — 2 columns, matches old site sizing */}
       <section className="bg-white py-8">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => {
               const photo = SERVICE_PHOTOS[service.slug];
               const href = `/services/${service.canonicalSlug.replace("services/", "")}`;
@@ -54,7 +55,7 @@ export default function ServicesPage() {
                 <Link
                   key={service.slug}
                   href={href}
-                  className="group relative block overflow-hidden h-52 rounded-sm"
+                  className="group relative block overflow-hidden h-72 rounded-xl"
                 >
                   {/* Background image */}
                   {photo ? (
@@ -71,7 +72,7 @@ export default function ServicesPage() {
                   <div className="absolute inset-0 bg-black/45 group-hover:bg-black/55 transition-colors duration-300" />
                   {/* Text */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <h2 className="text-white font-bold text-xl md:text-2xl leading-tight mb-1">
+                    <h2 className={`${playfair.className} text-white font-bold text-2xl md:text-3xl leading-tight mb-2`}>
                       {service.name}
                     </h2>
                     <p className="text-gray-200 text-sm leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out max-w-sm">
