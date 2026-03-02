@@ -74,18 +74,25 @@ export default function HomePage() {
       </section>
 
       {/* Stats bar */}
-      <section className="bg-[#111111] text-white py-6 border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="relative bg-[#0d1b2e] text-white py-12 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b2e] via-[#1e3a5f]/30 to-[#0d1b2e]" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/30 to-transparent" />
+        <div className="relative max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/8">
             {[
-              { num: "10+", label: "Years Experience" },
-              { num: "500+", label: "Projects Completed" },
-              { num: "22", label: "Areas Covered" },
-              { num: "16", label: "Services Offered" },
-            ].map((s) => (
-              <div key={s.label}>
-                <div className="text-3xl font-bold text-[#4a9ebb]">{s.num}</div>
-                <div className="text-gray-400 text-sm font-medium mt-0.5">{s.label}</div>
+              { num: "30", suffix: "+", label: "Years Experience", sub: "Combined team expertise" },
+              { num: "100", suffix: "s", label: "Projects Completed", sub: "Across Kent & Canterbury" },
+              { num: "22", suffix: "", label: "Areas Covered", sub: "Throughout East Kent" },
+              { num: "16", suffix: "", label: "Services Offered", sub: "All trades under one roof" },
+            ].map((s, i) => (
+              <div key={s.label} className={`flex flex-col items-center text-center px-6 py-2 ${i % 2 === 0 ? "" : ""}`}>
+                <div className="flex items-end gap-0.5 mb-1">
+                  <span className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none">{s.num}</span>
+                  <span className="text-2xl md:text-3xl font-bold text-[#4a9ebb] leading-none mb-0.5">{s.suffix}</span>
+                </div>
+                <div className="text-sm font-bold text-white/90 uppercase tracking-[0.12em] mt-2 mb-0.5">{s.label}</div>
+                <div className="text-xs text-white/35 font-medium">{s.sub}</div>
               </div>
             ))}
           </div>
