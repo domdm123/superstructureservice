@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import GoogleReviews from "@/components/GoogleReviews";
 import { DOMAIN, COMPANY } from "@/lib/services";
 
 const inter = Inter({
@@ -44,6 +45,7 @@ export default function RootLayout({
         <LoadingScreen />
         <Header />
         <main>{children}</main>
+        <GoogleReviews />
         <Footer />
       </body>
     </html>
