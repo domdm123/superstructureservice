@@ -13,18 +13,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* About */}
           <div>
-            <div className="mb-5 flex items-center gap-3">
-              <Image
-                src="/logo-icon.png"
-                alt="Superstructure Services icon"
-                width={40}
-                height={40}
-                className="h-9 w-auto object-contain brightness-0 invert"
-              />
-              <div className="leading-tight">
-                <div className="text-white font-bold text-sm tracking-wider uppercase">Superstructure</div>
-                <div className="text-gray-400 font-semibold text-xs tracking-widest uppercase">Services</div>
-              </div>
+            <div className="mb-5">
+              <Link href="/">
+                <div className="inline-block bg-white rounded-lg px-3 py-2">
+                  <Image
+                    src="/logo.png"
+                    alt="Superstructure Services"
+                    width={200}
+                    height={46}
+                    className="h-9 w-auto object-contain"
+                  />
+                </div>
+              </Link>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Your trusted builders and contractors based in Canterbury, serving clients
@@ -42,8 +42,8 @@ export default function Footer() {
                 href={`mailto:${EMAIL}`}
                 className="flex items-center gap-2 text-gray-400 hover:text-[#4a9ebb] transition-colors"
               >
-                <Mail size={14} />
-                {EMAIL}
+                <Mail size={14} className="flex-shrink-0" />
+                <span className="break-all">{EMAIL}</span>
               </a>
               <span className="flex items-center gap-2 text-gray-300">
                 <MapPin size={14} />
