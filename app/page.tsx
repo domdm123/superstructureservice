@@ -8,6 +8,7 @@ import TrustBadges from "@/components/TrustBadges";
 import HowWeWork from "@/components/HowWeWork";
 import CTASection from "@/components/CTASection";
 import AnimatedService from "@/components/AnimatedService";
+import ProjectGallery from "@/components/ProjectGallery";
 import { playfair } from "@/app/layout";
 
 export const metadata: Metadata = {
@@ -179,6 +180,8 @@ export default function HomePage() {
       </section>
 
       <TrustBadges />
+
+      <ProjectGallery />
 
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
