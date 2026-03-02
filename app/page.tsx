@@ -103,24 +103,32 @@ export default function HomePage() {
       {/* Services */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-14">
-            <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">
-              Based in the Heart of Canterbury, Kent
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-tight">
-              Your Local Trusted Builder
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed mb-4">
-              Superstructure Services is an independently run, high-quality property restoration,
-              conversion, refurbishment &amp; maintenance company — serving Canterbury and the wider Kent area.
-            </p>
-            <p className="text-gray-400 max-w-xl mx-auto text-base leading-relaxed mb-8">
-              From kitchen installations to solar panels, we offer a comprehensive range of
-              building and trade services, all under one roof.
-            </p>
-            <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed mb-8">
-              Paul, the Director of the company, has over 30 years experience in the construction industry. With a wealth of knowledge across all building types — commercial and residential, listed buildings to new builds — our team continually work hard to deliver a high-end finish.
-            </p>
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">
+                Based in the Heart of Canterbury, Kent
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 tracking-tight">
+                Your Local Trusted Builder
+              </h2>
+            </div>
+            
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+              <div className="text-gray-600 text-lg leading-relaxed">
+                <strong className="text-[#1a2e44] font-bold">Superstructure Services</strong> is an independently run, high-quality property restoration, conversion, refurbishment &amp; maintenance company — serving Canterbury and the wider Kent area.
+                <br /><br />
+                From kitchen installations to solar panels, we offer a comprehensive range of building and trade services, <span className="text-[#4a9ebb] font-semibold">all under one roof</span>.
+              </div>
+              
+              <div className="relative pl-6 md:pl-8 border-l-2 border-[#f5c518]">
+                <p className="text-gray-500 text-base leading-relaxed italic mb-4">
+                  "Paul, the Director of the company, has over 30 years experience in the construction industry. With a wealth of knowledge across all building types — commercial and residential, listed buildings to new builds — our team continually work hard to deliver a high-end finish."
+                </p>
+                <div className="font-bold text-[#1a2e44] text-sm uppercase tracking-wider">
+                  Paul &mdash; Director
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Pull quote — full width world-class */}
