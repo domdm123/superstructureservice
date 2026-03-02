@@ -7,7 +7,7 @@
   --brand-charcoal: #1c1c1c;
   --brand-mid: #3a3a3a;
   --brand-sky: #4a9ebb;
-  --brand-gold: #c9a84c;
+  --brand-navy: #1e3a5f;
 }
 
 body {
@@ -58,12 +58,12 @@ html {
 }
 
 .prose a {
-  color: #e8a020;
+  color: #1e3a5f;
   text-decoration: underline;
 }
 
 .prose a:hover {
-  color: #d4911a;
+  color: #162d4a;
 }
 
 /* Line clamp utility */

@@ -65,8 +65,8 @@ export default function ContactPage() {
               <div className="flex flex-col gap-5 mb-10">
                 {contactDetails.map((d) => (
                   <div key={d.label} className="flex items-start gap-4">
-                    <div className="w-11 h-11 bg-[#e8a020]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <d.icon size={20} className="text-[#e8a020]" />
+                    <div className="w-11 h-11 bg-[#1e3a5f]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <d.icon size={20} className="text-[#1e3a5f]" />
                     </div>
                     <div>
                       <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">
@@ -75,7 +75,7 @@ export default function ContactPage() {
                       {d.href ? (
                         <a
                           href={d.href}
-                          className="font-semibold text-[#1a2e44] hover:text-[#e8a020] transition-colors"
+                          className="font-semibold text-[#1a2e44] hover:text-[#1e3a5f] transition-colors"
                         >
                           {d.value}
                         </a>

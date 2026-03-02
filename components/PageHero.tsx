@@ -80,7 +80,7 @@ export default function PageHero({
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href={ctaHref}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#c9a84c] text-white font-bold rounded-xl hover:bg-[#b8953f] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               {ctaText}
             </Link>

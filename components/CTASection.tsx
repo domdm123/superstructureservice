@@ -23,7 +23,7 @@ export default function CTASection({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-base bg-[#c9a84c] text-white hover:bg-[#b8953f] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-base bg-[#1e3a5f] text-white hover:bg-[#162d4a] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Get a Free Quote <ArrowRight size={18} />
           </Link>

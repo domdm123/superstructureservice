@@ -65,7 +65,7 @@ export default function HomePage() {
             </Link>
             <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#c9a84c] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#b8953f] transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1e3a5f] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#162d4a] transition-all"
             >
               <Phone size={16} /> {PHONE}
             </a>
@@ -194,7 +194,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a84c] text-white font-bold rounded-xl hover:bg-[#b8953f] transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all"
               >
                 Start Your Project <ArrowRight size={16} />
               </Link>

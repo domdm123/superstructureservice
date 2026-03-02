@@ -41,7 +41,7 @@ export default function Header() {
           ) : (
             <button
               onClick={() => setPhoneRevealed(true)}
-              className="flex items-center gap-2 bg-[#c9a84c] hover:bg-[#b8953f] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors"
+              className="flex items-center gap-2 bg-[#1e3a5f] hover:bg-[#162d4a] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors"
             >
               <Phone size={13} />
               Show Phone Number
@@ -114,7 +114,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className="ml-3 px-6 py-2.5 bg-[#c9a84c] text-white font-semibold rounded-lg hover:bg-[#b8953f] transition-colors text-sm shadow-sm"
+              className="ml-3 px-6 py-2.5 bg-[#1e3a5f] text-white font-semibold rounded-lg hover:bg-[#162d4a] transition-colors text-sm shadow-sm"
             >
               Free Quote
             </Link>
@@ -164,7 +164,7 @@ export default function Header() {
             <Link href="/areas-we-serve" className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50" onClick={() => setMobileOpen(false)}>
               Areas We Serve
             </Link>
-            <Link href="/contact" className="mt-2 px-4 py-3 bg-[#c9a84c] text-white font-semibold rounded-lg text-center hover:bg-[#b8953f]" onClick={() => setMobileOpen(false)}>
+            <Link href="/contact" className="mt-2 px-4 py-3 bg-[#1e3a5f] text-white font-semibold rounded-lg text-center hover:bg-[#162d4a]" onClick={() => setMobileOpen(false)}>
               Get a Free Quote
             </Link>
             <a href={`tel:${PHONE.replace(/\s/g, "")}`} className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50 flex items-center gap-2">

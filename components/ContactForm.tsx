@@ -143,7 +143,7 @@ export default function ContactForm({ prefilledService, prefilledLocation }: Con
       <button
         type="submit"
         disabled={loading}
-        className="flex items-center justify-center gap-2 px-8 py-4 bg-[#c9a84c] text-white font-bold rounded-xl hover:bg-[#b8953f] transition-all shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
+        className="flex items-center justify-center gap-2 px-8 py-4 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? (
           <span className="flex items-center gap-2">

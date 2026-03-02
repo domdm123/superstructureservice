@@ -44,7 +44,7 @@ export default function Footer() {
               ) : (
                 <button
                   onClick={() => setPhoneRevealed(true)}
-                  className="flex items-center gap-2 bg-[#c9a84c] hover:bg-[#b8953f] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors"
+                  className="flex items-center gap-2 bg-[#1e3a5f] hover:bg-[#162d4a] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors"
                 >
                   <Phone size={14} />
                   Show Phone Number

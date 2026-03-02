@@ -62,7 +62,7 @@ export default function RentalPropertyMaintenancePage() {
                   "Multi-property maintenance contracts",
                 ].map((f) => (
                   <li key={f} className="flex gap-3">
-                    <CheckCircle size={20} className="text-[#e8a020] flex-shrink-0 mt-0.5" />
+                    <CheckCircle size={20} className="text-[#1e3a5f] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{f}</span>
                   </li>
                 ))}
@@ -79,7 +79,7 @@ export default function RentalPropertyMaintenancePage() {
                   </p>
                   <Link
                     href="/contact"
-                    className="flex items-center justify-center gap-2 px-6 py-3 bg-[#e8a020] text-white font-bold rounded-xl hover:bg-[#d4911a] transition-all mb-3 w-full"
+                    className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Get in Touch <ArrowRight size={16} />
                   </Link>
@@ -97,9 +97,9 @@ export default function RentalPropertyMaintenancePage() {
                       <li key={s.slug}>
                         <Link
                           href={`/services/${s.canonicalSlug.replace("services/", "")}`}
-                          className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#e8a020] transition-colors"
+                          className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#1e3a5f] transition-colors"
                         >
-                          <ArrowRight size={13} className="text-[#e8a020]" />
+                          <ArrowRight size={13} className="text-[#1e3a5f]" />
                           {s.shortName}
                         </Link>
                       </li>

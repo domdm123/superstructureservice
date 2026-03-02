@@ -20,7 +20,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#c9a84c] text-white font-bold rounded-xl hover:bg-[#b8953f] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all"
           >
             Get a Quote <ArrowRight size={18} />
           </Link>

@@ -90,7 +90,7 @@ export default function FacilityBuildingManagementPage() {
 
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
                 <h3 className="text-xl font-bold text-[#1a2e44] mb-4 flex items-center gap-2">
-                  <MapPin size={20} className="text-[#e8a020]" />
+                  <MapPin size={20} className="text-[#1e3a5f]" />
                   Available Across Kent
                 </h3>
                 <p className="text-gray-600 text-sm mb-5">
@@ -101,7 +101,7 @@ export default function FacilityBuildingManagementPage() {
                     <Link
                       key={area.slug}
                       href={`/facility-building-management/${area.slug}`}
-                      className="px-3 py-2 bg-white border border-gray-100 rounded-lg text-sm text-[#1a2e44] hover:bg-[#e8a020] hover:text-white hover:border-[#e8a020] transition-all text-center font-medium"
+                      className="px-3 py-2 bg-white border border-gray-100 rounded-lg text-sm text-[#1a2e44] hover:bg-[#1e3a5f] hover:text-white hover:border-[#1e3a5f] transition-all text-center font-medium"
                     >
                       {area.name}
                     </Link>
@@ -119,7 +119,7 @@ export default function FacilityBuildingManagementPage() {
                   </p>
                   <Link
                     href="/contact"
-                    className="flex items-center justify-center gap-2 px-6 py-3 bg-[#e8a020] text-white font-bold rounded-xl hover:bg-[#d4911a] transition-all mb-3 w-full"
+                    className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Request a Quote <ArrowRight size={16} />
                   </Link>
@@ -139,9 +139,9 @@ export default function FacilityBuildingManagementPage() {
                         <li key={s.slug}>
                           <Link
                             href={`/services/${s.canonicalSlug.replace("services/", "")}`}
-                            className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#e8a020] transition-colors"
+                            className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#1e3a5f] transition-colors"
                           >
-                            <ArrowRight size={13} className="text-[#e8a020]" />
+                            <ArrowRight size={13} className="text-[#1e3a5f]" />
                             {s.shortName}
                           </Link>
                         </li>
