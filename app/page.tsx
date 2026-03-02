@@ -146,14 +146,16 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Animated service line below cards */}
-          <div className="text-center mt-10 mb-2">
-            <p className="text-gray-500 text-lg">
-              We can do <AnimatedService />
-            </p>
+          {/* Animated service showcase */}
+          <div className="mt-16 -mx-4 px-4 py-16 bg-gray-50 border-y border-gray-100 text-center">
+            <p className="text-gray-400 text-sm font-semibold uppercase tracking-[0.25em] mb-4">We specialise in</p>
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <span className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0d1b2e] tracking-tight">We can do</span>
+              <AnimatedService />
+            </div>
           </div>
 
-          <div className="text-center mt-4">
+          <div className="text-center mt-10">
             <Link
               href="/services"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#111111] text-white font-bold rounded-xl hover:bg-[#2a2a2a] transition-all"

@@ -41,12 +41,16 @@ export default function AnimatedService() {
 
   return (
     <span
-      className="text-[#4a9ebb] transition-all duration-400"
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(6px)",
+        transform: visible ? "translateY(0)" : "translateY(16px)",
         display: "inline-block",
-        transition: "opacity 0.4s ease, transform 0.4s ease",
+        transition: "opacity 0.45s ease, transform 0.45s ease",
+        fontSize: "inherit",
+        fontWeight: "inherit",
+        lineHeight: "inherit",
+        color: "#4a9ebb",
+        minWidth: "2ch",
       }}
     >
       {SERVICES[index]}
