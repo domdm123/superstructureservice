@@ -17,7 +17,7 @@ export default function Header() {
       <div className="bg-[#111111] text-white text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <span className="hidden sm:block text-gray-400 tracking-wide text-xs uppercase">
+            <span className="hidden sm:block text-[#f5c518] tracking-wide text-xs uppercase">
               Serving Canterbury, Kent &amp; Surrounding Villages
             </span>
             <a
@@ -25,7 +25,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-gray-400 hover:text-[#4a9ebb] transition-colors"
+              className="text-[#f5c518] hover:text-white transition-colors"
             >
               <Instagram size={15} />
             </a>
