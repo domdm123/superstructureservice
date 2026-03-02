@@ -39,7 +39,7 @@ export default function CTASection({
 
         {/* Trust signals */}
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-10 text-sm text-gray-400">
-          {["Respond within 24 hours", "Fully insured & accredited", "No hidden costs"].map((t) => (
+          {["Respond within 24 hours", "Fully insured & accredited"].map((t) => (
             <span key={t} className="flex items-center gap-1.5">
               <CheckCircle size={14} className="text-[#4a9ebb] flex-shrink-0" />
               {t}
