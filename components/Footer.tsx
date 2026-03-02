@@ -60,9 +60,9 @@ export default function Footer() {
                 <Mail size={15} className="flex-shrink-0 text-[#4a9ebb]" />
                 <span className="text-sm">{EMAIL}</span>
               </a>
-              <span className="flex items-center gap-2 text-gray-300">
+              <span className="flex items-center gap-2 text-gray-300 text-sm">
                 <MapPin size={15} className="text-[#4a9ebb] flex-shrink-0" />
-                Canterbury, Kent
+                Serving Canterbury, Kent &amp; Surrounding Villages
               </span>
             </div>
           </div>
