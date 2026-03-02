@@ -29,6 +29,7 @@ const featuredProjects = [
     title: "Roofing in Canterbury",
     category: "Roofing",
     location: "Canterbury",
+    image: "/images/roofing.jpg",
     description:
       "Complete roof replacement on a period Canterbury property using traditional clay peg tiles, completed to conservation area standards.",
     tags: ["Flat Roofing", "GRP Fibreglass", "Listed Building"],
@@ -37,6 +38,7 @@ const featuredProjects = [
     title: "Kitchen Installation in Canterbury",
     category: "Kitchen Installation",
     location: "Canterbury",
+    image: "/images/kitchen-installation.jpg",
     description:
       "Full kitchen refit including structural wall removal, bespoke joinery, granite worktops from Global Granite, and integrated appliances.",
     tags: ["Bespoke Design", "Granite Worktops", "Structural Work"],
@@ -45,6 +47,7 @@ const featuredProjects = [
     title: "Commercial Refurbishment",
     category: "Refurbishments",
     location: "Whitstable",
+    image: "/images/refurbishment-2.jpg",
     description:
       "Complete commercial office refurbishment in Whitstable — stripping back, full rewire, new flooring, plaster, decoration and fit-out.",
     tags: ["Commercial", "Full Refurb", "Electrical"],
@@ -53,6 +56,7 @@ const featuredProjects = [
     title: "New Bathroom & Plumbing",
     category: "Bathroom",
     location: "Faversham",
+    image: "/images/bathroom.jpg",
     description:
       "Luxury wet room installation with underfloor heating, bespoke tiling, custom shower enclosure and full plumbing by our Gas Safe team.",
     tags: ["Wet Room", "Underfloor Heating", "Gas Safe"],
@@ -61,6 +65,7 @@ const featuredProjects = [
     title: "Underfloor Heating Installation",
     category: "Flooring",
     location: "Chartham",
+    image: "/images/underfloor-heating.jpg",
     description:
       "Retrofit underfloor heating throughout a Victorian terrace using milled channels in existing screed — no floor level changes required.",
     tags: ["Retrofit UFH", "Victorian Property", "All Rooms"],
@@ -69,6 +74,7 @@ const featuredProjects = [
     title: "Domestic Refurbishment",
     category: "Refurbishments",
     location: "Bridge",
+    image: "/images/property-refurbishment.jpg",
     description:
       "Full internal and external refurbishment of a 4-bedroom detached property — new kitchen, bathrooms, flooring, rewire and re-plaster.",
     tags: ["Full Property", "Multiple Trades", "Project Management"],
@@ -77,49 +83,55 @@ const featuredProjects = [
     title: "Home Office Creation",
     category: "Conversion",
     location: "Sturry",
+    image: "/images/home-office.jpg",
     description:
       "Garage conversion into a bespoke home office with dedicated data cabling, built-in furniture, climate control and a separate entrance.",
     tags: ["Garage Conversion", "Data Cabling", "Bespoke Furniture"],
   },
   {
-    title: "Library Renovation",
+    title: "Bespoke Carpentry",
     category: "Carpentry",
     location: "Canterbury",
+    image: "/images/carpentry.jpg",
     description:
       "Floor-to-ceiling bespoke library installation with solid oak shelving, reading nook, hidden lighting and integrated electrical points.",
     tags: ["Bespoke Joinery", "Solid Oak", "Lighting"],
   },
   {
-    title: "Entrance Restoration",
-    category: "Carpentry",
-    location: "Canterbury",
-    description:
-      "Full restoration of a Victorian entrance hall in a Canterbury city centre property — original floorboards, cornicing and period-appropriate joinery.",
-    tags: ["Heritage", "Period Property", "Restoration"],
-  },
-  {
-    title: "External Refurbishment & Roof Repair",
-    category: "Roofing",
-    location: "Folkestone",
-    description:
-      "Full external refurbishment including new rendering, roof repairs with EPDM membrane, and repainting of a 1930s semi-detached home.",
-    tags: ["EPDM", "External Works", "Rendering"],
-  },
-  {
     title: "Listed Building Restoration & Kitchen",
     category: "Listed Building",
     location: "Canterbury",
+    image: "/images/listed-building.jpg",
     description:
       "Sympathetic restoration of a Grade II listed property in Canterbury city centre, including a new kitchen installation designed to complement the historic character.",
     tags: ["Grade II Listed", "Conservation", "Kitchen"],
   },
   {
-    title: "Carpentry Hardwood Decking",
-    category: "Carpentry",
-    location: "Sandwich",
+    title: "Solar Panel Installation",
+    category: "Solar Panels",
+    location: "Canterbury",
+    image: "/images/solar-panels.jpg",
     description:
-      "Premium hardwood decking installation in a coastal garden in Sandwich — treated hardwood, stainless steel fixings, built-in seating and planters.",
-    tags: ["Hardwood", "Outdoor", "Decking"],
+      "Full MCS-accredited solar panel installation with battery storage and EV charger integration on a detached property in Canterbury.",
+    tags: ["MCS Accredited", "Battery Storage", "EV Charger"],
+  },
+  {
+    title: "Driveway & Paving",
+    category: "Driveways",
+    location: "Sandwich",
+    image: "/images/driveways-paving.jpg",
+    description:
+      "Premium block paving driveway installation with dropped kerb, drainage soakaway and decorative border edging.",
+    tags: ["Block Paving", "Dropped Kerb", "Drainage"],
+  },
+  {
+    title: "Garage Conversion",
+    category: "Conversion",
+    location: "Faversham",
+    image: "/images/garage-conversion.jpg",
+    description:
+      "Full garage-to-living-space conversion including insulation, plastering, electrical rewire, flooring and decorating.",
+    tags: ["Garage Conversion", "Living Space", "Full Build"],
   },
 ];
 
@@ -177,13 +189,10 @@ export default function ProjectsPage() {
                 key={project.title}
                 className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                {/* Image placeholder */}
-                <div className="h-48 bg-gray-100 flex items-center justify-center border-b border-gray-100">
-                  <div className="text-center">
-                    <div className="text-xs font-semibold uppercase tracking-widest text-gray-400">{project.category}</div>
-                    <div className="mt-2 w-12 h-0.5 bg-gray-300 mx-auto" />
-                  </div>
-                </div>
+                <div
+                  className="h-52 bg-gray-200 bg-cover bg-center"
+                  style={{ backgroundImage: `url('${project.image}')` }}
+                />
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-semibold text-[#4a9ebb] uppercase tracking-wider">

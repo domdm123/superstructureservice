@@ -17,22 +17,22 @@ export const metadata: Metadata = {
 };
 
 const SERVICE_PHOTOS: Record<string, string> = {
-  "kitchen-installation": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Kitchen-Installation-in-Canterbury-1.jpg",
-  "flooring-underfloor-heating": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Underfloor-Heating-in-Canterbury-1.jpg",
-  "facility-building-management": "https://superstructureservices.co.uk/wp-content/uploads/2025/07/Facilities-building-management-firm-in-Canterbury-Kent.jpg",
-  "electrician": "https://superstructureservices.co.uk/wp-content/uploads/2025/07/home-electrician-in-canterbury-rewiring-fuse-metering-scaled.jpg",
-  "air-source-heat-pump": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Air-source-heat-pumps-and-conditioning.jpg",
-  "solar-panel-installation": "https://superstructureservices.co.uk/wp-content/uploads/2025/06/Solar-panel-installer-in-Canterbury-Kent.jpg",
-  "air-conditioning": "https://superstructureservices.co.uk/wp-content/uploads/2025/07/air-con-service-installation-company-in-canterbury-scaled.jpg",
-  "new-bathroom": "https://superstructureservices.co.uk/wp-content/uploads/2025/07/classic-modern-bathroom-refurbishment-service-canterbury.jpg",
-  "property-refurbishment": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Property-maintanence-in-Canterbury-Kent.jpg",
-  "plumbing-drainage": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Bathrooms-in-Canterbury.jpg",
-  "carpentry": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Carpenter-in-Canterbury.jpeg",
-  "garage-workshop-conversion": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Garage-Conversion-in-Canterbury.jpg",
-  "roofing": "https://superstructureservices.co.uk/wp-content/uploads/2021/11/Professional-roofing-service-in-Canterbury-Kent.jpg",
-  "home-office-conversion": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Home-office-creation-Canterbury-Kent-rotated.jpg",
-  "cinema-room-installation": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Cinema-Rooms-in-Kent.jpg",
-  "driveways-paving": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Driveway-paving-in-Canterbury-Kent-1.jpg",
+  "kitchen-installation": "/images/kitchen-installation.jpg",
+  "flooring-underfloor-heating": "/images/underfloor-heating.jpg",
+  "facility-building-management": "/images/facilities-management.jpg",
+  "electrician": "/images/electrician.jpg",
+  "air-source-heat-pump": "/images/air-source-heat-pump.jpg",
+  "solar-panel-installation": "/images/solar-panels.jpg",
+  "air-conditioning": "/images/air-conditioning.jpg",
+  "new-bathroom": "/images/bathroom.jpg",
+  "property-refurbishment": "/images/property-refurbishment.jpg",
+  "plumbing-drainage": "/images/plumbing.jpg",
+  "carpentry": "/images/carpentry.jpg",
+  "garage-workshop-conversion": "/images/garage-conversion.jpg",
+  "roofing": "/images/roofing.jpg",
+  "home-office-conversion": "/images/home-office.jpg",
+  "cinema-room-installation": "/images/cinema-room.jpg",
+  "driveways-paving": "/images/driveways-paving.jpg",
 };
 
 export default function ServicesPage() {
