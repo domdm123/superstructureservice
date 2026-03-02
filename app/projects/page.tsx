@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, MapPin } from "lucide-react";
 import { DOMAIN } from "@/lib/services";
+import { PROJECTS } from "@/lib/projects";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 
@@ -12,202 +14,65 @@ export const metadata: Metadata = {
   alternates: { canonical: `${DOMAIN}/projects` },
 };
 
-const projectCategories = [
-  { name: "Kitchen Installation", slug: "kitchen-installation", count: 24 },
-  { name: "Bathroom Refurbishment", slug: "plumbing-and-drainage", count: 18 },
-  { name: "Roofing", slug: "roofing", count: 31 },
-  { name: "Refurbishments & Conversions", slug: "refurbishments-and-conversions", count: 22 },
-  { name: "Flooring", slug: "flooring", count: 15 },
-  { name: "Home Office", slug: "home-office", count: 9 },
-  { name: "Carpentry", slug: "carpentry", count: 20 },
-  { name: "Underfloor Heating", slug: "underfloor-heating", count: 12 },
-  { name: "Listed Building Restoration", slug: "listed-property-restoration", count: 7 },
-];
-
-const featuredProjects = [
-  {
-    title: "Roofing in Canterbury",
-    category: "Roofing",
-    location: "Canterbury",
-    image: "/images/Professional-roofing-service-in-Canterbury-Kent.jpg",
-    description:
-      "Complete roof replacement on a period Canterbury property using traditional clay peg tiles, completed to conservation area standards.",
-    tags: ["Flat Roofing", "GRP Fibreglass", "Listed Building"],
-  },
-  {
-    title: "Kitchen Installation in Canterbury",
-    category: "Kitchen Installation",
-    location: "Canterbury",
-    image: "/images/Kitchen-Installation-in-Canterbury.jpg",
-    description:
-      "Full kitchen refit including structural wall removal, bespoke joinery, granite worktops from Global Granite, and integrated appliances.",
-    tags: ["Bespoke Design", "Granite Worktops", "Structural Work"],
-  },
-  {
-    title: "Commercial Refurbishment",
-    category: "Refurbishments",
-    location: "Whitstable",
-    image: "/images/Property-Refurbishment-in-Canterbury.jpg",
-    description:
-      "Complete commercial office refurbishment in Whitstable — stripping back, full rewire, new flooring, plaster, decoration and fit-out.",
-    tags: ["Commercial", "Full Refurb", "Electrical"],
-  },
-  {
-    title: "New Bathroom & Plumbing",
-    category: "Bathroom",
-    location: "Faversham",
-    image: "/images/classic-modern-bathroom-refurbishment-service-canterbury.jpg",
-    description:
-      "Luxury wet room installation with underfloor heating, bespoke tiling, custom shower enclosure and full plumbing by our Gas Safe team.",
-    tags: ["Wet Room", "Underfloor Heating", "Gas Safe"],
-  },
-  {
-    title: "Underfloor Heating Installation",
-    category: "Flooring",
-    location: "Chartham",
-    image: "/images/Underfloor-Heating-in-Canterbury.jpg",
-    description:
-      "Retrofit underfloor heating throughout a Victorian terrace using milled channels in existing screed — no floor level changes required.",
-    tags: ["Retrofit UFH", "Victorian Property", "All Rooms"],
-  },
-  {
-    title: "Domestic Refurbishment",
-    category: "Refurbishments",
-    location: "Bridge",
-    image: "/images/Property-maintanence-in-Canterbury-Kent.jpg",
-    description:
-      "Full internal and external refurbishment of a 4-bedroom detached property — new kitchen, bathrooms, flooring, rewire and re-plaster.",
-    tags: ["Full Property", "Multiple Trades", "Project Management"],
-  },
-  {
-    title: "Home Office Creation",
-    category: "Conversion",
-    location: "Sturry",
-    image: "/images/Home-office-creation-Canterbury-Kent.jpg",
-    description:
-      "Garage conversion into a bespoke home office with dedicated data cabling, built-in furniture, climate control and a separate entrance.",
-    tags: ["Garage Conversion", "Data Cabling", "Bespoke Furniture"],
-  },
-  {
-    title: "Bespoke Carpentry",
-    category: "Carpentry",
-    location: "Canterbury",
-    image: "/images/Carpenter-in-Canterbury.jpg",
-    description:
-      "Floor-to-ceiling bespoke library installation with solid oak shelving, reading nook, hidden lighting and integrated electrical points.",
-    tags: ["Bespoke Joinery", "Solid Oak", "Lighting"],
-  },
-  {
-    title: "Listed Building Restoration & Kitchen",
-    category: "Listed Building",
-    location: "Canterbury",
-    image: "/images/canterbury-listed-building-refurbishment.jpg",
-    description:
-      "Sympathetic restoration of a Grade II listed property in Canterbury city centre, including a new kitchen installation designed to complement the historic character.",
-    tags: ["Grade II Listed", "Conservation", "Kitchen"],
-  },
-  {
-    title: "Solar Panel Installation",
-    category: "Solar Panels",
-    location: "Canterbury",
-    image: "/images/Solar-panel-installer-in-Canterbury-Kent.jpg",
-    description:
-      "Full MCS-accredited solar panel installation with battery storage and EV charger integration on a detached property in Canterbury.",
-    tags: ["MCS Accredited", "Battery Storage", "EV Charger"],
-  },
-  {
-    title: "Driveway & Paving",
-    category: "Driveways",
-    location: "Sandwich",
-    image: "/images/Driveway-paving-in-Canterbury-Kent.jpg",
-    description:
-      "Premium block paving driveway installation with dropped kerb, drainage soakaway and decorative border edging.",
-    tags: ["Block Paving", "Dropped Kerb", "Drainage"],
-  },
-  {
-    title: "Garage Conversion",
-    category: "Conversion",
-    location: "Faversham",
-    image: "/images/Garage-Conversion-in-Canterbury.jpg",
-    description:
-      "Full garage-to-living-space conversion including insulation, plastering, electrical rewire, flooring and decorating.",
-    tags: ["Garage Conversion", "Living Space", "Full Build"],
-  },
-];
-
 export default function ProjectsPage() {
   return (
     <>
       <PageHero
         title="Our Projects"
-        subtitle="Browse a selection of our completed building and renovation projects across Canterbury and Kent. Every project, large or small, delivered to the same high standard."
+        subtitle="Browse our completed building and renovation projects across Canterbury and Kent. Every project delivered to the same high standard — click any project to see full details and photos."
         breadcrumbs={[{ label: "Projects" }]}
-        badge="Our Work"
+        badge="Our Portfolio"
       />
 
-      {/* Categories */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Browse by Category
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {projectCategories.map((cat) => (
-              <div
-                key={cat.slug}
-                className="flex flex-col gap-1 p-5 bg-white rounded-xl border border-gray-100 hover:border-gray-300 hover:shadow-sm transition-all cursor-pointer group"
-              >
-                <span className="text-sm font-semibold text-gray-900 group-hover:text-[#4a9ebb] leading-tight">
-                  {cat.name}
-                </span>
-                <span className="text-xs text-gray-400">{cat.count} projects</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured projects grid */}
+      {/* Projects grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
             <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
-              Our Portfolio
+              Completed Work
             </span>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Featured Projects
+              {PROJECTS.length} Completed Projects
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              A selection of our recent building and renovation work across Canterbury and the
-              wider Kent area. Contact us to discuss your project.
+              A selection of our building and renovation work across Canterbury and the wider Kent area.
+              Click any project to view full details, description and photos.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map((project) => (
-              <div
-                key={project.title}
+            {PROJECTS.map((project) => (
+              <Link
+                key={project.slug}
+                href={`/projects/${project.slug}`}
                 className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                <div
-                  className="h-52 bg-gray-200 bg-cover bg-center"
-                  style={{ backgroundImage: `url('${project.image}')` }}
-                />
+                <div className="relative h-52 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  <span className="absolute top-3 left-3 text-xs font-semibold text-white bg-[#1e3a5f]/80 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                    {project.category}
+                  </span>
+                </div>
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-semibold text-[#4a9ebb] uppercase tracking-wider">
-                      {project.category}
-                    </span>
-                    <span className="text-xs text-gray-400">{project.location}</span>
+                  <div className="flex items-center gap-1.5 mb-2 text-xs text-gray-400">
+                    <MapPin size={11} className="text-[#4a9ebb]" />
+                    {project.location}, Kent
                   </div>
-                  <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-[#4a9ebb] transition-colors">
+                  <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-[#4a9ebb] transition-colors leading-snug">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {project.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
                         className="text-xs bg-gray-50 border border-gray-100 text-gray-500 px-2 py-0.5 rounded-full"
@@ -216,8 +81,11 @@ export default function ProjectsPage() {
                       </span>
                     ))}
                   </div>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4a9ebb] group-hover:gap-2.5 transition-all">
+                    View Project <ArrowRight size={12} />
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -237,8 +105,7 @@ export default function ProjectsPage() {
 
       <CTASection
         heading="Start Your Project Today"
-        subheading="Join hundreds of satisfied clients across Canterbury and Kent. Contact us for a free, no-obligation quote."
-        dark
+        subheading="Join our satisfied clients across Canterbury and Kent. Contact us for a free, no-obligation quote."
       />
     </>
   );
