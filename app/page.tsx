@@ -34,7 +34,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — full screen video */}
-      <section className="relative h-[92vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         {/* Video background */}
         <video
           autoPlay
@@ -46,46 +46,29 @@ export default function HomePage() {
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
-        {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent" />
+        {/* Dark overlay — matches old site's dark machinery feel */}
+        <div className="absolute inset-0 bg-black/65" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
-          <div className="max-w-3xl">
-            <span className="inline-block bg-white/10 backdrop-blur-sm text-white text-xs font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-6 border border-white/20">
-              Canterbury &amp; Kent Builders
-            </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 text-white">
-              Trusted Builders for All Your{" "}
-              <span className="text-[#4a9ebb]">Construction Needs</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl">
-              Serving Canterbury and the wider Kent area with premium building services. From kitchen
-              installations to complete property refurbishments — quality craftsmanship, every time.
-            </p>
-            <ul className="flex flex-col gap-2.5 mb-10">
-              {highlights.map((h) => (
-                <li key={h} className="flex items-center gap-2.5 text-gray-200">
-                  <CheckCircle size={17} className="text-[#4a9ebb] flex-shrink-0" />
-                  {h}
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#c9a84c] text-white font-bold rounded-xl hover:bg-[#b8953f] transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 text-base"
-              >
-                Get a Free Quote <ArrowRight size={18} />
-              </Link>
-              <a
-                href={`tel:${PHONE.replace(/\s/g, "")}`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/40 text-white font-bold rounded-xl hover:bg-white/10 transition-all text-base backdrop-blur-sm"
-              >
-                <Phone size={18} /> {PHONE}
-              </a>
-            </div>
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug mb-6 tracking-tight">
+            Modern approach, old fashioned values.
+          </h1>
+          <p className="text-gray-300 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+            Canterbury &amp; Kent builders — kitchens, renovations, solar, roofing and more.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-[#111111] transition-all"
+            >
+              View Our Services
+            </Link>
+            <a
+              href={`tel:${PHONE.replace(/\s/g, "")}`}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#c9a84c] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#b8953f] transition-all"
+            >
+              <Phone size={16} /> {PHONE}
+            </a>
           </div>
         </div>
       </section>
