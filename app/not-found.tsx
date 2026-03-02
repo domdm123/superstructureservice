@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Home } from "lucide-react";
-import { SERVICES } from "@/lib/services";
+import { SERVICES, EMAIL } from "@/lib/services";
 
 export default function NotFound() {
   return (
@@ -18,12 +18,12 @@ export default function NotFound() {
           >
             <Home size={18} /> Back to Home
           </Link>
-          <Link
-            href="/contact"
+          <a
+            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`}
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all"
           >
             Get a Quote <ArrowRight size={18} />
-          </Link>
+          </a>
         </div>
         <div>
           <p className="text-sm text-gray-500 mb-4">Looking for a service?</p>

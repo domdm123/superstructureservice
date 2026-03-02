@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
-import { PHONE } from "@/lib/services";
+import { PHONE, EMAIL } from "@/lib/services";
 
 interface CTASectionProps {
   heading?: string;
@@ -21,12 +20,12 @@ export default function CTASection({
           {subheading}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/contact"
+          <a
+            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-base bg-[#1e3a5f] text-white hover:bg-[#162d4a] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Get a Free Quote <ArrowRight size={18} />
-          </Link>
+          </a>
           <a
             href={`tel:${PHONE.replace(/\s/g, "")}`}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-base border-2 border-white/20 text-white hover:bg-white/10 transition-all"

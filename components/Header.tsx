@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone, ChevronDown, Instagram } from "lucide-react";
-import { SERVICES, PHONE } from "@/lib/services";
+import { SERVICES, PHONE, EMAIL } from "@/lib/services";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -112,12 +112,12 @@ export default function Header() {
             <Link href="/areas-we-serve" className="px-4 py-2 text-gray-700 font-medium hover:text-[#111111] transition-colors text-sm">
               Areas We Serve
             </Link>
-            <Link
-              href="/contact"
+            <a
+              href={`mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`}
               className="ml-3 px-6 py-2.5 bg-[#1e3a5f] text-white font-semibold rounded-lg hover:bg-[#162d4a] transition-colors text-sm shadow-sm"
             >
               Free Quote
-            </Link>
+            </a>
           </nav>
 
           {/* Mobile button */}
@@ -164,9 +164,9 @@ export default function Header() {
             <Link href="/areas-we-serve" className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50" onClick={() => setMobileOpen(false)}>
               Areas We Serve
             </Link>
-            <Link href="/contact" className="mt-2 px-4 py-3 bg-[#1e3a5f] text-white font-semibold rounded-lg text-center hover:bg-[#162d4a]" onClick={() => setMobileOpen(false)}>
+            <a href={`mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`} className="mt-2 px-4 py-3 bg-[#1e3a5f] text-white font-semibold rounded-lg text-center hover:bg-[#162d4a]" onClick={() => setMobileOpen(false)}>
               Get a Free Quote
-            </Link>
+            </a>
             <a href={`tel:${PHONE.replace(/\s/g, "")}`} className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50 flex items-center gap-2">
               <Phone size={16} /> {PHONE}
             </a>

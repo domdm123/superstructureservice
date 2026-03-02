@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ChevronRight, Phone } from "lucide-react";
-import { PHONE } from "@/lib/services";
+import { PHONE, EMAIL } from "@/lib/services";
 
 interface BreadcrumbItem {
   label: string;
@@ -23,7 +23,7 @@ export default function PageHero({
   breadcrumbs,
   showCTA = true,
   ctaText = "Get a Free Quote",
-  ctaHref = "/contact",
+  ctaHref = `mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`,
   badge,
 }: PageHeroProps) {
   return (
@@ -78,12 +78,12 @@ export default function PageHero({
 
         {showCTA && (
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link
+            <a
               href={ctaHref}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               {ctaText}
-            </Link>
+            </a>
             <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-bold rounded-xl hover:bg-white/10 transition-all"

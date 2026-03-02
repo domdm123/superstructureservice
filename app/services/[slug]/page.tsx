@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone, MapPin } from "lucide-react";
-import { SERVICES, PHONE, DOMAIN } from "@/lib/services";
+import { SERVICES, PHONE, EMAIL, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
@@ -145,12 +145,12 @@ export default async function ServicePage({ params }: Props) {
                     Interested in our {service.shortName.toLowerCase()} service? Contact us today
                     for a free, no-obligation quote.
                   </p>
-                  <Link
-                    href={`/contact?subject=${encodeURIComponent(`${service.name} enquiry`)}`}
+                  <a
+                    href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${service.name} enquiry - Superstructure Services`)}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Request a Quote <ArrowRight size={16} />
-                  </Link>
+                  </a>
                   <a
                     href={`tel:${PHONE.replace(/\s/g, "")}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all w-full"
