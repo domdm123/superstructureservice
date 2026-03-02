@@ -64,7 +64,7 @@ export default function ContactForm({ prefilledService, prefilledLocation }: Con
             onChange={handleChange}
             required
             placeholder="Your full name"
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e8a020] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4a9ebb] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white"
           />
         </div>
         <div>
@@ -78,7 +78,7 @@ export default function ContactForm({ prefilledService, prefilledLocation }: Con
             onChange={handleChange}
             required
             placeholder="Your phone number"
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e8a020] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4a9ebb] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white"
           />
         </div>
       </div>
@@ -93,7 +93,7 @@ export default function ContactForm({ prefilledService, prefilledLocation }: Con
           onChange={handleChange}
           required
           placeholder="your@email.com"
-          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e8a020] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white"
+          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4a9ebb] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white"
         />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -103,7 +103,7 @@ export default function ContactForm({ prefilledService, prefilledLocation }: Con
             name="service"
             value={form.service}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e8a020] focus:border-transparent text-gray-800 bg-white"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4a9ebb] focus:border-transparent text-gray-800 bg-white"
           >
             <option value="">Select a service...</option>
             {SERVICES.map((s) => (
@@ -122,7 +122,7 @@ export default function ContactForm({ prefilledService, prefilledLocation }: Con
             value={form.location}
             onChange={handleChange}
             placeholder="Town or postcode"
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e8a020] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4a9ebb] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white"
           />
         </div>
       </div>
@@ -137,13 +137,13 @@ export default function ContactForm({ prefilledService, prefilledLocation }: Con
           required
           rows={5}
           placeholder="Describe your project, including any relevant details about your property and what you'd like to achieve..."
-          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e8a020] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white resize-none"
+          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4a9ebb] focus:border-transparent text-gray-800 placeholder-gray-400 bg-white resize-none"
         />
       </div>
       <button
         type="submit"
         disabled={loading}
-        className="flex items-center justify-center gap-2 px-8 py-4 bg-[#e8a020] text-white font-bold rounded-xl hover:bg-[#d4911a] transition-all shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
+        className="flex items-center justify-center gap-2 px-8 py-4 bg-[#c9a84c] text-white font-bold rounded-xl hover:bg-[#b8953f] transition-all shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? (
           <span className="flex items-center gap-2">

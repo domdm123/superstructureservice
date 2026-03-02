@@ -13,14 +13,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* About */}
           <div>
-            <div className="mb-5">
+            <div className="mb-5 flex items-center gap-3">
               <Image
-                src="/logo.png"
-                alt="Superstructure Services"
-                width={200}
-                height={46}
-                className="h-10 w-auto object-contain brightness-0 invert"
+                src="/logo-icon.png"
+                alt="Superstructure Services icon"
+                width={40}
+                height={40}
+                className="h-9 w-auto object-contain brightness-0 invert"
               />
+              <div className="leading-tight">
+                <div className="text-white font-bold text-sm tracking-wider uppercase">Superstructure</div>
+                <div className="text-gray-400 font-semibold text-xs tracking-widest uppercase">Services</div>
+              </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Your trusted builders and contractors based in Canterbury, serving clients
@@ -29,14 +33,14 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-sm">
               <a
                 href={`tel:${PHONE.replace(/\s/g, "")}`}
-                className="flex items-center gap-2 text-gray-400 hover:text-[#c9a84c] transition-colors"
+                className="flex items-center gap-2 text-gray-400 hover:text-[#4a9ebb] transition-colors"
               >
                 <Phone size={14} />
                 {PHONE}
               </a>
               <a
                 href={`mailto:${EMAIL}`}
-                className="flex items-center gap-2 text-gray-400 hover:text-[#c9a84c] transition-colors"
+                className="flex items-center gap-2 text-gray-400 hover:text-[#4a9ebb] transition-colors"
               >
                 <Mail size={14} />
                 {EMAIL}
@@ -65,7 +69,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-[#c9a84c] hover:text-yellow-300 text-sm font-semibold transition-colors"
+                  className="text-[#4a9ebb] hover:text-sky-300 text-sm font-semibold transition-colors"
                 >
                   View All Services →
                 </Link>
@@ -107,7 +111,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/areas-we-serve"
-                  className="text-[#c9a84c] hover:text-yellow-300 text-sm font-semibold transition-colors"
+                  className="text-[#4a9ebb] hover:text-sky-300 text-sm font-semibold transition-colors"
                 >
                   View All Areas →
                 </Link>

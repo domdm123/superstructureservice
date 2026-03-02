@@ -55,7 +55,7 @@ export default function TrustBadges() {
               className="flex flex-col items-center text-center p-5 bg-gray-50 rounded-xl border border-gray-100 hover:border-gray-300 hover:shadow-sm transition-all"
             >
               <div className="w-11 h-11 bg-[#111111] rounded-xl flex items-center justify-center mb-3">
-                <b.icon className="text-[#c9a84c]" size={20} />
+                <b.icon className="text-[#4a9ebb]" size={20} />
               </div>
               <h3 className="font-bold text-gray-900 text-sm mb-1">{b.title}</h3>
               <p className="text-gray-500 text-xs leading-snug">{b.desc}</p>

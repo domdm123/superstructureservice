@@ -49,7 +49,7 @@ export default function HowWeWork() {
               )}
               <div className="relative z-10 text-center lg:text-left">
                 <div className="w-14 h-14 bg-[#111111] rounded-2xl flex items-center justify-center mb-5 mx-auto lg:mx-0 shadow-md">
-                  <span className="text-[#c9a84c] font-bold text-lg">{step.number}</span>
+                  <span className="text-[#4a9ebb] font-bold text-lg">{step.number}</span>
                 </div>
                 <h3 className="font-bold text-gray-900 text-lg mb-3">{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>

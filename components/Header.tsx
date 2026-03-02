@@ -20,7 +20,7 @@ export default function Header() {
           </span>
           <a
             href={`tel:${PHONE.replace(/\s/g, "")}`}
-            className="flex items-center gap-2 hover:text-[#c9a84c] transition-colors font-semibold"
+            className="flex items-center gap-2 hover:text-[#4a9ebb] transition-colors font-semibold"
           >
             <Phone size={13} />
             {PHONE}
