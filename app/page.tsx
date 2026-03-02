@@ -103,15 +103,19 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
-            <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
-              What We Do
+            <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">
+              Based in the Heart of Canterbury, Kent
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Building Services
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-tight">
+              Your Local Trusted Builder
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed mb-4">
+              Superstructure Services is an independently run, high-quality property restoration,
+              conversion, refurbishment &amp; maintenance company — serving Canterbury and the wider Kent area.
+            </p>
+            <p className="text-gray-400 max-w-xl mx-auto text-base leading-relaxed">
               From kitchen installations to solar panels, we offer a comprehensive range of
-              high-quality building and trade services across Canterbury and Kent.
+              building and trade services, all under one roof.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
