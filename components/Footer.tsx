@@ -33,8 +33,11 @@ export default function Footer() {
                 />
               </Link>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              Your trusted builders and contractors based in Canterbury, serving clients across Kent and surrounding villages with quality craftsmanship and transparent service.
+            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+              Quality property builders offering a range of services in refurbishment, renovation and maintenance in Canterbury, Kent.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              Comprising of highly skilled and qualified tradesmen, your dreams will be brought to reality in an up to date modern approach – sympathetic to the aesthetics that is your home or workplace.
             </p>
             <div className="flex flex-col gap-3 text-sm">
               {phoneRevealed ? (
