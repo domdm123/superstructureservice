@@ -29,7 +29,7 @@ export default function Footer() {
                   alt="Superstructure Services"
                   width={280}
                   height={65}
-                  className="h-14 w-auto object-contain"
+                  className="h-14 w-auto object-contain object-left"
                 />
               </Link>
             </div>
