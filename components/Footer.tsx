@@ -15,15 +15,13 @@ export default function Footer() {
           <div>
             <div className="mb-5">
               <Link href="/">
-                <div className="inline-block bg-white rounded-lg px-3 py-2">
-                  <Image
-                    src="/logo.png"
-                    alt="Superstructure Services"
-                    width={200}
-                    height={46}
-                    className="h-9 w-auto object-contain"
-                  />
-                </div>
+                <Image
+                  src="/logo-light.png"
+                  alt="Superstructure Services"
+                  width={220}
+                  height={50}
+                  className="h-10 w-auto object-contain"
+                />
               </Link>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
