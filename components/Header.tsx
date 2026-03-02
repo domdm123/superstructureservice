@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Instagram } from "lucide-react";
 import { SERVICES, PHONE } from "@/lib/services";
 
 export default function Header() {
@@ -16,9 +16,20 @@ export default function Header() {
       {/* Top bar */}
       <div className="bg-[#111111] text-white text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <span className="hidden sm:block text-gray-400 tracking-wide text-xs uppercase">
-            Builders &amp; Contractors · Canterbury &amp; Kent
-          </span>
+          <div className="flex items-center gap-4">
+            <span className="hidden sm:block text-gray-400 tracking-wide text-xs uppercase">
+              Builders &amp; Contractors · Canterbury &amp; Kent
+            </span>
+            <a
+              href="https://www.instagram.com/superstructureservices"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-gray-400 hover:text-[#4a9ebb] transition-colors"
+            >
+              <Instagram size={15} />
+            </a>
+          </div>
           {phoneRevealed ? (
             <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}

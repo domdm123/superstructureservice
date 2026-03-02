@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram } from "lucide-react";
 import { PHONE, EMAIL, SERVICES } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
 
@@ -141,6 +141,15 @@ export default function Footer() {
             <Link href="/privacy-policy" className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
             <Link href="/services" className="hover:text-gray-400 transition-colors">Services</Link>
             <Link href="/projects" className="hover:text-gray-400 transition-colors">Projects</Link>
+            <a
+              href="https://www.instagram.com/superstructureservices"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-gray-500 hover:text-[#4a9ebb] transition-colors"
+            >
+              <Instagram size={16} />
+            </a>
           </div>
         </div>
       </div>
