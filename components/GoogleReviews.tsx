@@ -1,4 +1,6 @@
-import { Star } from "lucide-react";
+"use client";
+import { useRef } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
   {
@@ -79,6 +81,13 @@ function GoogleIcon() {
 }
 
 export default function GoogleReviews() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (dir: "left" | "right") => {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollBy({ left: dir === "right" ? 320 : -320, behavior: "smooth" });
+  };
+
   return (
     <section className="bg-[#1a1a2e] py-14">
       <div className="max-w-7xl mx-auto px-4">
@@ -97,10 +106,27 @@ export default function GoogleReviews() {
               <GoogleIcon />
               <span className="text-white font-bold text-lg tracking-tight">Google</span>
             </div>
+            {/* Arrow controls */}
+            <div className="flex items-center gap-3 mt-6">
+              <button
+                onClick={() => scroll("left")}
+                aria-label="Previous reviews"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
+              >
+                <ChevronLeft size={18} strokeWidth={1.5} />
+              </button>
+              <button
+                onClick={() => scroll("right")}
+                aria-label="Next reviews"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
+              >
+                <ChevronRight size={18} strokeWidth={1.5} />
+              </button>
+            </div>
           </div>
 
-          {/* Right — review cards scrollable row */}
-          <div className="flex-1 flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+          {/* Right — review cards scrollable row (no scrollbar) */}
+          <div ref={scrollRef} className="flex-1 flex gap-4 overflow-x-auto pb-2 scrollbar-hide scroll-smooth">
             {reviews.map((review) => (
               <div
                 key={review.name}
