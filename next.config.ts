@@ -3,6 +3,16 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactCompiler: true,
 
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "superstructureservices.co.uk",
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
+  },
+
   async redirects() {
     return [
       // Legacy WordPress URL patterns — preserve SEO juice with 301s

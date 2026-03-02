@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { SERVICES, DOMAIN } from "@/lib/services";
-import { AREAS } from "@/lib/areas";
-import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
-import TrustBadges from "@/components/TrustBadges";
-import ServiceCard from "@/components/ServiceCard";
 
 export const metadata: Metadata = {
   title: "Building Services in Canterbury & Kent | All Services",
@@ -21,86 +16,68 @@ export const metadata: Metadata = {
   },
 };
 
+const SERVICE_PHOTOS: Record<string, string> = {
+  "kitchen-installation": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Kitchen-Installation-in-Canterbury-1.jpg",
+  "flooring-underfloor-heating": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Underfloor-Heating-in-Canterbury-1.jpg",
+  "facility-building-management": "https://superstructureservices.co.uk/wp-content/uploads/2025/07/Facilities-building-management-firm-in-Canterbury-Kent.jpg",
+  "electrician": "https://superstructureservices.co.uk/wp-content/uploads/2025/07/home-electrician-in-canterbury-rewiring-fuse-metering-scaled.jpg",
+  "air-source-heat-pump": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Air-source-heat-pumps-and-conditioning.jpg",
+  "solar-panel-installation": "https://superstructureservices.co.uk/wp-content/uploads/2025/06/Solar-panel-installer-in-Canterbury-Kent.jpg",
+  "air-conditioning": "https://superstructureservices.co.uk/wp-content/uploads/2025/07/air-con-service-installation-company-in-canterbury-scaled.jpg",
+  "new-bathroom": "https://superstructureservices.co.uk/wp-content/uploads/2025/07/classic-modern-bathroom-refurbishment-service-canterbury.jpg",
+  "property-refurbishment": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Property-maintanence-in-Canterbury-Kent.jpg",
+  "plumbing-drainage": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Bathrooms-in-Canterbury.jpg",
+  "carpentry": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Carpenter-in-Canterbury.jpeg",
+  "garage-workshop-conversion": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Garage-Conversion-in-Canterbury.jpg",
+  "roofing": "https://superstructureservices.co.uk/wp-content/uploads/2021/11/Professional-roofing-service-in-Canterbury-Kent.jpg",
+  "home-office-conversion": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Home-office-creation-Canterbury-Kent-rotated.jpg",
+  "cinema-room-installation": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Cinema-Rooms-in-Kent.jpg",
+  "driveways-paving": "https://superstructureservices.co.uk/wp-content/uploads/2021/07/Driveway-paving-in-Canterbury-Kent-1.jpg",
+};
+
 export default function ServicesPage() {
   return (
     <>
-      <PageHero
-        title="Our Building Services in Canterbury & Kent"
-        subtitle="We partner with you to be your trusted building service in Canterbury and across Kent. A complete range of building and trade services — all under one roof."
-        breadcrumbs={[{ label: "Services" }]}
-        badge="All Trades"
-      />
+      {/* Page title — matches old site minimal header */}
+      <div className="py-12 text-center bg-white border-b border-gray-100">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Services</h1>
+      </div>
 
-      {/* Services grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              All Our Services
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              From kitchen installations to solar panel fitting, every service we offer is backed
-              by qualified professionals, full insurance and our commitment to quality.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICES.map((s) => (
-              <ServiceCard key={s.slug} service={s} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <TrustBadges />
-
-      {/* Services by area */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Find Services in Your Area
-            </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
-              All our services are available across Canterbury and the surrounding Kent towns and villages.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {SERVICES.map((service) => (
-              <div
+      {/* Photo card grid — 2 columns, large cards with overlay text */}
+      <section className="bg-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          {SERVICES.map((service) => {
+            const photo = SERVICE_PHOTOS[service.slug];
+            const href = `/services/${service.canonicalSlug.replace("services/", "")}`;
+            return (
+              <Link
                 key={service.slug}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6"
+                href={href}
+                className="group relative block overflow-hidden aspect-[4/3]"
               >
-                <div className="mb-4">
-                  <div className="w-8 h-0.5 bg-gray-200 mb-4" />
-                  <h3 className="font-bold text-gray-900 text-lg">{service.shortName}</h3>
+                {/* Background image */}
+                {photo ? (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url('${photo}')` }}
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gray-700" />
+                )}
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300" />
+                {/* Text */}
+                <div className="absolute inset-0 flex flex-col justify-end p-8">
+                  <h2 className="text-white font-bold text-2xl md:text-3xl leading-tight mb-2">
+                    {service.name}
+                  </h2>
+                  <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-w-sm">
+                    {service.tagline}
+                  </p>
                 </div>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {service.tagline}
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {AREAS.slice(0, 8).map((area) => (
-                    <Link
-                      key={area.slug}
-                      href={`/${service.slug}/${area.slug}`}
-                      className="text-xs px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-full text-gray-600 hover:bg-[#e8a020] hover:text-white hover:border-[#e8a020] transition-all"
-                    >
-                      {area.name}
-                    </Link>
-                  ))}
-                  <span className="text-xs px-2.5 py-1 text-gray-400">
-                    +{AREAS.length - 8} more
-                  </span>
-                </div>
-                <Link
-                  href={`/services/${service.canonicalSlug.replace("services/", "")}`}
-                  className="inline-flex items-center gap-1.5 text-sm text-[#e8a020] font-semibold hover:underline"
-                >
-                  View service details <ArrowRight size={14} />
-                </Link>
-              </div>
-            ))}
-          </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
