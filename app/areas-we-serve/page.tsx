@@ -7,6 +7,13 @@ import { SERVICES, DOMAIN } from "@/lib/services";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 
+const AREAS_WITH_PHOTOS = new Set([
+  "bekesbourne", "wickhambreaux", "barham", "blean", "bridge",
+  "canterbury", "chartham", "harbledown", "whitstable", "wingham",
+  "adisham", "chilham", "faversham", "folkestone", "fordwich",
+  "ickham", "littlebourne", "petham", "sandwich", "sturry", "waltham", "wye",
+]);
+
 const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {
   "kitchen-installation": { src: "/images/Kitchen-Installation-in-Canterbury.jpg", alt: "Kitchen Installation in Canterbury" },
   "flooring-underfloor-heating": { src: "/images/Underfloor-Heating-in-Canterbury.jpg", alt: "Underfloor Heating in Canterbury" },
@@ -72,13 +79,19 @@ export default function AreasWeServePage() {
               >
                 {/* Area photo */}
                 <div className="relative h-44 w-full overflow-hidden">
-                  <Image
-                    src={`/images/areas/builders-in-${area.slug}-kent.jpg`}
-                    alt={`Builders in ${area.name}, Kent`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                  {AREAS_WITH_PHOTOS.has(area.slug) ? (
+                    <Image
+                      src={`/images/areas/builders-in-${area.slug}-kent.jpg`}
+                      alt={`Builders in ${area.name}, Kent`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-[#0d1b2e] to-[#1e3a5f] flex items-center justify-center">
+                      <span className="text-white/20 text-5xl font-black tracking-tighter">{area.name.charAt(0)}</span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   <span className="absolute top-3 right-3 text-xs font-semibold uppercase tracking-[0.12em] text-white/80 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-full capitalize">
                     {area.type}
