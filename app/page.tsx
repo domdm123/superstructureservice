@@ -8,6 +8,7 @@ import TrustBadges from "@/components/TrustBadges";
 import Testimonials from "@/components/Testimonials";
 import HowWeWork from "@/components/HowWeWork";
 import CTASection from "@/components/CTASection";
+import AnimatedService from "@/components/AnimatedService";
 
 export const metadata: Metadata = {
   title: "Builders in Canterbury | House Renovation & Maintenance | Superstructure Services",
@@ -50,11 +51,14 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug mb-4 tracking-tight">
             Modern approach, old fashioned values.
           </h1>
-          <p className="text-gray-300 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Serving Canterbury, Kent and surrounding villages — kitchens, renovations, solar, roofing and more.
+          <p className="text-white/90 text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 leading-snug">
+            We can do <AnimatedService />
+          </p>
+          <p className="text-gray-400 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+            Serving Canterbury, Kent and surrounding villages.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
