@@ -74,7 +74,7 @@ export default function ServicesPage() {
                     <h2 className="text-white font-bold text-xl md:text-2xl leading-tight mb-1">
                       {service.name}
                     </h2>
-                    <p className="text-gray-300 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-w-sm">
+                    <p className="text-gray-200 text-sm leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out max-w-sm">
                       {service.tagline}
                     </p>
                   </div>
