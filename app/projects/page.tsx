@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 };
 
 const projectCategories = [
-  { name: "Kitchen Installation", slug: "kitchen-installation", icon: "🍳", count: 24 },
-  { name: "Bathroom Refurbishment", slug: "plumbing-and-drainage", icon: "🛁", count: 18 },
-  { name: "Roofing", slug: "roofing", icon: "🏠", count: 31 },
-  { name: "Refurbishments & Conversions", slug: "refurbishments-and-conversions", icon: "🔨", count: 22 },
-  { name: "Flooring", slug: "flooring", icon: "🪵", count: 15 },
-  { name: "Home Office", slug: "home-office", icon: "💼", count: 9 },
-  { name: "Carpentry", slug: "carpentry", icon: "🪚", count: 20 },
-  { name: "Underfloor Heating", slug: "underfloor-heating", icon: "🌡️", count: 12 },
-  { name: "Listed Building Restoration", slug: "listed-property-restoration", icon: "🏛️", count: 7 },
+  { name: "Kitchen Installation", slug: "kitchen-installation", count: 24 },
+  { name: "Bathroom Refurbishment", slug: "plumbing-and-drainage", count: 18 },
+  { name: "Roofing", slug: "roofing", count: 31 },
+  { name: "Refurbishments & Conversions", slug: "refurbishments-and-conversions", count: 22 },
+  { name: "Flooring", slug: "flooring", count: 15 },
+  { name: "Home Office", slug: "home-office", count: 9 },
+  { name: "Carpentry", slug: "carpentry", count: 20 },
+  { name: "Underfloor Heating", slug: "underfloor-heating", count: 12 },
+  { name: "Listed Building Restoration", slug: "listed-property-restoration", count: 7 },
 ];
 
 const featuredProjects = [
@@ -130,23 +130,22 @@ export default function ProjectsPage() {
         title="Our Projects"
         subtitle="Browse a selection of our completed building and renovation projects across Canterbury and Kent. Every project, large or small, delivered to the same high standard."
         breadcrumbs={[{ label: "Projects" }]}
-        badge="📸 Our Work"
+        badge="Our Work"
       />
 
       {/* Categories */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-[#1a2e44] mb-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Browse by Category
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {projectCategories.map((cat) => (
               <div
                 key={cat.slug}
-                className="flex flex-col items-center gap-2 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#e8a020] transition-all cursor-pointer group"
+                className="flex flex-col gap-1 p-5 bg-white rounded-xl border border-gray-100 hover:border-gray-300 hover:shadow-sm transition-all cursor-pointer group"
               >
-                <span className="text-3xl">{cat.icon}</span>
-                <span className="text-sm font-semibold text-[#1a2e44] group-hover:text-[#e8a020] text-center leading-tight">
+                <span className="text-sm font-semibold text-gray-900 group-hover:text-[#4a9ebb] leading-tight">
                   {cat.name}
                 </span>
                 <span className="text-xs text-gray-400">{cat.count} projects</span>
@@ -160,13 +159,13 @@ export default function ProjectsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
-            <span className="text-[#e8a020] font-semibold text-sm uppercase tracking-widest mb-2 block">
+            <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
               Our Portfolio
             </span>
-            <h2 className="text-3xl font-bold text-[#1a2e44] mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Featured Projects
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-500 max-w-2xl mx-auto">
               A selection of our recent building and renovation work across Canterbury and the
               wider Kent area. Contact us to discuss your project.
             </p>
@@ -179,24 +178,20 @@ export default function ProjectsPage() {
                 className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
                 {/* Image placeholder */}
-                <div className="h-52 bg-gradient-to-br from-[#1a2e44] to-[#2d4a6e] flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="text-5xl mb-2">
-                      {projectCategories.find((c) =>
-                        project.category.toLowerCase().includes(c.name.toLowerCase().split(" ")[0].toLowerCase())
-                      )?.icon || "🏗️"}
-                    </div>
-                    <div className="text-sm text-white/60 font-medium">{project.category}</div>
+                <div className="h-48 bg-gray-100 flex items-center justify-center border-b border-gray-100">
+                  <div className="text-center">
+                    <div className="text-xs font-semibold uppercase tracking-widest text-gray-400">{project.category}</div>
+                    <div className="mt-2 w-12 h-0.5 bg-gray-300 mx-auto" />
                   </div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-semibold text-[#e8a020] uppercase tracking-wider">
+                    <span className="text-xs font-semibold text-[#4a9ebb] uppercase tracking-wider">
                       {project.category}
                     </span>
                     <span className="text-xs text-gray-400">{project.location}</span>
                   </div>
-                  <h3 className="font-bold text-[#1a2e44] text-lg mb-2 group-hover:text-[#e8a020] transition-colors">
+                  <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-[#4a9ebb] transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -223,7 +218,7 @@ export default function ProjectsPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#e8a020] text-white font-bold rounded-xl hover:bg-[#d4911a] transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#c9a84c] text-white font-bold rounded-xl hover:bg-[#b8953f] transition-all shadow-lg"
             >
               Discuss Your Project <ArrowRight size={18} />
             </Link>

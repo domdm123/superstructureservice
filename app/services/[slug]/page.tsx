@@ -81,7 +81,7 @@ export default async function ServicePage({ params }: Props) {
           { label: "Services", href: "/services" },
           { label: service.shortName },
         ]}
-        badge={service.icon + " " + service.shortName}
+        badge={service.shortName}
       />
 
       {/* Main content */}

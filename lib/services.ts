@@ -36,7 +36,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Expert kitchen installation in {location}, Kent. Bespoke designs, worktop fitting & full refits by Superstructure Services. Free quote available.",
     canonicalSlug: "services/kitchen-installation-service",
-    icon: "🍳",
+    icon: "",
   },
   {
     slug: "flooring-underfloor-heating",
@@ -56,7 +56,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Flooring installation and underfloor heating in {location}, Kent. All floor types fitted. Retrofit or new installation by Superstructure Services.",
     canonicalSlug: "services/underfloor-heating-installation",
-    icon: "🏠",
+    icon: "",
   },
   {
     slug: "facility-building-management",
@@ -76,7 +76,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Professional facilities building management in {location}, Kent. Planned & reactive maintenance, plumbing, electrical & AC by Superstructure Services.",
     canonicalSlug: "services/facility-building-management",
-    icon: "🏢",
+    icon: "",
   },
   {
     slug: "electrician",
@@ -96,7 +96,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "NICEIC-approved electricians in {location}, Kent. EICR reports, commercial & domestic electrical work. Free quotes from Superstructure Services.",
     canonicalSlug: "services/electrician-canterbury",
-    icon: "⚡",
+    icon: "",
   },
   {
     slug: "air-source-heat-pump",
@@ -116,7 +116,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "MCS-accredited air source heat pump installation in {location}, Kent. Eco-friendly heating with Government grant support. Get a free quote today.",
     canonicalSlug: "services/air-source-heat-pump-installation",
-    icon: "♻️",
+    icon: "",
   },
   {
     slug: "solar-panel-installation",
@@ -136,7 +136,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "MCS-accredited solar panel installation in {location}, Kent. Battery storage, EV chargers & expert fitting by Superstructure Services. Free quote.",
     canonicalSlug: "services/solar-panel-installer-canterbury",
-    icon: "☀️",
+    icon: "",
   },
   {
     slug: "air-conditioning",
@@ -156,7 +156,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "F-Gas certified air conditioning installation in {location}, Kent. Supply, fit & servicing for homes & businesses. Superstructure Services.",
     canonicalSlug: "services/air-con-service-canterbury",
-    icon: "❄️",
+    icon: "",
   },
   {
     slug: "new-bathroom",
@@ -176,7 +176,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Expert bathroom fitters in {location}, Kent. Full bathroom design, supply and installation. Wet rooms, suites and refurbishments. Free quote.",
     canonicalSlug: "new-bathroom-fitter-canterbury",
-    icon: "🛁",
+    icon: "",
   },
   {
     slug: "property-refurbishment",
@@ -196,7 +196,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "House refurbishment and renovation in {location}, Kent. Full project management from minor updates to complete transformations. Free quote available.",
     canonicalSlug: "services/property-refurbishment",
-    icon: "🔨",
+    icon: "",
   },
   {
     slug: "plumbing-drainage",
@@ -216,7 +216,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Gas Safe registered plumbers in {location}, Kent. Boilers, bathrooms, drainage & heating by Superstructure Services. Free no-obligation quotes.",
     canonicalSlug: "services/plumber-in-canterbury",
-    icon: "🔧",
+    icon: "",
   },
   {
     slug: "carpentry",
@@ -236,7 +236,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Expert carpenters in {location}, Kent. Bespoke joinery, structural carpentry & heritage work. First/second fix by Superstructure Services.",
     canonicalSlug: "services/carpenter-in-canterbury",
-    icon: "🪵",
+    icon: "",
   },
   {
     slug: "garage-workshop-conversion",
@@ -256,7 +256,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Professional garage conversion in {location}, Kent. Transform your garage into living space. Full build by Superstructure Services. Free quote.",
     canonicalSlug: "services/garage-workshop-conversion",
-    icon: "🏗️",
+    icon: "",
   },
   {
     slug: "roofing",
@@ -276,7 +276,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Expert roofing in {location}, Kent. New roofs, repairs, flat roofing & listed building specialists. Superstructure Services. Free quote today.",
     canonicalSlug: "services/new-roof-installation-repairs",
-    icon: "🏠",
+    icon: "",
   },
   {
     slug: "home-office-conversion",
@@ -296,7 +296,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Bespoke home office conversion in {location}, Kent. Full design, build, data systems & furniture. Superstructure Services. Get a free quote.",
     canonicalSlug: "services/office-conversion",
-    icon: "💼",
+    icon: "",
   },
   {
     slug: "cinema-room-installation",
@@ -316,7 +316,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Bespoke cinema room installation in {location}, Kent. Full design, AV fitting & sound insulation. Create your dream home cinema. Free quote.",
     canonicalSlug: "services/cinema-room-installation",
-    icon: "🎬",
+    icon: "",
   },
   {
     slug: "driveways-paving",
@@ -336,7 +336,7 @@ export const SERVICES: Service[] = [
     metaDescription:
       "Expert driveways and paving in {location}, Kent. Block paving, resin, tarmac, porcelain & more. Superstructure Services. Free quote today.",
     canonicalSlug: "services/driveways-and-paving-canterbury",
-    icon: "🛣️",
+    icon: "",
   },
 ];
 

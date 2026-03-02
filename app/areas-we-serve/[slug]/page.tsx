@@ -102,7 +102,7 @@ export default async function AreaPage({ params }: Props) {
                   "Local Canterbury-based",
                 ].map((b) => (
                   <div key={b} className="flex items-center gap-2 text-sm text-gray-700">
-                    <CheckCircle size={16} className="text-[#e8a020] flex-shrink-0" />
+                    <CheckCircle size={16} className="text-[#4a9ebb] flex-shrink-0" />
                     {b}
                   </div>
                 ))}
@@ -138,7 +138,7 @@ export default async function AreaPage({ params }: Props) {
             <div>
               <MapEmbed embedUrl={area.mapEmbed} title={area.name} />
               <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
-                <MapPin size={14} className="text-[#e8a020]" />
+                <MapPin size={14} className="text-[#4a9ebb]" />
                 {area.name}, {area.county} — within our Canterbury service area
               </div>
             </div>
@@ -150,13 +150,13 @@ export default async function AreaPage({ params }: Props) {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="text-[#e8a020] font-semibold text-sm uppercase tracking-widest mb-2 block">
+            <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
               Available in {area.name}
             </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a2e44] mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               All Building Services in {area.name}
             </h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
+            <p className="text-gray-500 max-w-xl mx-auto">
               Every service we offer is available to homeowners and businesses in {area.name}.
               Click any service for more details and a free quote.
             </p>
@@ -174,7 +174,7 @@ export default async function AreaPage({ params }: Props) {
       {/* Other areas */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-xl font-bold text-[#1a2e44] mb-6 text-center">
+          <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">
             Other Areas We Serve in Kent
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
@@ -182,7 +182,7 @@ export default async function AreaPage({ params }: Props) {
               <Link
                 key={a.slug}
                 href={`/areas-we-serve/${a.slug}`}
-                className="flex items-center justify-center px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl text-sm font-medium text-[#1a2e44] hover:bg-[#e8a020] hover:text-white hover:border-[#e8a020] transition-all text-center"
+                className="flex items-center justify-center px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:bg-[#111111] hover:text-white hover:border-[#111111] transition-all text-center"
               >
                 {a.name}
               </Link>
@@ -191,7 +191,7 @@ export default async function AreaPage({ params }: Props) {
           <div className="text-center mt-6">
             <Link
               href="/areas-we-serve"
-              className="inline-flex items-center gap-2 text-[#e8a020] font-semibold hover:underline text-sm"
+              className="inline-flex items-center gap-2 text-[#4a9ebb] font-semibold hover:underline text-sm"
             >
               View All Areas <ArrowRight size={15} />
             </Link>

@@ -67,9 +67,8 @@ export default function Header() {
                     <Link
                       key={s.slug}
                       href={`/services/${s.canonicalSlug.replace("services/", "")}`}
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 hover:text-[#4a9ebb] text-sm text-gray-600 transition-colors"
+                      className="px-3 py-2 rounded-lg hover:bg-gray-50 hover:text-[#4a9ebb] text-sm text-gray-600 transition-colors block"
                     >
-                      <span className="text-base">{s.icon}</span>
                       {s.shortName}
                     </Link>
                   ))}
@@ -129,10 +128,10 @@ export default function Header() {
                   <Link
                     key={s.slug}
                     href={`/services/${s.canonicalSlug.replace("services/", "")}`}
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-[#4a9ebb] rounded-lg hover:bg-gray-50"
+                    className="px-3 py-2 text-sm text-gray-600 hover:text-[#4a9ebb] rounded-lg hover:bg-gray-50 block"
                     onClick={() => setMobileOpen(false)}
                   >
-                    <span>{s.icon}</span> {s.shortName}
+                    {s.shortName}
                   </Link>
                 ))}
               </div>

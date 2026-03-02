@@ -138,7 +138,7 @@ export default async function ServiceLocationPage({ params }: Props) {
           },
           { label: area.name },
         ]}
-        badge={`${service.icon} ${area.name}`}
+        badge={`${service.shortName} · ${area.name}`}
       />
 
       {/* Main content */}
