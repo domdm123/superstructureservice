@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone, MapPin } from "lucide-react";
 import { SERVICES, PHONE, EMAIL, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
+import { generateServiceLocationIntro, generateWhyChooseUsLocal } from "@/lib/location-content";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import TrustBadges from "@/components/TrustBadges";
@@ -153,12 +154,13 @@ export default async function ServiceLocationPage({ params }: Props) {
                   {service.shortName} Services in {area.name}
                 </h2>
                 <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                  {service.description.replace(/Canterbury/g, `${area.name}`)}
+                  {service.description}
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  {generateServiceLocationIntro(service, area)}
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  {area.description} Our Canterbury-based team is perfectly positioned to serve
-                  clients in {area.name}, offering the same premium standard of workmanship and
-                  service that our clients across Kent have come to rely on.
+                  {area.description} Our experienced team serves {area.name} with the same commitment to quality and attention to detail that has built our reputation across Kent.
                 </p>
               </div>
 
@@ -186,11 +188,7 @@ export default async function ServiceLocationPage({ params }: Props) {
                   Why Choose Superstructure Services in {area.name}?
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-5">
-                  As a Canterbury-based building contractor, we understand the properties and
-                  planning requirements specific to {area.name} and the surrounding{" "}
-                  {area.county} area. Whether your property is a modern new build, a period
-                  home, or a listed building, our skilled team has the expertise to deliver
-                  outstanding results.
+                  {generateWhyChooseUsLocal(area)}
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
