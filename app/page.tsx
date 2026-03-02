@@ -124,7 +124,7 @@ export default function HomePage() {
           </div>
 
           {/* Pull quote — full width world-class */}
-          <div className="mt-16 -mx-4 sm:-mx-6 lg:-mx-8 xl:-mx-16 2xl:-mx-32 relative overflow-hidden bg-[#0d1b2e]">
+          <div className="mt-16 mb-16 -mx-4 sm:-mx-6 lg:-mx-8 xl:-mx-16 2xl:-mx-32 relative overflow-hidden bg-[#0d1b2e]">
             {/* Background texture layers */}
             <div className="absolute inset-0 bg-[linear-gradient(135deg,#0d1b2e_0%,#1e3a5f_50%,#0d1b2e_100%)]" />
             <div className="absolute inset-0 opacity-[0.04] bg-[repeating-linear-gradient(45deg,#4a9ebb,#4a9ebb_1px,transparent_1px,transparent_60px)]" />
