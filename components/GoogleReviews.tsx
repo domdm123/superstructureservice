@@ -2,36 +2,68 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "James Hounsell",
-    date: "13/09/2024",
-    rating: 5,
-    text: "Incredible service and exceptional finish. Paul designed and enhance our TV set up. He was also so neat and tidy throughout the whole process.",
-    initials: "J",
-    color: "bg-green-600",
-  },
-  {
-    name: "Suzanne Knight",
-    date: "24/02/2024",
-    rating: 5,
-    text: "I can't thank Superstructure Services Ltd enough for what they did to my house - they were amazing! The team were professional, friendly and incredibly skilled.",
-    initials: "S",
-    color: "bg-blue-500",
-  },
-  {
     name: "Fiona Batchelor",
-    date: "25/01/2023",
+    date: "3 years ago",
     rating: 5,
-    text: "I can't recommend Superstructures services high enough. They have been absolutely brilliant. We are so pleased with the results.",
+    text: "I can't recommend Superstructures services high enough. They have been absolutely brilliant. We are so delighted with our kitchen. Everyone — carpenter, painters, plumbers, tilers and electricians were so professional and very patient with me. A big thanks to Paul — he was always there on the day, guiding and overseeing the work. You couldn't find anyone better to fit your kitchen.",
     initials: "F",
     color: "bg-red-500",
   },
   {
-    name: "Mark Thompson",
-    date: "08/06/2024",
+    name: "Suzanne Knight",
+    date: "2 years ago",
     rating: 5,
-    text: "Used Superstructure Services for a full kitchen renovation and couldn't be happier. Outstanding craftsmanship and very professional throughout.",
-    initials: "M",
+    text: "I can't thank Superstructure Services Ltd enough for what they did to my house — they were amazing! He took on the job of undoing inferior work and finished all rooms to a very high standard. The carpenters, kitchen fitters, bathroom fitters, electrician, decorators and plumber were each so experienced and knowledgeable. I love my home now.",
+    initials: "S",
+    color: "bg-blue-500",
+  },
+  {
+    name: "Katrin Niewerth",
+    date: "3 years ago",
+    rating: 5,
+    text: "We renovated an entire house with Paul and his team — completely new electrics, floors, windows/doors, kitchen and bathroom installation, carpentry and decorating. The quality of work was outstanding in every aspect. He is responding on messages within minutes, is very knowledgeable, helpful and friendly. I can highly recommend Paul and his company.",
+    initials: "K",
+    color: "bg-green-600",
+  },
+  {
+    name: "James Hounsell",
+    date: "1 year ago",
+    rating: 5,
+    text: "Incredible service and exceptional finish. Paul designed and enhanced our TV set up. He was also so neat and tidy. 100% recommended, super quality and trustworthy.",
+    initials: "J",
     color: "bg-purple-600",
+  },
+  {
+    name: "Alison Hicks",
+    date: "9 months ago",
+    rating: 5,
+    text: "Paul and his team at Superstructure Services have been brilliant at helping maintain our buildings. They've undertaken plumbing, carpentry, decorating, electrical work and a variety of small maintenance tasks, and the standard of work is consistently high, with Paul giving sound advice on the best way forward.",
+    initials: "A",
+    color: "bg-orange-500",
+  },
+  {
+    name: "Ruari Batchelor",
+    date: "7 months ago",
+    rating: 5,
+    text: "I have used Paul and his team for a few years now for a number of different jobs and projects. I have always been impressed with their professionalism, support and the quality of the work. I would highly recommend.",
+    initials: "R",
+    color: "bg-teal-600",
+  },
+  {
+    name: "Stuart Axford",
+    date: "3 years ago",
+    rating: 5,
+    text: "Paul did an excellent job building and installing some bespoke bookshelves for us. Not only did he do an excellent job, but he treated our house with respect, used clean dustsheets and cleaned thoroughly up after himself. We already have him down for another job.",
+    initials: "S",
+    color: "bg-indigo-600",
+  },
+  {
+    name: "Danielle Luckhurst",
+    date: "4 years ago",
+    rating: 5,
+    text: "Just wanted to say a big thank you to Paul and his team. We are so happy with our new kitchen and the installation went very smoothly. Hope to see you all again on our next project!",
+    initials: "D",
+    color: "bg-pink-600",
   },
 ];
 
@@ -60,19 +92,19 @@ export default function GoogleReviews() {
                 <Star key={i} size={26} className="fill-[#f5a623] text-[#f5a623]" />
               ))}
             </div>
-            <p className="text-gray-400 text-sm mb-3">Based on 10 reviews</p>
+            <p className="text-gray-400 text-sm mb-3">Based on 12 reviews</p>
             <div className="flex items-center gap-1.5">
               <GoogleIcon />
               <span className="text-white font-bold text-lg tracking-tight">Google</span>
             </div>
           </div>
 
-          {/* Right — review cards */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Right — review cards scrollable row */}
+          <div className="flex-1 flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
             {reviews.map((review) => (
               <div
                 key={review.name}
-                className="bg-[#111111] rounded-xl p-5 flex flex-col gap-3 border border-white/5"
+                className="bg-[#111111] rounded-xl p-5 flex flex-col gap-3 border border-white/5 min-w-[280px] max-w-[280px]"
               >
                 {/* Header */}
                 <div className="flex items-start justify-between gap-2">
