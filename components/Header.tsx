@@ -18,7 +18,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <span className="hidden sm:block text-gray-400 tracking-wide text-xs uppercase">
-              Builders &amp; Contractors · Canterbury &amp; Kent
+              Serving Canterbury, Kent &amp; Surrounding Villages
             </span>
             <a
               href="https://www.instagram.com/superstructureservices"

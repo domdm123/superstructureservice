@@ -54,7 +54,7 @@ export default function HomePage() {
             Modern approach, old fashioned values.
           </h1>
           <p className="text-gray-300 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Canterbury &amp; Kent builders — kitchens, renovations, solar, roofing and more.
+            Serving Canterbury, Kent and surrounding villages — kitchens, renovations, solar, roofing and more.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

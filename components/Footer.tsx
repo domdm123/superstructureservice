@@ -29,8 +29,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Your trusted builders and contractors based in Canterbury, serving clients
-              across Kent with quality craftsmanship and transparent service.
+              Your trusted builders and contractors based in Canterbury, serving clients across Kent and surrounding villages with quality craftsmanship and transparent service.
             </p>
             <div className="flex flex-col gap-3 text-sm">
               {phoneRevealed ? (
