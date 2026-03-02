@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Instagram } from "lucide-react";
-import { PHONE, EMAIL, SERVICES } from "@/lib/services";
+import { Phone, MapPin, Instagram } from "lucide-react";
+import { PHONE, SERVICES } from "@/lib/services";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { AREAS } from "@/lib/areas";
 
 export default function Footer() {
@@ -53,13 +54,10 @@ export default function Footer() {
                   Show Phone Number
                 </button>
               )}
-              <a
-                href={`mailto:${EMAIL}`}
+              <ObfuscatedEmail
                 className="flex items-center gap-2 text-gray-300 hover:text-[#4a9ebb] transition-colors"
-              >
-                <Mail size={15} className="flex-shrink-0 text-[#4a9ebb]" />
-                <span className="text-sm">{EMAIL}</span>
-              </a>
+                showIcon={true}
+              />
               <span className="flex items-center gap-2 text-gray-300 text-sm">
                 <MapPin size={15} className="text-[#4a9ebb] flex-shrink-0" />
                 Serving Canterbury, Kent &amp; Surrounding Villages
