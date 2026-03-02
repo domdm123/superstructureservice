@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, ChevronDown, Instagram, MapPin } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Instagram, MapPin, Mail } from "lucide-react";
 import { SERVICES, PHONE, EMAIL } from "@/lib/services";
 
 export default function Header() {
@@ -14,19 +14,26 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
       {/* Top bar */}
-      <div className="bg-[#111111] text-white text-sm py-2">
+      <div className="bg-[#111111] text-gray-300 text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <span className="hidden sm:flex items-center gap-1.5 text-[#f5c518] tracking-wide text-xs uppercase">
+          <div className="flex items-center gap-6">
+            <span className="hidden sm:flex items-center gap-1.5 text-gray-300 tracking-wide text-xs uppercase">
               <MapPin size={13} />
               Serving Canterbury, Kent &amp; Surrounding Villages
             </span>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="hidden sm:flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors tracking-wide text-xs uppercase"
+            >
+              <Mail size={13} />
+              {EMAIL}
+            </a>
             <a
               href="https://www.instagram.com/superstructureservices"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-[#f5c518] hover:text-white transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               <Instagram size={15} />
             </a>
