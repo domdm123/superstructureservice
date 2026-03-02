@@ -80,8 +80,8 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "electrician",
-    name: "Electrician",
-    shortName: "Electrician",
+    name: "Electrical",
+    shortName: "Electrical",
     tagline: "Fully qualified electricians serving Canterbury & the wider Kent area",
     description:
       "Our skilled electricians bring expertise and innovation to every project, ensuring safety, efficiency, and personalised solutions for both homes and businesses. From advanced smart home installations to reliable power systems, we're committed to meeting your electrical needs with professionalism and care. NICEIC-approved team serving Canterbury and Kent.",
