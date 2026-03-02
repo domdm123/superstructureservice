@@ -121,12 +121,9 @@ export default function HomePage() {
               </div>
               
               <div className="relative pl-6 md:pl-8 border-l-2 border-[#f5c518]">
-                <p className="text-gray-500 text-base leading-relaxed italic mb-4">
-                  "Paul, the Director of the company, has over 30 years experience in the construction industry. With a wealth of knowledge across all building types — commercial and residential, listed buildings to new builds — our team continually work hard to deliver a high-end finish."
+                <p className="text-gray-600 text-base leading-relaxed mb-4">
+                  Paul, the Director of the company, has over 30 years experience in the construction industry. With a wealth of knowledge across all building types — commercial and residential, listed buildings to new builds — our team continually work hard to deliver a high-end finish.
                 </p>
-                <div className="font-bold text-[#1a2e44] text-sm uppercase tracking-wider">
-                  Paul &mdash; Director
-                </div>
               </div>
             </div>
           </div>
