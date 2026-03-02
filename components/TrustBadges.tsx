@@ -3,22 +3,22 @@ import { Shield, Clock, Users } from "lucide-react";
 
 const accreditations = [
   {
-    src: "/images/accreditations/gas-safe.svg",
-    alt: "Gas Safe Registered",
+    src: "/images/accreditations/gas-safe.jpg",
+    alt: "Gas Safe Certified Plumber in Canterbury Kent",
     label: "Gas Safe Registered",
     desc: "Certified gas & heating engineers",
   },
   {
-    src: "/images/accreditations/niceic.svg",
-    alt: "NICEIC Approved Contractor",
-    label: "NICEIC Approved",
-    desc: "Certified electrical contractors",
-  },
-  {
-    src: "/images/accreditations/mcs.svg",
-    alt: "MCS Certified",
+    src: "/images/accreditations/mcs.webp",
+    alt: "MCS Certified Heat Pump and Solar Panel Installer Canterbury Kent",
     label: "MCS Certified",
     desc: "Heat pump & solar panel installers",
+  },
+  {
+    src: "/images/accreditations/niceic.png",
+    alt: "NICEIC Certified Electrician in Canterbury Kent",
+    label: "NICEIC Approved",
+    desc: "Certified electrical contractors",
   },
 ];
 
