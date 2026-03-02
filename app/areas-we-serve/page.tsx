@@ -70,16 +70,22 @@ export default function AreasWeServePage() {
                 href={`/areas-we-serve/${area.slug}`}
                 className="group relative flex flex-col bg-white border border-gray-100 hover:border-[#1e3a5f]/20 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
-                {/* Left accent bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#4a9ebb] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom" />
-                <div className="p-6 flex-1">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#0d1b2e] group-hover:bg-[#1e3a5f] transition-colors flex items-center justify-center">
-                      <span className="text-white text-lg">📍</span>
-                    </div>
-                    <span className="text-xs font-semibold uppercase tracking-[0.12em] text-gray-300 capitalize">{area.type}</span>
-                  </div>
-                  <h3 className="font-bold text-[#0d1b2e] text-lg mb-1 group-hover:text-[#1e3a5f] transition-colors">
+                {/* Area photo */}
+                <div className="relative h-44 w-full overflow-hidden">
+                  <Image
+                    src={`/images/areas/builders-in-${area.slug}-kent.jpg`}
+                    alt={`Builders in ${area.name}, Kent`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <span className="absolute top-3 right-3 text-xs font-semibold uppercase tracking-[0.12em] text-white/80 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-full capitalize">
+                    {area.type}
+                  </span>
+                </div>
+                <div className="p-5 flex-1">
+                  <h3 className="font-bold text-[#0d1b2e] text-lg mb-0.5 group-hover:text-[#1e3a5f] transition-colors">
                     {area.name}
                   </h3>
                   <p className="text-xs text-[#4a9ebb] font-semibold mb-3">{area.county}</p>
@@ -87,7 +93,7 @@ export default function AreasWeServePage() {
                     {area.description}
                   </p>
                 </div>
-                <div className="px-6 pb-5 flex items-center justify-between">
+                <div className="px-5 pb-5 flex items-center justify-between">
                   <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-300 group-hover:text-[#4a9ebb] transition-colors duration-300">View Area</span>
                   <div className="w-8 h-8 rounded-full border border-gray-100 group-hover:border-[#4a9ebb] group-hover:bg-[#4a9ebb]/8 flex items-center justify-center transition-all duration-300">
                     <ArrowRight size={14} className="text-gray-300 group-hover:text-[#4a9ebb] group-hover:translate-x-0.5 transition-all" />
