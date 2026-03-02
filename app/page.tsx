@@ -153,22 +153,23 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Animated service showcase */}
-          <div className="mt-16 -mx-4 px-4 py-16 bg-gray-50 border-y border-gray-100 text-center">
-            <p className="text-gray-400 text-sm font-semibold uppercase tracking-[0.25em] mb-4">We specialise in</p>
-            <div className="flex items-center justify-center gap-4 flex-wrap">
-              <span className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0d1b2e] tracking-tight">We can do</span>
-              <AnimatedService />
+          {/* Animated service showcase — full width */}
+          <div className="mt-16 -mx-4 sm:-mx-6 lg:-mx-8 xl:-mx-16 2xl:-mx-32 py-20 bg-gray-50 border-y border-gray-100 text-center px-4">
+            <p className="text-gray-400 text-sm font-semibold uppercase tracking-[0.25em] mb-6">We specialise in</p>
+            <div className="flex flex-col items-center justify-center gap-2">
+              <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#0d1b2e] tracking-tight">We can do</span>
+              <div className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+                <AnimatedService />
+              </div>
             </div>
-          </div>
-
-          <div className="text-center mt-10">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#111111] text-white font-bold rounded-xl hover:bg-[#2a2a2a] transition-all"
-            >
-              View All Services <ArrowRight size={18} />
-            </Link>
+            <div className="mt-10">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#111111] text-white font-bold rounded-xl hover:bg-[#2a2a2a] transition-all"
+              >
+                View All Services <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
