@@ -17,10 +17,10 @@ export default function Footer() {
       <div className="h-1 bg-gradient-to-r from-[#4a9ebb] via-[#1e3a5f] to-[#4a9ebb]" />
 
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-14">
 
           {/* About */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <div className="mb-6">
               <Link href="/">
                 <Image
@@ -58,7 +58,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-gray-300 hover:text-[#4a9ebb] transition-colors"
               >
                 <Mail size={15} className="flex-shrink-0 text-[#4a9ebb]" />
-                <span className="break-all">{EMAIL}</span>
+                <span className="text-sm">{EMAIL}</span>
               </a>
               <span className="flex items-center gap-2 text-gray-300">
                 <MapPin size={15} className="text-[#4a9ebb] flex-shrink-0" />
