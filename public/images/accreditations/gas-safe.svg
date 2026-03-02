@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" fill="#e30613" rx="4"/>
+  <rect x="4" y="4" width="72" height="72" fill="#e30613" rx="2"/>
+  <!-- Flame icon -->
+  <path d="M24 60 C24 60 16 48 22 38 C22 38 24 44 28 44 C28 44 20 32 32 20 C32 20 30 32 36 34 C36 34 32 26 40 22 C40 22 36 34 42 36 C42 36 38 28 46 28 C46 28 50 36 44 44 C44 44 50 38 48 30 C48 30 58 42 50 54 C50 54 46 46 40 48 C40 48 44 56 38 62 C38 62 32 54 30 58 Z" fill="white"/>
+  <!-- GAS SAFE text -->
+  <text x="82" y="32" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="white">GAS SAFE</text>
+  <text x="82" y="50" font-family="Arial Black, sans-serif" font-weight="900" font-size="18" fill="white">REGISTER</text>
+  <text x="82" y="68" font-family="Arial, sans-serif" font-size="9" fill="white" letter-spacing="1">REGISTERED BUSINESS</text>
+</svg>

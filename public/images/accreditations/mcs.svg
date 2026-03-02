@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" fill="#ffffff" rx="4"/>
+  <rect width="200" height="80" fill="none" stroke="#0066b3" stroke-width="2" rx="4"/>
+  <!-- MCS circle logo -->
+  <circle cx="40" cy="40" r="28" fill="#0066b3"/>
+  <circle cx="40" cy="40" r="22" fill="white"/>
+  <text x="40" y="46" font-family="Arial Black, sans-serif" font-weight="900" font-size="16" fill="#0066b3" text-anchor="middle">MCS</text>
+  <!-- Text -->
+  <text x="78" y="30" font-family="Arial Black, sans-serif" font-weight="900" font-size="18" fill="#0066b3">MCS</text>
+  <text x="78" y="48" font-family="Arial, sans-serif" font-size="10" fill="#333" letter-spacing="0.3">CERTIFIED</text>
+  <text x="78" y="63" font-family="Arial, sans-serif" font-size="9" fill="#666">Microgeneration Scheme</text>
+</svg>

@@ -5,7 +5,6 @@ import { SERVICES, PHONE, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
 import ServiceCard from "@/components/ServiceCard";
 import TrustBadges from "@/components/TrustBadges";
-import Testimonials from "@/components/Testimonials";
 import HowWeWork from "@/components/HowWeWork";
 import CTASection from "@/components/CTASection";
 import AnimatedService from "@/components/AnimatedService";
@@ -224,7 +223,6 @@ export default function HomePage() {
       </section>
 
       <HowWeWork />
-      <Testimonials />
 
       {/* Areas We Serve */}
       <section className="py-20 bg-white">
