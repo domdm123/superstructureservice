@@ -8,6 +8,7 @@ import TrustBadges from "@/components/TrustBadges";
 import HowWeWork from "@/components/HowWeWork";
 import CTASection from "@/components/CTASection";
 import AnimatedService from "@/components/AnimatedService";
+import { playfair } from "@/app/layout";
 
 export const metadata: Metadata = {
   title: "Builders in Canterbury | House Renovation & Maintenance | Superstructure Services",
@@ -50,13 +51,10 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug mb-4 tracking-tight">
-            Modern approach, old fashioned values.
+          <h1 className={`${playfair.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 tracking-normal`}>
+            Modern approach,<br className="hidden sm:block" /> old fashioned values.
           </h1>
-          <p className="text-white/90 text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 leading-snug">
-            We can do <AnimatedService />
-          </p>
-          <p className="text-gray-400 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-300 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
             Serving Canterbury, Kent and surrounding villages.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -120,6 +118,9 @@ export default function HomePage() {
               From kitchen installations to solar panels, we offer a comprehensive range of
               building and trade services, all under one roof.
             </p>
+            <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed mb-8">
+              Paul, the Director of the company, has over 30 years experience in the construction industry. With a wealth of knowledge across all building types — commercial and residential, listed buildings to new builds — our team continually work hard to deliver a high-end finish.
+            </p>
             <blockquote className="max-w-2xl mx-auto border-l-2 border-[#4a9ebb] pl-5 text-left">
               <p className="text-gray-400 text-base italic leading-relaxed">
                 &ldquo;The secret of change is to focus all of your energy, not on fighting the old, but building from it.&rdquo;
@@ -131,7 +132,15 @@ export default function HomePage() {
               <ServiceCard key={s.slug} service={s} />
             ))}
           </div>
-          <div className="text-center mt-10">
+
+          {/* Animated service line below cards */}
+          <div className="text-center mt-10 mb-2">
+            <p className="text-gray-500 text-lg">
+              We can do <AnimatedService />
+            </p>
+          </div>
+
+          <div className="text-center mt-4">
             <Link
               href="/services"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#111111] text-white font-bold rounded-xl hover:bg-[#2a2a2a] transition-all"
