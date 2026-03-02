@@ -121,15 +121,8 @@ export default function Header() {
               Areas We Serve
             </Link>
             <a
-              href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="ml-2 flex items-center gap-1.5 px-4 py-2.5 text-gray-700 font-semibold text-sm hover:text-[#1e3a5f] transition-colors"
-            >
-              <Phone size={14} className="text-[#4a9ebb]" />
-              {PHONE}
-            </a>
-            <a
               href={`mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`}
-              className="ml-1 px-6 py-2.5 bg-[#1e3a5f] text-white font-semibold rounded-lg hover:bg-[#162d4a] transition-colors text-sm shadow-sm"
+              className="ml-3 px-6 py-2.5 bg-[#1e3a5f] text-white font-semibold rounded-lg hover:bg-[#162d4a] transition-colors text-sm shadow-sm"
             >
               Free Quote
             </a>
