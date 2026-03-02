@@ -27,37 +27,74 @@ const steps = [
 
 export default function HowWeWork() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
+    <section className="relative bg-[#0d1b2e] overflow-hidden">
+      {/* Diagonal grid texture */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[repeating-linear-gradient(45deg,#4a9ebb,#4a9ebb_1px,transparent_1px,transparent_60px)]" />
+      {/* Top accent */}
+      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#4a9ebb] to-transparent" />
+
+      <div className="relative max-w-7xl mx-auto px-4 py-24">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.3em] mb-4 block">
             Our Process
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
             How We Work
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-            A refined 4-step approach that ensures every project is delivered with
-            precision, transparency, and uncompromising quality.
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-px w-12 bg-[#4a9ebb]/40" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#4a9ebb]" />
+            <div className="h-px w-12 bg-[#4a9ebb]/40" />
+          </div>
+          <p className="text-gray-400 max-w-xl mx-auto text-lg leading-relaxed">
+            A refined 4-step approach that delivers every project with precision,
+            transparency, and uncompromising quality.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
           {steps.map((step, i) => (
-            <div key={step.number} className="relative">
+            <div key={step.number} className="relative group">
+              {/* Vertical separator on desktop */}
               {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-gray-200 to-transparent z-0" />
+                <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-px bg-white/5" />
               )}
-              <div className="relative z-10 text-center lg:text-left">
-                <div className="w-14 h-14 bg-[#111111] rounded-2xl flex items-center justify-center mb-5 mx-auto lg:mx-0 shadow-md">
-                  <span className="text-[#4a9ebb] font-bold text-lg">{step.number}</span>
+
+              <div className="px-8 py-10 lg:py-12">
+                {/* Step number — large ghost */}
+                <div className="relative mb-8">
+                  <span className="block text-[5rem] font-black leading-none text-white/5 select-none tracking-tighter">
+                    {step.number}
+                  </span>
+                  <div className="absolute bottom-2 left-0 w-8 h-[2px] bg-[#4a9ebb]" />
                 </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-3">{step.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>
+
+                {/* Content */}
+                <h3 className="text-white font-bold text-xl mb-4 tracking-tight">
+                  {step.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+
+                {/* Connector arrow — desktop only */}
+                {i < steps.length - 1 && (
+                  <div className="hidden lg:flex absolute top-[4.5rem] right-0 translate-x-1/2 z-10 items-center justify-center w-6 h-6 rounded-full bg-[#1e3a5f] border border-[#4a9ebb]/30">
+                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                      <path d="M1 4h6M4 1l3 3-3 3" stroke="#4a9ebb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                )}
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Bottom accent */}
+      <div className="absolute bottom-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#4a9ebb] to-transparent" />
     </section>
   );
 }
