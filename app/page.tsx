@@ -60,13 +60,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-[#111111] transition-all"
+              className="inline-flex items-center justify-center w-full sm:w-[260px] h-14 border-2 border-white text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-[#111111] transition-all"
             >
               View Our Services
             </Link>
             <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1e3a5f] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#162d4a] transition-all"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-[260px] h-14 bg-[#1e3a5f] border-2 border-[#1e3a5f] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#162d4a] hover:border-[#162d4a] transition-all"
             >
               <Phone size={16} /> {PHONE}
             </a>
