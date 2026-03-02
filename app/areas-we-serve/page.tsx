@@ -1,10 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { AREAS } from "@/lib/areas";
 import { SERVICES, DOMAIN } from "@/lib/services";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
+
+const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {
+  "kitchen-installation": { src: "/images/Kitchen-Installation-in-Canterbury.jpg", alt: "Kitchen Installation in Canterbury" },
+  "flooring-underfloor-heating": { src: "/images/Underfloor-Heating-in-Canterbury.jpg", alt: "Underfloor Heating in Canterbury" },
+  "facility-building-management": { src: "/images/Facilities-building-management-firm-in-Canterbury-Kent.jpg", alt: "Facilities Building Management Canterbury" },
+  "electrician": { src: "/images/home-electrician-in-canterbury-rewiring-fuse-metering.jpg", alt: "Electrician in Canterbury" },
+  "air-source-heat-pump": { src: "/images/Air-source-heat-pumps-and-conditioning.jpg", alt: "Air Source Heat Pumps Canterbury" },
+  "solar-panel-installation": { src: "/images/Solar-panel-installer-in-Canterbury-Kent.jpg", alt: "Solar Panel Installer Canterbury" },
+  "air-conditioning": { src: "/images/air-con-service-installation-company-in-canterbury.jpg", alt: "Air Conditioning Canterbury" },
+  "new-bathroom": { src: "/images/classic-modern-bathroom-refurbishment-service-canterbury.jpg", alt: "New Bathroom Canterbury" },
+  "property-refurbishment": { src: "/images/Property-maintanence-in-Canterbury-Kent.jpg", alt: "Property Refurbishment Canterbury" },
+  "plumbing-drainage": { src: "/images/Bathrooms-in-Canterbury.jpg", alt: "Plumbing Canterbury" },
+  "carpentry": { src: "/images/Carpenter-in-Canterbury.jpg", alt: "Carpentry Canterbury" },
+  "garage-workshop-conversion": { src: "/images/Garage-Conversion-in-Canterbury.jpg", alt: "Garage Conversion Canterbury" },
+  "roofing": { src: "/images/Professional-roofing-service-in-Canterbury-Kent.jpg", alt: "Roofing Canterbury" },
+  "home-office-conversion": { src: "/images/Home-office-creation-Canterbury-Kent.jpg", alt: "Home Office Canterbury" },
+  "cinema-room-installation": { src: "/images/Cinema-Rooms-in-Kent.jpg", alt: "Cinema Rooms Kent" },
+  "driveways-paving": { src: "/images/Driveway-paving-in-Canterbury-Kent.jpg", alt: "Driveways & Paving Canterbury" },
+};
 
 
 export const metadata: Metadata = {
@@ -90,18 +110,35 @@ export default function AreasWeServePage() {
               Every service we offer is available across all {AREAS.length} areas we cover.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
-            {SERVICES.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/services/${s.canonicalSlug.replace("services/", "")}`}
-                className="flex items-center justify-center p-4 bg-white rounded-xl border border-gray-100 hover:border-[#4a9ebb] hover:shadow-sm transition-all text-center group"
-              >
-                <span className="text-xs font-medium text-gray-600 group-hover:text-[#4a9ebb] leading-tight">
-                  {s.shortName}
-                </span>
-              </Link>
-            ))}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {SERVICES.map((s) => {
+              const photo = SERVICE_PHOTOS[s.slug];
+              return (
+                <Link
+                  key={s.slug}
+                  href={`/services/${s.canonicalSlug.replace("services/", "")}`}
+                  className="group relative overflow-hidden rounded-xl aspect-[4/3] shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  {photo ? (
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-[#1a2e44]" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <span className="text-white font-semibold text-xs leading-tight line-clamp-2">
+                      {s.shortName}
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
