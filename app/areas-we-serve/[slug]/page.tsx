@@ -87,10 +87,7 @@ export default async function AreaPage({ params }: Props) {
                 {area.description}
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Superstructure Services is your trusted local building contractor, based in
-                Canterbury and serving {area.name} and the wider {area.county} area. From
-                kitchen installations and bathroom refurbishments to roofing, electrical work and
-                solar panels — our skilled team covers all trades under one roof.
+                {area.secondParagraph}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {[
