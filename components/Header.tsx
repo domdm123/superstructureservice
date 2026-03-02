@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, ChevronDown, Instagram } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Instagram, MapPin } from "lucide-react";
 import { SERVICES, PHONE, EMAIL } from "@/lib/services";
 
 export default function Header() {
@@ -17,7 +17,8 @@ export default function Header() {
       <div className="bg-[#111111] text-white text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <span className="hidden sm:block text-[#f5c518] tracking-wide text-xs uppercase">
+            <span className="hidden sm:flex items-center gap-1.5 text-[#f5c518] tracking-wide text-xs uppercase">
+              <MapPin size={13} />
               Serving Canterbury, Kent &amp; Surrounding Villages
             </span>
             <a
