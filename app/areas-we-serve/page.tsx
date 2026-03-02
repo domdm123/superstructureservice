@@ -1,10 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { AREAS } from "@/lib/areas";
 import { SERVICES, DOMAIN } from "@/lib/services";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
+
+const AREA_PHOTOS: Record<string, string> = {
+  "canterbury": "/images/areas/canterbury.jpg",
+  "harbledown": "/images/areas/harbledown.jpg",
+  "blean": "/images/areas/blean.jpg",
+  "sturry": "/images/areas/sturry.jpg",
+  "bridge": "/images/areas/bridge.jpg",
+  "barham": "/images/areas/barham.jpg",
+  "bekesbourne": "/images/areas/bekesbourne.jpg",
+  "wickhambreaux": "/images/areas/wickhambreaux.jpg",
+  "wingham": "/images/areas/wingham.jpg",
+  "fordwich": "/images/areas/fordwich.jpg",
+  "chartham": "/images/areas/chartham.jpg",
+  "adisham": "/images/areas/adisham.jpg",
+  "littlebourne": "/images/areas/littlebourne.jpg",
+  "ickham": "/images/areas/ickham.jpg",
+  "petham": "/images/areas/petham.jpg",
+  "waltham": "/images/areas/waltham.jpg",
+  "whitstable": "/images/areas/whitstable.jpg",
+  "faversham": "/images/areas/faversham.jpg",
+  "wye": "/images/areas/wye.jpg",
+  "sandwich": "/images/areas/sandwich.jpg",
+  "folkestone": "/images/areas/folkestone.jpg",
+  "chilham": "/images/areas/chilham.jpg",
+};
 
 export const metadata: Metadata = {
   title: "Areas We Serve in Kent | Building Services Near You",
@@ -43,41 +68,46 @@ export default function AreasWeServePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {AREAS.map((area) => (
-              <Link
-                key={area.slug}
-                href={`/areas-we-serve/${area.slug}`}
-                className="group bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 shadow-sm"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-2">
+            {AREAS.map((area) => {
+              const photo = AREA_PHOTOS[area.slug];
+              return (
+                <Link
+                  key={area.slug}
+                  href={`/areas-we-serve/${area.slug}`}
+                  className="group relative overflow-hidden rounded-2xl h-56 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                >
+                  {/* Background photo */}
+                  {photo && (
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-50"
+                      style={{ backgroundImage: `url('${photo}')` }}
+                    />
+                  )}
+                  {/* Base colour so cards without photos look good */}
+                  <div className="absolute inset-0 bg-[#1a2e44]" style={{ zIndex: photo ? -1 : 0 }} />
+                  {/* Gradient overlay — darkens bottom for legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                  {/* Content */}
+                  <div className="absolute inset-0 flex flex-col justify-between p-6">
+                    <span className="self-end bg-white/15 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full capitalize border border-white/20">
+                      {area.type}
+                    </span>
                     <div>
-                      <h3 className="font-bold text-gray-900 group-hover:text-[#4a9ebb] transition-colors">
-                        {area.name}
-                      </h3>
-                      <span className="text-xs text-gray-400 capitalize">{area.type} · {area.county}</span>
+                      <div className="flex items-end justify-between mb-1">
+                        <h3 className="font-bold text-white text-xl leading-tight">
+                          {area.name}
+                        </h3>
+                        <ArrowRight size={18} className="text-white/70 group-hover:text-[#4a9ebb] group-hover:translate-x-1 transition-all flex-shrink-0 mb-0.5" />
+                      </div>
+                      <p className="text-white/70 text-xs mb-3">{area.county}</p>
+                      <p className="text-white/60 text-xs leading-relaxed line-clamp-2 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
+                        {area.description}
+                      </p>
                     </div>
                   </div>
-                  <ArrowRight size={16} className="text-gray-300 group-hover:text-[#4a9ebb] transition-colors mt-1" />
-                </div>
-                <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
-                  {area.description}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {SERVICES.slice(0, 4).map((s) => (
-                    <span
-                      key={s.slug}
-                      className="text-xs bg-gray-50 border border-gray-100 text-gray-500 px-2 py-0.5 rounded-full"
-                    >
-                      {s.shortName}
-                    </span>
-                  ))}
-                  <span className="text-xs text-gray-400 font-medium px-2 py-0.5">
-                    +{SERVICES.length - 4} more
-                  </span>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
