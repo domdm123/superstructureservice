@@ -48,7 +48,7 @@ export default function TrustBadges() {
             Trusted by homeowners and businesses across Canterbury and Kent for over a decade.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-5 max-w-3xl mx-auto">
           {badges.map((b) => (
             <div
               key={b.title}
