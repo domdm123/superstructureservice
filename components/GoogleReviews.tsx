@@ -133,7 +133,7 @@ export default function GoogleReviews() {
                 </p>
 
                 <a
-                  href="https://www.google.com/maps/place/Superstructure+Services"
+                  href="https://www.google.com/maps/search/Superstructure+Services+Ltd+Canterbury+Kent"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#4a9ebb] text-xs hover:underline mt-auto"
