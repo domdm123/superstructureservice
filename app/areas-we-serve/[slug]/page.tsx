@@ -72,7 +72,7 @@ export default async function AreaPage({ params }: Props) {
           { label: "Areas We Serve", href: "/areas-we-serve" },
           { label: area.name },
         ]}
-        badge={`📍 ${area.name}, ${area.county}`}
+        badge={`${area.name}, ${area.county}`}
       />
 
       {/* About the area + map */}
