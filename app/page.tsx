@@ -121,11 +121,24 @@ export default function HomePage() {
             <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed mb-8">
               Paul, the Director of the company, has over 30 years experience in the construction industry. With a wealth of knowledge across all building types — commercial and residential, listed buildings to new builds — our team continually work hard to deliver a high-end finish.
             </p>
-            <blockquote className="max-w-2xl mx-auto border-l-2 border-[#4a9ebb] pl-5 text-left">
-              <p className="text-gray-400 text-base italic leading-relaxed">
-                &ldquo;The secret of change is to focus all of your energy, not on fighting the old, but building from it.&rdquo;
-              </p>
-            </blockquote>
+          </div>
+
+          {/* Pull quote */}
+          <div className="mt-16 -mx-4 px-4 py-14 bg-[#0d1b2e] relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b2e] via-[#1e3a5f]/20 to-[#0d1b2e]" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/40 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/40 to-transparent" />
+            <div className="relative max-w-3xl mx-auto text-center">
+              <span className="text-[#4a9ebb] text-6xl leading-none font-serif select-none">&ldquo;</span>
+              <blockquote className="-mt-4">
+                <p className="text-white text-xl md:text-2xl lg:text-3xl font-light leading-relaxed tracking-wide italic">
+                  The secret of change is to focus all of your energy, not on fighting the old, but building from it.
+                </p>
+                <footer className="mt-6 text-[#4a9ebb] text-sm font-semibold uppercase tracking-[0.2em]">
+                  — Socrates
+                </footer>
+              </blockquote>
+            </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {SERVICES.map((s) => (
