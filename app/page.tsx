@@ -266,7 +266,7 @@ export default function HomePage() {
               <Link
                 key={area.slug}
                 href={`/areas-we-serve/${area.slug}`}
-                className="group flex items-center justify-center px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:bg-[#111111] hover:text-white hover:border-[#111111] transition-all text-center"
+                className="group flex items-center justify-center px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:bg-[#1e3a5f] hover:text-white hover:border-[#1e3a5f] transition-all text-center"
               >
                 {area.name}
               </Link>
