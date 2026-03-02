@@ -6,30 +6,6 @@ import { SERVICES, DOMAIN } from "@/lib/services";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 
-const AREA_PHOTOS: Record<string, { src: string; alt: string }> = {
-  "canterbury": { src: "/images/areas/builders-in-canterbury-kent.jpg", alt: "Builders in Canterbury Kent" },
-  "harbledown": { src: "/images/areas/builders-in-harbledown-kent.jpg", alt: "Builders in Harbledown Kent" },
-  "blean": { src: "/images/areas/builders-in-blean-kent.jpg", alt: "Builders in Blean Kent" },
-  "sturry": { src: "/images/areas/builders-in-sturry-kent.jpg", alt: "Builders in Sturry Kent" },
-  "bridge": { src: "/images/areas/builders-in-bridge-kent.jpg", alt: "Builders in Bridge Kent" },
-  "barham": { src: "/images/areas/builders-in-barham-kent.jpg", alt: "Builders in Barham Kent" },
-  "bekesbourne": { src: "/images/areas/builders-in-bekesbourne-kent.jpg", alt: "Builders in Bekesbourne Kent" },
-  "wickhambreaux": { src: "/images/areas/builders-in-wickhambreaux-kent.jpg", alt: "Builders in Wickhambreaux Kent" },
-  "wingham": { src: "/images/areas/builders-in-wingham-kent.jpg", alt: "Builders in Wingham Kent" },
-  "fordwich": { src: "/images/areas/builders-in-fordwich-kent.jpg", alt: "Builders in Fordwich Kent" },
-  "chartham": { src: "/images/areas/builders-in-chartham-kent.jpg", alt: "Builders in Chartham Kent" },
-  "adisham": { src: "/images/areas/builders-in-adisham-kent.jpg", alt: "Builders in Adisham Kent" },
-  "littlebourne": { src: "/images/areas/builders-in-littlebourne-kent.jpg", alt: "Builders in Littlebourne Kent" },
-  "ickham": { src: "/images/areas/builders-in-ickham-kent.jpg", alt: "Builders in Ickham Kent" },
-  "petham": { src: "/images/areas/builders-in-petham-kent.jpg", alt: "Builders in Petham Kent" },
-  "waltham": { src: "/images/areas/builders-in-waltham-kent.jpg", alt: "Builders in Waltham Kent" },
-  "whitstable": { src: "/images/areas/builders-in-whitstable-kent.jpg", alt: "Builders in Whitstable Kent" },
-  "faversham": { src: "/images/areas/builders-in-faversham-kent.jpg", alt: "Builders in Faversham Kent" },
-  "wye": { src: "/images/areas/builders-in-wye-kent.jpg", alt: "Builders in Wye Kent" },
-  "sandwich": { src: "/images/areas/builders-in-sandwich-kent.jpg", alt: "Builders in Sandwich Kent" },
-  "folkestone": { src: "/images/areas/builders-in-folkestone-kent.jpg", alt: "Builders in Folkestone Kent" },
-  "chilham": { src: "/images/areas/builders-in-chilham-kent.jpg", alt: "Builders in Chilham Kent" },
-};
 
 export const metadata: Metadata = {
   title: "Areas We Serve in Kent | Building Services Near You",
@@ -68,48 +44,37 @@ export default function AreasWeServePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {AREAS.map((area) => {
-              const photo = AREA_PHOTOS[area.slug];
-              return (
-                <Link
-                  key={area.slug}
-                  href={`/areas-we-serve/${area.slug}`}
-                  className="group relative overflow-hidden rounded-2xl h-56 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                >
-                  {/* Background photo */}
-                  {photo && (
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-50"
-                      style={{ backgroundImage: `url('${photo.src}')` }}
-                      role="img"
-                      aria-label={photo.alt}
-                    />
-                  )}
-                  {/* Base colour so cards without photos look good */}
-                  <div className="absolute inset-0 bg-[#1a2e44]" style={{ zIndex: photo ? -1 : 0 }} />
-                  {/* Gradient overlay — darkens bottom for legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                  {/* Content */}
-                  <div className="absolute inset-0 flex flex-col justify-between p-6">
-                    <span className="self-end bg-white/15 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full capitalize border border-white/20">
-                      {area.type}
-                    </span>
-                    <div>
-                      <div className="flex items-end justify-between mb-1">
-                        <h3 className="font-bold text-white text-xl leading-tight">
-                          {area.name}
-                        </h3>
-                        <ArrowRight size={18} className="text-white/70 group-hover:text-[#4a9ebb] group-hover:translate-x-1 transition-all flex-shrink-0 mb-0.5" />
-                      </div>
-                      <p className="text-white/70 text-xs mb-3">{area.county}</p>
-                      <p className="text-white/60 text-xs leading-relaxed line-clamp-2 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
-                        {area.description}
-                      </p>
+            {AREAS.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/areas-we-serve/${area.slug}`}
+                className="group relative flex flex-col bg-white border border-gray-100 hover:border-[#1e3a5f]/20 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              >
+                {/* Left accent bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#4a9ebb] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom" />
+                <div className="p-6 flex-1">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-[#0d1b2e] group-hover:bg-[#1e3a5f] transition-colors flex items-center justify-center">
+                      <span className="text-white text-lg">📍</span>
                     </div>
+                    <span className="text-xs font-semibold uppercase tracking-[0.12em] text-gray-300 capitalize">{area.type}</span>
                   </div>
-                </Link>
-              );
-            })}
+                  <h3 className="font-bold text-[#0d1b2e] text-lg mb-1 group-hover:text-[#1e3a5f] transition-colors">
+                    {area.name}
+                  </h3>
+                  <p className="text-xs text-[#4a9ebb] font-semibold mb-3">{area.county}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
+                    {area.description}
+                  </p>
+                </div>
+                <div className="px-6 pb-5 flex items-center justify-between">
+                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-300 group-hover:text-[#4a9ebb] transition-colors duration-300">View Area</span>
+                  <div className="w-8 h-8 rounded-full border border-gray-100 group-hover:border-[#4a9ebb] group-hover:bg-[#4a9ebb]/8 flex items-center justify-center transition-all duration-300">
+                    <ArrowRight size={14} className="text-gray-300 group-hover:text-[#4a9ebb] group-hover:translate-x-0.5 transition-all" />
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
