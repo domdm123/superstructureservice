@@ -123,20 +123,27 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Pull quote */}
-          <div className="mt-16 -mx-4 px-4 py-14 bg-[#0d1b2e] relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b2e] via-[#1e3a5f]/20 to-[#0d1b2e]" />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/40 to-transparent" />
-            <div className="relative max-w-3xl mx-auto text-center">
-              <span className="text-[#4a9ebb] text-6xl leading-none font-serif select-none">&ldquo;</span>
-              <blockquote className="-mt-4">
-                <p className="text-white text-xl md:text-2xl lg:text-3xl font-light leading-relaxed tracking-wide italic">
-                  The secret of change is to focus all of your energy, not on fighting the old, but building from it.
+          {/* Pull quote — full width world-class */}
+          <div className="mt-16 -mx-4 sm:-mx-6 lg:-mx-8 xl:-mx-16 2xl:-mx-32 relative overflow-hidden bg-[#0d1b2e]">
+            {/* Background texture layers */}
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,#0d1b2e_0%,#1e3a5f_50%,#0d1b2e_100%)]" />
+            <div className="absolute inset-0 opacity-[0.04] bg-[repeating-linear-gradient(45deg,#4a9ebb,#4a9ebb_1px,transparent_1px,transparent_60px)]" />
+            {/* Top & bottom accent lines */}
+            <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#4a9ebb] to-transparent" />
+            <div className="absolute bottom-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#4a9ebb] to-transparent" />
+            {/* Giant decorative quotemark */}
+            <div className="absolute -left-6 top-1/2 -translate-y-1/2 text-[#4a9ebb]/5 text-[28rem] font-serif leading-none select-none pointer-events-none">&ldquo;</div>
+            <div className="relative py-20 px-8 md:px-16 lg:px-32 max-w-6xl mx-auto text-center">
+              <blockquote>
+                <p className={`${playfair.className} text-white text-2xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight`}>
+                  <span className="text-[#4a9ebb]">The secret of change</span> is to focus all of your energy, not on fighting the old,{" "}
+                  <span className="italic font-light">but building from it.</span>
                 </p>
-                <footer className="mt-6 text-[#4a9ebb] text-sm font-semibold uppercase tracking-[0.2em]">
-                  — Superstructure Services
-                </footer>
+                <div className="mt-10 flex items-center justify-center gap-4">
+                  <div className="h-px w-16 bg-[#4a9ebb]/40" />
+                  <div className="w-2 h-2 rounded-full bg-[#4a9ebb]/60" />
+                  <div className="h-px w-16 bg-[#4a9ebb]/40" />
+                </div>
               </blockquote>
             </div>
           </div>
