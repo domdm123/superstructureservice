@@ -29,7 +29,7 @@ const featuredProjects = [
     title: "Roofing in Canterbury",
     category: "Roofing",
     location: "Canterbury",
-    image: "/images/roofing.jpg",
+    image: "/images/Professional-roofing-service-in-Canterbury-Kent.jpg",
     description:
       "Complete roof replacement on a period Canterbury property using traditional clay peg tiles, completed to conservation area standards.",
     tags: ["Flat Roofing", "GRP Fibreglass", "Listed Building"],
@@ -38,7 +38,7 @@ const featuredProjects = [
     title: "Kitchen Installation in Canterbury",
     category: "Kitchen Installation",
     location: "Canterbury",
-    image: "/images/kitchen-installation.jpg",
+    image: "/images/Kitchen-Installation-in-Canterbury.jpg",
     description:
       "Full kitchen refit including structural wall removal, bespoke joinery, granite worktops from Global Granite, and integrated appliances.",
     tags: ["Bespoke Design", "Granite Worktops", "Structural Work"],
@@ -47,7 +47,7 @@ const featuredProjects = [
     title: "Commercial Refurbishment",
     category: "Refurbishments",
     location: "Whitstable",
-    image: "/images/refurbishment-2.jpg",
+    image: "/images/Property-Refurbishment-in-Canterbury.jpg",
     description:
       "Complete commercial office refurbishment in Whitstable — stripping back, full rewire, new flooring, plaster, decoration and fit-out.",
     tags: ["Commercial", "Full Refurb", "Electrical"],
@@ -56,7 +56,7 @@ const featuredProjects = [
     title: "New Bathroom & Plumbing",
     category: "Bathroom",
     location: "Faversham",
-    image: "/images/bathroom.jpg",
+    image: "/images/classic-modern-bathroom-refurbishment-service-canterbury.jpg",
     description:
       "Luxury wet room installation with underfloor heating, bespoke tiling, custom shower enclosure and full plumbing by our Gas Safe team.",
     tags: ["Wet Room", "Underfloor Heating", "Gas Safe"],
@@ -65,7 +65,7 @@ const featuredProjects = [
     title: "Underfloor Heating Installation",
     category: "Flooring",
     location: "Chartham",
-    image: "/images/underfloor-heating.jpg",
+    image: "/images/Underfloor-Heating-in-Canterbury.jpg",
     description:
       "Retrofit underfloor heating throughout a Victorian terrace using milled channels in existing screed — no floor level changes required.",
     tags: ["Retrofit UFH", "Victorian Property", "All Rooms"],
@@ -74,7 +74,7 @@ const featuredProjects = [
     title: "Domestic Refurbishment",
     category: "Refurbishments",
     location: "Bridge",
-    image: "/images/property-refurbishment.jpg",
+    image: "/images/Property-maintanence-in-Canterbury-Kent.jpg",
     description:
       "Full internal and external refurbishment of a 4-bedroom detached property — new kitchen, bathrooms, flooring, rewire and re-plaster.",
     tags: ["Full Property", "Multiple Trades", "Project Management"],
@@ -83,7 +83,7 @@ const featuredProjects = [
     title: "Home Office Creation",
     category: "Conversion",
     location: "Sturry",
-    image: "/images/home-office.jpg",
+    image: "/images/Home-office-creation-Canterbury-Kent.jpg",
     description:
       "Garage conversion into a bespoke home office with dedicated data cabling, built-in furniture, climate control and a separate entrance.",
     tags: ["Garage Conversion", "Data Cabling", "Bespoke Furniture"],
@@ -92,7 +92,7 @@ const featuredProjects = [
     title: "Bespoke Carpentry",
     category: "Carpentry",
     location: "Canterbury",
-    image: "/images/carpentry.jpg",
+    image: "/images/Carpenter-in-Canterbury.jpg",
     description:
       "Floor-to-ceiling bespoke library installation with solid oak shelving, reading nook, hidden lighting and integrated electrical points.",
     tags: ["Bespoke Joinery", "Solid Oak", "Lighting"],
@@ -101,7 +101,7 @@ const featuredProjects = [
     title: "Listed Building Restoration & Kitchen",
     category: "Listed Building",
     location: "Canterbury",
-    image: "/images/listed-building.jpg",
+    image: "/images/canterbury-listed-building-refurbishment.jpg",
     description:
       "Sympathetic restoration of a Grade II listed property in Canterbury city centre, including a new kitchen installation designed to complement the historic character.",
     tags: ["Grade II Listed", "Conservation", "Kitchen"],
@@ -110,7 +110,7 @@ const featuredProjects = [
     title: "Solar Panel Installation",
     category: "Solar Panels",
     location: "Canterbury",
-    image: "/images/solar-panels.jpg",
+    image: "/images/Solar-panel-installer-in-Canterbury-Kent.jpg",
     description:
       "Full MCS-accredited solar panel installation with battery storage and EV charger integration on a detached property in Canterbury.",
     tags: ["MCS Accredited", "Battery Storage", "EV Charger"],
@@ -119,7 +119,7 @@ const featuredProjects = [
     title: "Driveway & Paving",
     category: "Driveways",
     location: "Sandwich",
-    image: "/images/driveways-paving.jpg",
+    image: "/images/Driveway-paving-in-Canterbury-Kent.jpg",
     description:
       "Premium block paving driveway installation with dropped kerb, drainage soakaway and decorative border edging.",
     tags: ["Block Paving", "Dropped Kerb", "Drainage"],
@@ -128,7 +128,7 @@ const featuredProjects = [
     title: "Garage Conversion",
     category: "Conversion",
     location: "Faversham",
-    image: "/images/garage-conversion.jpg",
+    image: "/images/Garage-Conversion-in-Canterbury.jpg",
     description:
       "Full garage-to-living-space conversion including insulation, plastering, electrical rewire, flooring and decorating.",
     tags: ["Garage Conversion", "Living Space", "Full Build"],

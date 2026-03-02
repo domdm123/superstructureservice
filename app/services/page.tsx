@@ -16,23 +16,23 @@ export const metadata: Metadata = {
   },
 };
 
-const SERVICE_PHOTOS: Record<string, string> = {
-  "kitchen-installation": "/images/kitchen-installation.jpg",
-  "flooring-underfloor-heating": "/images/underfloor-heating.jpg",
-  "facility-building-management": "/images/facilities-management.jpg",
-  "electrician": "/images/electrician.jpg",
-  "air-source-heat-pump": "/images/air-source-heat-pump.jpg",
-  "solar-panel-installation": "/images/solar-panels.jpg",
-  "air-conditioning": "/images/air-conditioning.jpg",
-  "new-bathroom": "/images/bathroom.jpg",
-  "property-refurbishment": "/images/property-refurbishment.jpg",
-  "plumbing-drainage": "/images/plumbing.jpg",
-  "carpentry": "/images/carpentry.jpg",
-  "garage-workshop-conversion": "/images/garage-conversion.jpg",
-  "roofing": "/images/roofing.jpg",
-  "home-office-conversion": "/images/home-office.jpg",
-  "cinema-room-installation": "/images/cinema-room.jpg",
-  "driveways-paving": "/images/driveways-paving.jpg",
+const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {
+  "kitchen-installation": { src: "/images/Kitchen-Installation-in-Canterbury.jpg", alt: "Kitchen Installation in Canterbury" },
+  "flooring-underfloor-heating": { src: "/images/Underfloor-Heating-in-Canterbury.jpg", alt: "Underfloor Heating in Canterbury" },
+  "facility-building-management": { src: "/images/Facilities-building-management-firm-in-Canterbury-Kent.jpg", alt: "Facilities Building Management firm in Canterbury Kent" },
+  "electrician": { src: "/images/home-electrician-in-canterbury-rewiring-fuse-metering.jpg", alt: "Home Electrician in Canterbury rewiring fuse metering" },
+  "air-source-heat-pump": { src: "/images/Air-source-heat-pumps-and-conditioning.jpg", alt: "Air Source Heat Pumps and Conditioning Canterbury" },
+  "solar-panel-installation": { src: "/images/Solar-panel-installer-in-Canterbury-Kent.jpg", alt: "Solar Panel Installer in Canterbury Kent" },
+  "air-conditioning": { src: "/images/air-con-service-installation-company-in-canterbury.jpg", alt: "Air Con Service Installation Company in Canterbury" },
+  "new-bathroom": { src: "/images/classic-modern-bathroom-refurbishment-service-canterbury.jpg", alt: "Classic Modern Bathroom Refurbishment Service Canterbury" },
+  "property-refurbishment": { src: "/images/Property-maintanence-in-Canterbury-Kent.jpg", alt: "Property Maintenance in Canterbury Kent" },
+  "plumbing-drainage": { src: "/images/Bathrooms-in-Canterbury.jpg", alt: "Bathrooms and Plumbing in Canterbury" },
+  "carpentry": { src: "/images/Carpenter-in-Canterbury.jpg", alt: "Carpenter in Canterbury" },
+  "garage-workshop-conversion": { src: "/images/Garage-Conversion-in-Canterbury.jpg", alt: "Garage Conversion in Canterbury" },
+  "roofing": { src: "/images/Professional-roofing-service-in-Canterbury-Kent.jpg", alt: "Professional Roofing Service in Canterbury Kent" },
+  "home-office-conversion": { src: "/images/Home-office-creation-Canterbury-Kent.jpg", alt: "Home Office Creation Canterbury Kent" },
+  "cinema-room-installation": { src: "/images/Cinema-Rooms-in-Kent.jpg", alt: "Cinema Rooms in Kent" },
+  "driveways-paving": { src: "/images/Driveway-paving-in-Canterbury-Kent.jpg", alt: "Driveway Paving in Canterbury Kent" },
 };
 
 export default function ServicesPage() {
@@ -59,7 +59,9 @@ export default function ServicesPage() {
                 {photo ? (
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                    style={{ backgroundImage: `url('${photo}')` }}
+                    style={{ backgroundImage: `url('${photo.src}')` }}
+                    role="img"
+                    aria-label={photo.alt}
                   />
                 ) : (
                   <div className="absolute inset-0 bg-gray-700" />
