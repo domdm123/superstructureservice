@@ -38,7 +38,8 @@ const contactDetails = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: { searchParams: Promise<{ subject?: string }> }) {
+  const { subject } = await searchParams;
   return (
     <>
       <PageHero
@@ -106,7 +107,7 @@ export default function ContactPage() {
               <p className="text-gray-500 text-sm mb-8">
                 Fill in the form below and we&apos;ll get back to you within 24 hours.
               </p>
-              <ContactForm />
+              <ContactForm prefilledSubject={subject} />
             </div>
           </div>
         </div>

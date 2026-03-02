@@ -172,7 +172,7 @@ export default async function ServiceLocationPage({ params }: Props) {
                     <li key={f} className="flex gap-3">
                       <CheckCircle
                         size={20}
-                        className="text-[#e8a020] flex-shrink-0 mt-0.5"
+                        className="text-[#4a9ebb] flex-shrink-0 mt-0.5"
                       />
                       <span className="text-gray-700">{f}</span>
                     </li>
@@ -202,7 +202,7 @@ export default async function ServiceLocationPage({ params }: Props) {
                     "Gas Safe & NICEIC approved",
                   ].map((b) => (
                     <div key={b} className="flex items-center gap-2 text-sm text-gray-700">
-                      <CheckCircle size={16} className="text-[#e8a020] flex-shrink-0" />
+                      <CheckCircle size={16} className="text-[#4a9ebb] flex-shrink-0" />
                       {b}
                     </div>
                   ))}
@@ -212,7 +212,7 @@ export default async function ServiceLocationPage({ params }: Props) {
               {/* Map */}
               <div>
                 <h3 className="text-xl font-bold text-[#1a2e44] mb-4 flex items-center gap-2">
-                  <MapPin size={20} className="text-[#e8a020]" />
+                  <MapPin size={20} className="text-[#4a9ebb]" />
                   Serving {area.name}, {area.county}
                 </h3>
                 <MapEmbed embedUrl={area.mapEmbed} title={area.name} />
@@ -265,7 +265,7 @@ export default async function ServiceLocationPage({ params }: Props) {
                     <Link
                       key={s.slug}
                       href={`/${s.slug}/${area.slug}`}
-                      className="flex items-center gap-2 px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl text-sm font-medium text-[#1a2e44] hover:bg-[#e8a020] hover:text-white hover:border-[#e8a020] transition-all"
+                      className="flex items-center gap-2 px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl text-sm font-medium text-[#1a2e44] hover:bg-[#1e3a5f] hover:text-white hover:border-[#1e3a5f] transition-all"
                     >
                       <span>{s.icon}</span> {s.shortName}
                     </Link>
@@ -287,8 +287,8 @@ export default async function ServiceLocationPage({ params }: Props) {
                     {service.shortName.toLowerCase()} project in {area.name}.
                   </p>
                   <Link
-                    href={`/contact?service=${service.slug}&location=${area.slug}`}
-                    className="flex items-center justify-center gap-2 px-6 py-3 bg-[#e8a020] text-white font-bold rounded-xl hover:bg-[#d4911a] transition-all mb-3 w-full"
+                    href={`/contact?subject=${encodeURIComponent(`${service.name} in ${area.name}`)}&service=${service.slug}&location=${area.slug}`}
+                    className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Get a Free Quote <ArrowRight size={16} />
                   </Link>
@@ -317,9 +317,9 @@ export default async function ServiceLocationPage({ params }: Props) {
                         <li key={nearbyArea.slug}>
                           <Link
                             href={`/${service.slug}/${nearbyArea.slug}`}
-                            className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#e8a020] transition-colors"
+                            className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#4a9ebb] transition-colors"
                           >
-                            <ArrowRight size={13} className="text-[#e8a020]" />
+                            <ArrowRight size={13} className="text-[#4a9ebb]" />
                             {nearbyArea.name}
                           </Link>
                         </li>
@@ -328,7 +328,7 @@ export default async function ServiceLocationPage({ params }: Props) {
                     <li>
                       <Link
                         href="/areas-we-serve"
-                        className="flex items-center gap-2 text-sm text-[#e8a020] font-semibold hover:underline"
+                        className="flex items-center gap-2 text-sm text-[#4a9ebb] font-semibold hover:underline"
                       >
                         <ArrowRight size={13} />
                         All areas we cover
@@ -344,7 +344,7 @@ export default async function ServiceLocationPage({ params }: Props) {
                     {["Gas Safe Registered", "NICEIC Approved", "MCS Accredited", "Fully Insured", "DDA Compliant"].map(
                       (acc) => (
                         <li key={acc} className="flex items-center gap-2">
-                          <CheckCircle size={14} className="text-[#e8a020]" />
+                          <CheckCircle size={14} className="text-[#4a9ebb]" />
                           {acc}
                         </li>
                       )

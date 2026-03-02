@@ -7,15 +7,17 @@ import { SERVICES } from "@/lib/services";
 interface ContactFormProps {
   prefilledService?: string;
   prefilledLocation?: string;
+  prefilledSubject?: string;
 }
 
-export default function ContactForm({ prefilledService, prefilledLocation }: ContactFormProps) {
+export default function ContactForm({ prefilledService, prefilledLocation, prefilledSubject }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
+    subject: prefilledSubject || "",
     service: prefilledService || "",
     location: prefilledLocation || "",
     message: "",
@@ -52,6 +54,11 @@ export default function ContactForm({ prefilledService, prefilledLocation }: Con
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      {form.subject && (
+        <div className="bg-[#1e3a5f]/8 border border-[#1e3a5f]/20 rounded-xl px-4 py-3 text-sm text-[#1a2e44]">
+          <span className="font-semibold text-[#1e3a5f]">Enquiry re: </span>{form.subject}
+        </div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label className="block text-sm font-semibold text-[#1a2e44] mb-1.5">

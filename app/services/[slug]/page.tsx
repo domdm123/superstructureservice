@@ -146,7 +146,7 @@ export default async function ServicePage({ params }: Props) {
                     for a free, no-obligation quote.
                   </p>
                   <Link
-                    href="/contact"
+                    href={`/contact?subject=${encodeURIComponent(`${service.name} enquiry`)}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Request a Quote <ArrowRight size={16} />
