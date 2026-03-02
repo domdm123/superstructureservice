@@ -113,10 +113,15 @@ export default function HomePage() {
               Superstructure Services is an independently run, high-quality property restoration,
               conversion, refurbishment &amp; maintenance company — serving Canterbury and the wider Kent area.
             </p>
-            <p className="text-gray-400 max-w-xl mx-auto text-base leading-relaxed">
+            <p className="text-gray-400 max-w-xl mx-auto text-base leading-relaxed mb-8">
               From kitchen installations to solar panels, we offer a comprehensive range of
               building and trade services, all under one roof.
             </p>
+            <blockquote className="max-w-2xl mx-auto border-l-2 border-[#4a9ebb] pl-5 text-left">
+              <p className="text-gray-400 text-base italic leading-relaxed">
+                &ldquo;The secret of change is to focus all of your energy, not on fighting the old, but building from it.&rdquo;
+              </p>
+            </blockquote>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {SERVICES.map((s) => (
