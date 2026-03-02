@@ -33,7 +33,7 @@ export default function Header() {
           {phoneRevealed ? (
             <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="flex items-center gap-2 text-[#4a9ebb] font-semibold transition-all"
+              className="flex items-center gap-2 bg-[#f5c518] text-black font-bold px-3 py-1.5 rounded transition-all text-xs"
             >
               <Phone size={13} />
               {PHONE}
