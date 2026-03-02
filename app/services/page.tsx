@@ -43,43 +43,45 @@ export default function ServicesPage() {
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Services</h1>
       </div>
 
-      {/* Photo card grid — 2 columns, large cards with overlay text */}
-      <section className="bg-white">
-        <div className="grid grid-cols-1 sm:grid-cols-2">
-          {SERVICES.map((service) => {
-            const photo = SERVICE_PHOTOS[service.slug];
-            const href = `/services/${service.canonicalSlug.replace("services/", "")}`;
-            return (
-              <Link
-                key={service.slug}
-                href={href}
-                className="group relative block overflow-hidden aspect-[4/3]"
-              >
-                {/* Background image */}
-                {photo ? (
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                    style={{ backgroundImage: `url('${photo.src}')` }}
-                    role="img"
-                    aria-label={photo.alt}
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-gray-700" />
-                )}
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300" />
-                {/* Text */}
-                <div className="absolute inset-0 flex flex-col justify-end p-8">
-                  <h2 className="text-white font-bold text-2xl md:text-3xl leading-tight mb-2">
-                    {service.name}
-                  </h2>
-                  <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-w-sm">
-                    {service.tagline}
-                  </p>
-                </div>
-              </Link>
-            );
-          })}
+      {/* Photo card grid — 2 columns, matches old site sizing */}
+      <section className="bg-white py-8">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {SERVICES.map((service) => {
+              const photo = SERVICE_PHOTOS[service.slug];
+              const href = `/services/${service.canonicalSlug.replace("services/", "")}`;
+              return (
+                <Link
+                  key={service.slug}
+                  href={href}
+                  className="group relative block overflow-hidden h-52 rounded-sm"
+                >
+                  {/* Background image */}
+                  {photo ? (
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                      style={{ backgroundImage: `url('${photo.src}')` }}
+                      role="img"
+                      aria-label={photo.alt}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gray-700" />
+                  )}
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/45 group-hover:bg-black/55 transition-colors duration-300" />
+                  {/* Text */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6">
+                    <h2 className="text-white font-bold text-xl md:text-2xl leading-tight mb-1">
+                      {service.name}
+                    </h2>
+                    <p className="text-gray-300 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-w-sm">
+                      {service.tagline}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
