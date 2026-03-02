@@ -135,7 +135,7 @@ export default function HomePage() {
                   The secret of change is to focus all of your energy, not on fighting the old, but building from it.
                 </p>
                 <footer className="mt-6 text-[#4a9ebb] text-sm font-semibold uppercase tracking-[0.2em]">
-                  — Socrates
+                  — Superstructure Services
                 </footer>
               </blockquote>
             </div>
