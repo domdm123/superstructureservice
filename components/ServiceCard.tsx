@@ -25,8 +25,11 @@ export default function ServiceCard({ service, location }: ServiceCardProps) {
           {service.shortName}
           {location && ` in ${location.charAt(0).toUpperCase() + location.slice(1)}`}
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
+        <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 group-hover:hidden">
           {service.tagline}
+        </p>
+        <p className="hidden text-gray-500 text-sm leading-relaxed line-clamp-4 group-hover:block">
+          {service.description}
         </p>
       </div>
 
