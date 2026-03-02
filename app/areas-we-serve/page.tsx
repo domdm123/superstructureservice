@@ -6,29 +6,29 @@ import { SERVICES, DOMAIN } from "@/lib/services";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 
-const AREA_PHOTOS: Record<string, string> = {
-  "canterbury": "/images/areas/canterbury.jpg",
-  "harbledown": "/images/areas/harbledown.jpg",
-  "blean": "/images/areas/blean.jpg",
-  "sturry": "/images/areas/sturry.jpg",
-  "bridge": "/images/areas/bridge.jpg",
-  "barham": "/images/areas/barham.jpg",
-  "bekesbourne": "/images/areas/bekesbourne.jpg",
-  "wickhambreaux": "/images/areas/wickhambreaux.jpg",
-  "wingham": "/images/areas/wingham.jpg",
-  "fordwich": "/images/areas/fordwich.jpg",
-  "chartham": "/images/areas/chartham.jpg",
-  "adisham": "/images/areas/adisham.jpg",
-  "littlebourne": "/images/areas/littlebourne.jpg",
-  "ickham": "/images/areas/ickham.jpg",
-  "petham": "/images/areas/petham.jpg",
-  "waltham": "/images/areas/waltham.jpg",
-  "whitstable": "/images/areas/whitstable.jpg",
-  "faversham": "/images/areas/faversham.jpg",
-  "wye": "/images/areas/wye.jpg",
-  "sandwich": "/images/areas/sandwich.jpg",
-  "folkestone": "/images/areas/folkestone.jpg",
-  "chilham": "/images/areas/chilham.jpg",
+const AREA_PHOTOS: Record<string, { src: string; alt: string }> = {
+  "canterbury": { src: "/images/areas/builders-in-canterbury-kent.jpg", alt: "Builders in Canterbury Kent" },
+  "harbledown": { src: "/images/areas/builders-in-harbledown-kent.jpg", alt: "Builders in Harbledown Kent" },
+  "blean": { src: "/images/areas/builders-in-blean-kent.jpg", alt: "Builders in Blean Kent" },
+  "sturry": { src: "/images/areas/builders-in-sturry-kent.jpg", alt: "Builders in Sturry Kent" },
+  "bridge": { src: "/images/areas/builders-in-bridge-kent.jpg", alt: "Builders in Bridge Kent" },
+  "barham": { src: "/images/areas/builders-in-barham-kent.jpg", alt: "Builders in Barham Kent" },
+  "bekesbourne": { src: "/images/areas/builders-in-bekesbourne-kent.jpg", alt: "Builders in Bekesbourne Kent" },
+  "wickhambreaux": { src: "/images/areas/builders-in-wickhambreaux-kent.jpg", alt: "Builders in Wickhambreaux Kent" },
+  "wingham": { src: "/images/areas/builders-in-wingham-kent.jpg", alt: "Builders in Wingham Kent" },
+  "fordwich": { src: "/images/areas/builders-in-fordwich-kent.jpg", alt: "Builders in Fordwich Kent" },
+  "chartham": { src: "/images/areas/builders-in-chartham-kent.jpg", alt: "Builders in Chartham Kent" },
+  "adisham": { src: "/images/areas/builders-in-adisham-kent.jpg", alt: "Builders in Adisham Kent" },
+  "littlebourne": { src: "/images/areas/builders-in-littlebourne-kent.jpg", alt: "Builders in Littlebourne Kent" },
+  "ickham": { src: "/images/areas/builders-in-ickham-kent.jpg", alt: "Builders in Ickham Kent" },
+  "petham": { src: "/images/areas/builders-in-petham-kent.jpg", alt: "Builders in Petham Kent" },
+  "waltham": { src: "/images/areas/builders-in-waltham-kent.jpg", alt: "Builders in Waltham Kent" },
+  "whitstable": { src: "/images/areas/builders-in-whitstable-kent.jpg", alt: "Builders in Whitstable Kent" },
+  "faversham": { src: "/images/areas/builders-in-faversham-kent.jpg", alt: "Builders in Faversham Kent" },
+  "wye": { src: "/images/areas/builders-in-wye-kent.jpg", alt: "Builders in Wye Kent" },
+  "sandwich": { src: "/images/areas/builders-in-sandwich-kent.jpg", alt: "Builders in Sandwich Kent" },
+  "folkestone": { src: "/images/areas/builders-in-folkestone-kent.jpg", alt: "Builders in Folkestone Kent" },
+  "chilham": { src: "/images/areas/builders-in-chilham-kent.jpg", alt: "Builders in Chilham Kent" },
 };
 
 export const metadata: Metadata = {
@@ -80,7 +80,9 @@ export default function AreasWeServePage() {
                   {photo && (
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-50"
-                      style={{ backgroundImage: `url('${photo}')` }}
+                      style={{ backgroundImage: `url('${photo.src}')` }}
+                      role="img"
+                      aria-label={photo.alt}
                     />
                   )}
                   {/* Base colour so cards without photos look good */}
