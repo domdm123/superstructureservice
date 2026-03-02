@@ -225,12 +225,12 @@ export default function ProjectsPage() {
             <p className="text-gray-500 mb-6">
               Want to see your project here? We&apos;d love to hear from you.
             </p>
-            <Link
-              href="/contact"
+            <a
+              href="mailto:enquiries@superstructureservices.co.uk?subject=Project%20Discussion%20-%20Superstructure%20Services"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all shadow-lg"
             >
               Discuss Your Project <ArrowRight size={18} />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

@@ -117,12 +117,12 @@ export default function FacilityBuildingManagementPage() {
                   <p className="text-gray-300 text-sm mb-6">
                     Looking for a reliable facilities management partner? Contact us today.
                   </p>
-                  <Link
-                    href="/contact"
+                  <a
+                    href="mailto:enquiries@superstructureservices.co.uk?subject=Facilities%20Management%20Enquiry%20-%20Superstructure%20Services"
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Request a Quote <ArrowRight size={16} />
-                  </Link>
+                  </a>
                   <a
                     href={`tel:${PHONE.replace(/\s/g, "")}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all w-full"

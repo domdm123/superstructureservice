@@ -212,12 +212,12 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <Link
-                href="/contact"
+              <a
+                href="mailto:enquiries@superstructureservices.co.uk?subject=New%20Project%20Enquiry%20-%20Superstructure%20Services"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all"
               >
                 Start Your Project <ArrowRight size={16} />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

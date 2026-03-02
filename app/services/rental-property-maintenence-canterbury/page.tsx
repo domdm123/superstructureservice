@@ -77,12 +77,12 @@ export default function RentalPropertyMaintenancePage() {
                     Looking for a reliable maintenance partner for your rental properties in
                     Canterbury or Kent?
                   </p>
-                  <Link
-                    href="/contact"
+                  <a
+                    href="mailto:enquiries@superstructureservices.co.uk?subject=Rental%20Property%20Maintenance%20Enquiry%20-%20Superstructure%20Services"
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Get in Touch <ArrowRight size={16} />
-                  </Link>
+                  </a>
                   <a
                     href={`tel:${PHONE.replace(/\s/g, "")}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all w-full"
