@@ -94,9 +94,9 @@ export default function ProjectsPage() {
                       className="object-cover transition-all duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300" />
                     
-                    <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                    <div className="absolute inset-0 p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className="text-xs font-semibold text-[#f5c518] uppercase tracking-wider mb-2">
                         {project.category}
                       </span>
@@ -107,11 +107,11 @@ export default function ProjectsPage() {
                         <MapPin size={11} />
                         {project.location}, Kent
                       </div>
-                      <p className="text-white/60 text-sm line-clamp-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-white/60 text-sm line-clamp-2 mb-4">
                         {project.description}
                       </p>
                       
-                      <div className="flex items-center gap-2 text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                      <div className="flex items-center gap-2 text-white text-sm font-semibold">
                         <span className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/30">
                           <Eye size={14} />
                           View Project
