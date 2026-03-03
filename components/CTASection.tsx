@@ -63,60 +63,25 @@ export default function CTASection({
           ))}
         </div>
 
-        <style jsx>{`
-          .btn-fill {
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-          }
-          .btn-fill::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(135deg, #162d4a 0%, #1e3a5f 50%, #4a9ebb 100%);
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: -1;
-          }
-          .btn-fill:hover::before {
-            width: 100%;
-          }
-          .btn-outline-fill {
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-          }
-          .btn-outline-fill::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.15);
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: -1;
-          }
-          .btn-outline-fill:hover::before {
-            width: 100%;
-          }
-        `}</style>
-
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={`mailto:${EMAIL}?subject=${encodeURIComponent(ctaSubject)}`}
-            className="btn-fill inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#1e3a5f] text-white font-bold rounded-xl shadow-lg shadow-[#1e3a5f]/40 hover:shadow-xl hover:shadow-[#1e3a5f]/50 hover:-translate-y-0.5 transition-all text-base border border-[#4a9ebb]/20"
+            className="group relative inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#1e3a5f] text-white font-bold rounded-xl shadow-lg shadow-[#1e3a5f]/40 hover:shadow-xl hover:shadow-[#1e3a5f]/50 hover:-translate-y-0.5 transition-all text-base border border-[#4a9ebb]/20 overflow-hidden"
           >
-            Get a Free Quote <ArrowRight size={18} />
+            <span className="absolute inset-0 bg-gradient-to-r from-[#162d4a] via-[#1e3a5f] to-[#4a9ebb] w-0 group-hover:w-full transition-all duration-500 ease-out" />
+            <span className="relative z-10 flex items-center gap-2">
+              Get a Free Quote <ArrowRight size={18} />
+            </span>
           </a>
           <a
             href={`tel:${PHONE.replace(/\s/g, "")}`}
-            className="btn-outline-fill inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base border-2 border-white/15 text-white hover:border-white/40 transition-all"
+            className="group relative inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base border-2 border-white/15 text-white hover:border-white/40 transition-all overflow-hidden"
           >
-            <Phone size={18} /> {PHONE}
+            <span className="absolute inset-0 bg-white/10 w-0 group-hover:w-full transition-all duration-500 ease-out" />
+            <span className="relative z-10 flex items-center gap-2">
+              <Phone size={18} /> {PHONE}
+            </span>
           </a>
         </div>
       </div>
