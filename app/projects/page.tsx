@@ -97,10 +97,10 @@ export default function ProjectsPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                     
                     <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                      <span className="text-xs font-semibold text-[#4a9ebb] uppercase tracking-wider mb-2">
+                      <span className="text-xs font-semibold text-[#f5c518] uppercase tracking-wider mb-2">
                         {project.category}
                       </span>
-                      <h3 className="text-white font-bold text-lg leading-tight mb-2 group-hover:text-[#4a9ebb] transition-colors">
+                      <h3 className="text-white font-bold text-lg leading-tight mb-2">
                         {project.title}
                       </h3>
                       <div className="flex items-center gap-1.5 text-white/70 text-xs mb-3">
@@ -112,7 +112,7 @@ export default function ProjectsPage() {
                       </p>
                       
                       <div className="flex items-center gap-2 text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                        <span className="flex items-center gap-1.5 bg-[#1e3a5f] px-3 py-1.5 rounded-lg">
+                        <span className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/30">
                           <Eye size={14} />
                           View Project
                         </span>
