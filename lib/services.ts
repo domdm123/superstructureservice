@@ -22,7 +22,7 @@ export const SERVICES: Service[] = [
     slug: "kitchen-installation",
     name: "Kitchen Installation",
     shortName: "Kitchen Installation",
-    tagline: "Quality kitchen installer and installations across Canterbury & Kent",
+    tagline: "If you talk about it, it's a dream. If you envision it, it's possible.",
     description:
       "We hold trade accounts with local supply companies and have a dedicated team of installers to give you that professional finish to your kitchen, emphasising on detail and practicality. Bespoke design finalised by the correct electrical and plumbing installations. We also install and fit a wide range of kitchen worktops across Canterbury and the wider Kent area — from laminate to Corian, Solid Wood, Quartz, Granite and Marble.",
     features: [
@@ -42,7 +42,7 @@ export const SERVICES: Service[] = [
     slug: "flooring-underfloor-heating",
     name: "Flooring & Underfloor Heating",
     shortName: "Flooring & Underfloor Heating",
-    tagline: "Professional flooring installation and underfloor heating in Canterbury & Kent",
+    tagline: "Following the rules of your industry will only get you so far.",
     description:
       "From all types of underfloor heating systems to upgrading your floor finish, we have the professionals on hand to install your new floor requirements. Underfloor heating gives a steady ambient temperature that makes everyone feel comfortable — concealed and efficient. From carpet to engineered hardwood, LVT to ceramic tiling, we have the answer to quality floor installation.",
     features: [
@@ -62,7 +62,7 @@ export const SERVICES: Service[] = [
     slug: "facility-building-management",
     name: "Facilities Building Management",
     shortName: "Facilities Management",
-    tagline: "Comprehensive facility and building management services across Kent",
+    tagline: "Managing your Kent building like pros.",
     description:
       "Reliable facility building management for commercial and residential properties in Canterbury and Kent. We offer planned and reactive maintenance, covering plumbing and gas, air conditioning, and commercial electrical services — all under one roof with a dedicated team you can trust.",
     features: [
@@ -82,7 +82,7 @@ export const SERVICES: Service[] = [
     slug: "electrician",
     name: "Electrical",
     shortName: "Electrical",
-    tagline: "Fully qualified electricians serving Canterbury & the wider Kent area",
+    tagline: "Energy is a liberated matter, what's the matter with being liberated?",
     description:
       "Our skilled electricians bring expertise and innovation to every project, ensuring safety, efficiency, and personalised solutions for both homes and businesses. From advanced smart home installations to reliable power systems, we're committed to meeting your electrical needs with professionalism and care. NICEIC-approved team serving Canterbury and Kent.",
     features: [
@@ -102,7 +102,7 @@ export const SERVICES: Service[] = [
     slug: "air-source-heat-pump",
     name: "Air Source Heat Pump Installation",
     shortName: "Air Source Heat Pumps",
-    tagline: "MCS-accredited air source heat pump installers in Canterbury & Kent",
+    tagline: "Modern solutions that may work just for you.",
     description:
       "With the industry's leading suppliers, we are approved air source heat pump installers. Every project adheres to the rigorous standards of the Microgeneration Certification Scheme (MCS). Opting for a heat pump is an eco-conscious choice that lowers both your environmental impact and utility expenses. We provide full home energy assessments, supply, installation and aftercare.",
     features: [
@@ -122,7 +122,7 @@ export const SERVICES: Service[] = [
     slug: "solar-panel-installation",
     name: "Solar Panel Installation",
     shortName: "Solar Panels",
-    tagline: "MCS-accredited solar panel installers in Canterbury & Kent",
+    tagline: "Invest in the future, store your own energy, and be efficient.",
     description:
       "Harness the power of renewable energy with professional solar panel installation across Canterbury and Kent. As MCS accredited and TESLA certified installers, we provide high-quality, efficient, and reliable solar systems. We handle everything from initial consultation to UKPN grid connection, battery storage and EV charger integration.",
     features: [
@@ -142,7 +142,7 @@ export const SERVICES: Service[] = [
     slug: "air-conditioning",
     name: "Air Conditioning",
     shortName: "Air Conditioning",
-    tagline: "F-Gas certified air conditioning installation and maintenance in Canterbury",
+    tagline: "Beat the heat with our expert air conditioning services",
     description:
       "Premier air conditioning solutions in Canterbury, Kent. F-Gas certified engineers with over two decades of experience delivering tailored climate control systems for residential and commercial properties. We offer expert installation, maintenance, and repair, leveraging advanced technology and eco-friendly practices to enhance comfort and efficiency year-round.",
     features: [
@@ -162,7 +162,7 @@ export const SERVICES: Service[] = [
     slug: "new-bathroom",
     name: "New Bathroom Installation",
     shortName: "New Bathrooms",
-    tagline: "Expert bathroom fitting and refurbishment specialists in Canterbury & Kent",
+    tagline: "Kent's bathroom maestros make every splash stylish!",
     description:
       "With extensive experience in bathroom transformations, our team at Superstructure Services crafts stunning, functional bathrooms tailored to your vision. Whether it's a modern wet room or a classic suite, we blend expert craftsmanship with high-quality materials to deliver lasting results. We work closely with you to design spaces that suit your style and budget.",
     features: [
@@ -182,7 +182,7 @@ export const SERVICES: Service[] = [
     slug: "property-refurbishment",
     name: "Refurbishments & Renovations",
     shortName: "Refurbishments",
-    tagline: "Complete house refurbishment and renovation specialists in Canterbury & Kent",
+    tagline: "Money may not buy happiness, but it's better to cry in a Lamborghini.",
     description:
       "Whatever is required in the upkeep or modernisation of any type of property in Kent, we can help. Tell us your thoughts and we can make your vision a reality. From minor works to stripping out your whole property and giving it a completely new facelift — we coordinate every trade efficiently to deliver a seamless, future-proof project that adds genuine value.",
     features: [
@@ -202,7 +202,7 @@ export const SERVICES: Service[] = [
     slug: "plumbing-drainage",
     name: "Plumbing & Drainage",
     shortName: "Plumbing & Drainage",
-    tagline: "Gas Safe registered plumbers covering Canterbury & Kent",
+    tagline: "Not just pipe dreams!",
     description:
       "Let us be your trusted plumber in Canterbury and Kent. From a brand new boiler installation to the bathroom of your dreams, we have the qualified plumbing and heating engineers to fulfil your requirements. Gas Safe, MCS Registered and DDA Compliant — we offer everything from domestic installations to commercial and medical grade installations.",
     features: [
@@ -222,7 +222,7 @@ export const SERVICES: Service[] = [
     slug: "carpentry",
     name: "Carpentry",
     shortName: "Carpentry",
-    tagline: "Expert carpenters delivering bespoke joinery across Canterbury & Kent",
+    tagline: "If opportunity doesn't knock, build a door.",
     description:
       "Elevate your property with expert carpentry services tailored to Canterbury, Kent, and surrounding areas. Our skilled carpenters bring years of experience to every project, delivering precision craftsmanship for both residential and commercial spaces. From bespoke joinery to structural work, we are committed to enhancing your home or business with durable, high-quality solutions.",
     features: [
@@ -242,7 +242,7 @@ export const SERVICES: Service[] = [
     slug: "garage-workshop-conversion",
     name: "Workshop & Garage Conversions",
     shortName: "Garage Conversions",
-    tagline: "Transform your garage into premium living space in Canterbury & Kent",
+    tagline: "Time to make a change?",
     description:
       "Maximise your home's potential with a professionally executed garage or workshop conversion. Our team manages complete transformations — including interior fittings, structural work, insulation, electrics and external finishes — ensuring a cohesive and polished result that adds genuine value to your Canterbury property.",
     features: [
@@ -262,7 +262,7 @@ export const SERVICES: Service[] = [
     slug: "roofing",
     name: "Roofing",
     shortName: "Roofing",
-    tagline: "Expert roofing installation and repairs across Canterbury & Kent",
+    tagline: "If you define the problem correctly, you almost have the solution.",
     description:
       "If you require roof works to any type of property we will have the answer. Experienced tradesmen with a wealth of knowledge to remedy or oversee your project. Materials in this industry are ever evolving — we can take a modern approach or more traditional, whatever you require. From repairs to complete re-roofing, we have it covered.",
     features: [
@@ -282,7 +282,7 @@ export const SERVICES: Service[] = [
     slug: "home-office-conversion",
     name: "Home Office Conversions",
     shortName: "Home Office",
-    tagline: "Bespoke home office design and installation in Canterbury & Kent",
+    tagline: "If you can work from home then why work from anywhere else?",
     description:
       "Now more of us work from home, why not have a bespoke office set up? We offer full redesign of a room for this purpose — layout, rewire, dedicated data systems, supply of office equipment and furniture, right down to custom-built computers supplied by leading UK companies and set up by a computer technician to your requirements.",
     features: [
@@ -302,7 +302,7 @@ export const SERVICES: Service[] = [
     slug: "cinema-room-installation",
     name: "Cinema Room Installation",
     shortName: "Cinema Rooms",
-    tagline: "Bespoke home cinema room installation in Canterbury & Kent",
+    tagline: "I'm trying to free your mind, Neo. But I can only show you the door...",
     description:
       "If you're looking for the addition of a home cinema to your property, we have the answer. From dedicated cinema rooms to a family cinema lounge, we can create your dream home entertainment space. All connective cables are managed and hidden into the structure of your building for a truly professional finish — from design to final demonstration.",
     features: [
@@ -322,7 +322,7 @@ export const SERVICES: Service[] = [
     slug: "driveways-paving",
     name: "Driveways & Paving",
     shortName: "Driveways & Paving",
-    tagline: "Expert driveway and paving specialists across Canterbury & Kent",
+    tagline: "We lay it down right, for driveways and patios that delight!",
     description:
       "Transform your property with our premier driveways and paving services in Canterbury, Kent. As trusted local specialists, we deliver durable, stylish and professionally crafted surfaces that enhance your home's kerb appeal. Our process begins with complete removal of existing materials, precise ground preparation and expert laying of your chosen paving.",
     features: [

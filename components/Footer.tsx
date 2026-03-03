@@ -22,17 +22,15 @@ export default function Footer() {
 
           {/* About */}
           <div className="lg:col-span-2">
-            <div className="mb-6">
-              <Link href="/" className="inline-block">
-                <Image
-                  src="/logo-light.png"
-                  alt="Superstructure Services"
-                  width={280}
-                  height={65}
-                  className="h-14 w-auto object-contain"
-                />
-              </Link>
-            </div>
+            <Link href="/" className="block mb-6 -ml-1">
+              <Image
+                src="/logo-light.png"
+                alt="Superstructure Services"
+                width={280}
+                height={65}
+                className="h-14 w-auto object-contain"
+              />
+            </Link>
             <p className="text-gray-300 text-sm leading-relaxed mb-3">
               Quality property builders offering a range of services in refurbishment, renovation and maintenance in Canterbury, Kent.
             </p>
