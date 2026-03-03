@@ -89,7 +89,7 @@ export default function GoogleReviews() {
   };
 
   return (
-    <section className="bg-[#1a1a2e] py-14">
+    <section className="bg-[#1a1a2e] py-14 pb-0">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-10">
 
