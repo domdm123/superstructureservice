@@ -22,13 +22,13 @@ export default function Footer() {
 
           {/* About */}
           <div className="lg:col-span-2">
-            <Link href="/" className="block mb-6 -ml-2">
+            <Link href="/" className="block mb-6 -ml-3">
               <Image
                 src="/logo-light.png"
                 alt="Superstructure Services"
                 width={280}
-                height={65}
-                className="h-14 w-auto object-contain"
+                height={70}
+                className="h-16 w-auto object-contain"
               />
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed mb-3">
