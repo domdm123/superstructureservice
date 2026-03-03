@@ -51,23 +51,35 @@ export default function Header() {
               <Instagram size={15} />
             </a>
           </div>
-          {phoneRevealed ? (
-            <a
-              href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="flex items-center gap-2 bg-[#f5c518] text-black font-bold px-3 py-1.5 rounded transition-all text-xs"
+          {/* Phone reveal with animation */}
+          <div className="relative h-8 overflow-hidden">
+            <div 
+              className={`absolute inset-0 flex items-center justify-end transition-all duration-500 ease-out transform ${
+                phoneRevealed ? "opacity-0 translate-x-4 pointer-events-none" : "opacity-100 translate-x-0"
+              }`}
             >
-              <Phone size={13} />
-              {PHONE}
-            </a>
-          ) : (
-            <button
-              onClick={() => setPhoneRevealed(true)}
-              className="flex items-center gap-2 bg-[#1e3a5f] hover:bg-[#162d4a] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors"
+              <button
+                onClick={() => setPhoneRevealed(true)}
+                className="flex items-center gap-2 bg-[#1e3a5f] hover:bg-[#162d4a] text-white font-semibold text-xs px-3 py-1.5 rounded transition-all hover:shadow-lg hover:shadow-[#1e3a5f]/30"
+              >
+                <Phone size={13} />
+                Show Phone Number
+              </button>
+            </div>
+            <div 
+              className={`absolute inset-0 flex items-center justify-end transition-all duration-500 ease-out transform ${
+                phoneRevealed ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
+              }`}
             >
-              <Phone size={13} />
-              Show Phone Number
-            </button>
-          )}
+              <a
+                href={`tel:${PHONE.replace(/\s/g, "")}`}
+                className="flex items-center gap-2 bg-[#f5c518] text-black font-bold px-3 py-1.5 rounded text-xs animate-pulse"
+              >
+                <Phone size={13} />
+                {PHONE}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 

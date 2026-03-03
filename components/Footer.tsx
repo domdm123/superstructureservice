@@ -38,23 +38,35 @@ export default function Footer() {
               Comprising of highly skilled and qualified tradesmen, your dreams will be brought to reality in an up to date modern approach – sympathetic to the aesthetics that is your home or workplace.
             </p>
             <div className="flex flex-col gap-3 text-sm">
-              {phoneRevealed ? (
-                <a
-                  href={`tel:${PHONE.replace(/\s/g, "")}`}
-                  className="inline-flex items-center gap-2 bg-[#f5c518] text-black font-bold px-4 py-2 rounded text-sm transition-all w-fit"
-                >
-                  <Phone size={15} />
-                  {PHONE}
-                </a>
-              ) : (
+            {/* Phone reveal with elegant animation */}
+            <div className="relative h-10 overflow-hidden">
+              <div 
+                className={`absolute inset-0 flex items-center transition-all duration-500 ease-out transform ${
+                  phoneRevealed ? "opacity-0 -translate-x-4 pointer-events-none" : "opacity-100 translate-x-0"
+                }`}
+              >
                 <button
                   onClick={() => setPhoneRevealed(true)}
-                  className="inline-flex items-center gap-2 bg-[#1e3a5f] hover:bg-[#162d4a] text-white font-semibold text-sm px-4 py-2 rounded transition-colors w-fit"
+                  className="inline-flex items-center gap-2 bg-[#1e3a5f] hover:bg-[#162d4a] text-white font-semibold text-sm px-4 py-2 rounded transition-all hover:shadow-lg hover:shadow-[#1e3a5f]/30 w-fit"
                 >
                   <Phone size={15} />
                   Show Phone Number
                 </button>
-              )}
+              </div>
+              <div 
+                className={`absolute inset-0 flex items-center transition-all duration-500 ease-out transform ${
+                  phoneRevealed ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
+                }`}
+              >
+                <a
+                  href={`tel:${PHONE.replace(/\s/g, "")}`}
+                  className="inline-flex items-center gap-2 bg-[#f5c518] text-black font-bold px-4 py-2 rounded text-sm animate-pulse w-fit"
+                >
+                  <Phone size={15} />
+                  {PHONE}
+                </a>
+              </div>
+            </div>
               <ObfuscatedEmail
                 className="flex items-center gap-2 text-gray-300 hover:text-[#4a9ebb] transition-colors"
                 showIcon={true}
