@@ -22,7 +22,7 @@ export default function Footer() {
 
           {/* About */}
           <div className="lg:col-span-2">
-            <Link href="/" className="block mb-6 -ml-1">
+            <Link href="/" className="block mb-6 -ml-2">
               <Image
                 src="/logo-light.png"
                 alt="Superstructure Services"
