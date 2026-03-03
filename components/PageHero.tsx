@@ -38,11 +38,11 @@ export default function PageHero({
             src={heroImage}
             alt={title}
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-50"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/90 via-[#111111]/70 to-[#111111]/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/80 via-[#111111]/60 to-[#111111]/80" />
         </div>
       )}
       {/* Background pattern */}
