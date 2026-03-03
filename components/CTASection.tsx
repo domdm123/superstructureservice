@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Phone, ArrowRight, CheckCircle } from "lucide-react";
 import { PHONE, EMAIL } from "@/lib/services";
 
@@ -15,16 +16,29 @@ export default function CTASection({
   ctaSubject = "Free Quote Enquiry - Superstructure Services",
 }: CTASectionProps) {
   return (
-    <section className="relative overflow-hidden py-24 px-4 bg-[#0d1b2e]">
-      {/* Background gradient layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0d1b2e] via-[#1e3a5f]/60 to-[#0d1b2e]" />
+    <section className="relative overflow-hidden py-24 px-4">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/cta-bg-bathroom.jpg"
+          alt="Bathroom renovation Canterbury Kent"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#0d1b2e]/85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2e] via-[#0d1b2e]/50 to-[#0d1b2e]/70" />
+      </div>
+      
       {/* Subtle top + bottom lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/40 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/40 to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/40 to-transparent z-10" />
       {/* Decorative glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#1e3a5f]/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#1e3a5f]/30 rounded-full blur-3xl pointer-events-none z-10" />
 
-      <div className="relative max-w-4xl mx-auto text-center">
+      <div className="relative z-20 max-w-4xl mx-auto text-center">
         {/* Eyebrow */}
         <span className="inline-block text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.25em] mb-5">
           Free No-Obligation Quote
