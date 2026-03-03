@@ -8,9 +8,11 @@ import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 
 const AREAS_WITH_PHOTOS = new Set([
-  "bekesbourne", "wickhambreaux", "barham", "blean", "bridge",
-  "canterbury", "chartham", "harbledown", "whitstable", "wingham", "sturry", "littlebourne",
-  "fordwich", "adisham", "ickham", "petham", "waltham", "faversham", "wye", "sandwich", "folkestone", "chilham",
+  "adisham", "barham", "bekesbourne", "blean", "bridge",
+  "canterbury", "chartham", "chilham", "faversham", "folkestone",
+  "fordwich", "harbledown", "ickham", "littlebourne", "petham",
+  "sandwich", "sturry", "waltham", "whitstable", "wickhambreaux",
+  "wingham", "wye",
 ]);
 
 const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {
