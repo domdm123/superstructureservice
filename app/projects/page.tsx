@@ -1,97 +1,144 @@
+"use client";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Eye } from "lucide-react";
+import { useState } from "react";
 import { DOMAIN } from "@/lib/services";
 import { PROJECTS } from "@/lib/projects";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 
-export const metadata: Metadata = {
-  title: "Our Projects | Building Work in Canterbury & Kent | Superstructure Services",
-  description:
-    "Browse our completed building projects across Canterbury and Kent. Kitchens, bathrooms, roofing, refurbishments, carpentry, flooring and more.",
-  alternates: { canonical: `${DOMAIN}/projects` },
-};
+const CATEGORIES = [
+  "All",
+  "Kitchen Installation",
+  "Refurbishments & Conversions", 
+  "New Bathrooms",
+  "Roofing",
+  "Electrical",
+  "Flooring & Underfloor Heating",
+  "Carpentry",
+  "Home Office Conversions",
+  "Listed Building Restoration",
+  "Plumbing & Drainage",
+  "Facilities Management",
+];
 
 export default function ProjectsPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredProjects = activeCategory === "All" 
+    ? PROJECTS 
+    : PROJECTS.filter(p => p.category === activeCategory);
   return (
     <>
       <PageHero
-        title="Our Projects"
-        subtitle="Browse our completed building and renovation projects across Canterbury and Kent. Every project delivered to the same high standard — click any project to see full details and photos."
+        title="Completed Projects"
+        subtitle="Browse our portfolio of building and renovation work across Canterbury and Kent. Every project showcases our commitment to quality craftsmanship."
         breadcrumbs={[{ label: "Projects" }]}
         badge="Our Portfolio"
       />
 
-      {/* Projects grid */}
-      <section className="py-20 bg-white">
+      {/* Category Filters */}
+      <section className="py-8 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-14">
-            <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
-              Completed Work
-            </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              {PROJECTS.length} Completed Projects
+          <div className="flex flex-wrap justify-center gap-2">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  activeCategory === cat
+                    ? "bg-[#1e3a5f] text-white shadow-md"
+                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Masonry Gallery */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">
+              {filteredProjects.length} {activeCategory !== "All" && activeCategory} Projects
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              A selection of our building and renovation work across Canterbury and the wider Kent area.
-              Click any project to view full details, description and photos.
+            <p className="text-gray-500">
+              Click any project to view full details, specifications and additional photos
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PROJECTS.map((project) => (
-              <Link
-                key={project.slug}
-                href={`/projects/${project.slug}`}
-                className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-              >
-                <div className="relative h-52 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  <span className="absolute top-3 left-3 text-xs font-semibold text-white bg-[#1e3a5f]/80 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                    {project.category}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-1.5 mb-2 text-xs text-gray-400">
-                    <MapPin size={11} className="text-[#4a9ebb]" />
-                    {project.location}, Kent
-                  </div>
-                  <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-[#4a9ebb] transition-colors leading-snug">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {project.tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs bg-gray-50 border border-gray-100 text-gray-500 px-2 py-0.5 rounded-full"
-                      >
-                        {tag}
+          {/* Masonry Grid */}
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+            {filteredProjects.map((project, index) => {
+              const isLarge = index % 5 === 0;
+              
+              return (
+                <Link
+                  key={project.slug}
+                  href={`/projects/${project.slug}`}
+                  className="group block break-inside-avoid"
+                >
+                  <div className={`relative overflow-hidden rounded-xl bg-gray-100 ${
+                    isLarge ? "aspect-[4/3]" : "aspect-square"
+                  }`}>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                    
+                    <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                      <span className="text-xs font-semibold text-[#4a9ebb] uppercase tracking-wider mb-2">
+                        {project.category}
                       </span>
-                    ))}
+                      <h3 className="text-white font-bold text-lg leading-tight mb-2 group-hover:text-[#4a9ebb] transition-colors">
+                        {project.title}
+                      </h3>
+                      <div className="flex items-center gap-1.5 text-white/70 text-xs mb-3">
+                        <MapPin size={11} />
+                        {project.location}, Kent
+                      </div>
+                      <p className="text-white/60 text-sm line-clamp-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {project.description}
+                      </p>
+                      
+                      <div className="flex items-center gap-2 text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <span className="flex items-center gap-1.5 bg-[#1e3a5f] px-3 py-1.5 rounded-lg">
+                          <Eye size={14} />
+                          View Project
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4a9ebb] group-hover:gap-2.5 transition-all">
-                    View Project <ArrowRight size={12} />
-                  </span>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
 
-          <div className="text-center mt-12">
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-gray-500 text-lg">No projects found in this category.</p>
+              <button
+                onClick={() => setActiveCategory("All")}
+                className="mt-4 text-[#4a9ebb] font-semibold hover:underline"
+              >
+                View all projects
+              </button>
+            </div>
+          )}
+
+          <div className="text-center mt-16">
             <p className="text-gray-500 mb-6">
-              Want to see your project here? We&apos;d love to hear from you.
+              Have a similar project in mind? Let&apos;s discuss how we can help.
             </p>
             <a
               href="mailto:enquiries@superstructureservices.co.uk?subject=Project%20Discussion%20-%20Superstructure%20Services"

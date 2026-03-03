@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Phone, CheckCircle, Star } from "lucide-react";
 import { SERVICES, PHONE, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
@@ -118,7 +119,7 @@ export default function HomePage() {
               <div className="text-gray-600 text-lg leading-relaxed">
                 <strong className="text-[#1a2e44] font-bold">Superstructure Services</strong> is an independently run, high-quality property restoration, conversion, refurbishment &amp; maintenance company — serving Canterbury and the wider Kent area.
                 <br /><br />
-                From kitchen installations to solar panels, we offer a comprehensive range of building and trade services, <span className="text-[#4a9ebb] font-semibold">all under one roof</span>.
+                From kitchen installations to solar panels, we offer a comprehensive range of building and trade services, all under one roof.
               </div>
               
               <div className="relative pl-6 md:pl-8 border-l-2 border-[#f5c518]">
@@ -130,7 +131,7 @@ export default function HomePage() {
           </div>
 
           {/* Pull quote — full width world-class */}
-          <div className="mt-16 mb-16 -mx-4 sm:-mx-6 lg:-mx-8 xl:-mx-16 2xl:-mx-32 relative overflow-hidden bg-[#0d1b2e]">
+          <div className="mt-16 mb-16 relative overflow-hidden bg-[#0d1b2e]" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
             {/* Background texture layers */}
             <div className="absolute inset-0 bg-[linear-gradient(135deg,#0d1b2e_0%,#1e3a5f_50%,#0d1b2e_100%)]" />
             <div className="absolute inset-0 opacity-[0.04] bg-[repeating-linear-gradient(45deg,#4a9ebb,#4a9ebb_1px,transparent_1px,transparent_60px)]" />
@@ -160,19 +161,43 @@ export default function HomePage() {
           </div>
 
           {/* Animated service showcase — full width */}
-          <div className="mt-16 -mx-4 sm:-mx-6 lg:-mx-8 xl:-mx-16 2xl:-mx-32 py-20 bg-gray-50 border-y border-gray-100 text-center px-4">
-            <div className="flex flex-col items-center justify-center gap-2">
-              <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#0d1b2e] tracking-tight">We can do</span>
-              <div className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+          <div 
+            className="mt-16 py-24 text-center px-4 relative overflow-hidden"
+            style={{ 
+              marginLeft: 'calc(-50vw + 50%)', 
+              marginRight: 'calc(-50vw + 50%)', 
+              width: '100vw',
+              background: 'linear-gradient(135deg, #0d1b2e 0%, #1e3a5f 50%, #162d4a 100%)'
+            }}
+          >
+            {/* Subtle grid pattern overlay */}
+            <div 
+              className="absolute inset-0 opacity-[0.03]"
+              style={{
+                backgroundImage: `
+                  linear-gradient(rgba(74, 158, 187, 0.5) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(74, 158, 187, 0.5) 1px, transparent 1px)
+                `,
+                backgroundSize: '60px 60px'
+              }}
+            />
+            {/* Radial glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(74,158,187,0.15)_0%,_transparent_70%)]" />
+            
+            <div className="relative z-10 flex flex-col items-center justify-center gap-3">
+              <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[#4a9ebb]/70 mb-2">Our Services</span>
+              <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">We can do</span>
+              <div className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#4a9ebb]">
                 <AnimatedService />
               </div>
             </div>
-            <div className="mt-10">
+            <div className="relative z-10 mt-12">
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#111111] text-white font-bold rounded-xl hover:bg-[#2a2a2a] transition-all"
+                className="group inline-flex items-center gap-3 px-10 py-4 bg-white text-[#0d1b2e] font-bold rounded-xl hover:bg-[#4a9ebb] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#4a9ebb]/20 hover:-translate-y-0.5"
               >
-                View All Services <ArrowRight size={18} />
+                View All Services 
+                <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -230,32 +255,48 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="bg-[#111111] rounded-3xl p-10 text-white">
-              <h3 className="text-2xl font-bold mb-6">Your Bespoke Project, Our Bespoke Service</h3>
-              <p className="text-gray-400 leading-relaxed mb-8">
-                We understand that starting a construction project can feel daunting. Our experienced
-                team listens to your goals, offering expert advice to make your project stress-free
-                and successful.
-              </p>
-              <div className="flex flex-col gap-3 text-sm text-gray-400 mb-10">
-                {[
-                  "Free, no-obligation quotes",
-                  "Full project management",
-                  "All trades under one roof",
-                  "Fully insured & accredited",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <Star size={13} className="text-[#4a9ebb] flex-shrink-0" />
-                    {item}
-                  </div>
-                ))}
+            <div className="relative rounded-3xl p-10 text-white overflow-hidden min-h-[480px] flex flex-col">
+              {/* Background image */}
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/renovation-canterbury-kent-bg.jpg"
+                  alt="Renovation in Canterbury Kent"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2e]/95 via-[#0d1b2e]/85 to-[#0d1b2e]/70" />
               </div>
-              <a
-                href="mailto:enquiries@superstructureservices.co.uk?subject=New%20Project%20Enquiry%20-%20Superstructure%20Services"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all"
-              >
-                Start Your Project <ArrowRight size={16} />
-              </a>
+              
+              {/* Content */}
+              <div className="relative z-10 flex flex-col flex-1">
+                <h3 className="text-2xl font-bold mb-6">Your Bespoke Project, Our Bespoke Service</h3>
+                <p className="text-white/80 leading-relaxed mb-8">
+                  We understand that starting a construction project can feel daunting. Our experienced
+                  team listens to your goals, offering expert advice to make your project stress-free
+                  and successful.
+                </p>
+                <div className="flex flex-col gap-3 text-sm text-white/70 mb-10">
+                  {[
+                    "Free, no-obligation quotes",
+                    "Full project management",
+                    "All trades under one roof",
+                    "Fully insured & accredited",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <Star size={13} className="text-[#4a9ebb] flex-shrink-0" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href="mailto:enquiries@superstructureservices.co.uk?subject=New%20Project%20Enquiry%20-%20Superstructure%20Services"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all w-fit"
+                >
+                  Start Your Project <ArrowRight size={16} />
+                </a>
+              </div>
             </div>
           </div>
         </div>

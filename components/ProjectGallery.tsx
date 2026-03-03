@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
 import { playfair } from "@/app/layout";
 
 const GALLERY_PHOTOS = [
@@ -8,43 +8,49 @@ const GALLERY_PHOTOS = [
     src: "/images/Kitchen-Installation-in-Canterbury.jpg",
     alt: "Kitchen installation in Canterbury",
     label: "Kitchen Installation",
-    span: "col-span-1 row-span-2",
+    slug: "kitchen-installation-in-canterbury-1",
   },
   {
     src: "/images/Property-Refurbishment-in-Canterbury.jpg",
     alt: "Property refurbishment in Canterbury",
     label: "Property Refurbishment",
-    span: "col-span-1 row-span-1",
+    slug: "property-maintenance-canterbury",
   },
   {
     src: "/images/canterbury-listed-building-refurbishment.jpg",
     alt: "Listed building refurbishment Canterbury",
     label: "Listed Building Restoration",
-    span: "col-span-1 row-span-1",
+    slug: "listed-building-refurb-canterbury",
   },
   {
     src: "/images/Kitchen-Installation-in-Canterbury-2.jpg",
     alt: "Kitchen installation Canterbury",
     label: "Bespoke Kitchen",
-    span: "col-span-1 row-span-1",
+    slug: "kitchen-installation-in-canterbury-1",
   },
   {
     src: "/images/classic-modern-bathroom-refurbishment-service-canterbury.jpg",
     alt: "Bathroom refurbishment Canterbury",
     label: "Bathroom Renovation",
-    span: "col-span-1 row-span-1",
+    slug: "bathroom-installation-canterbury-plumber",
   },
   {
     src: "/images/Professional-roofing-service-in-Canterbury-Kent.jpg",
     alt: "Roofing service Canterbury Kent",
     label: "Roofing",
-    span: "col-span-1 row-span-1",
+    slug: "roof-repair-canterbury",
   },
   {
     src: "/images/Solar-panel-installer-in-Canterbury-Kent.jpg",
     alt: "Solar panel installation Canterbury Kent",
     label: "Solar Panels",
-    span: "col-span-1 row-span-1",
+    slug: "roofing-in-canterbury-1",
+  },
+  {
+    src: "/images/Home-office-creation-Canterbury-Kent.jpg",
+    alt: "Home office creation Canterbury",
+    label: "Home Office",
+    slug: "home-office-creation-in-canterbury",
   },
 ];
 
@@ -64,48 +70,95 @@ export default function ProjectGallery() {
           </div>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#1e3a5f] hover:text-[#4a9ebb] transition-colors shrink-0"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-[#1e3a5f] hover:text-[#4a9ebb] transition-colors shrink-0"
           >
-            View All Projects <ArrowRight size={15} />
+            View All Projects 
+            <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
 
-        {/* Collage grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-[200px_200px] md:grid-rows-[260px_260px] gap-3">
-          {/* Large left tile — spans 2 rows */}
-          <div className="relative col-span-1 row-span-2 group overflow-hidden rounded-2xl">
+        {/* Mosaic Grid - Bento Style */}
+        <div className="grid grid-cols-12 gap-3 auto-rows-[140px] md:auto-rows-[180px]">
+          
+          {/* Large feature - Kitchen (spans 6 cols, 2 rows) */}
+          <Link
+            href={`/projects/${GALLERY_PHOTOS[0].slug}`}
+            className="col-span-12 md:col-span-6 row-span-2 relative group overflow-hidden rounded-2xl block"
+          >
             <Image
               src={GALLERY_PHOTOS[0].src}
               alt={GALLERY_PHOTOS[0].alt}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5">
+              <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-semibold mb-2">
+                Featured
+              </span>
+              <h3 className="text-white text-xl font-bold">{GALLERY_PHOTOS[0].label}</h3>
+            </div>
+            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="flex items-center gap-1.5 bg-[#1e3a5f] text-white px-3 py-1.5 rounded-lg text-sm font-semibold">
+                <Eye size={14} />
+                View
+              </span>
+            </div>
+          </Link>
+
+          {/* Medium - Property Refurb (spans 3 cols, 2 rows) */}
+          <Link
+            href={`/projects/${GALLERY_PHOTOS[1].slug}`}
+            className="col-span-6 md:col-span-3 row-span-2 relative group overflow-hidden rounded-2xl block"
+          >
+            <Image
+              src={GALLERY_PHOTOS[1].src}
+              alt={GALLERY_PHOTOS[1].alt}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 50vw, 25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <span className="absolute bottom-4 left-4 text-white text-sm font-semibold">
-              {GALLERY_PHOTOS[0].label}
+              {GALLERY_PHOTOS[1].label}
             </span>
-          </div>
-
-          {/* Top middle two tiles */}
-          {[GALLERY_PHOTOS[1], GALLERY_PHOTOS[2]].map((photo) => (
-            <div key={photo.src} className="relative col-span-1 row-span-1 group overflow-hidden rounded-2xl">
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <span className="absolute bottom-3 left-3 text-white text-xs font-semibold">
-                {photo.label}
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+                <Eye size={12} />
+                View
               </span>
             </div>
-          ))}
+          </Link>
 
-          {/* Large right tile — spans 2 rows */}
-          <div className="relative col-span-1 row-span-2 group overflow-hidden rounded-2xl">
+          {/* Small - Listed Building (spans 3 cols, 1 row) */}
+          <Link
+            href={`/projects/${GALLERY_PHOTOS[2].slug}`}
+            className="col-span-6 md:col-span-3 row-span-1 relative group overflow-hidden rounded-2xl block"
+          >
+            <Image
+              src={GALLERY_PHOTOS[2].src}
+              alt={GALLERY_PHOTOS[2].alt}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 50vw, 25vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <span className="absolute bottom-3 left-3 text-white text-xs font-semibold">
+              {GALLERY_PHOTOS[2].label}
+            </span>
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+                <Eye size={12} />
+              </span>
+            </div>
+          </Link>
+
+          {/* Small - Bespoke Kitchen (spans 3 cols, 1 row) */}
+          <Link
+            href={`/projects/${GALLERY_PHOTOS[3].slug}`}
+            className="col-span-6 md:col-span-3 row-span-1 relative group overflow-hidden rounded-2xl block"
+          >
             <Image
               src={GALLERY_PHOTOS[3].src}
               alt={GALLERY_PHOTOS[3].alt}
@@ -114,27 +167,117 @@ export default function ProjectGallery() {
               sizes="(max-width: 768px) 50vw, 25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <span className="absolute bottom-4 left-4 text-white text-sm font-semibold">
+            <span className="absolute bottom-3 left-3 text-white text-xs font-semibold">
               {GALLERY_PHOTOS[3].label}
             </span>
-          </div>
-
-          {/* Bottom middle two tiles */}
-          {[GALLERY_PHOTOS[4], GALLERY_PHOTOS[5]].map((photo) => (
-            <div key={photo.src} className="relative col-span-1 row-span-1 group overflow-hidden rounded-2xl">
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <span className="absolute bottom-3 left-3 text-white text-xs font-semibold">
-                {photo.label}
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+                <Eye size={12} />
               </span>
             </div>
-          ))}
+          </Link>
+
+          {/* Wide - Bathroom (spans 4 cols, 1 row) */}
+          <Link
+            href={`/projects/${GALLERY_PHOTOS[4].slug}`}
+            className="col-span-6 md:col-span-4 row-span-1 relative group overflow-hidden rounded-2xl block"
+          >
+            <Image
+              src={GALLERY_PHOTOS[4].src}
+              alt={GALLERY_PHOTOS[4].alt}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">
+              {GALLERY_PHOTOS[4].label}
+            </span>
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+                <Eye size={12} />
+              </span>
+            </div>
+          </Link>
+
+          {/* Medium - Roofing (spans 4 cols, 1 row) */}
+          <Link
+            href={`/projects/${GALLERY_PHOTOS[5].slug}`}
+            className="col-span-6 md:col-span-4 row-span-1 relative group overflow-hidden rounded-2xl block"
+          >
+            <Image
+              src={GALLERY_PHOTOS[5].src}
+              alt={GALLERY_PHOTOS[5].alt}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">
+              {GALLERY_PHOTOS[5].label}
+            </span>
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+                <Eye size={12} />
+              </span>
+            </div>
+          </Link>
+
+          {/* Medium - Solar (spans 4 cols, 1 row) */}
+          <Link
+            href={`/projects/${GALLERY_PHOTOS[6].slug}`}
+            className="col-span-6 md:col-span-4 row-span-1 relative group overflow-hidden rounded-2xl block"
+          >
+            <Image
+              src={GALLERY_PHOTOS[6].src}
+              alt={GALLERY_PHOTOS[6].alt}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">
+              {GALLERY_PHOTOS[6].label}
+            </span>
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+                <Eye size={12} />
+              </span>
+            </div>
+          </Link>
+
+          {/* Wide - Home Office (spans 6 cols, 1 row) */}
+          <Link
+            href={`/projects/${GALLERY_PHOTOS[7].slug}`}
+            className="col-span-12 md:col-span-6 row-span-1 relative group overflow-hidden rounded-2xl block"
+          >
+            <Image
+              src={GALLERY_PHOTOS[7].src}
+              alt={GALLERY_PHOTOS[7].alt}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 text-white text-sm font-semibold">
+              {GALLERY_PHOTOS[7].label}
+            </span>
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+                <Eye size={12} />
+              </span>
+            </div>
+          </Link>
+
+          {/* Stats tile - instead of empty space */}
+          <div className="col-span-12 md:col-span-6 row-span-1 bg-[#0d1b2e] rounded-2xl flex items-center justify-center text-center p-6">
+            <div>
+              <div className="text-4xl md:text-5xl font-black text-white mb-1">16</div>
+              <div className="text-[#4a9ebb] text-sm font-semibold uppercase tracking-wider">Services</div>
+              <div className="text-white/50 text-xs mt-2">All trades under one roof</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
