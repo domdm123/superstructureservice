@@ -60,7 +60,7 @@ export default function Footer() {
               >
                 <a
                   href={`tel:${PHONE.replace(/\s/g, "")}`}
-                  className="inline-flex items-center gap-2 bg-[#f5c518] text-black font-bold px-4 py-2 rounded text-sm animate-pulse w-fit"
+                  className="inline-flex items-center gap-2 bg-[#f5c518] text-black font-bold px-4 py-2 rounded text-sm w-fit"
                 >
                   <Phone size={15} />
                   {PHONE}
