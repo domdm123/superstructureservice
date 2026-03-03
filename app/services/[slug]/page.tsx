@@ -82,6 +82,7 @@ export default async function ServicePage({ params }: Props) {
           { label: service.shortName },
         ]}
         badge={service.shortName}
+        heroImage={service.heroImage}
       />
 
       {/* Main content */}
