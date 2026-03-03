@@ -52,7 +52,7 @@ export default function Header() {
             </a>
           </div>
           {/* Phone reveal with animation */}
-          <div className="relative h-8 overflow-hidden">
+          <div className="relative h-9 overflow-hidden min-w-[180px]">
             <div 
               className={`absolute inset-0 flex items-center justify-end transition-all duration-500 ease-out transform ${
                 phoneRevealed ? "opacity-0 translate-x-4 pointer-events-none" : "opacity-100 translate-x-0"
