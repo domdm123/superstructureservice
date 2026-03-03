@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Phone, ArrowRight, CheckCircle } from "lucide-react";
 import { PHONE, EMAIL } from "@/lib/services";
