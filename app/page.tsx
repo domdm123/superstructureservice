@@ -10,6 +10,7 @@ import HowWeWork from "@/components/HowWeWork";
 import CTASection from "@/components/CTASection";
 import AnimatedService from "@/components/AnimatedService";
 import ProjectGallery from "@/components/ProjectGallery";
+import FadeIn from "@/components/FadeIn";
 import { playfair } from "@/app/layout";
 
 export const metadata: Metadata = {
@@ -155,8 +156,10 @@ export default function HomePage() {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SERVICES.map((s) => (
-              <ServiceCard key={s.slug} service={s} />
+            {SERVICES.map((s, i) => (
+              <FadeIn key={s.slug} delay={i * 100}>
+                <ServiceCard service={s} />
+              </FadeIn>
             ))}
           </div>
 
@@ -204,9 +207,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <TrustBadges />
+      <FadeIn>
+        <TrustBadges />
+      </FadeIn>
 
-      <ProjectGallery />
+      <FadeIn>
+        <ProjectGallery />
+      </FadeIn>
 
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
@@ -302,7 +309,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <HowWeWork />
+      <FadeIn>
+        <HowWeWork />
+      </FadeIn>
 
       {/* Areas We Serve */}
       <section className="py-20 bg-white">
@@ -341,7 +350,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CTASection />
+      <FadeIn>
+        <CTASection />
+      </FadeIn>
     </>
   );
 }

@@ -9,9 +9,7 @@ import CTASection from "@/components/CTASection";
 
 const AREAS_WITH_PHOTOS = new Set([
   "bekesbourne", "wickhambreaux", "barham", "blean", "bridge",
-  "canterbury", "chartham", "harbledown", "whitstable", "wingham",
-  "adisham", "chilham", "faversham", "folkestone", "fordwich",
-  "ickham", "littlebourne", "petham", "sandwich", "sturry", "waltham", "wye",
+  "canterbury", "chartham", "harbledown", "whitstable", "wingham", "sturry",
 ]);
 
 const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {

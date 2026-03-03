@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone, ChevronDown, Instagram, MapPin, Mail } from "lucide-react";
@@ -10,9 +10,22 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [phoneRevealed, setPhoneRevealed] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100/50" 
+        : "bg-white border-b border-gray-100"
+    }`}>
       {/* Top bar */}
       <div className="bg-[#111111] text-gray-300 text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
@@ -77,9 +90,12 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             <Link
               href="/"
-              className="px-4 py-2 text-gray-700 font-medium hover:text-[#111111] transition-colors text-sm"
+              className="group relative px-4 py-2 text-gray-700 font-medium hover:text-[#1e3a5f] transition-colors duration-300 text-sm"
             >
-              Home
+              <span className="relative">
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4a9ebb] transition-all duration-300 group-hover:w-full" />
+              </span>
             </Link>
 
             {/* Services dropdown */}
@@ -88,8 +104,12 @@ export default function Header() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 px-4 py-2 text-gray-700 font-medium hover:text-[#111111] transition-colors text-sm">
-                Services <ChevronDown size={15} />
+              <button className="group relative flex items-center gap-1.5 px-4 py-2 text-gray-700 font-medium hover:text-[#1e3a5f] transition-colors duration-300 text-sm">
+                <span className="relative">
+                  Services
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4a9ebb] transition-all duration-300 group-hover:w-full" />
+                </span>
+                <ChevronDown size={14} className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
               {servicesOpen && (
                 <div className="absolute top-full left-0 bg-white shadow-2xl rounded-xl border border-gray-100 w-[660px] p-6 grid grid-cols-2 gap-1 z-50">
@@ -114,15 +134,21 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/projects" className="px-4 py-2 text-gray-700 font-medium hover:text-[#111111] transition-colors text-sm">
-              Projects
+            <Link href="/projects" className="group relative px-4 py-2 text-gray-700 font-medium hover:text-[#1e3a5f] transition-colors duration-300 text-sm">
+              <span className="relative">
+                Projects
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4a9ebb] transition-all duration-300 group-hover:w-full" />
+              </span>
             </Link>
-            <Link href="/areas-we-serve" className="px-4 py-2 text-gray-700 font-medium hover:text-[#111111] transition-colors text-sm">
-              Areas We Serve
+            <Link href="/areas-we-serve" className="group relative px-4 py-2 text-gray-700 font-medium hover:text-[#1e3a5f] transition-colors duration-300 text-sm">
+              <span className="relative">
+                Areas We Serve
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4a9ebb] transition-all duration-300 group-hover:w-full" />
+              </span>
             </Link>
             <a
               href={`mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`}
-              className="ml-3 px-6 py-2.5 bg-[#1e3a5f] text-white font-semibold rounded-lg hover:bg-[#162d4a] transition-colors text-sm shadow-sm"
+              className="ml-3 px-6 py-2.5 bg-[#1e3a5f] text-white font-semibold rounded-lg hover:bg-[#162d4a] hover:shadow-lg hover:shadow-[#1e3a5f]/20 hover:-translate-y-0.5 transition-all duration-300 text-sm"
             >
               Free Quote
             </a>
