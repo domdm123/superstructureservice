@@ -25,11 +25,23 @@ const steps = [
   },
 ];
 
+import Image from "next/image";
+
 export default function HowWeWork() {
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Luxury grey/black/white gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#2d2d3a] to-[#1a1a2e]" />
+      {/* Background image with 50% opacity */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/how-we-work-bg.jpg"
+          alt="How we work background"
+          fill
+          className="object-cover opacity-50"
+          sizes="100vw"
+        />
+      </div>
+      {/* Luxury grey/black/white gradient background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e]/80 via-[#2d2d3a]/80 to-[#1a1a2e]/80" />
       {/* Subtle radial glows - white/grey tones */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-white/3 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gray-400/5 rounded-full blur-3xl" />
