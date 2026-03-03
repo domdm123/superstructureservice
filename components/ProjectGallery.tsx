@@ -100,7 +100,7 @@ export default function ProjectGallery() {
               <h3 className="text-white text-xl font-bold">{GALLERY_PHOTOS[0].label}</h3>
             </div>
             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1.5 bg-[#1e3a5f] text-white px-3 py-1.5 rounded-lg text-sm font-semibold">
+              <span className="flex items-center gap-1.5 bg-black/80 text-white px-3 py-1.5 rounded-lg text-sm font-semibold border border-white/20">
                 <Eye size={14} />
                 View
               </span>
@@ -124,7 +124,7 @@ export default function ProjectGallery() {
               {GALLERY_PHOTOS[1].label}
             </span>
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
                 <Eye size={12} />
                 View
               </span>
@@ -148,7 +148,7 @@ export default function ProjectGallery() {
               {GALLERY_PHOTOS[2].label}
             </span>
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
                 <Eye size={12} />
               </span>
             </div>
@@ -171,7 +171,7 @@ export default function ProjectGallery() {
               {GALLERY_PHOTOS[3].label}
             </span>
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
                 <Eye size={12} />
               </span>
             </div>
@@ -194,7 +194,7 @@ export default function ProjectGallery() {
               {GALLERY_PHOTOS[4].label}
             </span>
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
                 <Eye size={12} />
               </span>
             </div>
@@ -217,7 +217,7 @@ export default function ProjectGallery() {
               {GALLERY_PHOTOS[5].label}
             </span>
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
                 <Eye size={12} />
               </span>
             </div>
@@ -240,7 +240,7 @@ export default function ProjectGallery() {
               {GALLERY_PHOTOS[6].label}
             </span>
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
                 <Eye size={12} />
               </span>
             </div>
@@ -263,7 +263,7 @@ export default function ProjectGallery() {
               {GALLERY_PHOTOS[7].label}
             </span>
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-[#1e3a5f] text-white px-2 py-1 rounded text-xs font-semibold">
+              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
                 <Eye size={12} />
               </span>
             </div>
