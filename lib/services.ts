@@ -338,6 +338,86 @@ export const SERVICES: Service[] = [
     canonicalSlug: "services/driveways-and-paving-canterbury",
     icon: "",
   },
+  {
+    slug: "listed-building-restoration",
+    name: "Listed Building Restoration",
+    shortName: "Listed Building Restoration",
+    tagline: "Preserving heritage with expert care and craftsmanship",
+    description:
+      "Specialist restoration and renovation of listed buildings and heritage properties across Canterbury and Kent. Our experienced team understands the unique requirements of working with historic structures, combining traditional techniques with modern building standards. We work closely with conservation officers to ensure all work meets listed building consent requirements while preserving the character and integrity of your property.",
+    features: [
+      "Heritage property restoration and conservation",
+      "Traditional lime mortar and plasterwork",
+      "Period joinery and carpentry using authentic methods",
+      "Structural repairs sympathetic to original construction",
+      "Listed building consent application support",
+    ],
+    metaTitle: "Listed Building Restoration in {location} | Superstructure Services",
+    metaDescription:
+      "Expert listed building restoration in {location}, Kent. Heritage property specialists. Traditional methods, modern standards. Superstructure Services.",
+    canonicalSlug: "services/listed-building-restoration",
+    icon: "",
+  },
+  {
+    slug: "groundworks",
+    name: "Groundworks",
+    shortName: "Groundworks",
+    tagline: "Building strong foundations for your project",
+    description:
+      "Professional groundworks services across Canterbury and Kent. From site preparation to drainage systems, our experienced team handles all aspects of groundwork for residential and commercial projects. We ensure solid foundations and proper drainage to protect your investment for years to come.",
+    features: [
+      "Site clearance and preparation",
+      "Foundation excavation and concrete work",
+      "Drainage systems and soakaway installation",
+      "Retaining walls and ground stabilisation",
+      "Service trenches for utilities",
+    ],
+    metaTitle: "Groundworks in {location} | Superstructure Services",
+    metaDescription:
+      "Professional groundworks in {location}, Kent. Foundations, drainage, site preparation & excavation. Superstructure Services. Free quote.",
+    canonicalSlug: "services/groundworks",
+    icon: "",
+  },
+  {
+    slug: "landscaping-gardens",
+    name: "Landscaping & Gardens",
+    shortName: "Landscaping & Gardens",
+    tagline: "Creating beautiful outdoor spaces you'll love",
+    description:
+      "Transform your outdoor space with our comprehensive landscaping and garden services in Canterbury and Kent. From complete garden redesigns to regular maintenance, we create beautiful, functional outdoor areas tailored to your lifestyle. Our team combines horticultural expertise with construction skills to deliver stunning results.",
+    features: [
+      "Garden design and complete landscaping",
+      "Patios, decking and outdoor living areas",
+      "Lawn installation and turfing",
+      "Planting schemes and borders",
+      "Garden maintenance and ongoing care",
+    ],
+    metaTitle: "Landscaping & Gardens in {location} | Superstructure Services",
+    metaDescription:
+      "Professional landscaping and garden services in {location}, Kent. Design, patios, planting & maintenance. Superstructure Services. Free quote.",
+    canonicalSlug: "services/landscaping-gardens",
+    icon: "",
+  },
+  {
+    slug: "rental-property-maintenance",
+    name: "Rental Property Maintenance",
+    shortName: "Rental Property Maintenance",
+    tagline: "Keeping your rental properties in top condition",
+    description:
+      "Dedicated property maintenance services for landlords and letting agents across Canterbury and Kent. We understand the unique challenges of maintaining rental properties and offer fast, reliable service to keep your tenants happy and your properties compliant. From emergency repairs to planned maintenance programmes, we're your trusted partner.",
+    features: [
+      "Rapid response emergency repairs",
+      "Planned preventative maintenance programmes",
+      "EICR electrical testing for landlords",
+      "Gas safety certificates and boiler servicing",
+      "End of tenancy repairs and refurbishment",
+    ],
+    metaTitle: "Rental Property Maintenance in {location} | Superstructure Services",
+    metaDescription:
+      "Landlord property maintenance in {location}, Kent. Emergency repairs, EICR testing, gas safety & refurbishment. Superstructure Services.",
+    canonicalSlug: "services/rental-property-maintenance",
+    icon: "",
+  },
 ];
 
 export function getServiceBySlug(slug: string): Service | undefined {
