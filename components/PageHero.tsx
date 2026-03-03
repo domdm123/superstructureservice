@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronRight, Phone } from "lucide-react";
 import { PHONE, EMAIL } from "@/lib/services";
 
@@ -15,6 +16,7 @@ interface PageHeroProps {
   ctaText?: string;
   ctaHref?: string;
   badge?: string;
+  heroImage?: string;
 }
 
 export default function PageHero({
@@ -25,9 +27,24 @@ export default function PageHero({
   ctaText = "Get a Free Quote",
   ctaHref = `mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`,
   badge,
+  heroImage,
 }: PageHeroProps) {
   return (
     <section className="relative bg-[#111111] text-white py-20 md:py-28 overflow-hidden">
+      {/* Hero background image */}
+      {heroImage && (
+        <div className="absolute inset-0">
+          <Image
+            src={heroImage}
+            alt={title}
+            fill
+            className="object-cover opacity-30"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/90 via-[#111111]/70 to-[#111111]/90" />
+        </div>
+      )}
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

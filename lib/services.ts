@@ -15,6 +15,7 @@ export interface Service {
   metaDescription: string;
   canonicalSlug: string; // the existing Canterbury URL slug
   icon: string;
+  heroImage?: string;
 }
 
 export const SERVICES: Service[] = [
@@ -37,6 +38,7 @@ export const SERVICES: Service[] = [
       "Expert kitchen installation in {location}, Kent. Bespoke designs, worktop fitting & full refits by Superstructure Services. Free quote available.",
     canonicalSlug: "services/kitchen-installation-service",
     icon: "",
+    heroImage: "/images/services/kitchen-installation.jpg",
   },
   {
     slug: "flooring-underfloor-heating",
@@ -77,6 +79,7 @@ export const SERVICES: Service[] = [
       "Professional facilities building management in {location}, Kent. Planned & reactive maintenance, plumbing, electrical & AC by Superstructure Services.",
     canonicalSlug: "services/facility-building-management",
     icon: "",
+    heroImage: "/images/services/facility-building-management.webp",
   },
   {
     slug: "electrician",
@@ -117,6 +120,7 @@ export const SERVICES: Service[] = [
       "MCS-accredited air source heat pump installation in {location}, Kent. Eco-friendly heating with Government grant support. Get a free quote today.",
     canonicalSlug: "services/air-source-heat-pump-installation",
     icon: "",
+    heroImage: "/images/services/air-source-heat-pump.webp",
   },
   {
     slug: "solar-panel-installation",
@@ -157,6 +161,7 @@ export const SERVICES: Service[] = [
       "F-Gas certified air conditioning installation in {location}, Kent. Supply, fit & servicing for homes & businesses. Superstructure Services.",
     canonicalSlug: "services/air-con-service-canterbury",
     icon: "",
+    heroImage: "/images/services/air-conditioning.webp",
   },
   {
     slug: "new-bathroom",
@@ -197,6 +202,7 @@ export const SERVICES: Service[] = [
       "House refurbishment and renovation in {location}, Kent. Full project management from minor updates to complete transformations. Free quote available.",
     canonicalSlug: "services/property-refurbishment",
     icon: "",
+    heroImage: "/images/services/property-refurbishment.jpg",
   },
   {
     slug: "plumbing-drainage",
@@ -237,6 +243,7 @@ export const SERVICES: Service[] = [
       "Expert carpenters in {location}, Kent. Bespoke joinery, structural carpentry & heritage work. First/second fix by Superstructure Services.",
     canonicalSlug: "services/carpenter-in-canterbury",
     icon: "",
+    heroImage: "/images/services/carpentry.webp",
   },
   {
     slug: "garage-workshop-conversion",
@@ -277,6 +284,7 @@ export const SERVICES: Service[] = [
       "Expert roofing in {location}, Kent. New roofs, repairs, flat roofing & listed building specialists. Superstructure Services. Free quote today.",
     canonicalSlug: "services/new-roof-installation-repairs",
     icon: "",
+    heroImage: "/images/services/roofing.webp",
   },
   {
     slug: "home-office-conversion",
@@ -317,6 +325,7 @@ export const SERVICES: Service[] = [
       "Bespoke cinema room installation in {location}, Kent. Full design, AV fitting & sound insulation. Create your dream home cinema. Free quote.",
     canonicalSlug: "services/cinema-room-installation",
     icon: "",
+    heroImage: "/images/services/cinema-room-installation.webp",
   },
   {
     slug: "driveways-paving",
@@ -357,6 +366,7 @@ export const SERVICES: Service[] = [
       "Expert listed building restoration in {location}, Kent. Heritage property specialists. Traditional methods, modern standards. Superstructure Services.",
     canonicalSlug: "services/listed-building-restoration",
     icon: "",
+    heroImage: "/images/services/listed-building-restoration.jpg",
   },
   {
     slug: "groundworks",
@@ -397,6 +407,7 @@ export const SERVICES: Service[] = [
       "Professional landscaping and garden services in {location}, Kent. Design, patios, planting & maintenance. Superstructure Services. Free quote.",
     canonicalSlug: "services/landscaping-gardens",
     icon: "",
+    heroImage: "/images/services/landscaping-gardens.webp",
   },
   {
     slug: "rental-property-maintenance",
