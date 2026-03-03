@@ -97,9 +97,6 @@ export default function ProjectsPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300" />
                     
                     <div className="absolute inset-0 p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-xs font-semibold text-[#f5c518] uppercase tracking-wider mb-2">
-                        {project.category}
-                      </span>
                       <h3 className="text-white font-bold text-lg leading-tight mb-2">
                         {project.title}
                       </h3>
