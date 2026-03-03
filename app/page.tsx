@@ -155,6 +155,17 @@ export default function HomePage() {
               </blockquote>
             </div>
           </div>
+
+          {/* Our Services Title */}
+          <div className="text-center mb-10 mt-16">
+            <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
+              What We Offer
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Our Services
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {SERVICES.map((s, i) => (
               <FadeIn key={s.slug} delay={i * 100}>
