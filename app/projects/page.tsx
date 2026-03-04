@@ -102,7 +102,7 @@ export default function ProjectsPage() {
                       </h3>
                       <div className="flex items-center gap-1.5 text-white/70 text-xs mb-3">
                         <MapPin size={11} />
-                        {project.location}, Kent
+                        {project.location}{!project.location.includes('Kent') && !project.location.includes('London') ? ', Kent' : ''}
                       </div>
                       <p className="text-white/60 text-sm line-clamp-2 mb-4">
                         {project.description}
