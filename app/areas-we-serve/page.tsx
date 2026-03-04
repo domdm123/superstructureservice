@@ -32,6 +32,10 @@ const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {
   "home-office-conversion": { src: "/images/Home-office-creation-Canterbury-Kent.jpg", alt: "Home Office Canterbury" },
   "cinema-room-installation": { src: "/images/Cinema-Rooms-in-Kent.jpg", alt: "Cinema Rooms Kent" },
   "driveways-paving": { src: "/images/Driveway-paving-in-Canterbury-Kent.jpg", alt: "Driveways & Paving Canterbury" },
+  "listed-building-restoration": { src: "/images/services/listed-building-restoration.jpg", alt: "Listed Building Restoration Canterbury" },
+  "groundworks": { src: "/images/groundworks-canterbury.JPG", alt: "Groundworks Canterbury" },
+  "landscaping-gardens": { src: "/images/services/landscaping-gardens.webp", alt: "Landscaping & Gardens Canterbury" },
+  "rental-property-maintenance": { src: "/images/rental-property-maintenance-hero.JPG", alt: "Rental Property Maintenance Canterbury" },
 };
 
 
