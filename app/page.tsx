@@ -46,7 +46,7 @@ export default function HomePage() {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          poster="/images/hero-bg.jpg"
+
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
