@@ -18,6 +18,8 @@ export async function generateStaticParams() {
   const params: { service: string; location: string }[] = [];
   for (const service of SERVICES) {
     for (const area of AREAS) {
+      // Canterbury uses canonical URLs — skip generating dynamic pages for it
+      if (area.slug === 'canterbury') continue;
       params.push({ service: service.slug, location: area.slug });
     }
   }
@@ -260,15 +262,20 @@ export default async function ServiceLocationPage({ params }: Props) {
                   Other Services We Offer in {area.name}
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {SERVICES.filter((s) => s.slug !== service.slug).map((s) => (
-                    <Link
-                      key={s.slug}
-                      href={`/${s.slug}/${area.slug}`}
-                      className="flex items-center gap-2 px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl text-sm font-medium text-[#1a2e44] hover:bg-[#1e3a5f] hover:text-white hover:border-[#1e3a5f] transition-all"
-                    >
-                      <span>{s.icon}</span> {s.shortName}
-                    </Link>
-                  ))}
+                  {SERVICES.filter((s) => s.slug !== service.slug).map((s) => {
+                    const href = area.slug === 'canterbury'
+                      ? `/${s.canonicalSlug}`
+                      : `/${s.slug}/${area.slug}`;
+                    return (
+                      <Link
+                        key={s.slug}
+                        href={href}
+                        className="flex items-center gap-2 px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl text-sm font-medium text-[#1a2e44] hover:bg-[#1e3a5f] hover:text-white hover:border-[#1e3a5f] transition-all"
+                      >
+                        <span>{s.icon}</span> {s.shortName}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -315,7 +322,7 @@ export default async function ServiceLocationPage({ params }: Props) {
                       return nearbyArea ? (
                         <li key={nearbyArea.slug}>
                           <Link
-                            href={`/${service.slug}/${nearbyArea.slug}`}
+                            href={nearbyArea.slug === 'canterbury' ? `/${service.canonicalSlug}` : `/${service.slug}/${nearbyArea.slug}`}
                             className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#4a9ebb] transition-colors"
                           >
                             <ArrowRight size={13} className="text-[#4a9ebb]" />
