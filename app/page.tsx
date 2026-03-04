@@ -5,6 +5,7 @@ import { ArrowRight, Phone, CheckCircle, Star } from "lucide-react";
 import { SERVICES, PHONE, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
 import ServiceCard from "@/components/ServiceCard";
+import ServicesGrid from "@/components/ServicesGrid";
 import TrustBadges from "@/components/TrustBadges";
 import HowWeWork from "@/components/HowWeWork";
 import CTASection from "@/components/CTASection";
@@ -103,9 +104,9 @@ export default function HomePage() {
       </section>
 
       {/* Services */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-20">
+          <div className="mb-10 sm:mb-20">
             <div className="text-center mb-12">
               <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">
                 Based in the Heart of Canterbury, Kent
@@ -156,7 +157,7 @@ export default function HomePage() {
           </div>
 
           {/* Our Services Title */}
-          <div className="text-center mb-10 mt-16">
+          <div className="text-center mb-10 mt-10 sm:mt-16">
             <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
               What We Offer
             </span>
@@ -165,13 +166,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SERVICES.map((s, i) => (
-              <FadeIn key={s.slug} delay={i * 100}>
-                <ServiceCard service={s} />
-              </FadeIn>
-            ))}
-          </div>
+          <ServicesGrid services={SERVICES} />
 
           {/* Animated service showcase — full width */}
           <div 
@@ -228,7 +223,7 @@ export default function HomePage() {
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
                 Why Choose Us
@@ -272,7 +267,7 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="relative rounded-3xl p-10 text-white overflow-hidden min-h-[480px] flex flex-col">
+            <div className="relative rounded-none sm:rounded-3xl -mx-4 sm:mx-0 p-8 sm:p-10 text-white overflow-hidden min-h-[400px] sm:min-h-[480px] flex flex-col">
               {/* Background image */}
               <div className="absolute inset-0">
                 <Image

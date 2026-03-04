@@ -24,7 +24,7 @@ const accreditations = [
 
 export default function TrustBadges() {
   return (
-    <section className="py-16 bg-white border-y border-gray-100">
+    <section className="py-10 sm:py-16 bg-white border-t border-gray-100">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -36,7 +36,7 @@ export default function TrustBadges() {
         </div>
 
         {/* Accreditation logos */}
-        <div className="grid grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-0">
           {accreditations.map((a) => (
             <div
               key={a.label}

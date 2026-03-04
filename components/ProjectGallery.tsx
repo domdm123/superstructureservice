@@ -77,205 +77,100 @@ export default function ProjectGallery() {
           </Link>
         </div>
 
-        {/* Mosaic Grid - Bento Style */}
-        <div className="grid grid-cols-12 gap-3 auto-rows-[140px] md:auto-rows-[180px]">
-          
-          {/* Large feature - Kitchen (spans 6 cols, 2 rows) */}
+        {/* Mobile grid: clean 2-col equal squares */}
+        <div className="grid grid-cols-2 gap-2 md:hidden">
+          {GALLERY_PHOTOS.map((photo) => (
+            <Link
+              key={photo.slug + photo.label}
+              href={`/projects/${photo.slug}`}
+              className="relative aspect-square overflow-hidden rounded-xl block group"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover transition-transform duration-500 group-active:scale-105"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute bottom-2 left-2 right-2 text-white text-xs font-semibold leading-tight drop-shadow">
+                {photo.label}
+              </span>
+            </Link>
+          ))}
           <Link
-            href={`/projects/${GALLERY_PHOTOS[0].slug}`}
-            className="col-span-12 md:col-span-6 row-span-2 relative group overflow-hidden rounded-2xl block"
+            href="/services"
+            className="relative aspect-square bg-[#0d1b2e] rounded-xl flex items-center justify-center text-center p-4 active:bg-[#1e3a5f] transition-colors group"
           >
-            <Image
-              src={GALLERY_PHOTOS[0].src}
-              alt={GALLERY_PHOTOS[0].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+            <div>
+              <div className="text-4xl font-black text-white mb-1">16</div>
+              <div className="text-[#4a9ebb] text-xs font-semibold uppercase tracking-wider">Services</div>
+              <div className="text-white/50 text-xs mt-1">All trades</div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Desktop bento grid - hidden on mobile */}
+        <div className="hidden md:grid grid-cols-12 gap-3 auto-rows-[180px]">
+
+          {/* Large feature - Kitchen (spans 6 cols, 2 rows) */}
+          <Link href={`/projects/${GALLERY_PHOTOS[0].slug}`} className="col-span-6 row-span-2 relative group overflow-hidden rounded-2xl block">
+            <Image src={GALLERY_PHOTOS[0].src} alt={GALLERY_PHOTOS[0].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="50vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5">
-              <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-semibold mb-2">
-                Featured
-              </span>
+              <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-semibold mb-2">Featured</span>
               <h3 className="text-white text-xl font-bold">{GALLERY_PHOTOS[0].label}</h3>
             </div>
             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1.5 bg-black/80 text-white px-3 py-1.5 rounded-lg text-sm font-semibold border border-white/20">
-                <Eye size={14} />
-                View
-              </span>
+              <span className="flex items-center gap-1.5 bg-black/80 text-white px-3 py-1.5 rounded-lg text-sm font-semibold border border-white/20"><Eye size={14} />View</span>
             </div>
           </Link>
 
-          {/* Medium - Property Refurb (spans 3 cols, 2 rows) */}
-          <Link
-            href={`/projects/${GALLERY_PHOTOS[1].slug}`}
-            className="col-span-6 md:col-span-3 row-span-2 relative group overflow-hidden rounded-2xl block"
-          >
-            <Image
-              src={GALLERY_PHOTOS[1].src}
-              alt={GALLERY_PHOTOS[1].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, 25vw"
-            />
+          <Link href={`/projects/${GALLERY_PHOTOS[1].slug}`} className="col-span-3 row-span-2 relative group overflow-hidden rounded-2xl block">
+            <Image src={GALLERY_PHOTOS[1].src} alt={GALLERY_PHOTOS[1].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <span className="absolute bottom-4 left-4 text-white text-sm font-semibold">
-              {GALLERY_PHOTOS[1].label}
-            </span>
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
-                <Eye size={12} />
-                View
-              </span>
-            </div>
+            <span className="absolute bottom-4 left-4 text-white text-sm font-semibold">{GALLERY_PHOTOS[1].label}</span>
           </Link>
 
-          {/* Small - Listed Building (spans 3 cols, 1 row) */}
-          <Link
-            href={`/projects/${GALLERY_PHOTOS[2].slug}`}
-            className="col-span-6 md:col-span-3 row-span-1 relative group overflow-hidden rounded-2xl block"
-          >
-            <Image
-              src={GALLERY_PHOTOS[2].src}
-              alt={GALLERY_PHOTOS[2].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, 25vw"
-            />
+          <Link href={`/projects/${GALLERY_PHOTOS[2].slug}`} className="col-span-3 row-span-1 relative group overflow-hidden rounded-2xl block">
+            <Image src={GALLERY_PHOTOS[2].src} alt={GALLERY_PHOTOS[2].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <span className="absolute bottom-3 left-3 text-white text-xs font-semibold">
-              {GALLERY_PHOTOS[2].label}
-            </span>
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
-                <Eye size={12} />
-              </span>
-            </div>
+            <span className="absolute bottom-3 left-3 text-white text-xs font-semibold">{GALLERY_PHOTOS[2].label}</span>
           </Link>
 
-          {/* Small - Bespoke Kitchen (spans 3 cols, 1 row) */}
-          <Link
-            href={`/projects/${GALLERY_PHOTOS[3].slug}`}
-            className="col-span-6 md:col-span-3 row-span-1 relative group overflow-hidden rounded-2xl block"
-          >
-            <Image
-              src={GALLERY_PHOTOS[3].src}
-              alt={GALLERY_PHOTOS[3].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, 25vw"
-            />
+          <Link href={`/projects/${GALLERY_PHOTOS[3].slug}`} className="col-span-3 row-span-1 relative group overflow-hidden rounded-2xl block">
+            <Image src={GALLERY_PHOTOS[3].src} alt={GALLERY_PHOTOS[3].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <span className="absolute bottom-3 left-3 text-white text-xs font-semibold">
-              {GALLERY_PHOTOS[3].label}
-            </span>
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
-                <Eye size={12} />
-              </span>
-            </div>
+            <span className="absolute bottom-3 left-3 text-white text-xs font-semibold">{GALLERY_PHOTOS[3].label}</span>
           </Link>
 
-          {/* Wide - Bathroom (spans 4 cols, 1 row) */}
-          <Link
-            href={`/projects/${GALLERY_PHOTOS[4].slug}`}
-            className="col-span-6 md:col-span-4 row-span-1 relative group overflow-hidden rounded-2xl block"
-          >
-            <Image
-              src={GALLERY_PHOTOS[4].src}
-              alt={GALLERY_PHOTOS[4].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, 33vw"
-            />
+          <Link href={`/projects/${GALLERY_PHOTOS[4].slug}`} className="col-span-4 row-span-1 relative group overflow-hidden rounded-2xl block">
+            <Image src={GALLERY_PHOTOS[4].src} alt={GALLERY_PHOTOS[4].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">
-              {GALLERY_PHOTOS[4].label}
-            </span>
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
-                <Eye size={12} />
-              </span>
-            </div>
+            <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">{GALLERY_PHOTOS[4].label}</span>
           </Link>
 
-          {/* Medium - Roofing (spans 4 cols, 1 row) */}
-          <Link
-            href={`/projects/${GALLERY_PHOTOS[5].slug}`}
-            className="col-span-6 md:col-span-4 row-span-1 relative group overflow-hidden rounded-2xl block"
-          >
-            <Image
-              src={GALLERY_PHOTOS[5].src}
-              alt={GALLERY_PHOTOS[5].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, 33vw"
-            />
+          <Link href={`/projects/${GALLERY_PHOTOS[5].slug}`} className="col-span-4 row-span-1 relative group overflow-hidden rounded-2xl block">
+            <Image src={GALLERY_PHOTOS[5].src} alt={GALLERY_PHOTOS[5].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">
-              {GALLERY_PHOTOS[5].label}
-            </span>
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
-                <Eye size={12} />
-              </span>
-            </div>
+            <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">{GALLERY_PHOTOS[5].label}</span>
           </Link>
 
-          {/* Medium - Solar (spans 4 cols, 1 row) */}
-          <Link
-            href={`/projects/${GALLERY_PHOTOS[6].slug}`}
-            className="col-span-6 md:col-span-4 row-span-1 relative group overflow-hidden rounded-2xl block"
-          >
-            <Image
-              src={GALLERY_PHOTOS[6].src}
-              alt={GALLERY_PHOTOS[6].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, 33vw"
-            />
+          <Link href={`/projects/${GALLERY_PHOTOS[6].slug}`} className="col-span-4 row-span-1 relative group overflow-hidden rounded-2xl block">
+            <Image src={GALLERY_PHOTOS[6].src} alt={GALLERY_PHOTOS[6].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">
-              {GALLERY_PHOTOS[6].label}
-            </span>
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
-                <Eye size={12} />
-              </span>
-            </div>
+            <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">{GALLERY_PHOTOS[6].label}</span>
           </Link>
 
-          {/* Wide - Home Office (spans 6 cols, 1 row) */}
-          <Link
-            href={`/projects/${GALLERY_PHOTOS[7].slug}`}
-            className="col-span-12 md:col-span-6 row-span-1 relative group overflow-hidden rounded-2xl block"
-          >
-            <Image
-              src={GALLERY_PHOTOS[7].src}
-              alt={GALLERY_PHOTOS[7].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+          <Link href={`/projects/${GALLERY_PHOTOS[7].slug}`} className="col-span-6 row-span-1 relative group overflow-hidden rounded-2xl block">
+            <Image src={GALLERY_PHOTOS[7].src} alt={GALLERY_PHOTOS[7].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="50vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <span className="absolute bottom-4 left-4 text-white text-sm font-semibold">
-              {GALLERY_PHOTOS[7].label}
-            </span>
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded text-xs font-semibold border border-white/20">
-                <Eye size={12} />
-              </span>
-            </div>
+            <span className="absolute bottom-4 left-4 text-white text-sm font-semibold">{GALLERY_PHOTOS[7].label}</span>
           </Link>
 
-          {/* Stats tile - instead of empty space */}
-          <Link
-            href="/services"
-            className="col-span-12 md:col-span-6 row-span-1 bg-[#0d1b2e] rounded-2xl flex items-center justify-center text-center p-6 hover:bg-[#1e3a5f] transition-colors group"
-          >
+          <Link href="/services" className="col-span-6 row-span-1 bg-[#0d1b2e] rounded-2xl flex items-center justify-center text-center p-6 hover:bg-[#1e3a5f] transition-colors group">
             <div>
-              <div className="text-4xl md:text-5xl font-black text-white mb-1 group-hover:scale-110 transition-transform">16</div>
+              <div className="text-5xl font-black text-white mb-1 group-hover:scale-110 transition-transform">16</div>
               <div className="text-[#4a9ebb] text-sm font-semibold uppercase tracking-wider">Services</div>
               <div className="text-white/50 text-xs mt-2">All trades under one roof</div>
             </div>
