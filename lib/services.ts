@@ -428,6 +428,7 @@ export const SERVICES: Service[] = [
       "Landlord property maintenance in {location}, Kent. Emergency repairs, EICR testing, gas safety & refurbishment. Superstructure Services.",
     canonicalSlug: "services/rental-property-maintenance",
     icon: "",
+    heroImage: "/images/rental-property-maintenance-hero.JPG",
   },
 ];
 

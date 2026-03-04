@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
     slug: "bathroom-installation-canterbury-plumber",
     title: "New Bathroom and Plumbing Maintenance",
     category: "Plumbing and Drainage",
-    location: "Kent",
+    location: "Canterbury",
     image: "/images/bathroom-adelphi/new bathroom installation canterbury.jpg",
     images: [
       "/images/bathroom-adelphi/new bathroom installation canterbury.jpg",

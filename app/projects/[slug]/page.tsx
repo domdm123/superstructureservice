@@ -215,7 +215,7 @@ export default function ProjectPage() {
                     <Hammer size={32} className="text-[#0d1b2e]" />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                    Need {project.category} Help?
+                    Need {project.category.toLowerCase()} help?
                   </h2>
                   <p className="text-white/80 text-lg leading-relaxed mb-6">
                     {service ? service.description.substring(0, 180) + '...' : `Discover our expert ${project.category.toLowerCase()} services, transforming homes and businesses in Canterbury and Kent with high-quality, tailored solutions.`}
