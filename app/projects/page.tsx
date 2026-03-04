@@ -82,9 +82,9 @@ export default function ProjectsPage() {
                 <Link
                   key={project.slug}
                   href={`/projects/${project.slug}`}
-                  className="group block break-inside-avoid"
+                  className="group block break-inside-avoid outline-none"
                 >
-                  <div className={`relative overflow-hidden rounded-xl bg-gray-100 ${
+                  <div className={`relative overflow-hidden rounded-xl bg-black ring-0 outline-none ${
                     isLarge ? "aspect-[4/3]" : "aspect-square"
                   }`}>
                     <Image
