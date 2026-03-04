@@ -101,15 +101,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className="overflow-x-hidden">
-      <body className="font-sans antialiased pt-[96px] lg:pt-[110px] bg-white text-gray-900 overflow-x-hidden">
+    <html lang="en-GB">
+      <body className="font-sans antialiased pt-[96px] lg:pt-[110px] bg-white text-gray-900">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        <LoadingScreen />
-        <Header />
-        <main>{children}</main>
+        <div className="overflow-x-hidden">
+          <LoadingScreen />
+          <Header />
+          <main>{children}</main>
+        </div>
         <GoogleReviews />
         <Footer />
         <MobileCTABar />
