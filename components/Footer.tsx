@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="h-1 bg-gradient-to-r from-[#4a9ebb] via-[#1e3a5f] to-[#4a9ebb]" />
 
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-8">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-10 lg:mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-10 lg:mb-14">
 
           {/* About */}
           <div className="col-span-2 lg:col-span-2">
@@ -89,9 +89,9 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div className="col-span-1">
+          <div className="col-span-2 lg:col-span-2">
             <h3 className="font-bold text-xs uppercase tracking-[0.15em] mb-5 text-[#4a9ebb]">Our Services</h3>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 mb-4">
               {SERVICES.slice(0, 8).map((s) => (
                 <li key={s.slug}>
                   <Link
@@ -102,32 +102,13 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li className="pt-1">
-                <Link
-                  href="/services"
-                  className="text-[#4a9ebb] hover:text-sky-300 text-sm font-semibold transition-colors"
-                >
-                  View All Services →
-                </Link>
-              </li>
             </ul>
-          </div>
-
-          {/* More Services */}
-          <div className="col-span-1">
-            <h3 className="font-bold text-xs uppercase tracking-[0.15em] mb-5 text-[#4a9ebb]">More Services</h3>
-            <ul className="flex flex-col gap-2.5">
-              {SERVICES.slice(8).map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/services/${s.canonicalSlug.replace("services/", "")}`}
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
-                  >
-                    {s.shortName}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <Link
+              href="/services"
+              className="inline-block mt-1 text-[#4a9ebb] hover:text-sky-300 text-sm font-semibold transition-colors"
+            >
+              View All Services →
+            </Link>
           </div>
 
           {/* Areas */}

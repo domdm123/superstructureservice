@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
@@ -82,84 +82,49 @@ function GoogleIcon() {
 
 export default function GoogleReviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number | null>(null);
-  const scrollPosRef = useRef(0);
-  const pauseUntilRef = useRef(0);       // timestamp until which auto-scroll is paused
-  const touchStartXRef = useRef(0);
-  const touchStartScrollRef = useRef(0);
+  const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const isPausedRef = useRef(false);
+  const CARD_WIDTH = 276; // 260px card + 16px gap
 
   const pauseFor = (ms: number) => {
-    pauseUntilRef.current = Date.now() + ms;
+    isPausedRef.current = true;
+    setTimeout(() => { isPausedRef.current = false; }, ms);
   };
 
-  const scroll = (dir: "left" | "right") => {
+  const scroll = useCallback((dir: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    const scrollAmount = 300;
-    const newScrollLeft = el.scrollLeft + (dir === "right" ? scrollAmount : -scrollAmount);
-    el.scrollTo({ left: newScrollLeft, behavior: "smooth" });
-    // sync after smooth scroll settles
-    setTimeout(() => {
-      if (scrollRef.current) scrollPosRef.current = scrollRef.current.scrollLeft;
-    }, 400);
-    pauseFor(3500);
-  };
+    pauseFor(4000);
+    el.scrollBy({ left: dir === "right" ? CARD_WIDTH : -CARD_WIDTH, behavior: "smooth" });
+  }, []);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
-    const scrollSpeed = 0.8;
-
-    const animate = () => {
-      if (Date.now() > pauseUntilRef.current && el) {
-        scrollPosRef.current += scrollSpeed;
-        const maxScroll = el.scrollWidth - el.clientWidth;
-        if (scrollPosRef.current >= maxScroll) scrollPosRef.current = 0;
-        el.scrollLeft = scrollPosRef.current;
+    // Auto-scroll: move one card every 3 seconds
+    autoScrollRef.current = setInterval(() => {
+      if (isPausedRef.current) return;
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      if (el.scrollLeft >= maxScroll - 10) {
+        el.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        el.scrollBy({ left: CARD_WIDTH, behavior: "smooth" });
       }
-      animationRef.current = requestAnimationFrame(animate);
-    };
+    }, 3000);
 
-    animationRef.current = requestAnimationFrame(animate);
-
-    // Touch handlers
-    const onTouchStart = (e: TouchEvent) => {
-      touchStartXRef.current = e.touches[0].clientX;
-      touchStartScrollRef.current = el.scrollLeft;
-      scrollPosRef.current = el.scrollLeft;
-      pauseUntilRef.current = Infinity; // pause indefinitely while touching
-    };
-
-    const onTouchMove = (e: TouchEvent) => {
-      const dx = touchStartXRef.current - e.touches[0].clientX;
-      el.scrollLeft = touchStartScrollRef.current + dx;
-      scrollPosRef.current = el.scrollLeft;
-    };
-
-    const onTouchEnd = () => {
-      scrollPosRef.current = el.scrollLeft;
-      pauseFor(3000);
-    };
-
-    // Mouse hover handlers
-    const onMouseEnter = () => { pauseUntilRef.current = Infinity; };
-    const onMouseLeave = () => {
-      scrollPosRef.current = el.scrollLeft;
-      pauseFor(500);
-    };
+    // Pause auto-scroll on any touch or mouse interaction
+    const onTouchStart = () => pauseFor(5000);
+    const onMouseEnter = () => { isPausedRef.current = true; };
+    const onMouseLeave = () => { isPausedRef.current = false; };
 
     el.addEventListener("touchstart", onTouchStart, { passive: true });
-    el.addEventListener("touchmove", onTouchMove, { passive: true });
-    el.addEventListener("touchend", onTouchEnd, { passive: true });
     el.addEventListener("mouseenter", onMouseEnter);
     el.addEventListener("mouseleave", onMouseLeave);
 
     return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
       el.removeEventListener("touchstart", onTouchStart);
-      el.removeEventListener("touchmove", onTouchMove);
-      el.removeEventListener("touchend", onTouchEnd);
       el.removeEventListener("mouseenter", onMouseEnter);
       el.removeEventListener("mouseleave", onMouseLeave);
     };
@@ -207,12 +172,14 @@ export default function GoogleReviews() {
           {/* Right — review cards scrollable row (no scrollbar) */}
           <div 
             ref={scrollRef} 
-            className="flex-1 flex gap-4 overflow-x-auto pb-4 scrollbar-hide scroll-smooth min-w-0"
+            className="flex-1 flex gap-4 overflow-x-auto pb-4 scrollbar-hide min-w-0"
+            style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
           >
             {reviews.map((review) => (
               <div
                 key={review.name}
-                className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 min-w-[260px] max-w-[260px] sm:min-w-[280px] sm:max-w-[280px]"
+                className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 min-w-[260px] max-w-[260px] sm:min-w-[280px] sm:max-w-[280px] flex-shrink-0"
+                style={{ scrollSnapAlign: "start" }}
               >
                 {/* Header */}
                 <div className="flex items-start justify-between gap-2">
