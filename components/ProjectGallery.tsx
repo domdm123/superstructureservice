@@ -5,49 +5,49 @@ import { playfair } from "@/app/layout";
 
 const GALLERY_PHOTOS = [
   {
-    src: "/images/Kitchen-Installation-in-Canterbury.jpg",
+    src: "/images/adelphi-court/new external property refurbishment and restoration service in canterbury.jpg",
     alt: "Kitchen installation in Canterbury",
     label: "Kitchen Installation",
     slug: "kitchen-installation-in-canterbury-1",
   },
   {
-    src: "/images/Property-Refurbishment-in-Canterbury.jpg",
+    src: "/images/refurb-adelphi/builder in canterbury, local quality.jpg",
     alt: "Property refurbishment in Canterbury",
     label: "Property Refurbishment",
     slug: "property-maintenance-canterbury",
   },
   {
-    src: "/images/canterbury-listed-building-refurbishment.jpg",
+    src: "/images/listed-building/listed building restoration in kent and canterbury.jpg",
     alt: "Listed building refurbishment Canterbury",
     label: "Listed Building Restoration",
     slug: "listed-building-refurb-canterbury",
   },
   {
-    src: "/images/Kitchen-Installation-in-Canterbury-2.jpg",
+    src: "/images/adelphi-court/new external property refurbishment and restoration service in canterbury.jpg",
     alt: "Kitchen installation Canterbury",
     label: "Bespoke Kitchen",
     slug: "kitchen-installation-in-canterbury-1",
   },
   {
-    src: "/images/classic-modern-bathroom-refurbishment-service-canterbury.jpg",
+    src: "/images/bathroom-adelphi/new bathroom installation canterbury.jpg",
     alt: "Bathroom refurbishment Canterbury",
     label: "Bathroom Renovation",
     slug: "bathroom-installation-canterbury-plumber",
   },
   {
-    src: "/images/Professional-roofing-service-in-Canterbury-Kent.jpg",
+    src: "/images/roof-repair/roof repairs service in cantebury kent.jpg",
     alt: "Roofing service Canterbury Kent",
     label: "Roofing",
     slug: "roof-repair-canterbury",
   },
   {
-    src: "/images/Solar-panel-installer-in-Canterbury-Kent.jpg",
+    src: "/images/solar-panels/Solar panel installation canterbury contractor.jpg",
     alt: "Solar panel installation Canterbury Kent",
     label: "Solar Panels",
     slug: "roofing-in-canterbury-1",
   },
   {
-    src: "/images/Home-office-creation-Canterbury-Kent.jpg",
+    src: "/images/home-office-adelphi/Home office installation in Canterbury.jpg",
     alt: "Home office creation Canterbury",
     label: "Home Office",
     slug: "home-office-creation-in-canterbury",
