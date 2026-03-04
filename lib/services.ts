@@ -84,8 +84,8 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "electrician",
-    name: "Electrical",
-    shortName: "Electrical",
+    name: "Electrician",
+    shortName: "Electrician",
     tagline: "Energy is a liberated matter, what's the matter with being liberated?",
     description:
       "Our skilled electricians bring expertise and innovation to every project, ensuring safety, efficiency, and personalised solutions for both homes and businesses. From advanced smart home installations to reliable power systems, we're committed to meeting your electrical needs with professionalism and care. NICEIC-approved team serving Canterbury and Kent.",
