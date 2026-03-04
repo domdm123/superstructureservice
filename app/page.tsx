@@ -170,7 +170,7 @@ export default function HomePage() {
 
           {/* Animated service showcase — full width */}
           <div 
-            className="mt-16 py-24 text-center px-4 relative overflow-hidden"
+            className="mt-16 py-10 sm:py-24 text-center px-4 relative overflow-hidden"
             style={{ 
               marginLeft: 'calc(-50vw + 50%)', 
               marginRight: 'calc(-50vw + 50%)', 
