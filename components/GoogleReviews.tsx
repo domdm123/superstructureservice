@@ -85,10 +85,35 @@ export default function GoogleReviews() {
   const [isPaused, setIsPaused] = useState(false);
   const animationRef = useRef<number | null>(null);
   const scrollPosRef = useRef(0);
+  const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({ left: dir === "right" ? 320 : -320, behavior: "smooth" });
+    
+    // Pause auto-scroll temporarily when navigating manually
+    setIsPaused(true);
+    
+    // Clear any existing timeout
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current);
+    }
+    
+    // Perform the scroll
+    const scrollAmount = 320;
+    const newScrollLeft = scrollRef.current.scrollLeft + (dir === "right" ? scrollAmount : -scrollAmount);
+    
+    scrollRef.current.scrollTo({
+      left: newScrollLeft,
+      behavior: "smooth"
+    });
+    
+    // Update the ref to match new position
+    scrollPosRef.current = newScrollLeft;
+    
+    // Resume auto-scroll after 3 seconds
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -116,6 +141,9 @@ export default function GoogleReviews() {
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
+      }
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current);
       }
     };
   }, [isPaused]);
