@@ -109,7 +109,7 @@ export default function RootLayout({
         />
         <LoadingScreen />
         <Header />
-        <main className="pb-16 lg:pb-0">{children}</main>
+        <main>{children}</main>
         <GoogleReviews />
         <Footer />
         <MobileCTABar />
