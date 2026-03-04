@@ -32,7 +32,7 @@ export default function NewBathroomPage() {
           { label: "Services", href: "/services" },
           { label: "New Bathrooms" },
         ]}
-        badge="🛁 New Bathrooms"
+        badge="New Bathrooms"
       />
 
       <section className="py-20 bg-white">
