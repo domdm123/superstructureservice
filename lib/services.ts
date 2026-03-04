@@ -59,6 +59,7 @@ export const SERVICES: Service[] = [
       "Flooring installation and underfloor heating in {location}, Kent. All floor types fitted. Retrofit or new installation by Superstructure Services.",
     canonicalSlug: "services/underfloor-heating-installation",
     icon: "",
+    heroImage: "/images/Underfloor-Heating-in-Canterbury.jpg",
   },
   {
     slug: "facility-building-management",
@@ -100,6 +101,7 @@ export const SERVICES: Service[] = [
       "NICEIC-approved electricians in {location}, Kent. EICR reports, commercial & domestic electrical work. Free quotes from Superstructure Services.",
     canonicalSlug: "services/electrician-canterbury",
     icon: "",
+    heroImage: "/images/home-electrician-in-canterbury-rewiring-fuse-metering.jpg",
   },
   {
     slug: "air-source-heat-pump",
@@ -183,6 +185,7 @@ export const SERVICES: Service[] = [
       "Expert bathroom fitters in {location}, Kent. Full bathroom design, supply and installation. Wet rooms, suites and refurbishments. Free quote.",
     canonicalSlug: "new-bathroom-fitter-canterbury",
     icon: "",
+    heroImage: "/images/classic-modern-bathroom-refurbishment-service-canterbury.jpg",
   },
   {
     slug: "property-refurbishment",
@@ -224,6 +227,7 @@ export const SERVICES: Service[] = [
       "Gas Safe registered plumbers in {location}, Kent. Boilers, bathrooms, drainage & heating by Superstructure Services. Free no-obligation quotes.",
     canonicalSlug: "services/plumber-in-canterbury",
     icon: "",
+    heroImage: "/images/Bathrooms-in-Canterbury.jpg",
   },
   {
     slug: "carpentry",
@@ -307,6 +311,7 @@ export const SERVICES: Service[] = [
       "Bespoke home office conversion in {location}, Kent. Full design, build, data systems & furniture. Superstructure Services. Get a free quote.",
     canonicalSlug: "services/office-conversion",
     icon: "",
+    heroImage: "/images/Home-office-creation-Canterbury-Kent.jpg",
   },
   {
     slug: "cinema-room-installation",
@@ -348,6 +353,7 @@ export const SERVICES: Service[] = [
       "Expert driveways and paving in {location}, Kent. Block paving, resin, tarmac, porcelain & more. Superstructure Services. Free quote today.",
     canonicalSlug: "services/driveways-and-paving-canterbury",
     icon: "",
+    heroImage: "/images/Driveway-paving-in-Canterbury-Kent.jpg",
   },
   {
     slug: "listed-building-restoration",
