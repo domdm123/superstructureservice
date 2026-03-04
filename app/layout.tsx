@@ -107,7 +107,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        <div className="overflow-x-hidden">
+        <div style={{ width: "100%", position: "relative" }}>
           <LoadingScreen />
           <Header />
           <main>{children}</main>
