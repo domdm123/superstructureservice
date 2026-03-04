@@ -6,7 +6,7 @@ import Link from "next/link";
 import { MapPin, Tag, ChevronLeft, ChevronRight, Hammer, ArrowRight } from "lucide-react";
 import { PROJECTS, getProjectBySlug, getRelatedProjects } from "@/lib/projects";
 import { SERVICES } from "@/lib/services";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ProjectPage() {
   const params = useParams();
@@ -15,6 +15,18 @@ export default function ProjectPage() {
   const project = getProjectBySlug(slug);
   
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-play gallery with 2-second fade interval
+  useEffect(() => {
+    if (!project || project.images.length <= 1 || isPaused) return;
+    
+    const interval = setInterval(() => {
+      setCarouselIndex((prev) => (prev + 1) % project.images.length);
+    }, 2000);
+    
+    return () => clearInterval(interval);
+  }, [project?.images.length, isPaused]);
 
   if (!project) {
     return (
@@ -112,7 +124,11 @@ export default function ProjectPage() {
 
       {/* World-class Image Gallery - Portrait-friendly */}
       {project.images.length > 1 && (
-        <section className="py-0 bg-[#0a0a0a]">
+        <section 
+          className="py-0 bg-[#0a0a0a]"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           {/* Main large featured image - portrait optimized */}
           <div className="relative w-full h-[85vh] min-h-[600px] overflow-hidden">
             {project.images.map((img, i) => (
