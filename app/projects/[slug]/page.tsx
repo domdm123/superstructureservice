@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Tag, ChevronLeft, ChevronRight } from "lucide-react";
+import { MapPin, Tag, ChevronLeft, ChevronRight, Hammer, ArrowRight } from "lucide-react";
 import { PROJECTS, getProjectBySlug, getRelatedProjects } from "@/lib/projects";
 import { SERVICES } from "@/lib/services";
 import { useState } from "react";
@@ -166,24 +166,61 @@ export default function ProjectPage() {
       )}
 
       {/* Category-specific CTA */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-12">
-            <div className="text-[#1e3a5f] mb-4">
-              <Tag size={48} className="mx-auto" />
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#1e3a5f] via-[#162d4a] to-[#0d1b2e] rounded-3xl shadow-2xl">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#4a9ebb]/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#f5c518]/5 rounded-full blur-3xl" />
+            
+            <div className="relative px-8 py-16 md:px-16 md:py-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                {/* Left side - Icon and text */}
+                <div className="text-left">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-[#f5c518] rounded-2xl mb-6 shadow-lg">
+                    <Hammer size={32} className="text-[#0d1b2e]" />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                    Need {project.category} Help?
+                  </h2>
+                  <p className="text-white/80 text-lg leading-relaxed mb-6">
+                    {service ? service.description.substring(0, 180) + '...' : `Discover our expert ${project.category.toLowerCase()} services, transforming homes and businesses in Canterbury and Kent with high-quality, tailored solutions.`}
+                  </p>
+                  <div className="flex flex-wrap gap-3 text-sm text-white/60">
+                    <span className="flex items-center gap-1.5">
+                      <div className="w-1.5 h-1.5 bg-[#f5c518] rounded-full" />
+                      Free Consultation
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <div className="w-1.5 h-1.5 bg-[#f5c518] rounded-full" />
+                      Expert Craftsmen
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <div className="w-1.5 h-1.5 bg-[#f5c518] rounded-full" />
+                      Quality Guaranteed
+                    </span>
+                  </div>
+                </div>
+
+                {/* Right side - CTA buttons */}
+                <div className="flex flex-col gap-4">
+                  <Link
+                    href={service ? `/services/${service.canonicalSlug.replace('services/', '')}` : '/services'}
+                    className="group flex items-center justify-between bg-[#f5c518] hover:bg-[#e0b515] text-[#0d1b2e] font-bold px-8 py-5 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                  >
+                    <span className="text-lg">View Service Details</span>
+                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <a
+                    href={`mailto:enquiries@superstructureservices.co.uk?subject=${encodeURIComponent(`${project.category} Enquiry - Superstructure Services`)}`}
+                    className="group flex items-center justify-between bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold px-8 py-5 rounded-xl transition-all border border-white/20 hover:border-white/40"
+                  >
+                    <span className="text-lg">Get a Free Quote</span>
+                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </div>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d1b2e] mb-4">
-              Need {project.category} Help?
-            </h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              {service ? service.description.substring(0, 150) + '...' : `Discover our expert ${project.category.toLowerCase()} services, transforming homes and businesses in Canterbury and Kent with high-quality, tailored solutions.`}
-            </p>
-            <Link
-              href={service ? `/services/${service.canonicalSlug.replace('services/', '')}` : '/services'}
-              className="inline-block bg-black hover:bg-gray-800 text-white font-bold px-8 py-3 rounded-lg transition-all"
-            >
-              Read More
-            </Link>
           </div>
         </div>
       </section>
