@@ -120,7 +120,7 @@ export const SERVICES: Service[] = [
       "MCS-accredited air source heat pump installation in {location}, Kent. Eco-friendly heating with Government grant support. Get a free quote today.",
     canonicalSlug: "services/air-source-heat-pump-installation",
     icon: "",
-    heroImage: "/images/services/air-source-heat-pump.webp",
+    heroImage: "/images/heat-pumps/air source heat pump installation canterbury.webp",
   },
   {
     slug: "solar-panel-installation",
@@ -141,6 +141,7 @@ export const SERVICES: Service[] = [
       "MCS-accredited solar panel installation in {location}, Kent. Battery storage, EV chargers & expert fitting by Superstructure Services. Free quote.",
     canonicalSlug: "services/solar-panel-installer-canterbury",
     icon: "",
+    heroImage: "/images/solar-panels/Solar panel installation canterbury contractor.jpg",
   },
   {
     slug: "air-conditioning",
