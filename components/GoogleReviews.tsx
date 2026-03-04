@@ -161,7 +161,7 @@ export default function GoogleReviews() {
   }, []);
 
   return (
-    <section className="bg-[#1a1a2e] py-10 lg:py-14 pb-0">
+    <section className="bg-[#1a1a2e] py-10 lg:py-14 pb-0 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-start lg:items-stretch gap-6 lg:gap-10">
 
@@ -202,7 +202,7 @@ export default function GoogleReviews() {
           {/* Right — review cards scrollable row (no scrollbar) */}
           <div 
             ref={scrollRef} 
-            className="flex-1 flex gap-4 overflow-x-auto pb-2 scrollbar-hide scroll-smooth"
+            className="flex-1 flex gap-4 overflow-x-auto pb-4 scrollbar-hide scroll-smooth min-w-0"
             onMouseEnter={() => {
               if (scrollRef.current) {
                 scrollPosRef.current = scrollRef.current.scrollLeft;
@@ -219,7 +219,7 @@ export default function GoogleReviews() {
             {reviews.map((review) => (
               <div
                 key={review.name}
-                className="bg-[#111111] rounded-xl p-5 flex flex-col gap-3 border border-white/5 min-w-[280px] max-w-[280px]"
+                className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 min-w-[260px] max-w-[260px] sm:min-w-[280px] sm:max-w-[280px]"
               >
                 {/* Header */}
                 <div className="flex items-start justify-between gap-2">
