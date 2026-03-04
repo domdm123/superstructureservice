@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
@@ -82,64 +82,53 @@ function GoogleIcon() {
 
 export default function GoogleReviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
   const animationRef = useRef<number | null>(null);
   const scrollPosRef = useRef(0);
-  const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const pauseUntilRef = useRef(0);       // timestamp until which auto-scroll is paused
   const touchStartXRef = useRef(0);
   const touchStartScrollRef = useRef(0);
-  const isTouchingRef = useRef(false);
 
-  const pauseAndResume = (ms = 3000) => {
-    setIsPaused(true);
-    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
-    pauseTimeoutRef.current = setTimeout(() => setIsPaused(false), ms);
+  const pauseFor = (ms: number) => {
+    pauseUntilRef.current = Date.now() + ms;
   };
 
   const scroll = (dir: "left" | "right") => {
-    if (!scrollRef.current) return;
+    const el = scrollRef.current;
+    if (!el) return;
     const scrollAmount = 300;
-    const newScrollLeft = scrollRef.current.scrollLeft + (dir === "right" ? scrollAmount : -scrollAmount);
-    scrollRef.current.scrollTo({ left: newScrollLeft, behavior: "smooth" });
-    scrollPosRef.current = newScrollLeft;
-    pauseAndResume(3000);
+    const newScrollLeft = el.scrollLeft + (dir === "right" ? scrollAmount : -scrollAmount);
+    el.scrollTo({ left: newScrollLeft, behavior: "smooth" });
+    // sync after smooth scroll settles
+    setTimeout(() => {
+      if (scrollRef.current) scrollPosRef.current = scrollRef.current.scrollLeft;
+    }, 400);
+    pauseFor(3500);
   };
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    const scrollSpeed = 0.8;
-    const animate = () => {
-      if (!isPaused && !isTouchingRef.current && scrollContainer) {
-        scrollPosRef.current += scrollSpeed;
-        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-        if (scrollPosRef.current >= maxScroll) scrollPosRef.current = 0;
-        scrollContainer.scrollLeft = scrollPosRef.current;
-      }
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    animationRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
-      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
-    };
-  }, [isPaused]);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
-    const onScroll = () => { scrollPosRef.current = el.scrollLeft; };
+    const scrollSpeed = 0.8;
 
+    const animate = () => {
+      if (Date.now() > pauseUntilRef.current && el) {
+        scrollPosRef.current += scrollSpeed;
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        if (scrollPosRef.current >= maxScroll) scrollPosRef.current = 0;
+        el.scrollLeft = scrollPosRef.current;
+      }
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    // Touch handlers
     const onTouchStart = (e: TouchEvent) => {
-      isTouchingRef.current = true;
       touchStartXRef.current = e.touches[0].clientX;
       touchStartScrollRef.current = el.scrollLeft;
       scrollPosRef.current = el.scrollLeft;
-      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
-      setIsPaused(true);
+      pauseUntilRef.current = Infinity; // pause indefinitely while touching
     };
 
     const onTouchMove = (e: TouchEvent) => {
@@ -149,20 +138,30 @@ export default function GoogleReviews() {
     };
 
     const onTouchEnd = () => {
-      isTouchingRef.current = false;
       scrollPosRef.current = el.scrollLeft;
-      pauseAndResume(3000);
+      pauseFor(3000);
     };
 
-    el.addEventListener("scroll", onScroll, { passive: true });
+    // Mouse hover handlers
+    const onMouseEnter = () => { pauseUntilRef.current = Infinity; };
+    const onMouseLeave = () => {
+      scrollPosRef.current = el.scrollLeft;
+      pauseFor(500);
+    };
+
     el.addEventListener("touchstart", onTouchStart, { passive: true });
     el.addEventListener("touchmove", onTouchMove, { passive: true });
     el.addEventListener("touchend", onTouchEnd, { passive: true });
+    el.addEventListener("mouseenter", onMouseEnter);
+    el.addEventListener("mouseleave", onMouseLeave);
+
     return () => {
-      el.removeEventListener("scroll", onScroll);
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
       el.removeEventListener("touchstart", onTouchStart);
       el.removeEventListener("touchmove", onTouchMove);
       el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("mouseenter", onMouseEnter);
+      el.removeEventListener("mouseleave", onMouseLeave);
     };
   }, []);
 
@@ -209,18 +208,6 @@ export default function GoogleReviews() {
           <div 
             ref={scrollRef} 
             className="flex-1 flex gap-4 overflow-x-auto pb-4 scrollbar-hide scroll-smooth min-w-0"
-            onMouseEnter={() => {
-              if (scrollRef.current) {
-                scrollPosRef.current = scrollRef.current.scrollLeft;
-              }
-              setIsPaused(true);
-            }}
-            onMouseLeave={() => {
-              if (scrollRef.current) {
-                scrollPosRef.current = scrollRef.current.scrollLeft;
-              }
-              setIsPaused(false);
-            }}
           >
             {reviews.map((review) => (
               <div
