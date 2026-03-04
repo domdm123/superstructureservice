@@ -109,9 +109,7 @@ export default function RootLayout({
         />
         <LoadingScreen />
         <Header />
-        <div className="overflow-x-hidden">
-          <main>{children}</main>
-        </div>
+        <main>{children}</main>
         <GoogleReviews />
         <Footer />
         <MobileCTABar />
