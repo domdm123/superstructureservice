@@ -37,6 +37,7 @@ export default function ProjectsPage() {
         subtitle="Browse our portfolio of building and renovation work across Canterbury and Kent. Every project showcases our commitment to quality craftsmanship."
         breadcrumbs={[{ label: "Projects" }]}
         badge="Our Portfolio"
+        heroImage="/images/refurbishment-adelphi/domestic refurb in kent builder.JPG"
       />
 
       {/* Category Filters */}
