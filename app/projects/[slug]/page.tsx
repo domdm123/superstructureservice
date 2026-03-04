@@ -34,8 +34,8 @@ export default function ProjectPage() {
   const nextHero = () => setHeroIndex((heroIndex + 1) % project.images.length);
   const prevHero = () => setHeroIndex((heroIndex - 1 + project.images.length) % project.images.length);
   
-  const nextCarousel = () => setCarouselIndex((carouselIndex + 1) % Math.max(0, project.images.length - 2));
-  const prevCarousel = () => setCarouselIndex((carouselIndex - 1 + Math.max(1, project.images.length - 2)) % Math.max(1, project.images.length - 2));
+  const nextCarousel = () => setCarouselIndex((carouselIndex + 1) % project.images.length);
+  const prevCarousel = () => setCarouselIndex((carouselIndex - 1 + project.images.length) % project.images.length);
 
   return (
     <>
@@ -124,42 +124,94 @@ export default function ProjectPage() {
         </div>
       </section>
 
-      {/* Image Carousel */}
+      {/* World-class Image Gallery */}
       {project.images.length > 1 && (
-        <section className="py-12 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {project.images.slice(carouselIndex, carouselIndex + 3).map((img, i) => (
-                  <div key={i} className="relative h-64 rounded-lg overflow-hidden">
+        <section className="py-0 bg-[#0a0a0a]">
+          {/* Large featured image */}
+          <div className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
+            {project.images.map((img, i) => (
+              <div
+                key={i}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  i === carouselIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
+              >
+                <Image
+                  src={img}
+                  alt={`${project.title} - Image ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
+              </div>
+            ))}
+
+            {/* Dark vignette overlay */}
+            <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60 pointer-events-none" />
+            <div className="absolute inset-0 z-20 bg-gradient-to-r from-[#0a0a0a]/40 via-transparent to-[#0a0a0a]/40 pointer-events-none" />
+
+            {/* Nav arrows */}
+            <button
+              onClick={prevCarousel}
+              className="absolute left-6 top-1/2 -translate-y-1/2 z-30 group w-14 h-14 flex items-center justify-center rounded-full border border-white/30 bg-black/30 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={24} className="text-white group-hover:scale-110 transition-transform" />
+            </button>
+            <button
+              onClick={nextCarousel}
+              className="absolute right-6 top-1/2 -translate-y-1/2 z-30 group w-14 h-14 flex items-center justify-center rounded-full border border-white/30 bg-black/30 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110"
+              aria-label="Next image"
+            >
+              <ChevronRight size={24} className="text-white group-hover:scale-110 transition-transform" />
+            </button>
+
+            {/* Counter */}
+            <div className="absolute top-6 right-6 z-30 bg-black/50 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/20">
+              {carouselIndex + 1} / {project.images.length}
+            </div>
+          </div>
+
+          {/* Thumbnail strip */}
+          <div className="bg-[#0a0a0a] px-6 py-5">
+            <div className="max-w-7xl mx-auto">
+              <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-hide">
+                {project.images.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCarouselIndex(i)}
+                    className={`relative flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
+                      i === carouselIndex
+                        ? "ring-2 ring-[#f5c518] ring-offset-2 ring-offset-[#0a0a0a] opacity-100 scale-105"
+                        : "opacity-50 hover:opacity-80"
+                    }`}
+                  >
                     <Image
                       src={img}
-                      alt={`${project.title} - Image ${carouselIndex + i + 1}`}
+                      alt={`Thumbnail ${i + 1}`}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="96px"
                     />
-                  </div>
+                  </button>
                 ))}
               </div>
-              {project.images.length > 3 && (
-                <>
+
+              {/* Dot indicators */}
+              <div className="flex justify-center gap-2 mt-4">
+                {project.images.map((_, i) => (
                   <button
-                    onClick={prevCarousel}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-gray-100 p-2 rounded-full shadow-lg transition-all"
-                    aria-label="Previous images"
-                  >
-                    <ChevronLeft size={20} />
-                  </button>
-                  <button
-                    onClick={nextCarousel}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white hover:bg-gray-100 p-2 rounded-full shadow-lg transition-all"
-                    aria-label="Next images"
-                  >
-                    <ChevronRight size={20} />
-                  </button>
-                </>
-              )}
+                    key={i}
+                    onClick={() => setCarouselIndex(i)}
+                    className={`transition-all duration-300 rounded-full ${
+                      i === carouselIndex
+                        ? "w-6 h-2 bg-[#f5c518]"
+                        : "w-2 h-2 bg-white/30 hover:bg-white/60"
+                    }`}
+                    aria-label={`Go to image ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
