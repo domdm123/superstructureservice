@@ -133,7 +133,7 @@ export default function Footer() {
           {/* Areas */}
           <div className="col-span-2 lg:col-span-1">
             <h3 className="font-bold text-xs uppercase tracking-[0.15em] mb-5 text-[#4a9ebb]">Areas We Serve</h3>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="grid grid-cols-2 lg:grid-cols-1 gap-x-3 gap-y-2.5">
               {AREAS.slice(0, 10).map((a) => (
                 <li key={a.slug}>
                   <Link
