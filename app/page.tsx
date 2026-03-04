@@ -83,35 +83,19 @@ export default function HomePage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4a9ebb]/30 to-transparent" />
         <div className="relative max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/8">
+          <div className="grid grid-cols-2 md:grid-cols-3 divide-x divide-white/8">
             {[
               { num: "30", suffix: "+", label: "Years Experience", sub: "Combined team expertise" },
               { num: "100", suffix: "s", label: "Projects Completed", sub: "Across Kent & Canterbury" },
               { num: "22", suffix: "", label: "Areas Covered", sub: "Throughout East Kent" },
-              { num: "16", suffix: "", label: "Projects", sub: "View our portfolio", link: "/projects" },
-            ].map((s, i) => (
-              <div key={s.label} className={`flex flex-col items-center text-center px-6 py-2 ${i % 2 === 0 ? "" : ""}`}>
-                {s.link ? (
-                  <Link href={s.link} className="group">
-                    <div className="flex items-end gap-0.5 mb-1">
-                      <span className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none group-hover:text-[#4a9ebb] transition-colors">{s.num}</span>
-                      <span className="text-2xl md:text-3xl font-bold text-[#4a9ebb] leading-none mb-0.5">{s.suffix}</span>
-                    </div>
-                    <div className="text-sm font-bold text-white/90 uppercase tracking-[0.12em] mt-2 mb-0.5 group-hover:text-[#f5c518] transition-colors">{s.label}</div>
-                    <div className="text-xs text-white/35 font-medium group-hover:text-white/60 transition-colors flex items-center justify-center gap-1">
-                      {s.sub} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
-                ) : (
-                  <>
-                    <div className="flex items-end gap-0.5 mb-1">
-                      <span className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none">{s.num}</span>
-                      <span className="text-2xl md:text-3xl font-bold text-[#4a9ebb] leading-none mb-0.5">{s.suffix}</span>
-                    </div>
-                    <div className="text-sm font-bold text-white/90 uppercase tracking-[0.12em] mt-2 mb-0.5">{s.label}</div>
-                    <div className="text-xs text-white/35 font-medium">{s.sub}</div>
-                  </>
-                )}
+            ].map((s) => (
+              <div key={s.label} className="flex flex-col items-center text-center px-6 py-2">
+                <div className="flex items-end gap-0.5 mb-1">
+                  <span className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none">{s.num}</span>
+                  <span className="text-2xl md:text-3xl font-bold text-[#4a9ebb] leading-none mb-0.5">{s.suffix}</span>
+                </div>
+                <div className="text-sm font-bold text-white/90 uppercase tracking-[0.12em] mt-2 mb-0.5">{s.label}</div>
+                <div className="text-xs text-white/35 font-medium">{s.sub}</div>
               </div>
             ))}
           </div>

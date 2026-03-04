@@ -236,7 +236,7 @@ export const PROJECTS: Project[] = [
     slug: "home-office-creation-in-canterbury",
     title: "Home Office Creation",
     category: "Home Office",
-    location: "Kent",
+    location: "Canterbury",
     image: "/images/home-office-adelphi/Home office installation in Canterbury.jpg",
     images: [
       "/images/home-office-adelphi/Home office installation in Canterbury.jpg",
