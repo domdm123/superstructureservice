@@ -169,17 +169,22 @@ export default function GoogleReviews() {
             </div>
           </div>
 
-          {/* Right — review cards scrollable row (no scrollbar) */}
+          {/* Right — review cards scrollable row */}
+          <div className="flex-1 min-w-0 overflow-hidden">
           <div 
             ref={scrollRef} 
-            className="flex-1 flex gap-4 overflow-x-auto pb-4 scrollbar-hide min-w-0"
-            style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
+            className="flex gap-4 overflow-x-scroll pb-4 scrollbar-hide w-full"
+            style={{ 
+              scrollSnapType: "x mandatory", 
+              WebkitOverflowScrolling: "touch",
+              touchAction: "pan-x",
+            }}
           >
             {reviews.map((review) => (
               <div
                 key={review.name}
-                className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 min-w-[260px] max-w-[260px] sm:min-w-[280px] sm:max-w-[280px] flex-shrink-0"
-                style={{ scrollSnapAlign: "start" }}
+                className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 flex-shrink-0"
+                style={{ scrollSnapAlign: "start", width: "260px", minWidth: "260px" }}
               >
                 {/* Header */}
                 <div className="flex items-start justify-between gap-2">
@@ -217,6 +222,7 @@ export default function GoogleReviews() {
                 </a>
               </div>
             ))}
+          </div>
           </div>
 
         </div>
