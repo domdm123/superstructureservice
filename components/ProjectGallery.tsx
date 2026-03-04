@@ -5,7 +5,7 @@ import { playfair } from "@/app/layout";
 
 const GALLERY_PHOTOS = [
   {
-    src: "/images/adelphi-court/new external property refurbishment and restoration service in canterbury.jpg",
+    src: "/images/Kitchen-Installation-in-Canterbury.jpg",
     alt: "Kitchen installation in Canterbury",
     label: "Kitchen Installation",
     slug: "kitchen-installation-in-canterbury-1",
@@ -17,33 +17,33 @@ const GALLERY_PHOTOS = [
     slug: "property-maintenance-canterbury",
   },
   {
-    src: "/images/listed-building/listed building restoration in kent and canterbury.jpg",
+    src: "/images/listed-building-adelphi/canterbury-listed-building-refurbishment.jpg.jpg",
     alt: "Listed building refurbishment Canterbury",
     label: "Listed Building Restoration",
     slug: "listed-building-refurb-canterbury",
   },
   {
-    src: "/images/adelphi-court/new external property refurbishment and restoration service in canterbury.jpg",
+    src: "/images/Kitchen-Installation-in-Canterbury-2.jpg",
     alt: "Kitchen installation Canterbury",
     label: "Bespoke Kitchen",
     slug: "kitchen-installation-in-canterbury-1",
   },
   {
     src: "/images/bathroom-adelphi/new bathroom installation canterbury.jpg",
-    alt: "Bathroom refurbishment Canterbury",
+    alt: "Bathroom renovation Canterbury",
     label: "Bathroom Renovation",
     slug: "bathroom-installation-canterbury-plumber",
   },
   {
-    src: "/images/roof-repair/roof repairs service in cantebury kent.jpg",
+    src: "/images/roof-repair-adelphi/canterbury-bespoke-roofing-joinery.jpg.jpg",
     alt: "Roofing service Canterbury Kent",
     label: "Roofing",
     slug: "roof-repair-canterbury",
   },
   {
-    src: "/images/solar-panels/Solar panel installation canterbury contractor.jpg",
-    alt: "Solar panel installation Canterbury Kent",
-    label: "Solar Panels",
+    src: "/images/Professional-roofing-service-in-Canterbury-Kent.jpg",
+    alt: "Roofing in Canterbury",
+    label: "Roofing in Canterbury",
     slug: "roofing-in-canterbury-1",
   },
   {
