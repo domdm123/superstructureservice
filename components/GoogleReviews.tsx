@@ -80,60 +80,38 @@ function GoogleIcon() {
   );
 }
 
-const CARD_W = 276; // card 260px + gap 16px
+const CARD_W = 260;
+const GAP = 16;
+const STEP = CARD_W + GAP;
+const TOTAL = reviews.length;
 
 export default function GoogleReviews() {
   const [index, setIndex] = useState(0);
-  const [cardWidth, setCardWidth] = useState(CARD_W);
-  const [visibleCount, setVisibleCount] = useState(1);
-  const containerRef = useRef<HTMLDivElement>(null);
   const autoRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const pausedRef = useRef(false);
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
-
-  const total = reviews.length;
-
-  const measure = useCallback(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const w = el.offsetWidth;
-    // Show as many 276px cards as fit, min 1
-    const visible = Math.max(1, Math.floor(w / CARD_W));
-    const cw = Math.floor(w / visible);
-    setVisibleCount(visible);
-    setCardWidth(cw);
-  }, []);
-
-  useEffect(() => {
-    measure();
-    const ro = new ResizeObserver(measure);
-    if (containerRef.current) ro.observe(containerRef.current);
-    return () => ro.disconnect();
-  }, [measure]);
-
-  const maxIndex = Math.max(0, total - visibleCount);
 
   const go = useCallback((dir: 1 | -1) => {
     pausedRef.current = true;
     setTimeout(() => { pausedRef.current = false; }, 5000);
     setIndex(prev => {
       const next = prev + dir;
-      if (next < 0) return maxIndex;
-      if (next > maxIndex) return 0;
+      if (next < 0) return TOTAL - 1;
+      if (next >= TOTAL) return 0;
       return next;
     });
-  }, [maxIndex]);
+  }, []);
 
   useEffect(() => {
     autoRef.current = setInterval(() => {
-      if (pausedRef.current) return;
-      setIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
+      if (!pausedRef.current) {
+        setIndex(prev => (prev + 1) % TOTAL);
+      }
     }, 3500);
     return () => { if (autoRef.current) clearInterval(autoRef.current); };
-  }, [maxIndex]);
+  }, []);
 
-  // Touch handlers
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
@@ -144,13 +122,12 @@ export default function GoogleReviews() {
     const dx = e.changedTouches[0].clientX - touchStartX.current;
     const dy = e.changedTouches[0].clientY - touchStartY.current;
     setTimeout(() => { pausedRef.current = false; }, 5000);
-    // Only swipe if horizontal movement dominates
     if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
       go(dx < 0 ? 1 : -1);
     }
   };
 
-  const translateX = -(index * cardWidth);
+  const translateX = -(index * STEP);
 
   return (
     <section className="bg-[#1a1a2e] pt-6 pb-0 lg:pt-14">
@@ -193,7 +170,6 @@ export default function GoogleReviews() {
 
           {/* Right — transform-based carousel (no overflow-x-scroll needed) */}
           <div
-            ref={containerRef}
             className="flex-1 min-w-0 overflow-hidden pb-4"
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
@@ -212,7 +188,7 @@ export default function GoogleReviews() {
                 <div
                   key={review.name}
                   className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 flex-shrink-0"
-                  style={{ width: `${cardWidth - 16}px` }}
+                  style={{ width: `${CARD_W}px` }}
                 >
                   {/* Header */}
                   <div className="flex items-start justify-between gap-2">
