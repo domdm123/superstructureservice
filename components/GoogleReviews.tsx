@@ -161,36 +161,38 @@ export default function GoogleReviews() {
   }, []);
 
   return (
-    <section className="bg-[#1a1a2e] py-14 pb-0">
+    <section className="bg-[#1a1a2e] py-10 lg:py-14 pb-0">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-10">
+        <div className="flex flex-col lg:flex-row items-start lg:items-stretch gap-6 lg:gap-10">
 
           {/* Left — rating summary */}
-          <div className="flex flex-col items-center justify-center text-center min-w-[180px] lg:border-r lg:border-white/10 lg:pr-10">
-            <p className="text-white font-black text-xl tracking-widest uppercase mb-2">Excellent</p>
-            <div className="flex gap-0.5 mb-2">
-              {[1,2,3,4,5].map((i) => (
-                <Star key={i} size={26} className="fill-[#f5a623] text-[#f5a623]" />
-              ))}
-            </div>
-            <p className="text-gray-400 text-sm mb-3">Based on 12 reviews</p>
-            <div className="flex items-center gap-1.5">
-              <GoogleIcon />
-              <span className="text-white font-bold text-lg tracking-tight">Google</span>
+          <div className="w-full lg:w-auto flex flex-row lg:flex-col items-center justify-between lg:justify-center text-center lg:min-w-[180px] lg:border-r lg:border-white/10 lg:pr-10 pb-4 lg:pb-0 border-b lg:border-b-0 border-white/10">
+            <div className="flex flex-col items-start lg:items-center">
+              <p className="text-white font-black text-lg lg:text-xl tracking-widest uppercase mb-1 lg:mb-2">Excellent</p>
+              <div className="flex gap-0.5 mb-1 lg:mb-2">
+                {[1,2,3,4,5].map((i) => (
+                  <Star key={i} size={20} className="fill-[#f5a623] text-[#f5a623]" />
+                ))}
+              </div>
+              <p className="text-gray-400 text-xs lg:text-sm mb-2 lg:mb-3">Based on 12 reviews</p>
+              <div className="flex items-center gap-1.5">
+                <GoogleIcon />
+                <span className="text-white font-bold text-base lg:text-lg tracking-tight">Google</span>
+              </div>
             </div>
             {/* Arrow controls */}
-            <div className="flex items-center gap-3 mt-6">
+            <div className="flex items-center gap-3 lg:mt-6">
               <button
                 onClick={() => scroll("left")}
                 aria-label="Previous reviews"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
+                className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
               >
                 <ChevronLeft size={18} strokeWidth={1.5} />
               </button>
               <button
                 onClick={() => scroll("right")}
                 aria-label="Next reviews"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
+                className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
               >
                 <ChevronRight size={18} strokeWidth={1.5} />
               </button>

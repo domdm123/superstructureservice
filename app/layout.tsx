@@ -102,7 +102,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB">
-      <body className="font-sans antialiased pt-[110px] bg-white text-gray-900">
+      <body className="font-sans antialiased pt-[96px] lg:pt-[110px] bg-white text-gray-900">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

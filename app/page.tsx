@@ -38,7 +38,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — full screen video */}
-      <section className="relative h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden bg-[#0d1b2e]">
+      <section className="relative h-[85vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-[#0d1b2e]">
         {/* Video background */}
         <video
           autoPlay
@@ -54,22 +54,22 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto w-full">
-          <h1 className={`${playfair.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 tracking-normal`}>
+          <h1 className={`${playfair.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6 tracking-normal`}>
             Modern approach,<br className="hidden sm:block" /> old fashioned values.
           </h1>
-          <p className="text-gray-300 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-300 text-sm sm:text-lg mb-6 sm:mb-10 max-w-xl mx-auto leading-relaxed">
             Serving Canterbury, Kent and surrounding villages.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full px-2 sm:px-0">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center w-full sm:w-[260px] h-14 border-2 border-white text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-[#111111] transition-all"
+              className="inline-flex items-center justify-center w-full sm:w-[240px] h-12 sm:h-14 border-2 border-white text-white font-bold uppercase tracking-widest text-xs sm:text-sm hover:bg-white hover:text-[#111111] transition-all"
             >
               View Our Services
             </Link>
             <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="inline-flex items-center justify-center gap-2 w-full sm:w-[260px] h-14 bg-[#1e3a5f] border-2 border-[#1e3a5f] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#162d4a] hover:border-[#162d4a] transition-all"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-[240px] h-12 sm:h-14 bg-[#1e3a5f] border-2 border-[#1e3a5f] text-white font-bold text-xs sm:text-sm uppercase tracking-widest hover:bg-[#162d4a] hover:border-[#162d4a] transition-all"
             >
               <Phone size={16} /> {PHONE}
             </a>
@@ -199,8 +199,8 @@ export default function HomePage() {
             
             <div className="relative z-10 flex flex-col items-center justify-center gap-3">
               <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[#4a9ebb]/70 mb-2">Our Services</span>
-              <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">We can do</span>
-              <div className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#4a9ebb]">
+              <span className="text-3xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">We can do</span>
+              <div className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#4a9ebb]">
                 <AnimatedService />
               </div>
             </div>

@@ -27,12 +27,16 @@ export default function Header() {
         : "bg-white border-b border-gray-100"
     }`}>
       {/* Top bar */}
-      <div className="bg-[#111111] text-gray-300 text-sm py-2">
+      <div className="bg-[#111111] text-gray-300 text-sm py-1.5">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <span className="hidden sm:flex items-center gap-1.5 text-gray-300 tracking-wide text-xs uppercase">
               <MapPin size={13} />
               Serving Canterbury, Kent &amp; Surrounding Villages
+            </span>
+            <span className="flex sm:hidden items-center gap-1.5 text-gray-300 tracking-wide text-xs">
+              <MapPin size={12} />
+              Canterbury, Kent
             </span>
             <a
               href={`mailto:${EMAIL}`}
@@ -46,7 +50,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-gray-300 hover:text-white transition-colors"
+              className="hidden sm:block text-gray-300 hover:text-white transition-colors"
             >
               <Instagram size={15} />
             </a>
@@ -85,7 +89,7 @@ export default function Header() {
 
       {/* Main nav */}
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image

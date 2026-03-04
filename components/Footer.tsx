@@ -18,10 +18,10 @@ export default function Footer() {
       <div className="h-1 bg-gradient-to-r from-[#4a9ebb] via-[#1e3a5f] to-[#4a9ebb]" />
 
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-10 lg:mb-14">
 
           {/* About */}
-          <div className="lg:col-span-2">
+          <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="block mb-6 -ml-3">
               <Image
                 src="/logo-light.png"
@@ -89,7 +89,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="col-span-1">
             <h3 className="font-bold text-xs uppercase tracking-[0.15em] mb-5 text-[#4a9ebb]">Our Services</h3>
             <ul className="flex flex-col gap-2.5">
               {SERVICES.slice(0, 8).map((s) => (
@@ -114,7 +114,7 @@ export default function Footer() {
           </div>
 
           {/* More Services */}
-          <div>
+          <div className="col-span-1">
             <h3 className="font-bold text-xs uppercase tracking-[0.15em] mb-5 text-[#4a9ebb]">More Services</h3>
             <ul className="flex flex-col gap-2.5">
               {SERVICES.slice(8).map((s) => (
@@ -131,7 +131,7 @@ export default function Footer() {
           </div>
 
           {/* Areas */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <h3 className="font-bold text-xs uppercase tracking-[0.15em] mb-5 text-[#4a9ebb]">Areas We Serve</h3>
             <ul className="flex flex-col gap-2.5">
               {AREAS.slice(0, 10).map((a) => (
@@ -157,11 +157,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-          <div>
-            © {year} Superstructure Services Ltd · Registered: 67 Canterbury Innovation Centre, CT2 7FG · Co. Reg: 4775585
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+          <div className="text-center sm:text-left">
+            © {year} Superstructure Services Ltd · Co. Reg: 4775585
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <Link href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
             <Link href="/services" className="hover:text-gray-300 transition-colors">Services</Link>
             <Link href="/projects" className="hover:text-gray-300 transition-colors">Projects</Link>
