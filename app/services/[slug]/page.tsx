@@ -82,6 +82,7 @@ export default async function ServicePage({ params }: Props) {
           { label: service.shortName },
         ]}
         heroImage={service.heroImage}
+        ctaHref={`mailto:${EMAIL}?subject=${encodeURIComponent(`${service.name} enquiry - Superstructure Services`)}`}
       />
 
       {/* Main content */}
