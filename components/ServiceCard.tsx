@@ -8,7 +8,11 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({ service, location }: ServiceCardProps) {
-  const href = location
+  // For Canterbury, use canonical URLs to preserve SEO from old site
+  // For other locations, use dynamic routing
+  const href = location && location.toLowerCase() === 'canterbury'
+    ? `/${service.canonicalSlug}`
+    : location
     ? `/${service.slug}/${location}`
     : `/services/${service.canonicalSlug.replace("services/", "")}`;
 
