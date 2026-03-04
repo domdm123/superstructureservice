@@ -388,6 +388,7 @@ export const SERVICES: Service[] = [
       "Professional groundworks in {location}, Kent. Foundations, drainage, site preparation & excavation. Superstructure Services. Free quote.",
     canonicalSlug: "services/groundworks",
     icon: "",
+    heroImage: "/images/groundworks-canterbury.JPG",
   },
   {
     slug: "landscaping-gardens",
