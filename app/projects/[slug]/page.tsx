@@ -1,9 +1,9 @@
 "use client";
 
-import { notFound, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft, MapPin, Tag, ChevronLeft, ChevronRight } from "lucide-react";
+import { MapPin, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import { PROJECTS, getProjectBySlug, getRelatedProjects } from "@/lib/projects";
 import { SERVICES } from "@/lib/services";
 import { useState } from "react";
@@ -13,13 +13,23 @@ export default function ProjectPage() {
   const slug = params.slug as string;
   
   const project = getProjectBySlug(slug);
-  if (!project) notFound();
-
-  const related = getRelatedProjects(project, 4);
-  const service = SERVICES.find(s => s.slug === project.serviceSlug);
   
   const [heroIndex, setHeroIndex] = useState(0);
   const [carouselIndex, setCarouselIndex] = useState(0);
+
+  if (!project) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">Project not found</h1>
+          <Link href="/projects" className="text-[#1e3a5f] font-semibold hover:underline">← Back to Projects</Link>
+        </div>
+      </div>
+    );
+  }
+
+  const related = getRelatedProjects(project, 4);
+  const service = SERVICES.find(s => s.slug === project.serviceSlug);
   
   const nextHero = () => setHeroIndex((heroIndex + 1) % project.images.length);
   const prevHero = () => setHeroIndex((heroIndex - 1 + project.images.length) % project.images.length);
