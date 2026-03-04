@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "external-property-maintenance-and-repairs",
     title: "External Property Maintenance and Repairs",
-    category: "Refurbishments & Conversions",
+    category: "Refurbishments and Conversions",
     location: "Canterbury",
     image: "/images/Property-maintanence-in-Canterbury-Kent.jpg",
     images: [
@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "electrician-rewiring-service-canterbury",
     title: "Full Electrical Re-Wiring",
-    category: "Electrical",
+    category: "Electrical works",
     location: "Canterbury",
     image: "/images/home-electrician-in-canterbury-rewiring-fuse-metering.jpg",
     images: [
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "bathroom-installation-canterbury-plumber",
     title: "New Bathroom and Plumbing Maintenance",
-    category: "New Bathrooms",
+    category: "Plumbing and Drainage",
     location: "Canterbury",
     image: "/images/classic-modern-bathroom-refurbishment-service-canterbury.jpg",
     images: [
@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "property-maintenance-canterbury",
     title: "Full Property Refurbishment & Maintenance",
-    category: "Refurbishments & Conversions",
+    category: "Refurbishments and Conversions",
     location: "Canterbury",
     image: "/images/Property-Refurbishment-in-Canterbury.jpg",
     images: [
@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "entrance-restoration-canterbury",
     title: "Entrance Restoration in Canterbury",
-    category: "Refurbishments & Conversions",
+    category: "Refurbishments and Conversions",
     location: "Canterbury",
     image: "/images/Property-Refurbishment-in-Canterbury.jpg",
     images: [
@@ -159,7 +159,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "library-renovation-ashford",
     title: "Library Renovation",
-    category: "Refurbishments & Conversions",
+    category: "Refurbishments and Conversions",
     location: "Ashford",
     image: "/images/Carpenter-in-Canterbury.jpg",
     images: [
@@ -177,7 +177,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "home-office-creation-in-canterbury",
     title: "Home Office Creation",
-    category: "Home Office Conversions",
+    category: "Home Office",
     location: "Sturry",
     image: "/images/Home-office-creation-Canterbury-Kent.jpg",
     images: [
@@ -195,7 +195,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "domestic-refurbishment-in-canterbury",
     title: "Domestic Refurbishment",
-    category: "Refurbishments & Conversions",
+    category: "Refurbishments and Conversions",
     location: "Bridge",
     image: "/images/Property-maintanence-in-Canterbury.jpg",
     images: [
@@ -213,7 +213,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "underfloor-heating-in-canterbury",
     title: "Underfloor Heating Installation",
-    category: "Flooring & Underfloor Heating",
+    category: "Underfloor heating",
     location: "Chartham",
     image: "/images/Underfloor-Heating-in-Canterbury.jpg",
     images: [
@@ -229,7 +229,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "plumbing-and-drainage-in-canterbury",
     title: "New Bathroom, Plumbing and Drainage",
-    category: "Plumbing & Drainage",
+    category: "Plumbing and Drainage",
     location: "Faversham",
     image: "/images/Bathrooms-in-Canterbury.jpg",
     images: [
@@ -246,7 +246,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "commercial-refurbishment-in-canterbury",
     title: "Commercial Refurbishment",
-    category: "Facilities Management",
+    category: "Refurbishments and Conversions",
     location: "Whitstable",
     image: "/images/Facilities-building-management-firm-in-Canterbury-Kent.jpg",
     images: [
