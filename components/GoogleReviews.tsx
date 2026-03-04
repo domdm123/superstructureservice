@@ -167,7 +167,7 @@ export default function GoogleReviews() {
   }, []);
 
   return (
-    <section className="bg-[#1a1a2e] py-10 lg:py-14 pb-0 overflow-hidden">
+    <section className="bg-[#1a1a2e] pt-6 pb-0 lg:pt-14 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-start lg:items-stretch gap-6 lg:gap-10">
 
