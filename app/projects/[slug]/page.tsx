@@ -40,7 +40,11 @@ export default function ProjectPage() {
   }
 
   const related = getRelatedProjects(project, 4);
-  const service = SERVICES.find(s => s.slug === project.serviceSlug);
+  const service = SERVICES.find(s => 
+    s.slug === project.serviceSlug || 
+    s.canonicalSlug.replace('services/', '') === project.serviceSlug ||
+    s.canonicalSlug === project.serviceSlug
+  );
   
   
   const nextCarousel = () => setCarouselIndex((carouselIndex + 1) % project.images.length);
