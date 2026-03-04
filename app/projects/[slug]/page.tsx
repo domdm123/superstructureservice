@@ -1,25 +1,17 @@
 "use client";
 
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowLeft, MapPin, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import { PROJECTS, getProjectBySlug, getRelatedProjects } from "@/lib/projects";
-import { DOMAIN, SERVICES } from "@/lib/services";
-import CTASection from "@/components/CTASection";
+import { SERVICES } from "@/lib/services";
 import { useState } from "react";
 
-interface Props {
-  params: Promise<{ slug: string }>;
-}
-
-export async function generateStaticParams() {
-  return PROJECTS.map((p) => ({ slug: p.slug }));
-}
-
-export default async function ProjectPage({ params }: Props) {
-  const { slug } = await params;
+export default function ProjectPage() {
+  const params = useParams();
+  const slug = params.slug as string;
+  
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
