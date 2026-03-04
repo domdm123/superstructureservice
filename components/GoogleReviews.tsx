@@ -120,7 +120,7 @@ export default function GoogleReviews() {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    const scrollSpeed = 0.5;
+    const scrollSpeed = 0.8;
 
     const animate = () => {
       if (!isPaused && scrollContainer) {
