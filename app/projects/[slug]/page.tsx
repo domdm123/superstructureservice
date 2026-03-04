@@ -227,29 +227,63 @@ export default function ProjectPage() {
 
       {/* Gallery-style Related Projects */}
       {related.length > 0 && (
-        <section className="py-16 bg-[#0d1b2e]">
+        <section className="py-20 bg-[#0d1b2e]">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">More Projects</h2>
+              <p className="text-white/60 text-lg">Explore our portfolio of completed work across Canterbury and Kent</p>
+            </div>
+
+            {/* Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {related.map((rel) => (
                 <Link
                   key={rel.slug}
                   href={`/projects/${rel.slug}`}
-                  className="group relative h-64 overflow-hidden rounded-lg"
+                  className="group relative aspect-square overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500"
                 >
                   <Image
                     src={rel.image}
                     alt={rel.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <div className="text-xs text-white/70 mb-1">{rel.category}</div>
-                    <h3 className="font-bold text-lg leading-tight">{rel.title}</h3>
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                  
+                  {/* Content */}
+                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                      <div className="text-xs font-semibold text-[#f5c518] mb-2 uppercase tracking-wider">
+                        {rel.category}
+                      </div>
+                      <h3 className="font-bold text-xl text-white leading-tight mb-3 line-clamp-2">
+                        {rel.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span>View Project</span>
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-[#f5c518]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
               ))}
+            </div>
+
+            {/* View All Link */}
+            <div className="text-center mt-12">
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#f5c518] transition-colors group"
+              >
+                <span className="text-lg">View All Projects</span>
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </section>
