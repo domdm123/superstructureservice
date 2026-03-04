@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
@@ -82,11 +82,55 @@ function GoogleIcon() {
 
 export default function GoogleReviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const animationRef = useRef<number | null>(null);
+  const scrollPosRef = useRef(0);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
     scrollRef.current.scrollBy({ left: dir === "right" ? 320 : -320, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    const scrollSpeed = 0.5;
+
+    const animate = () => {
+      if (!isPaused && scrollContainer) {
+        scrollPosRef.current += scrollSpeed;
+        
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        if (scrollPosRef.current >= maxScroll) {
+          scrollPosRef.current = 0;
+        }
+        
+        scrollContainer.scrollLeft = scrollPosRef.current;
+      }
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isPaused]);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    const handleScroll = () => {
+      scrollPosRef.current = scrollContainer.scrollLeft;
+    };
+
+    scrollContainer.addEventListener("scroll", handleScroll);
+    return () => scrollContainer.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className="bg-[#1a1a2e] py-14 pb-0">
@@ -126,7 +170,12 @@ export default function GoogleReviews() {
           </div>
 
           {/* Right — review cards scrollable row (no scrollbar) */}
-          <div ref={scrollRef} className="flex-1 flex gap-4 overflow-x-auto pb-2 scrollbar-hide scroll-smooth">
+          <div 
+            ref={scrollRef} 
+            className="flex-1 flex gap-4 overflow-x-auto pb-2 scrollbar-hide scroll-smooth"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             {reviews.map((review) => (
               <div
                 key={review.name}

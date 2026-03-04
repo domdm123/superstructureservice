@@ -270,13 +270,16 @@ export default function ProjectGallery() {
           </Link>
 
           {/* Stats tile - instead of empty space */}
-          <div className="col-span-12 md:col-span-6 row-span-1 bg-[#0d1b2e] rounded-2xl flex items-center justify-center text-center p-6">
+          <Link
+            href="/services"
+            className="col-span-12 md:col-span-6 row-span-1 bg-[#0d1b2e] rounded-2xl flex items-center justify-center text-center p-6 hover:bg-[#1e3a5f] transition-colors group"
+          >
             <div>
-              <div className="text-4xl md:text-5xl font-black text-white mb-1">16</div>
+              <div className="text-4xl md:text-5xl font-black text-white mb-1 group-hover:scale-110 transition-transform">16</div>
               <div className="text-[#4a9ebb] text-sm font-semibold uppercase tracking-wider">Services</div>
               <div className="text-white/50 text-xs mt-2">All trades under one roof</div>
             </div>
-          </div>
+          </Link>
 
         </div>
       </div>
