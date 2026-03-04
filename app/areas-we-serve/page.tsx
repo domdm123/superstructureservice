@@ -52,10 +52,10 @@ export default function AreasWeServePage() {
   return (
     <>
       <PageHero
-        title="Areas We Serve Across Kent"
+        title="Areas we serve across Kent"
         subtitle="Based in Canterbury, we deliver professional building and trade services to homes and businesses throughout the surrounding Kent towns and villages."
-        breadcrumbs={[{ label: "Areas We Serve" }]}
-        badge="Kent Coverage"
+        breadcrumbs={[{ label: "Areas we serve" }]}
+        badge="Kent coverage"
       />
 
       {/* Areas grid */}
@@ -63,7 +63,7 @@ export default function AreasWeServePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              All Areas We Cover
+              All areas we cover
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
               Click any area to see all available building and trade services, local information
@@ -108,7 +108,7 @@ export default function AreasWeServePage() {
                   </p>
                 </div>
                 <div className="px-5 pb-5 flex items-center justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-300 group-hover:text-[#4a9ebb] transition-colors duration-300">View Area</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-300 group-hover:text-[#4a9ebb] transition-colors duration-300">View area</span>
                   <div className="w-8 h-8 rounded-full border border-gray-100 group-hover:border-[#4a9ebb] group-hover:bg-[#4a9ebb]/8 flex items-center justify-center transition-all duration-300">
                     <ArrowRight size={14} className="text-gray-300 group-hover:text-[#4a9ebb] group-hover:translate-x-0.5 transition-all" />
                   </div>
@@ -124,7 +124,7 @@ export default function AreasWeServePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-gray-900 mb-3">
-              Services Available Across All Areas
+              Services available across all areas
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm">
               Every service we offer is available across all {AREAS.length} areas we cover.
@@ -164,7 +164,7 @@ export default function AreasWeServePage() {
       </section>
 
       <CTASection
-        heading="Can't Find Your Area?"
+        heading="Can't find your area?"
         subheading="We may still be able to help. Contact us directly and we'll let you know if we can cover your location in Kent."
       />
     </>

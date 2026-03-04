@@ -79,7 +79,7 @@ export const SERVICES: Service[] = [
       "Professional facilities building management in {location}, Kent. Planned & reactive maintenance, plumbing, electrical & AC by Superstructure Services.",
     canonicalSlug: "services/facility-building-management",
     icon: "",
-    heroImage: "/images/services/facility-building-management.webp",
+    heroImage: "/images/facility-management/Facilities-building-management-firm-in-Canterbury-Kent.webp",
   },
   {
     slug: "electrician",
