@@ -29,7 +29,7 @@ import Image from "next/image";
 
 export default function HowWeWork() {
   return (
-    <section className="pt-24 pb-0 sm:py-24 relative overflow-hidden">
+    <section className="pt-8 pb-0 sm:py-24 relative overflow-hidden">
       {/* Background image with 50% opacity */}
       <div className="absolute inset-0">
         <Image

@@ -221,7 +221,7 @@ export default function HomePage() {
       </FadeIn>
 
       {/* Why Choose Us */}
-      <section className="pt-0 pb-12 sm:py-20 bg-gray-50">
+      <section className="pt-0 pb-0 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
