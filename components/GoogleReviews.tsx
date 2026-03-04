@@ -201,8 +201,18 @@ export default function GoogleReviews() {
           <div 
             ref={scrollRef} 
             className="flex-1 flex gap-4 overflow-x-auto pb-2 scrollbar-hide scroll-smooth"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
+            onMouseEnter={() => {
+              if (scrollRef.current) {
+                scrollPosRef.current = scrollRef.current.scrollLeft;
+              }
+              setIsPaused(true);
+            }}
+            onMouseLeave={() => {
+              if (scrollRef.current) {
+                scrollPosRef.current = scrollRef.current.scrollLeft;
+              }
+              setIsPaused(false);
+            }}
           >
             {reviews.map((review) => (
               <div
