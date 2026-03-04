@@ -42,12 +42,6 @@ const nextConfig: NextConfig = {
         destination: "/services/driveways-and-paving-canterbury",
         permanent: true,
       },
-      // Projects sub-pages
-      {
-        source: "/projects/:slug",
-        destination: "/projects",
-        permanent: true,
-      },
     ];
   },
 
