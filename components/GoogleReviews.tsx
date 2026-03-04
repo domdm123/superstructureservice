@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
@@ -80,54 +80,15 @@ function GoogleIcon() {
   );
 }
 
-const CARD_W = 260;
-const GAP = 16;
-const STEP = CARD_W + GAP;
-const TOTAL = reviews.length;
-
 export default function GoogleReviews() {
-  const [index, setIndex] = useState(0);
-  const autoRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const pausedRef = useRef(false);
-  const touchStartX = useRef(0);
-  const touchStartY = useRef(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const CARD_WIDTH = 276;
 
-  const go = useCallback((dir: 1 | -1) => {
-    pausedRef.current = true;
-    setTimeout(() => { pausedRef.current = false; }, 5000);
-    setIndex(prev => {
-      const next = prev + dir;
-      if (next < 0) return TOTAL - 1;
-      if (next >= TOTAL) return 0;
-      return next;
-    });
-  }, []);
-
-  useEffect(() => {
-    autoRef.current = setInterval(() => {
-      if (!pausedRef.current) {
-        setIndex(prev => (prev + 1) % TOTAL);
-      }
-    }, 3500);
-    return () => { if (autoRef.current) clearInterval(autoRef.current); };
-  }, []);
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchStartY.current = e.touches[0].clientY;
-    pausedRef.current = true;
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir === "right" ? CARD_WIDTH : -CARD_WIDTH, behavior: "smooth" });
   };
-
-  const onTouchEnd = (e: React.TouchEvent) => {
-    const dx = e.changedTouches[0].clientX - touchStartX.current;
-    const dy = e.changedTouches[0].clientY - touchStartY.current;
-    setTimeout(() => { pausedRef.current = false; }, 5000);
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-      go(dx < 0 ? 1 : -1);
-    }
-  };
-
-  const translateX = -(index * STEP);
 
   return (
     <section className="bg-[#1a1a2e] pt-6 pb-0 lg:pt-14">
@@ -152,14 +113,14 @@ export default function GoogleReviews() {
             {/* Arrow controls */}
             <div className="flex items-center gap-3 lg:mt-6">
               <button
-                onClick={() => go(-1)}
+                onClick={() => scroll("left")}
                 aria-label="Previous reviews"
                 className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
               >
                 <ChevronLeft size={18} strokeWidth={1.5} />
               </button>
               <button
-                onClick={() => go(1)}
+                onClick={() => scroll("right")}
                 aria-label="Next reviews"
                 className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
               >
@@ -168,65 +129,57 @@ export default function GoogleReviews() {
             </div>
           </div>
 
-          {/* Right — transform-based carousel (no overflow-x-scroll needed) */}
-          <div
-            className="flex-1 min-w-0 overflow-hidden pb-4"
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-            onMouseEnter={() => { pausedRef.current = true; }}
-            onMouseLeave={() => { pausedRef.current = false; }}
+          {/* Right — review cards scrollable row */}
+          <div 
+            ref={scrollRef} 
+            className="flex-1 min-w-0 flex gap-4 overflow-x-auto pb-4"
+            style={{ 
+              scrollSnapType: "x mandatory",
+              WebkitOverflowScrolling: "touch",
+            }}
           >
-            <div
-              className="flex gap-4"
-              style={{
-                transform: `translateX(${translateX}px)`,
-                transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1)",
-                willChange: "transform",
-              }}
-            >
-              {reviews.map((review) => (
-                <div
-                  key={review.name}
-                  className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 flex-shrink-0"
-                  style={{ width: `${CARD_W}px` }}
-                >
-                  {/* Header */}
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex items-center gap-2.5">
-                      <div className={`w-9 h-9 rounded-full ${review.color} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
-                        {review.initials}
-                      </div>
-                      <div>
-                        <p className="text-white font-semibold text-sm leading-tight">{review.name}</p>
-                        <p className="text-gray-500 text-xs">{review.date}</p>
-                      </div>
+            {reviews.map((review) => (
+              <div
+                key={review.name}
+                className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 flex-shrink-0"
+                style={{ scrollSnapAlign: "start", width: "260px" }}
+              >
+                {/* Header */}
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-center gap-2.5">
+                    <div className={`w-9 h-9 rounded-full ${review.color} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
+                      {review.initials}
                     </div>
-                    <GoogleIcon />
+                    <div>
+                      <p className="text-white font-semibold text-sm leading-tight">{review.name}</p>
+                      <p className="text-gray-500 text-xs">{review.date}</p>
+                    </div>
                   </div>
-
-                  {/* Stars */}
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: review.rating }).map((_, i) => (
-                      <Star key={i} size={13} className="fill-[#f5a623] text-[#f5a623]" />
-                    ))}
-                  </div>
-
-                  {/* Text */}
-                  <p className="text-gray-400 text-xs leading-relaxed line-clamp-4">
-                    {review.text}
-                  </p>
-
-                  <a
-                    href="https://www.google.com/maps/search/Superstructure+Services+Ltd+Canterbury+Kent"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#4a9ebb] text-xs hover:underline mt-auto"
-                  >
-                    Read more
-                  </a>
+                  <GoogleIcon />
                 </div>
-              ))}
-            </div>
+
+                {/* Stars */}
+                <div className="flex gap-0.5">
+                  {Array.from({ length: review.rating }).map((_, i) => (
+                    <Star key={i} size={13} className="fill-[#f5a623] text-[#f5a623]" />
+                  ))}
+                </div>
+
+                {/* Text */}
+                <p className="text-gray-400 text-xs leading-relaxed line-clamp-4">
+                  {review.text}
+                </p>
+
+                <a
+                  href="https://www.google.com/maps/search/Superstructure+Services+Ltd+Canterbury+Kent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#4a9ebb] text-xs hover:underline mt-auto"
+                >
+                  Read more
+                </a>
+              </div>
+            ))}
           </div>
 
         </div>
