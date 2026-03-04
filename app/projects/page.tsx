@@ -12,17 +12,16 @@ import CTASection from "@/components/CTASection";
 
 const CATEGORIES = [
   "All",
-  "Kitchen Installation",
-  "Refurbishments & Conversions", 
-  "New Bathrooms",
-  "Roofing",
-  "Electrical",
-  "Flooring & Underfloor Heating",
   "Carpentry",
-  "Home Office Conversions",
+  "Electrical works",
+  "Flooring",
+  "Home Office",
+  "Kitchen Installation",
   "Listed Building Restoration",
-  "Plumbing & Drainage",
-  "Facilities Management",
+  "Plumbing and Drainage",
+  "Refurbishments and Conversions",
+  "Roofing",
+  "Underfloor heating",
 ];
 
 export default function ProjectsPage() {
