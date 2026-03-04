@@ -110,11 +110,11 @@ export default function ProjectPage() {
         </div>
       </section>
 
-      {/* World-class Image Gallery */}
+      {/* World-class Image Gallery - Portrait-friendly */}
       {project.images.length > 1 && (
         <section className="py-0 bg-[#0a0a0a]">
-          {/* Large featured image */}
-          <div className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
+          {/* Main large featured image - portrait optimized */}
+          <div className="relative w-full h-[85vh] min-h-[600px] overflow-hidden">
             {project.images.map((img, i) => (
               <div
                 key={i}
@@ -126,50 +126,46 @@ export default function ProjectPage() {
                   src={img}
                   alt={`${project.title} - Image ${i + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-contain bg-[#0a0a0a]"
                   sizes="100vw"
                 />
               </div>
             ))}
 
-            {/* Dark vignette overlay */}
-            <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60 pointer-events-none" />
-            <div className="absolute inset-0 z-20 bg-gradient-to-r from-[#0a0a0a]/40 via-transparent to-[#0a0a0a]/40 pointer-events-none" />
-
             {/* Nav arrows */}
             <button
               onClick={prevCarousel}
-              className="absolute left-6 top-1/2 -translate-y-1/2 z-30 group w-14 h-14 flex items-center justify-center rounded-full border border-white/30 bg-black/30 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110"
+              className="absolute left-6 top-1/2 -translate-y-1/2 z-30 group w-14 h-14 flex items-center justify-center rounded-full border border-white/30 bg-black/50 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110"
               aria-label="Previous image"
             >
               <ChevronLeft size={24} className="text-white group-hover:scale-110 transition-transform" />
             </button>
             <button
               onClick={nextCarousel}
-              className="absolute right-6 top-1/2 -translate-y-1/2 z-30 group w-14 h-14 flex items-center justify-center rounded-full border border-white/30 bg-black/30 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110"
+              className="absolute right-6 top-1/2 -translate-y-1/2 z-30 group w-14 h-14 flex items-center justify-center rounded-full border border-white/30 bg-black/50 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110"
               aria-label="Next image"
             >
               <ChevronRight size={24} className="text-white group-hover:scale-110 transition-transform" />
             </button>
 
             {/* Counter */}
-            <div className="absolute top-6 right-6 z-30 bg-black/50 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/20">
+            <div className="absolute top-6 right-6 z-30 bg-black/60 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/20">
               {carouselIndex + 1} / {project.images.length}
             </div>
           </div>
 
-          {/* Thumbnail strip */}
-          <div className="bg-[#0a0a0a] px-6 py-5">
+          {/* Thumbnail strip - larger for better visibility */}
+          <div className="bg-[#0a0a0a] px-4 py-6">
             <div className="max-w-7xl mx-auto">
-              <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-hide">
+              <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide justify-center">
                 {project.images.map((img, i) => (
                   <button
                     key={i}
                     onClick={() => setCarouselIndex(i)}
-                    className={`relative flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
+                    className={`relative flex-shrink-0 w-28 h-20 rounded-lg overflow-hidden transition-all duration-300 ${
                       i === carouselIndex
                         ? "ring-2 ring-[#f5c518] ring-offset-2 ring-offset-[#0a0a0a] opacity-100 scale-105"
-                        : "opacity-50 hover:opacity-80"
+                        : "opacity-60 hover:opacity-90"
                     }`}
                   >
                     <Image
@@ -177,25 +173,9 @@ export default function ProjectPage() {
                       alt={`Thumbnail ${i + 1}`}
                       fill
                       className="object-cover"
-                      sizes="96px"
+                      sizes="112px"
                     />
                   </button>
-                ))}
-              </div>
-
-              {/* Dot indicators */}
-              <div className="flex justify-center gap-2 mt-4">
-                {project.images.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCarouselIndex(i)}
-                    className={`transition-all duration-300 rounded-full ${
-                      i === carouselIndex
-                        ? "w-6 h-2 bg-[#f5c518]"
-                        : "w-2 h-2 bg-white/30 hover:bg-white/60"
-                    }`}
-                    aria-label={`Go to image ${i + 1}`}
-                  />
                 ))}
               </div>
             </div>
