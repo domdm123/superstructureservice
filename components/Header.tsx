@@ -184,7 +184,7 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
-          <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+          <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1 overflow-y-auto" style={{ maxHeight: 'calc(100dvh - 96px)' }}>
             <Link href="/" className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50" onClick={() => setMobileOpen(false)}>
               Home
             </Link>

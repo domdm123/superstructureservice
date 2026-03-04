@@ -86,34 +86,23 @@ export default function GoogleReviews() {
   const animationRef = useRef<number | null>(null);
   const scrollPosRef = useRef(0);
   const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const touchStartXRef = useRef(0);
+  const touchStartScrollRef = useRef(0);
+  const isTouchingRef = useRef(false);
+
+  const pauseAndResume = (ms = 3000) => {
+    setIsPaused(true);
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    pauseTimeoutRef.current = setTimeout(() => setIsPaused(false), ms);
+  };
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
-    
-    // Pause auto-scroll temporarily when navigating manually
-    setIsPaused(true);
-    
-    // Clear any existing timeout
-    if (pauseTimeoutRef.current) {
-      clearTimeout(pauseTimeoutRef.current);
-    }
-    
-    // Perform the scroll
-    const scrollAmount = 320;
+    const scrollAmount = 300;
     const newScrollLeft = scrollRef.current.scrollLeft + (dir === "right" ? scrollAmount : -scrollAmount);
-    
-    scrollRef.current.scrollTo({
-      left: newScrollLeft,
-      behavior: "smooth"
-    });
-    
-    // Update the ref to match new position
+    scrollRef.current.scrollTo({ left: newScrollLeft, behavior: "smooth" });
     scrollPosRef.current = newScrollLeft;
-    
-    // Resume auto-scroll after 3 seconds
-    pauseTimeoutRef.current = setTimeout(() => {
-      setIsPaused(false);
-    }, 3000);
+    pauseAndResume(3000);
   };
 
   useEffect(() => {
@@ -121,43 +110,60 @@ export default function GoogleReviews() {
     if (!scrollContainer) return;
 
     const scrollSpeed = 0.8;
-
     const animate = () => {
-      if (!isPaused && scrollContainer) {
+      if (!isPaused && !isTouchingRef.current && scrollContainer) {
         scrollPosRef.current += scrollSpeed;
-        
         const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-        if (scrollPosRef.current >= maxScroll) {
-          scrollPosRef.current = 0;
-        }
-        
+        if (scrollPosRef.current >= maxScroll) scrollPosRef.current = 0;
         scrollContainer.scrollLeft = scrollPosRef.current;
       }
       animationRef.current = requestAnimationFrame(animate);
     };
 
     animationRef.current = requestAnimationFrame(animate);
-
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-      if (pauseTimeoutRef.current) {
-        clearTimeout(pauseTimeoutRef.current);
-      }
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
     };
   }, [isPaused]);
 
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+    const el = scrollRef.current;
+    if (!el) return;
 
-    const handleScroll = () => {
-      scrollPosRef.current = scrollContainer.scrollLeft;
+    const onScroll = () => { scrollPosRef.current = el.scrollLeft; };
+
+    const onTouchStart = (e: TouchEvent) => {
+      isTouchingRef.current = true;
+      touchStartXRef.current = e.touches[0].clientX;
+      touchStartScrollRef.current = el.scrollLeft;
+      scrollPosRef.current = el.scrollLeft;
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+      setIsPaused(true);
     };
 
-    scrollContainer.addEventListener("scroll", handleScroll);
-    return () => scrollContainer.removeEventListener("scroll", handleScroll);
+    const onTouchMove = (e: TouchEvent) => {
+      const dx = touchStartXRef.current - e.touches[0].clientX;
+      el.scrollLeft = touchStartScrollRef.current + dx;
+      scrollPosRef.current = el.scrollLeft;
+    };
+
+    const onTouchEnd = () => {
+      isTouchingRef.current = false;
+      scrollPosRef.current = el.scrollLeft;
+      pauseAndResume(3000);
+    };
+
+    el.addEventListener("scroll", onScroll, { passive: true });
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchmove", onTouchMove, { passive: true });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+    };
   }, []);
 
   return (
