@@ -214,12 +214,14 @@ export default function Header() {
             <Link href="/areas-we-serve" className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50" onClick={() => setMobileOpen(false)}>
               Areas We Serve
             </Link>
-            <a href={`mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`} className="mt-2 px-4 py-3 bg-[#1e3a5f] text-white font-semibold rounded-lg text-center hover:bg-[#162d4a]" onClick={() => setMobileOpen(false)}>
-              Get a Free Quote
-            </a>
-            <a href={`tel:${PHONE.replace(/\s/g, "")}`} className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50 flex items-center gap-2">
-              <Phone size={16} /> {PHONE}
-            </a>
+            <div className="mt-2 flex flex-col gap-2">
+              <a href={`mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`} className="px-4 py-3 bg-[#1e3a5f] text-white font-semibold rounded-lg text-center hover:bg-[#162d4a] active:bg-[#0d1b2e]" onClick={() => setMobileOpen(false)}>
+                Get a Free Quote
+              </a>
+              <a href={`tel:${PHONE.replace(/\s/g, "")}`} className="px-4 py-3 bg-black text-white font-semibold rounded-lg text-center flex items-center justify-center gap-2 hover:bg-gray-900 active:bg-gray-800" onClick={() => setMobileOpen(false)}>
+                <Phone size={16} /> Call {PHONE}
+              </a>
+            </div>
           </nav>
         </div>
       )}
