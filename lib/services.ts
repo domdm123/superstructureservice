@@ -265,6 +265,7 @@ export const SERVICES: Service[] = [
       "Professional garage conversion in {location}, Kent. Transform your garage into living space. Full build by Superstructure Services. Free quote.",
     canonicalSlug: "services/garage-workshop-conversion",
     icon: "",
+    heroImage: "/images/workshop-conversion-canterbury.JPG",
   },
   {
     slug: "roofing",
