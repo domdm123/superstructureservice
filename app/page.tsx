@@ -38,7 +38,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — full screen video */}
-      <section className="relative h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden bg-[#0d1b2e]">
         {/* Video background */}
         <video
           autoPlay
@@ -46,7 +46,7 @@ export default function HomePage() {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          poster="/logo-icon.png"
+          poster="/images/hero-bg.jpg"
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
