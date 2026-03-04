@@ -74,7 +74,7 @@ export default function ProjectPage() {
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{project.title}</h1>
             <div className="flex items-center gap-2 text-white/80 text-sm">
               <MapPin size={14} />
-              {project.location}, Kent
+              {project.location}{!project.location.includes('Kent') && !project.location.includes('London') ? ', Kent' : ''}
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function ProjectPage() {
                 <h2 className="text-2xl font-bold text-[#0d1b2e] mb-6">Project Details</h2>
                 <ul className="space-y-4 text-gray-700">
                   <li>
-                    <strong className="text-[#0d1b2e]">Location:</strong> {project.location}, Kent
+                    <strong className="text-[#0d1b2e]">Location:</strong> {project.location}{!project.location.includes('Kent') && !project.location.includes('London') ? ', Kent' : ''}
                   </li>
                   <li>
                     <strong className="text-[#0d1b2e]">Full super service:</strong> {project.category}
