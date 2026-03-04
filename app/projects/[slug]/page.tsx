@@ -14,7 +14,6 @@ export default function ProjectPage() {
   
   const project = getProjectBySlug(slug);
   
-  const [heroIndex, setHeroIndex] = useState(0);
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   if (!project) {
@@ -31,19 +30,17 @@ export default function ProjectPage() {
   const related = getRelatedProjects(project, 4);
   const service = SERVICES.find(s => s.slug === project.serviceSlug);
   
-  const nextHero = () => setHeroIndex((heroIndex + 1) % project.images.length);
-  const prevHero = () => setHeroIndex((heroIndex - 1 + project.images.length) % project.images.length);
   
   const nextCarousel = () => setCarouselIndex((carouselIndex + 1) % project.images.length);
   const prevCarousel = () => setCarouselIndex((carouselIndex - 1 + project.images.length) % project.images.length);
 
   return (
     <>
-      {/* Hero Carousel */}
-      <section className="relative bg-gray-100 h-[60vh] min-h-[400px] max-h-[600px]">
+      {/* Hero - single static image */}
+      <section className="relative bg-gray-900 h-[65vh] min-h-[450px] max-h-[650px]">
         <div className="absolute inset-0">
           <Image
-            src={project.images[heroIndex]}
+            src={project.image}
             alt={project.title}
             fill
             className="object-cover"
@@ -51,28 +48,17 @@ export default function ProjectPage() {
             sizes="100vw"
           />
         </div>
-        {project.images.length > 1 && (
-          <>
-            <button
-              onClick={prevHero}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-10"
-              aria-label="Previous image"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={nextHero}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-10"
-              aria-label="Next image"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </>
-        )}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
+        {/* Content */}
+        <div className="absolute bottom-0 left-0 right-0 p-10">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{project.title}</h1>
-            <div className="flex items-center gap-2 text-white/80 text-sm">
+            <div className="inline-flex items-center gap-2 text-[#f5c518] text-xs font-bold uppercase tracking-widest mb-3">
+              <div className="w-6 h-px bg-[#f5c518]" />
+              {project.category}
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">{project.title}</h1>
+            <div className="flex items-center gap-2 text-white/70 text-sm">
               <MapPin size={14} />
               {project.location}{!project.location.includes('Kent') && !project.location.includes('London') ? ', Kent' : ''}
             </div>
