@@ -361,6 +361,12 @@ export const PROJECTS: Project[] = [
     image: "/images/Professional-roofing-service-in-Canterbury-Kent.jpg",
     images: [
       "/images/Professional-roofing-service-in-Canterbury-Kent.jpg",
+      "/images/roofing-canterbury-1/Professional roofing service in Canterbury Kent.JPG",
+      "/images/roofing-canterbury-1/Roofing in Canterbury.JPG",
+      "/images/roofing-canterbury-1/Roofing installation in Canterbury Kent.JPG",
+      "/images/roofing-canterbury-1/Roofing service Canterbury Kent.JPG",
+      "/images/roofing-canterbury-1/Roofing service in Canterbury Kent.JPG",
+      "/images/roofing-canterbury-1/Roofing specialist in Canterbury.JPG",
     ],
     description: "Complete roof replacement in Canterbury using traditional products for a long-lasting, aesthetically pleasing result.",
     longDescription: "Our clients roof in Canterbury was beyond economical repair and also wasn't very aesthetically pleasing to look at. The decision was made to replace in a more traditional product not only providing a long lasting water tight job but one that was much more easier on the eye.",
