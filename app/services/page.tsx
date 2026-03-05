@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SERVICES, DOMAIN } from "@/lib/services";
 import CTASection from "@/components/CTASection";
-import { playfair } from "@/app/layout";
+import { playfair } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Building Services in Canterbury & Kent | All Services",

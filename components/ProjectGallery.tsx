@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Eye } from "lucide-react";
-import { playfair } from "@/app/layout";
+import { playfair } from "@/lib/fonts";
 
 const GALLERY_PHOTOS = [
   {
