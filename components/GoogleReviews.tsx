@@ -174,9 +174,10 @@ export default function GoogleReviews() {
                   href="https://www.google.com/maps/search/Superstructure+Services+Ltd+Canterbury+Kent"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Read ${review.name}'s full review on Google`}
                   className="text-[#4a9ebb] text-xs hover:underline mt-auto"
                 >
-                  Read more
+                  Read {review.name}&apos;s review
                 </a>
               </div>
             ))}
