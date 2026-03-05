@@ -177,24 +177,26 @@ export default function ProjectPage() {
           {/* Thumbnail strip - larger for better visibility */}
           <div className="bg-[#0a0a0a] px-4 py-6">
             <div className="max-w-7xl mx-auto">
-              <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide justify-center">
+              <div className="flex gap-3 overflow-x-auto pt-2 pb-2 scrollbar-hide justify-center">
                 {project.images.map((img, i) => (
                   <button
                     key={i}
                     onClick={() => setCarouselIndex(i)}
-                    className={`relative flex-shrink-0 w-28 h-20 rounded-lg overflow-hidden transition-all duration-300 ${
+                    className={`relative flex-shrink-0 w-28 h-20 rounded-lg transition-all duration-300 ${
                       i === carouselIndex
                         ? "ring-2 ring-[#f5c518] ring-offset-2 ring-offset-[#0a0a0a] opacity-100 scale-105"
                         : "opacity-60 hover:opacity-90"
                     }`}
                   >
-                    <Image
-                      src={img}
-                      alt={`Thumbnail ${i + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="112px"
-                    />
+                    <div className="absolute inset-0 rounded-lg overflow-hidden">
+                      <Image
+                        src={img}
+                        alt={`Thumbnail ${i + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="112px"
+                      />
+                    </div>
                   </button>
                 ))}
               </div>
