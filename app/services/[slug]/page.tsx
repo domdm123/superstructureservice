@@ -47,6 +47,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: service.metaDescription.replace(/{location}/g, "Canterbury"),
       images: [ogImage],
     },
+    other: {
+      "geo.region": "GB-KEN",
+      "geo.placename": "Canterbury",
+      "geo.position": "51.2802;1.0780",
+      "ICBM": "51.2802, 1.0780",
+    },
   };
 }
 

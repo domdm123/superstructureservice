@@ -30,6 +30,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `Building Services in ${area.name} | Superstructure Services`,
       description: `Expert builders in ${area.name}, Kent. All building and trade services from a local Canterbury team. Free quotes available.`,
       url: `${DOMAIN}/areas-we-serve/${area.slug}`,
+      images: [{ url: `${DOMAIN}/images/og-image.jpg`, width: 1200, height: 630, alt: `Builders in ${area.name}, Kent` }],
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title: `Building Services in ${area.name} | Superstructure Services`,
+      description: `Expert builders in ${area.name}, Kent. Free quotes available.`,
+      images: [`${DOMAIN}/images/og-image.jpg`],
+    },
+    other: {
+      "geo.region": "GB-KEN",
+      "geo.placename": area.name,
+      "geo.position": "51.2802;1.0780",
+      "ICBM": "51.2802, 1.0780",
     },
   };
 }

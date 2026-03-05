@@ -36,6 +36,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = service.metaDescription.replace(/{location}/g, area.name);
   const canonical = `${DOMAIN}/${service.slug}/${area.slug}`;
 
+  const ogImage = service.heroImage
+    ? `${DOMAIN}${service.heroImage}`
+    : `${DOMAIN}/images/og-image.jpg`;
+
   return {
     title,
     description,
@@ -45,6 +49,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url: canonical,
       type: "website",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: `${service.name} in ${area.name}, Kent` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+    other: {
+      "geo.region": "GB-KEN",
+      "geo.placename": area.name,
+      "geo.position": "51.2802;1.0780",
+      "ICBM": "51.2802, 1.0780",
     },
   };
 }
