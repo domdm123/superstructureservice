@@ -397,6 +397,7 @@ export const PROJECTS: Project[] = [
     image: "/images/cinema-room/cinema-room-in-canterbury.jpg",
     images: [
       "/images/cinema-room/cinema-room-in-canterbury.jpg",
+      "/images/cinema-room/electrician-in-kent-near-me.jpg",
     ],
     description: "Bespoke cinema room installation in Canterbury, Kent.",
     longDescription: "Our team designs and installs bespoke home cinema rooms across Canterbury and Kent, handling everything from acoustic treatment and projector setup to seating and lighting control.",
