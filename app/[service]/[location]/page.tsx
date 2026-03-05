@@ -9,6 +9,7 @@ import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import TrustBadges from "@/components/TrustBadges";
 import MapEmbed from "@/components/MapEmbed";
+import ServiceGallery from "@/components/ServiceGallery";
 
 interface Props {
   params: Promise<{ service: string; location: string }>;
@@ -330,6 +331,9 @@ export default async function ServiceLocationPage({ params }: Props) {
                   ))}
                 </div>
               </div>
+
+              {/* Service Gallery */}
+              <ServiceGallery serviceSlug={service.slug} />
 
               {/* Other services in this area */}
               <div>

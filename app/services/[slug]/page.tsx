@@ -9,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
 import TrustBadges from "@/components/TrustBadges";
 import FaqAccordion from "@/components/FaqAccordion";
+import ServiceGallery from "@/components/ServiceGallery";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -174,6 +175,9 @@ export default async function ServicePage({ params }: Props) {
                   </li>
                 ))}
               </ul>
+
+              {/* Service Gallery */}
+              <ServiceGallery serviceSlug={service.slug} />
 
               {/* Areas for this service */}
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
