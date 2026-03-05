@@ -23,9 +23,10 @@ export default function ServiceGallery({ serviceSlug }: Props) {
       p.serviceSlug === service?.canonicalSlug
   );
 
-  if (related.length === 0) return null;
+  // Fall back to all projects if none match this service
+  const source = related.length > 0 ? related : PROJECTS;
 
-  const photos = related.flatMap((p) =>
+  const photos = source.flatMap((p) =>
     p.images.map((src) => ({ src, title: p.title }))
   ).slice(0, 6);
 

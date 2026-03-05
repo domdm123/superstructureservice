@@ -96,7 +96,7 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             <Link
               href="/"
-              className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-playfair tracking-wide"
+              className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-furore tracking-wide"
             >
               <span className="relative">
                 Home
@@ -110,7 +110,7 @@ export default function Header() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="group relative flex items-center gap-1.5 px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-playfair tracking-wide">
+              <button className="group relative flex items-center gap-1.5 px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-furore tracking-wide">
                 <span className="relative">
                   Services
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full" />
@@ -140,13 +140,13 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/projects" className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-playfair tracking-wide">
+            <Link href="/projects" className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-furore tracking-wide">
               <span className="relative">
                 Projects
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full" />
               </span>
             </Link>
-            <Link href="/areas-we-serve" className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-playfair tracking-wide">
+            <Link href="/areas-we-serve" className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-furore tracking-wide">
               <span className="relative">
                 Areas We Serve
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full" />
