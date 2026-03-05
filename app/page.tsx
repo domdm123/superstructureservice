@@ -89,7 +89,7 @@ export default function HomePage() {
             {[
               { num: "30", suffix: "+", label: "Years Experience", sub: "Combined team expertise" },
               { num: "100", suffix: "s", label: "Projects Completed", sub: "Across Kent & Canterbury" },
-              { num: null, suffix: "", label: "Canterbury & Surrounding Areas", sub: "Covering Kent" },
+              { num: null, suffix: "", label: "Canterbury & Surrounding Areas", sub: "" },
             ].map((s) => (
               <div key={s.label} className="flex flex-col items-center text-center px-2 sm:px-6 py-2">
                 {s.num !== null ? (
