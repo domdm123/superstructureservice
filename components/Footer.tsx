@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="h-1 bg-gradient-to-r from-[#4a9ebb] via-[#1e3a5f] to-[#4a9ebb]" />
 
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-20 lg:pb-8">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-10 lg:mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-10 lg:mb-14">
 
           {/* About */}
           <div className="col-span-2 lg:col-span-2">
