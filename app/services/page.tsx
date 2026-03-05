@@ -42,11 +42,6 @@ const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {
 export default function ServicesPage() {
   return (
     <>
-      {/* Page title — matches old site minimal header */}
-      <div className="py-12 text-center bg-white border-b border-gray-100">
-        <h1 className="font-furore text-4xl md:text-5xl text-gray-900">Services</h1>
-      </div>
-
       {/* Photo card grid — 2 columns, matches old site sizing */}
       <section className="bg-white py-8">
         <div className="max-w-5xl mx-auto px-4">
