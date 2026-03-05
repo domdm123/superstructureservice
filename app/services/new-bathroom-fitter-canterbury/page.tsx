@@ -6,6 +6,7 @@ import { AREAS } from "@/lib/areas";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import TrustBadges from "@/components/TrustBadges";
+import ServiceGallery from "@/components/ServiceGallery";
 
 export const metadata: Metadata = {
   title: "New Bathroom Fitter in Canterbury | Bathroom Refurbishment Specialists",
@@ -76,6 +77,8 @@ export default function NewBathroomPage() {
                   </li>
                 ))}
               </ul>
+
+              <ServiceGallery serviceSlug="new-bathroom" />
 
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 mb-8">
                 <h3 className="text-xl font-bold text-[#1a2e44] mb-4 flex items-center gap-2">

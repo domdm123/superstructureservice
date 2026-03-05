@@ -5,6 +5,7 @@ import { SERVICES, PHONE, DOMAIN } from "@/lib/services";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import TrustBadges from "@/components/TrustBadges";
+import ServiceGallery from "@/components/ServiceGallery";
 
 export const metadata: Metadata = {
   title: "Landscaping & Garden Design in Canterbury & Kent | Superstructure Services",
@@ -64,6 +65,7 @@ export default function LandscapingPage() {
                   </div>
                 ))}
               </div>
+              <ServiceGallery serviceSlug="landscaping-gardens" />
             </div>
 
             <div className="lg:col-span-1">
