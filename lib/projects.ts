@@ -342,6 +342,9 @@ export const PROJECTS: Project[] = [
     images: [
       "/images/commercial-adelphi/Commercial Refurbishment service in canterbury and kent.JPG",
       "/images/commercial-adelphi/Commercial-builder-in-Canterbury-Kent.webp",
+      "/images/facilities-management/commercial-property-refurbishment-construction-company-kent.jpg",
+      "/images/facilities-management/building-management-company-in-canterbury-kent-professional-maintanence.webp",
+      "/images/facilities-management/Facilities-building-management-firm-in-Canterbury-Kent.webp",
     ],
     description: "Modern industrial-look office refurbishment in London, stripping out old party walls for open plan use with new flooring, rewire and LED lighting.",
     longDescription: "Our client requested an up to date modern approach for an office floor that had recently become available for new tenancy. They wanted to go with the industrial look which we supplied for them. Stripping out old party walls, for open plan use, new floor panels, rewire for equipment, data and building management, lagging and suspended led lighting.",
