@@ -175,11 +175,11 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1 overflow-y-auto" style={{ maxHeight: 'calc(100dvh - 96px)' }}>
-            <Link href="/" className="px-4 py-3 text-gray-700 font-bold rounded-lg hover:bg-gray-50 font-playfair text-lg" onClick={() => setMobileOpen(false)}>
+            <Link href="/" className="px-4 py-3 text-gray-700 rounded-lg hover:bg-gray-50 font-furore text-lg" onClick={() => setMobileOpen(false)}>
               Home
             </Link>
             <button
-              className="flex items-center justify-between px-4 py-3 text-gray-700 font-bold rounded-lg hover:bg-gray-50 w-full text-left font-playfair text-lg"
+              className="flex items-center justify-between px-4 py-3 text-gray-700 rounded-lg hover:bg-gray-50 w-full text-left font-furore text-lg"
               onClick={() => setServicesOpen(!servicesOpen)}
             >
               Services <ChevronDown size={16} className={servicesOpen ? "rotate-180" : ""} />
@@ -198,10 +198,10 @@ export default function Header() {
                 ))}
               </div>
             )}
-            <Link href="/projects" className="px-4 py-3 text-gray-700 font-bold rounded-lg hover:bg-gray-50 font-playfair text-lg" onClick={() => setMobileOpen(false)}>
+            <Link href="/projects" className="px-4 py-3 text-gray-700 rounded-lg hover:bg-gray-50 font-furore text-lg" onClick={() => setMobileOpen(false)}>
               Projects
             </Link>
-            <Link href="/areas-we-serve" className="px-4 py-3 text-gray-700 font-bold rounded-lg hover:bg-gray-50 font-playfair text-lg" onClick={() => setMobileOpen(false)}>
+            <Link href="/areas-we-serve" className="px-4 py-3 text-gray-700 rounded-lg hover:bg-gray-50 font-furore text-lg" onClick={() => setMobileOpen(false)}>
               Areas We Serve
             </Link>
             <div className="mt-2 flex flex-col gap-2">
