@@ -139,7 +139,7 @@ export default function ProjectsPage() {
       </section>
 
       <CTASection
-        heading="Start Your Project Today"
+        heading="Start your project today"
         subheading="Join our satisfied clients across Canterbury and Kent. Contact us for a free, no-obligation quote."
       />
     </>

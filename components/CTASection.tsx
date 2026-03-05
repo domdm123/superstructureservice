@@ -12,7 +12,7 @@ interface CTASectionProps {
 }
 
 export default function CTASection({
-  heading = "Ready to Start Your Project?",
+  heading = "Ready to start your project?",
   subheading = "Get a free, no-obligation quote from Canterbury's most trusted builders, serving Kent and surrounding villages.",
   dark = false,
   ctaSubject = "Free Quote Enquiry - Superstructure Services",
