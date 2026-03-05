@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SERVICES, DOMAIN } from "@/lib/services";
 import CTASection from "@/components/CTASection";
-import { playfair } from "@/lib/fonts";
+import { barlow } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Building Services in Canterbury & Kent | All Services",
@@ -76,7 +76,7 @@ export default function ServicesPage() {
                   <div className="absolute inset-0 bg-black/45 group-hover:bg-black/55 transition-colors duration-300" />
                   {/* Text */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <h2 className={`${playfair.className} text-white font-bold text-2xl md:text-3xl leading-tight mb-2`}>
+                    <h2 className={`${barlow.className} text-white font-extrabold text-2xl md:text-3xl leading-tight mb-2 tracking-wide uppercase`}>
                       {service.name}
                     </h2>
                     <p className="text-gray-200 text-sm leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out max-w-sm">
