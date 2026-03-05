@@ -46,7 +46,7 @@ export default function PageHero({
         </div>
       )}
       {/* Gold accent bar */}
-      <div className="absolute top-0 left-0 w-1 h-full bg-[#4a9ebb]" />
+      <div className="absolute top-0 left-0 w-1 h-full" style={{ background: "linear-gradient(to bottom, #ffffff, #888888, #111111)" }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Breadcrumbs */}
