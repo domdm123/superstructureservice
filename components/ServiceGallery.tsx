@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { PROJECTS } from "@/lib/projects";
+import { SERVICES } from "@/lib/services";
 
 interface Props {
   serviceSlug: string;
@@ -14,7 +15,12 @@ interface Props {
 export default function ServiceGallery({ serviceSlug, projectsPageHref = "/projects" }: Props) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const related = PROJECTS.filter((p) => p.serviceSlug === serviceSlug);
+  const service = SERVICES.find((s) => s.slug === serviceSlug);
+  const canonicalSlug = service?.canonicalSlug.replace("services/", "") ?? serviceSlug;
+
+  const related = PROJECTS.filter(
+    (p) => p.serviceSlug === serviceSlug || p.serviceSlug === canonicalSlug || p.serviceSlug === service?.canonicalSlug
+  );
   if (related.length === 0) return null;
 
   const allImages: { src: string; title: string }[] = related.flatMap((p) =>
