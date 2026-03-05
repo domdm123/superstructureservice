@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +9,8 @@ import GoogleReviews from "@/components/GoogleReviews";
 import MobileCTABar from "@/components/MobileCTABar";
 import BackToTop from "@/components/BackToTop";
 import { DOMAIN, COMPANY, PHONE, EMAIL } from "@/lib/services";
+
+const GA_ID = "G-REPLACE_WITH_YOUR_ID"; // TODO: replace with your GA4 Measurement ID (Admin → Data Streams → stream → Measurement ID)
 
 const inter = Inter({
   subsets: ["latin"],
@@ -134,6 +137,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        {/* Google Analytics 4 */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+          `}
+        </Script>
         <LoadingScreen />
         <Header />
         <main>{children}</main>
