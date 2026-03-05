@@ -18,10 +18,10 @@ export default function Footer() {
       <div className="h-1 bg-gradient-to-r from-[#4a9ebb] via-[#1e3a5f] to-[#4a9ebb]" />
 
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-20 lg:pb-8">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-10 lg:mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 lg:mb-14">
 
           {/* About */}
-          <div className="col-span-2 lg:col-span-2">
+          <div className="md:col-span-2 lg:col-span-2">
             <Link href="/" className="block mb-6 -ml-3">
               <Image
                 src="/logo-light.png"
@@ -89,7 +89,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div className="col-span-2 lg:col-span-2">
+          <div className="md:col-span-1 lg:col-span-1">
             <h3 className="font-bold text-xs uppercase tracking-[0.15em] mb-5 text-[#4a9ebb]">Our Services</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 mb-4">
               {SERVICES.slice(0, 8).map((s) => (
@@ -112,7 +112,7 @@ export default function Footer() {
           </div>
 
           {/* Areas */}
-          <div className="col-span-2 lg:col-span-1">
+          <div className="md:col-span-1 lg:col-span-1">
             <h3 className="font-bold text-xs uppercase tracking-[0.15em] mb-5 text-[#4a9ebb]">Areas We Serve</h3>
             <ul className="grid grid-cols-2 lg:grid-cols-1 gap-x-3 gap-y-2.5">
               {AREAS.slice(0, 10).map((a) => (
