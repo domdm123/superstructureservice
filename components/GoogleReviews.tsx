@@ -82,12 +82,12 @@ function GoogleIcon() {
 
 export default function GoogleReviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const CARD_WIDTH = 276;
 
   const scroll = (dir: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    el.scrollBy({ left: dir === "right" ? CARD_WIDTH : -CARD_WIDTH, behavior: "smooth" });
+    const cardWidth = el.querySelector("div")?.offsetWidth ?? 280;
+    el.scrollBy({ left: dir === "right" ? cardWidth + 16 : -(cardWidth + 16), behavior: "smooth" });
   };
 
   return (
@@ -110,8 +110,8 @@ export default function GoogleReviews() {
                 <span className="text-white font-bold text-base lg:text-lg tracking-tight">Google</span>
               </div>
             </div>
-            {/* Arrow controls - mobile/tablet only */}
-            <div className="flex lg:hidden items-center gap-3">
+            {/* Arrow controls — always visible */}
+            <div className="flex items-center gap-3">
               <button
                 onClick={() => scroll("left")}
                 aria-label="Previous reviews"
@@ -130,10 +130,10 @@ export default function GoogleReviews() {
           </div>
 
           {/* Right — review cards scrollable row */}
-          <div 
-            ref={scrollRef} 
-            className="flex-1 min-w-0 flex gap-4 overflow-x-auto pb-4 scrollbar-hide"
-            style={{ 
+          <div
+            ref={scrollRef}
+            className="flex-1 min-w-0 flex gap-4 overflow-x-auto pb-4"
+            style={{
               scrollSnapType: "x mandatory",
               WebkitOverflowScrolling: "touch",
               scrollbarWidth: "none",
@@ -143,8 +143,8 @@ export default function GoogleReviews() {
             {reviews.map((review) => (
               <div
                 key={review.name}
-                className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 flex-shrink-0"
-                style={{ scrollSnapAlign: "start", width: "260px" }}
+                className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 flex-shrink-0 w-[85vw] sm:w-[300px] lg:w-[260px]"
+                style={{ scrollSnapAlign: "start" }}
               >
                 {/* Header */}
                 <div className="flex items-start justify-between gap-2">
@@ -167,8 +167,8 @@ export default function GoogleReviews() {
                   ))}
                 </div>
 
-                {/* Text */}
-                <p className="text-gray-400 text-xs leading-relaxed line-clamp-4">
+                {/* Text — no clamp so full review is readable */}
+                <p className="text-gray-400 text-xs leading-relaxed">
                   {review.text}
                 </p>
 
