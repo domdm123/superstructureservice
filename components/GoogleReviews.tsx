@@ -110,19 +110,19 @@ export default function GoogleReviews() {
                 <span className="text-white font-bold text-base lg:text-lg tracking-tight">Google</span>
               </div>
             </div>
-            {/* Arrow controls */}
-            <div className="flex items-center gap-3 lg:mt-6">
+            {/* Arrow controls - mobile/tablet only */}
+            <div className="flex lg:hidden items-center gap-3">
               <button
                 onClick={() => scroll("left")}
                 aria-label="Previous reviews"
-                className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
               >
                 <ChevronLeft size={18} strokeWidth={1.5} />
               </button>
               <button
                 onClick={() => scroll("right")}
                 aria-label="Next reviews"
-                className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
               >
                 <ChevronRight size={18} strokeWidth={1.5} />
               </button>
