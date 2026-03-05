@@ -25,16 +25,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     (s) => s.canonicalSlug.replace("services/", "") === slug
   );
   if (!service) return {};
+  const canonical = `${DOMAIN}/services/${service.canonicalSlug.replace("services/", "")}`;
+  const ogImage = service.heroImage
+    ? `${DOMAIN}${service.heroImage}`
+    : `${DOMAIN}/images/og-image.jpg`;
+
   return {
     title: `${service.name} in Canterbury, Kent | Superstructure Services`,
     description: service.metaDescription.replace(/{location}/g, "Canterbury"),
-    alternates: {
-      canonical: `${DOMAIN}/services/${service.canonicalSlug.replace("services/", "")}`,
-    },
+    alternates: { canonical },
     openGraph: {
+      title: `${service.name} in Canterbury, Kent | Superstructure Services`,
+      description: service.metaDescription.replace(/{location}/g, "Canterbury"),
+      url: canonical,
+      type: "website",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: `${service.name} in Canterbury, Kent` }],
+    },
+    twitter: {
+      card: "summary_large_image",
       title: `${service.name} in Canterbury | Superstructure Services`,
       description: service.metaDescription.replace(/{location}/g, "Canterbury"),
-      url: `${DOMAIN}/services/${service.canonicalSlug.replace("services/", "")}`,
+      images: [ogImage],
     },
   };
 }

@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { SERVICES, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
+import { PROJECTS } from "@/lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -67,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Service + location combination pages (16 × 22 = 352 pages)
+  // Service + location combination pages
   const serviceLocationPages: MetadataRoute.Sitemap = SERVICES.flatMap((s) =>
     AREAS.map((a) => ({
       url: `${DOMAIN}/${s.slug}/${a.slug}`,
@@ -77,10 +78,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
+  // Project pages
+  const projectPages: MetadataRoute.Sitemap = PROJECTS.map((p) => ({
+    url: `${DOMAIN}/projects/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
     ...servicePages,
     ...areaPages,
     ...serviceLocationPages,
+    ...projectPages,
   ];
 }
