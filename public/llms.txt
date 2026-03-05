@@ -46,9 +46,23 @@ Canterbury, Whitstable, Faversham, Folkestone, Sandwich, Wye, Chartham, Harbledo
 - All Services: https://www.superstructureservices.co.uk/services
 - Areas We Serve: https://www.superstructureservices.co.uk/areas-we-serve
 - Projects Gallery: https://www.superstructureservices.co.uk/projects
-- Kitchen Installation Canterbury: https://www.superstructureservices.co.uk/services/kitchen-installation-service
-- Bathroom Fitting Canterbury: https://www.superstructureservices.co.uk/services/new-bathroom-fitter-canterbury
-- Electrician Canterbury: https://www.superstructureservices.co.uk/services/electrician-canterbury
-- Solar Panels Canterbury: https://www.superstructureservices.co.uk/services/solar-panel-installer-canterbury
-- Roofing Canterbury: https://www.superstructureservices.co.uk/services/new-roof-installation-repairs
-- Air Source Heat Pumps Canterbury: https://www.superstructureservices.co.uk/services/air-source-heat-pump-installation
+- Kitchen Installation: https://www.superstructureservices.co.uk/services/kitchen-installation-service
+- Flooring & Underfloor Heating: https://www.superstructureservices.co.uk/services/underfloor-heating-installation
+- Facilities Building Management: https://www.superstructureservices.co.uk/services/facility-building-management
+- Electrician: https://www.superstructureservices.co.uk/services/electrician-canterbury
+- Air Source Heat Pump Installation: https://www.superstructureservices.co.uk/services/air-source-heat-pump-installation
+- Solar Panel Installation: https://www.superstructureservices.co.uk/services/solar-panel-installer-canterbury
+- Air Conditioning: https://www.superstructureservices.co.uk/services/air-con-service-canterbury
+- New Bathroom Installation: https://www.superstructureservices.co.uk/services/new-bathroom-fitter-canterbury
+- Property Refurbishment: https://www.superstructureservices.co.uk/services/property-refurbishment
+- Plumbing & Drainage: https://www.superstructureservices.co.uk/services/plumber-in-canterbury
+- Carpentry: https://www.superstructureservices.co.uk/services/carpenter-in-canterbury
+- Garage & Workshop Conversions: https://www.superstructureservices.co.uk/services/garage-workshop-conversion
+- Roofing: https://www.superstructureservices.co.uk/services/new-roof-installation-repairs
+- Home Office Conversion: https://www.superstructureservices.co.uk/services/office-conversion
+- Cinema Room Installation: https://www.superstructureservices.co.uk/services/cinema-room-installation
+- Driveways & Paving: https://www.superstructureservices.co.uk/services/driveways-and-paving-canterbury
+- Listed Building Restoration: https://www.superstructureservices.co.uk/services/listed-building-restoration
+- Groundworks: https://www.superstructureservices.co.uk/services/groundworks
+- Landscaping & Gardens: https://www.superstructureservices.co.uk/services/landscaping-gardens
+- Rental Property Maintenance: https://www.superstructureservices.co.uk/services/rental-property-maintenance
