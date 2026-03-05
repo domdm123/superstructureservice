@@ -72,7 +72,7 @@ export default function Footer() {
                 showIcon={true}
               />
               <span className="flex items-center gap-2 text-gray-300 text-sm">
-                <MapPin size={15} className="text-[#4a9ebb] flex-shrink-0" />
+                <MapPin size={15} className="text-white flex-shrink-0" />
                 Serving Canterbury, Kent &amp; Surrounding Villages
               </span>
               <a
@@ -82,7 +82,7 @@ export default function Footer() {
                 aria-label="Follow us on Instagram"
                 className="inline-flex items-center gap-2 text-gray-300 hover:text-[#4a9ebb] transition-colors text-sm w-fit"
               >
-                <Instagram size={18} className="text-[#4a9ebb]" />
+                <Instagram size={18} className="text-white" />
                 Follow us on Instagram
               </a>
               <a
