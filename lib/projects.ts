@@ -57,8 +57,6 @@ export const PROJECTS: Project[] = [
     image: "/images/bathroom-adelphi/new bathroom installation canterbury.jpg",
     images: [
       "/images/bathroom-adelphi/new bathroom installation canterbury.jpg",
-      "/images/bathroom-adelphi/bathroom appliance plumber canterbury.jpg",
-      "/images/bathroom-adelphi/canterbury plumbing service.jpg",
       "/images/new-bathroom/bathroom-installation-canterbury.jpg",
       "/images/new-bathroom/bathrooms-canterbury.jpg",
       "/images/new-bathroom/bathrooms-in-canterbury-kent.jpg",
