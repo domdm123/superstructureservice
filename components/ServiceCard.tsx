@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Service } from "@/lib/services";
+import { playfair } from "@/app/layout";
 
 interface ServiceCardProps {
   service: Service;
@@ -25,7 +26,7 @@ export default function ServiceCard({ service, location }: ServiceCardProps) {
       <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#4a9ebb] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom" />
 
       <div className="p-5 flex-1">
-        <h3 className="font-bold text-[#0d1b2e] text-base leading-snug mb-2 group-hover:text-[#1e3a5f] transition-colors">
+        <h3 className={`${playfair.className} font-bold text-[#0d1b2e] text-base leading-snug mb-2 group-hover:text-[#1e3a5f] transition-colors`}>
           {service.shortName}
           {location && ` in ${location.charAt(0).toUpperCase() + location.slice(1)}`}
         </h3>

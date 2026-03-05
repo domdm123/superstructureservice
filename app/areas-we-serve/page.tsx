@@ -69,10 +69,6 @@ export default function AreasWeServePage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               All areas we cover
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              Click any area to see all available building and trade services, local information
-              and a map. We operate across {AREAS.length} areas in and around Canterbury.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

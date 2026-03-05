@@ -64,15 +64,6 @@ export default function ProjectsPage() {
       {/* Masonry Gallery */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
-              {filteredProjects.length} {activeCategory !== "All" && activeCategory} Projects
-            </h2>
-            <p className="text-gray-500">
-              Click any project to view full details, specifications and additional photos
-            </p>
-          </div>
-
           {/* Masonry Grid */}
           <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
             {filteredProjects.map((project, index) => {
