@@ -59,11 +59,6 @@ export default function ServiceGallery({ serviceSlug }: Props) {
           sizes={sizes}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-        {featured && (
-          <div className="absolute bottom-5 left-5 right-5">
-            <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-semibold mb-2">Featured</span>
-          </div>
-        )}
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
           <span className="flex items-center gap-1.5 bg-black/80 text-white px-3 py-1.5 rounded-lg text-sm font-semibold border border-white/20">
             <Eye size={14} /> View
