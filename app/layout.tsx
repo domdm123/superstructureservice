@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
+import { playfair } from "@/lib/fonts";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -17,11 +18,6 @@ const inter = Inter({
   display: "swap",
 });
 
-export const playfair = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-playfair",
-});
 
 export const metadata: Metadata = {
   title: {

@@ -12,7 +12,7 @@ import CTASection from "@/components/CTASection";
 import AnimatedService from "@/components/AnimatedService";
 import ProjectGallery from "@/components/ProjectGallery";
 import FadeIn from "@/components/FadeIn";
-import { playfair } from "@/app/layout";
+import { playfair } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Builders in Canterbury | House Renovation & Maintenance | Superstructure Services",

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Service } from "@/lib/services";
-import { playfair } from "@/app/layout";
+import { playfair } from "@/lib/fonts";
 
 interface ServiceCardProps {
   service: Service;
