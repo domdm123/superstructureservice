@@ -201,8 +201,8 @@ export default function HomePage() {
             
             <div className="relative z-10 flex flex-col items-center justify-center gap-3">
               <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[#4a9ebb]/70 mb-2">Our Services</span>
-              <span className="font-furore text-3xl md:text-6xl lg:text-7xl text-white tracking-tight">We can do</span>
-              <div className="font-furore text-3xl md:text-6xl lg:text-7xl tracking-tight text-[#4a9ebb]">
+              <span className="font-furore text-3xl md:text-4xl lg:text-5xl text-white tracking-tight">We can do</span>
+              <div className="font-furore text-3xl md:text-4xl lg:text-5xl tracking-tight text-[#4a9ebb]">
                 <AnimatedService />
               </div>
             </div>
