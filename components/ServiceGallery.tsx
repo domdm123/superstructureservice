@@ -109,11 +109,6 @@ export default function ServiceGallery({ serviceSlug }: Props) {
   return (
     <>
       <div className="mb-8">
-        <div className="mb-4">
-          <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-1 block">Our Work</span>
-          <h3 className="font-furore text-xl text-[#1a2e44]">Recent Projects</h3>
-        </div>
-
         {/* Mobile: 2-col grid */}
         <div className="grid grid-cols-2 gap-2 md:hidden">
           {tiles.slice(0, 4).map((photo, i) => (
