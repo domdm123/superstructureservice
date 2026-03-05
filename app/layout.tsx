@@ -10,7 +10,7 @@ import MobileCTABar from "@/components/MobileCTABar";
 import BackToTop from "@/components/BackToTop";
 import { DOMAIN, COMPANY, PHONE, EMAIL } from "@/lib/services";
 
-const GA_ID = "G-REPLACE_WITH_YOUR_ID"; // TODO: replace with your GA4 Measurement ID (Admin → Data Streams → stream → Measurement ID)
+const GA_ID = "G-LF7J492JPG";
 
 const inter = Inter({
   subsets: ["latin"],
