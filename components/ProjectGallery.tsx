@@ -42,7 +42,7 @@ const GALLERY_PHOTOS = [
   },
   {
     src: "/images/Professional-roofing-service-in-Canterbury-Kent.jpg",
-    alt: "Roofing in Canterbury",
+    alt: "Professional roofing contractor working on a Canterbury property",
     label: "Roofing in Canterbury",
     slug: "roofing-in-canterbury-1",
   },

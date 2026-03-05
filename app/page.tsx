@@ -47,9 +47,10 @@ export default function HomePage() {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-
+          aria-hidden="true"
         >
           <source src="/hero.mp4" type="video/mp4" />
+          <track kind="captions" srcLang="en" label="English" default />
         </video>
         {/* Dark overlay — matches old site's dark machinery feel */}
         <div className="absolute inset-0 bg-black/65" />
@@ -108,7 +109,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-10 sm:mb-20">
             <div className="text-center mb-12">
-              <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">
+              <span className="text-[#1a6e8a] font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">
                 Based in the Heart of Canterbury, Kent
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 tracking-tight">
@@ -158,7 +159,7 @@ export default function HomePage() {
 
           {/* Our Services Title */}
           <div className="text-center mb-10 mt-10 sm:mt-16">
-            <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
+            <span className="text-[#1a6e8a] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
               What We Offer
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -225,7 +226,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
-              <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
+              <span className="text-[#1a6e8a] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
                 Why Choose Us
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -322,7 +323,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
-            <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
+            <span className="text-[#1a6e8a] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
               Coverage
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -347,7 +348,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/areas-we-serve"
-              className="inline-flex items-center gap-2 text-[#4a9ebb] font-semibold hover:underline"
+              className="inline-flex items-center gap-2 text-[#1a6e8a] font-semibold hover:underline"
             >
               View All Areas &amp; Services <ArrowRight size={16} />
             </Link>
