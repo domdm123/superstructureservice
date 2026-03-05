@@ -384,6 +384,25 @@ export const PROJECTS: Project[] = [
     metaTitle: "Roofing in Canterbury | Superstructure Services",
     metaDescription: "Complete roof replacement in Canterbury using traditional products. Long-lasting, water-tight installation by Superstructure Services.",
   },
+  {
+    slug: "air-source-heat-pump-installation-canterbury",
+    title: "Air Source Heat Pump Installation",
+    category: "Air Source Heat Pumps",
+    location: "Canterbury",
+    image: "/images/air-source-heat-pump/air-source-heat-pumps-installer-canterbury-kent.webp",
+    images: [
+      "/images/air-source-heat-pump/air-source-heat-pumps-installer-canterbury-kent.webp",
+      "/images/air-source-heat-pump/air-source-heat-pumps-and-conditioning.webp",
+      "/images/air-source-heat-pump/air-conditioning-installer-in-canterbury-kent.webp",
+      "/images/air-source-heat-pump/air-source-heat-pump-installation-canterbury.webp",
+    ],
+    description: "MCS-accredited air source heat pump installation in Canterbury, Kent.",
+    longDescription: "Our MCS-accredited team installs air source heat pumps across Canterbury and the wider Kent area. We handle everything from survey to commissioning, ensuring maximum efficiency and eligibility for Government grant support.",
+    tags: ["Air Source Heat Pump", "MCS Accredited", "Canterbury", "Kent", "Renewable Energy"],
+    serviceSlug: "air-source-heat-pump",
+    metaTitle: "Air Source Heat Pump Installation in Canterbury | Superstructure Services",
+    metaDescription: "MCS-accredited air source heat pump installation in Canterbury, Kent. Eco-friendly heating with Government grant support by Superstructure Services.",
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
