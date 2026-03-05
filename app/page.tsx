@@ -89,13 +89,19 @@ export default function HomePage() {
             {[
               { num: "30", suffix: "+", label: "Years Experience", sub: "Combined team expertise" },
               { num: "100", suffix: "s", label: "Projects Completed", sub: "Across Kent & Canterbury" },
-              { num: "22", suffix: "", label: "Areas Covered", sub: "Throughout East Kent" },
+              { num: null, suffix: "", label: "Canterbury & Surrounding Areas", sub: "Covering Kent" },
             ].map((s) => (
               <div key={s.label} className="flex flex-col items-center text-center px-2 sm:px-6 py-2">
-                <div className="flex items-end gap-0.5 mb-1">
-                  <span className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-none">{s.num}</span>
-                  <span className="text-lg sm:text-2xl md:text-3xl font-bold text-[#4a9ebb] leading-none mb-0.5">{s.suffix}</span>
-                </div>
+                {s.num !== null ? (
+                  <div className="flex items-end gap-0.5 mb-1">
+                    <span className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-none">{s.num}</span>
+                    <span className="text-lg sm:text-2xl md:text-3xl font-bold text-[#4a9ebb] leading-none mb-0.5">{s.suffix}</span>
+                  </div>
+                ) : (
+                  <div className="mb-1">
+                    <span className="text-xl sm:text-3xl md:text-4xl font-black text-[#4a9ebb] tracking-tight leading-none">Kent</span>
+                  </div>
+                )}
                 <div className="text-[10px] sm:text-sm font-bold text-white/90 uppercase tracking-[0.08em] sm:tracking-[0.12em] mt-1 sm:mt-2 mb-0.5">{s.label}</div>
                 <div className="hidden sm:block text-xs text-white/35 font-medium">{s.sub}</div>
               </div>
