@@ -275,6 +275,66 @@ export const AREAS: Area[] = [
     nearbyAreas: ["Chartham", "Wye", "Canterbury"],
     type: "village",
   },
+  {
+    slug: "maidstone",
+    name: "Maidstone",
+    county: "Kent",
+    description:
+      "Maidstone is the county town of Kent, a thriving commercial and residential hub on the River Medway. With a wide variety of property types — from Victorian townhouses and Edwardian semis to modern new-builds — our team delivers expert building and trade services across Maidstone and its surrounding neighbourhoods.",
+    secondParagraph: "Maidstone's diverse housing stock means our team works across a broad spectrum of projects here — from full property refurbishments and kitchen renovations in period homes to air source heat pump installations and bathroom suites in modern developments. Our Canterbury base puts us well within reach of Maidstone, and we bring the same high standards of craftsmanship and project management that our clients across Kent have come to expect.",
+    mapEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40096.44!2d0.5217!3d51.2720!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47df37d7e4952ef3%3A0x4a3a8e9b1b1b1b1b!2sMaidstone!5e0!3m2!1sen!2suk!4v1700000000022",
+    nearbyAreas: ["Wye", "Folkestone", "Canterbury"],
+    type: "town",
+  },
+  {
+    slug: "deal",
+    name: "Deal",
+    county: "Kent",
+    description:
+      "Deal is a charming coastal town on the East Kent coast, rich in maritime history with a picturesque seafront and a wealth of Georgian and Victorian architecture. Our team provides high-quality building and renovation services throughout Deal, from period property refurbishments to modern home improvements.",
+    secondParagraph: "Deal's historic character and coastal setting create specific building challenges — salt air, older building stock and conservation sensitivities. We're experienced in working with these conditions, delivering everything from roof repairs and damp treatment to bespoke kitchen and bathroom renovations. Whether your property is a Georgian townhouse steps from the seafront or a modern family home, we deliver the quality craftsmanship Deal homeowners deserve.",
+    mapEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20024.44!2d1.4020!3d51.2220!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47decde000000001%3A0x12345abcd6789f05!2sDeal%2C%20Kent!5e0!3m2!1sen!2suk!4v1700000000023",
+    nearbyAreas: ["Sandwich", "Ramsgate", "Canterbury"],
+    type: "town",
+  },
+  {
+    slug: "broadstairs",
+    name: "Broadstairs",
+    county: "Kent",
+    description:
+      "Broadstairs is a picturesque seaside town on the Isle of Thanet, beloved for its sandy bays, Dickensian heritage and strong community spirit. With a mix of Victorian villas, period cottages and modern homes, our team delivers expert building services throughout Broadstairs and the surrounding Thanet area.",
+    secondParagraph: "Broadstairs' coastal Victorian and Edwardian housing stock comes with its own set of building demands — weatherproofing, period-sensitive renovation and energy efficiency upgrades are all common requests from homeowners here. We bring the full range of our building and trade services to Broadstairs, offering reliable, high-quality work from a team that understands the demands of coastal properties.",
+    mapEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20024.44!2d1.4380!3d51.3620!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47decf5000000001%3A0x12345abcd6789f06!2sBroadstairs%2C%20Kent!5e0!3m2!1sen!2suk!4v1700000000024",
+    nearbyAreas: ["Ramsgate", "Sandwich", "Deal"],
+    type: "town",
+  },
+  {
+    slug: "ramsgate",
+    name: "Ramsgate",
+    county: "Kent",
+    description:
+      "Ramsgate is a vibrant harbour town on the Isle of Thanet, home to the only Royal Harbour in England and a fine collection of Regency and Victorian architecture. Our team serves homeowners and businesses across Ramsgate with the full range of building and trade services.",
+    secondParagraph: "Ramsgate has seen significant regeneration in recent years, driving demand for quality building work across all property types. From refurbishing Victorian terraces in the town centre to fitting modern kitchens and bathrooms in harbourside apartments, our team brings the same attention to detail and project management expertise to every job in Ramsgate that we deliver across Kent.",
+    mapEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20024.44!2d1.4160!3d51.3360!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47decf8000000001%3A0x12345abcd6789f07!2sRamsgate%2C%20Kent!5e0!3m2!1sen!2suk!4v1700000000025",
+    nearbyAreas: ["Broadstairs", "Sandwich", "Deal"],
+    type: "town",
+  },
+  {
+    slug: "ashford",
+    name: "Ashford",
+    county: "Kent",
+    description:
+      "Ashford is one of Kent's fastest-growing towns, a major transport hub with excellent High Speed rail links to London and Europe. With a booming residential sector and mix of period and modern properties, our team delivers the full range of building and trade services across Ashford and its surrounding villages.",
+    secondParagraph: "Ashford's rapid growth has created strong demand for quality building work — from new kitchen and bathroom installations in modern developments to full refurbishments of older properties in the town's established residential areas. We've worked extensively across the Ashford area, and our experience in projects at Wye, Waltham and Chilham means our team knows this corner of Kent extremely well.",
+    mapEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40096.44!2d0.8742!3d51.1465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47df0e0000000001%3A0x12345abcd6789f08!2sAshford%2C%20Kent!5e0!3m2!1sen!2suk!4v1700000000026",
+    nearbyAreas: ["Wye", "Waltham", "Folkestone"],
+    type: "town",
+  },
 ];
 
 export function getAreaBySlug(slug: string): Area | undefined {

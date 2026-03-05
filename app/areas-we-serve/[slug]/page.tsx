@@ -17,6 +17,7 @@ const AREAS_WITH_PHOTOS = new Set([
   "fordwich", "harbledown", "ickham", "littlebourne", "petham",
   "sandwich", "sturry", "waltham", "whitstable", "wickhambreaux",
   "wingham", "wye",
+  "maidstone", "deal", "broadstairs", "ramsgate", "ashford",
 ]);
 
 interface Props {

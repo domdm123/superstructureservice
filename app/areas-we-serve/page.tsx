@@ -13,6 +13,7 @@ const AREAS_WITH_PHOTOS = new Set([
   "fordwich", "harbledown", "ickham", "littlebourne", "petham",
   "sandwich", "sturry", "waltham", "whitstable", "wickhambreaux",
   "wingham", "wye",
+  "maidstone", "deal", "broadstairs", "ramsgate", "ashford",
 ]);
 
 const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {
@@ -42,7 +43,7 @@ const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {
 export const metadata: Metadata = {
   title: "Areas We Serve in Kent | Building Services Near You",
   description:
-    "Superstructure Services covers Canterbury and 21 towns and villages across Kent. Find building, renovation and trade services in your area.",
+    "Superstructure Services covers Canterbury and 26 towns and villages across Kent. Find building, renovation and trade services in your area.",
   alternates: { canonical: `${DOMAIN}/areas-we-serve` },
   openGraph: {
     title: "Areas We Serve in Kent | Superstructure Services",

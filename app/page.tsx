@@ -12,6 +12,7 @@ import CTASection from "@/components/CTASection";
 import AnimatedService from "@/components/AnimatedService";
 import ProjectGallery from "@/components/ProjectGallery";
 import FadeIn from "@/components/FadeIn";
+import HeroVideo from "@/components/HeroVideo";
 import { playfair } from "@/lib/fonts";
 
 export const metadata: Metadata = {
@@ -41,17 +42,7 @@ export default function HomePage() {
       {/* Hero — full screen video */}
       <section className="relative h-[85vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-[#0d1b2e]">
         {/* Video background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          aria-hidden="true"
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-          <track kind="captions" srcLang="en" label="English" default />
-        </video>
+        <HeroVideo />
         {/* Dark overlay — matches old site's dark machinery feel */}
         <div className="absolute inset-0 bg-black/65" />
 
