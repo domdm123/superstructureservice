@@ -12,7 +12,7 @@ import CTASection from "@/components/CTASection";
 import AnimatedService from "@/components/AnimatedService";
 import ProjectGallery from "@/components/ProjectGallery";
 import FadeIn from "@/components/FadeIn";
-import { barlow, playfair } from "@/lib/fonts";
+import { playfair } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Builders in Canterbury | House Renovation & Maintenance | Superstructure Services",
@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto w-full">
-          <h1 className={`${barlow.className} text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-none mb-4 sm:mb-6 tracking-wide uppercase`}>
+          <h1 className="font-furore text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-none mb-4 sm:mb-6 tracking-wide uppercase">
             Modern approach,<br className="hidden sm:block" /> old fashioned values.
           </h1>
           <p className="text-gray-300 text-sm sm:text-lg mb-6 sm:mb-10 max-w-xl mx-auto leading-relaxed">

@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Furore";
+  src: url("/fonts/Furore.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-furore {
+  font-family: "Furore", sans-serif;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #111111;
