@@ -398,6 +398,22 @@ export const PROJECTS: Project[] = [
     metaDescription: "Complete roof replacement in Canterbury using traditional products. Long-lasting, water-tight installation by Superstructure Services.",
   },
   {
+    slug: "cinema-room-installation-canterbury",
+    title: "Cinema Room Installation",
+    category: "Cinema Rooms",
+    location: "Canterbury",
+    image: "/images/cinema-room/cinema-room-in-canterbury.jpg",
+    images: [
+      "/images/cinema-room/cinema-room-in-canterbury.jpg",
+    ],
+    description: "Bespoke cinema room installation in Canterbury, Kent.",
+    longDescription: "Our team designs and installs bespoke home cinema rooms across Canterbury and Kent, handling everything from acoustic treatment and projector setup to seating and lighting control.",
+    tags: ["Cinema Room", "Home Cinema", "Canterbury", "Kent", "AV Installation"],
+    serviceSlug: "cinema-room-installation",
+    metaTitle: "Cinema Room Installation in Canterbury | Superstructure Services",
+    metaDescription: "Bespoke cinema room installation in Canterbury, Kent. Full AV setup, acoustic treatment and lighting by Superstructure Services.",
+  },
+  {
     slug: "air-source-heat-pump-installation-canterbury",
     title: "Air Source Heat Pump Installation",
     category: "Air Source Heat Pumps",
