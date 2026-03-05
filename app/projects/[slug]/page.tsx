@@ -50,6 +50,12 @@ export default function ProjectPage() {
   const nextCarousel = () => setCarouselIndex((carouselIndex + 1) % project.images.length);
   const prevCarousel = () => setCarouselIndex((carouselIndex - 1 + project.images.length) % project.images.length);
 
+  const truncateWords = (text: string, maxChars: number) => {
+    if (text.length <= maxChars) return text;
+    const cut = text.lastIndexOf(" ", maxChars);
+    return text.substring(0, cut > 0 ? cut : maxChars) + "…";
+  };
+
   return (
     <>
       {/* Hero - single static image */}
@@ -220,11 +226,11 @@ export default function ProjectPage() {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-[#f5c518] rounded-2xl mb-6 shadow-lg">
                     <Hammer size={32} className="text-[#0d1b2e]" />
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                    Need {project.category.toLowerCase()} help?
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                    {service ? `Need ${service.shortName.toLowerCase()}?` : `Interested in this type of work?`}
                   </h2>
-                  <p className="text-white/80 text-lg leading-relaxed mb-6">
-                    {service ? service.description.substring(0, 180) + '...' : `Discover our expert ${project.category.toLowerCase()} services, transforming homes and businesses in Canterbury and Kent with high-quality, tailored solutions.`}
+                  <p className="text-white/80 text-base leading-relaxed mb-6">
+                    {service ? truncateWords(service.description, 160) : `We deliver expert building and renovation services across Canterbury and Kent. Get in touch for a free, no-obligation quote.`}
                   </p>
                   <div className="flex flex-wrap gap-3 text-sm text-white/60">
                     <span className="flex items-center gap-1.5">
