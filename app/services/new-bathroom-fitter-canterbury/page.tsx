@@ -34,6 +34,7 @@ export default function NewBathroomPage() {
           { label: "New Bathrooms" },
         ]}
         badge="New Bathrooms"
+        heroImage="/images/new-bathroom/bathroom-fitters-canterbury-hero.jpg"
       />
 
       <section className="py-20 bg-white">
