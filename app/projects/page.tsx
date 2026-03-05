@@ -84,14 +84,14 @@ export default function ProjectsPage() {
                   href={`/projects/${project.slug}`}
                   className="group block break-inside-avoid outline-none"
                 >
-                  <div className={`relative overflow-hidden rounded-xl bg-black ring-0 outline-none ${
+                  <div className={`relative overflow-hidden rounded-xl bg-black ring-0 outline-none isolate ${
                     isLarge ? "aspect-[4/3]" : "aspect-square"
                   }`}>
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover transition-all duration-700 group-hover:scale-110"
+                      className="object-cover transition-transform duration-700 scale-[1.01] group-hover:scale-110 transform-gpu will-change-transform"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
