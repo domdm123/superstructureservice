@@ -97,7 +97,7 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             <Link
               href="/"
-              className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-sm"
+              className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-playfair tracking-wide"
             >
               <span className="relative">
                 Home
@@ -111,7 +111,7 @@ export default function Header() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="group relative flex items-center gap-1.5 px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-sm">
+              <button className="group relative flex items-center gap-1.5 px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-playfair tracking-wide">
                 <span className="relative">
                   Services
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full" />
@@ -141,13 +141,13 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/projects" className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-sm">
+            <Link href="/projects" className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-playfair tracking-wide">
               <span className="relative">
                 Projects
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full" />
               </span>
             </Link>
-            <Link href="/areas-we-serve" className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-sm">
+            <Link href="/areas-we-serve" className="group relative px-4 py-2 text-gray-700 font-bold hover:text-[#1e3a5f] transition-colors duration-300 text-[15px] font-playfair tracking-wide">
               <span className="relative">
                 Areas We Serve
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full" />
@@ -176,11 +176,11 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1 overflow-y-auto" style={{ maxHeight: 'calc(100dvh - 96px)' }}>
-            <Link href="/" className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50" onClick={() => setMobileOpen(false)}>
+            <Link href="/" className="px-4 py-3 text-gray-700 font-bold rounded-lg hover:bg-gray-50 font-playfair text-lg" onClick={() => setMobileOpen(false)}>
               Home
             </Link>
             <button
-              className="flex items-center justify-between px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50 w-full text-left"
+              className="flex items-center justify-between px-4 py-3 text-gray-700 font-bold rounded-lg hover:bg-gray-50 w-full text-left font-playfair text-lg"
               onClick={() => setServicesOpen(!servicesOpen)}
             >
               Services <ChevronDown size={16} className={servicesOpen ? "rotate-180" : ""} />
@@ -199,10 +199,10 @@ export default function Header() {
                 ))}
               </div>
             )}
-            <Link href="/projects" className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50" onClick={() => setMobileOpen(false)}>
+            <Link href="/projects" className="px-4 py-3 text-gray-700 font-bold rounded-lg hover:bg-gray-50 font-playfair text-lg" onClick={() => setMobileOpen(false)}>
               Projects
             </Link>
-            <Link href="/areas-we-serve" className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-gray-50" onClick={() => setMobileOpen(false)}>
+            <Link href="/areas-we-serve" className="px-4 py-3 text-gray-700 font-bold rounded-lg hover:bg-gray-50 font-playfair text-lg" onClick={() => setMobileOpen(false)}>
               Areas We Serve
             </Link>
             <div className="mt-2 flex flex-col gap-2">
