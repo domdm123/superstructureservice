@@ -132,10 +132,12 @@ export default function GoogleReviews() {
           {/* Right — review cards scrollable row */}
           <div 
             ref={scrollRef} 
-            className="flex-1 min-w-0 flex gap-4 overflow-x-auto pb-4"
+            className="flex-1 min-w-0 flex gap-4 overflow-x-auto pb-4 scrollbar-hide"
             style={{ 
               scrollSnapType: "x mandatory",
               WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
             }}
           >
             {reviews.map((review) => (
