@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, ChevronDown, Instagram, MapPin, Mail } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Instagram, MapPin } from "lucide-react";
 import { SERVICES, PHONE, EMAIL } from "@/lib/services";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,13 +39,11 @@ export default function Header() {
               <MapPin size={12} />
               Canterbury, Kent
             </span>
-            <a
-              href={`mailto:${EMAIL}`}
+            <ObfuscatedEmail
               className="hidden lg:flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors tracking-wide text-xs uppercase"
-            >
-              <Mail size={13} />
-              {EMAIL}
-            </a>
+              showIcon={true}
+              label={EMAIL}
+            />
             <a
               href="https://www.instagram.com/superstructureservices"
               target="_blank"

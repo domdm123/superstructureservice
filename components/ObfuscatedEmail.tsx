@@ -43,7 +43,7 @@ export default function ObfuscatedEmail({
       className={className}
     >
       {showIcon && <Mail size={15} className="flex-shrink-0 text-[#4a9ebb]" />}
-      <span className="text-sm">{label ?? email}</span>
+      <span>{label ?? email}</span>
     </a>
   );
 }
