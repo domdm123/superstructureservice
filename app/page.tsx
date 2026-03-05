@@ -99,7 +99,7 @@ export default function HomePage() {
                   </div>
                 ) : (
                   <div className="mb-1">
-                    <span className="text-xl sm:text-3xl md:text-4xl font-black text-[#4a9ebb] tracking-tight leading-none">Kent</span>
+                    <span className="text-xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none">Covering Kent</span>
                   </div>
                 )}
                 <div className="text-[10px] sm:text-sm font-bold text-white/90 uppercase tracking-[0.08em] sm:tracking-[0.12em] mt-1 sm:mt-2 mb-0.5">{s.label}</div>
