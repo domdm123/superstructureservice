@@ -30,8 +30,8 @@ export default function CTASection({
           priority
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-[#0d1b2e]/85" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2e] via-[#0d1b2e]/50 to-[#0d1b2e]/70" />
+        <div className="absolute inset-0 bg-[#0d1b2e]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2e]/80 via-[#0d1b2e]/30 to-[#0d1b2e]/40" />
       </div>
       
       {/* Subtle top + bottom lines */}
