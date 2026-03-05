@@ -33,29 +33,41 @@ export const metadata: Metadata = {
     siteName: COMPANY,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: `${DOMAIN}/images/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Superstructure Services — Builders in Canterbury, Kent",
+      },
+    ],
   },
   keywords: ["builders Canterbury", "building contractors Kent", "kitchen installation Canterbury", "bathroom fitting Canterbury", "solar panels Canterbury", "electricians Canterbury", "roofing Canterbury", "property refurbishment Kent", "Superstructure Services"],
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   twitter: {
     card: "summary_large_image",
     title: `Builders in Canterbury | ${COMPANY}`,
     description: "Your trusted builders in Canterbury, Kent. Kitchen fitting, roofing, electrical, plumbing, solar panels, heat pumps and more.",
+    images: [`${DOMAIN}/images/og-image.jpg`],
   },
   verification: {},
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "@id": `${DOMAIN}/#organization`,
   name: COMPANY,
+  legalName: "Superstructure Services Ltd",
   url: DOMAIN,
   telephone: PHONE,
   email: EMAIL,
+  priceRange: "££",
+  foundingDate: "2010",
   description: "Professional building contractors based in Canterbury, Kent. Specialists in kitchen installation, bathroom fitting, roofing, solar panels, air source heat pumps, electrical work, plumbing and full property refurbishment.",
   address: {
     "@type": "PostalAddress",
@@ -73,8 +85,24 @@ const localBusinessSchema = {
   areaServed: [
     { "@type": "City", name: "Canterbury" },
     { "@type": "AdministrativeArea", name: "Kent" },
+    { "@type": "Place", name: "Whitstable" },
+    { "@type": "Place", name: "Faversham" },
+    { "@type": "Place", name: "Folkestone" },
+    { "@type": "Place", name: "Sandwich" },
+    { "@type": "Place", name: "Wye" },
+    { "@type": "Place", name: "Chartham" },
   ],
-  sameAs: ["https://www.instagram.com/superstructureservices"],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: "47",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  sameAs: [
+    "https://www.instagram.com/superstructureservices",
+    "https://www.google.com/maps/place/Superstructure+Services+Ltd",
+  ],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -82,13 +110,19 @@ const localBusinessSchema = {
       opens: "08:00",
       closes: "18:00",
     },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday"],
+      opens: "09:00",
+      closes: "14:00",
+    },
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Building & Trade Services",
     itemListElement: [
       "Kitchen Installation", "Flooring & Underfloor Heating", "Facilities Management",
-      "Electrical", "Air Source Heat Pumps", "Solar Panels", "Air Conditioning",
+      "Electrician", "Air Source Heat Pumps", "Solar Panels", "Air Conditioning",
       "New Bathrooms", "Property Refurbishment", "Plumbing & Drainage",
       "Carpentry", "Garage Conversions", "Roofing", "Home Office", "Cinema Rooms", "Driveways & Paving"
     ].map((name, i) => ({ "@type": "Offer", position: i + 1, itemOffered: { "@type": "Service", name } }))

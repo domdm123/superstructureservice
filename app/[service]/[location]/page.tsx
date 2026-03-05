@@ -57,23 +57,41 @@ export default async function ServiceLocationPage({ params }: Props) {
 
   const pageTitle = `${service.name} in ${area.name}, ${area.county}`;
 
+  const canonical = `${DOMAIN}/${service.slug}/${area.slug}`;
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "@id": `${DOMAIN}/#organization`,
     name: "Superstructure Services",
     description: `${service.name} in ${area.name}, Kent — ${service.tagline}`,
     telephone: PHONE,
+    email: EMAIL,
     url: DOMAIN,
+    priceRange: "££",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "67 Canterbury Innovation Centre",
       addressLocality: "Canterbury",
       addressRegion: "Kent",
+      postalCode: "CT2 7FG",
       addressCountry: "GB",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 51.2802,
+      longitude: 1.078,
     },
     areaServed: [
       { "@type": "City", name: "Canterbury" },
       { "@type": "Place", name: area.name },
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "47",
+      bestRating: "5",
+    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: service.name,
@@ -86,6 +104,44 @@ export default async function ServiceLocationPage({ params }: Props) {
         },
       })),
     },
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${service.name} in ${area.name}`,
+    description: service.metaDescription.replace(/{location}/g, area.name),
+    url: canonical,
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Superstructure Services",
+      telephone: PHONE,
+      url: DOMAIN,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Canterbury",
+        addressRegion: "Kent",
+        postalCode: "CT2 7FG",
+        addressCountry: "GB",
+      },
+    },
+    areaServed: {
+      "@type": "Place",
+      name: area.name,
+      containedInPlace: { "@type": "AdministrativeArea", name: "Kent" },
+    },
+    serviceType: service.name,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: DOMAIN },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${DOMAIN}/services` },
+      { "@type": "ListItem", position: 3, name: service.shortName, item: `${DOMAIN}/services/${service.canonicalSlug.replace("services/", "")}` },
+      { "@type": "ListItem", position: 4, name: area.name, item: canonical },
+    ],
   };
 
   const faqSchema = {
@@ -124,6 +180,14 @@ export default async function ServiceLocationPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"

@@ -46,33 +46,67 @@ export default async function ServicePage({ params }: Props) {
   );
   if (!service) notFound();
 
-  const localBusinessSchema = {
+  const serviceCanonical = `${DOMAIN}/services/${service.canonicalSlug.replace("services/", "")}`;
+
+  const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `${service.name} in Canterbury`,
-    description: service.description,
+    description: service.metaDescription.replace(/{location}/g, "Canterbury"),
+    url: serviceCanonical,
     provider: {
       "@type": "LocalBusiness",
+      "@id": `${DOMAIN}/#organization`,
       name: "Superstructure Services",
       telephone: PHONE,
+      email: EMAIL,
+      url: DOMAIN,
       address: {
         "@type": "PostalAddress",
+        streetAddress: "67 Canterbury Innovation Centre",
         addressLocality: "Canterbury",
         addressRegion: "Kent",
+        postalCode: "CT2 7FG",
         addressCountry: "GB",
       },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 51.2802,
+        longitude: 1.078,
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "47",
+        bestRating: "5",
+      },
     },
-    areaServed: {
-      "@type": "City",
-      name: "Canterbury",
-    },
+    areaServed: [
+      { "@type": "City", name: "Canterbury" },
+      { "@type": "AdministrativeArea", name: "Kent" },
+    ],
+    serviceType: service.name,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: DOMAIN },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${DOMAIN}/services` },
+      { "@type": "ListItem", position: 3, name: `${service.shortName} in Canterbury`, item: serviceCanonical },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <PageHero
         title={`${service.name} in Canterbury, Kent`}
