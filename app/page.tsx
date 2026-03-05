@@ -118,7 +118,7 @@ export default function HomePage() {
               <span className="text-[#1a6e8a] font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">
                 Based in the Heart of Canterbury, Kent
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 tracking-tight">
+              <h2 className="font-furore text-3xl md:text-5xl text-gray-900 mb-5 tracking-tight">
                 Your Local Trusted Builder
               </h2>
             </div>

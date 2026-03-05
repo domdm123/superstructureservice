@@ -46,7 +46,7 @@ export default function CTASection({
           Free No-Obligation Quote
         </span>
 
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
+        <h2 className="font-furore text-3xl md:text-4xl lg:text-5xl text-white mb-5 leading-tight">
           {heading}
         </h2>
         <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">

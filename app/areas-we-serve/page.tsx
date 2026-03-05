@@ -66,7 +66,7 @@ export default function AreasWeServePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="font-furore text-3xl text-gray-900 mb-4">
               All areas we cover
             </h2>
           </div>
@@ -123,7 +123,7 @@ export default function AreasWeServePage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+            <h2 className="font-furore text-2xl text-gray-900 mb-3">
               Services available across all Kent
             </h2>
           </div>

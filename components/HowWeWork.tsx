@@ -64,7 +64,7 @@ export default function HowWeWork() {
           <span className="text-white/50 font-semibold text-xs uppercase tracking-[0.25em] mb-4 block">
             Our Process
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="font-furore text-3xl md:text-5xl text-white mb-6 tracking-tight">
             How We Work
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-lg leading-relaxed">
