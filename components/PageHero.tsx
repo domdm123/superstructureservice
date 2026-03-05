@@ -17,6 +17,7 @@ interface PageHeroProps {
   ctaHref?: string;
   badge?: string;
   heroImage?: string;
+  imagePosition?: string;
 }
 
 export default function PageHero({
@@ -28,6 +29,7 @@ export default function PageHero({
   ctaHref = `mailto:${EMAIL}?subject=${encodeURIComponent("Free Quote Enquiry - Superstructure Services")}`,
   badge,
   heroImage,
+  imagePosition = "center",
 }: PageHeroProps) {
   return (
     <section className="relative bg-[#111111] text-white py-20 md:py-28 overflow-hidden">
@@ -39,6 +41,7 @@ export default function PageHero({
             alt={title}
             fill
             className="object-cover opacity-75"
+            style={{ objectPosition: imagePosition }}
             sizes="100vw"
             priority
           />

@@ -25,6 +25,8 @@ export default function ListedBuildingRestorationPage() {
           { label: "Listed Building Restoration" },
         ]}
         badge="🏛️ Heritage Specialists"
+        heroImage="/images/listed-building-new/canterbury-listed-building-refurbishment.jpg.jpg"
+        imagePosition="top"
       />
 
       <section className="py-20 bg-white">
