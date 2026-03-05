@@ -98,8 +98,8 @@ export default function HowWeWork() {
                       
                       <div className="relative z-10">
                         <div className="flex items-center gap-4 mb-4">
-                          <span className="text-white/60 font-bold text-lg">{step.number}.</span>
-                          <h3 className="text-white font-bold text-xl tracking-tight">
+                          <span className="font-furore text-white/60 text-lg">{step.number}.</span>
+                          <h3 className="font-furore text-white text-xl tracking-tight">
                             {step.title}
                           </h3>
                         </div>
