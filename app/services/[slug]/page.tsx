@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle, ArrowRight, Phone, MapPin } from "lucide-react";
+import { CheckCircle, ArrowRight, Phone, MapPin, ChevronDown } from "lucide-react";
 import { SERVICES, PHONE, EMAIL, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
 import TrustBadges from "@/components/TrustBadges";
+import FaqAccordion from "@/components/FaqAccordion";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -99,6 +100,16 @@ export default async function ServicePage({ params }: Props) {
     serviceType: service.name,
   };
 
+  const faqSchema = service.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  } : null;
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -119,6 +130,12 @@ export default async function ServicePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <PageHero
         title={`${service.name} in Canterbury, Kent`}
         subtitle={service.tagline}
@@ -230,6 +247,9 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
+      {service.faqs.length > 0 && (
+        <FaqAccordion faqs={service.faqs} heading={`${service.shortName} — Frequently Asked Questions`} />
+      )}
       <TrustBadges />
       <CTASection
         heading={`Ready for Your ${service.shortName} Project?`}
