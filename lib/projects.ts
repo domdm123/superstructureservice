@@ -424,6 +424,20 @@ export const PROJECTS: Project[] = [
     metaTitle: "Air Source Heat Pump Installation in Canterbury | Superstructure Services",
     metaDescription: "MCS-accredited air source heat pump installation in Canterbury, Kent. Eco-friendly heating with Government grant support by Superstructure Services.",
   },
+  {
+    slug: "landscaping-gardens-canterbury",
+    title: "Landscaping & Garden Design",
+    category: "Landscaping",
+    location: "Canterbury",
+    image: "",
+    images: [],
+    description: "Professional landscaping and garden design services across Canterbury and Kent.",
+    longDescription: "",
+    tags: ["Landscaping", "Garden Design", "Canterbury", "Kent"],
+    serviceSlug: "landscaping-gardens",
+    metaTitle: "Landscaping & Garden Design in Canterbury | Superstructure Services",
+    metaDescription: "Professional landscaping and garden design in Canterbury, Kent.",
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
