@@ -16,7 +16,7 @@ export default function FaqAccordion({ faqs, heading }: Props) {
     <section className="py-20 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4">
         {heading && (
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0d1b2e] mb-10 text-center">
+          <h2 className="font-furore text-2xl md:text-3xl text-[#0d1b2e] mb-10 text-center">
             {heading}
           </h2>
         )}
