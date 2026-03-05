@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Eye } from "lucide-react";
-import { playfair } from "@/lib/fonts";
 
 const GALLERY_PHOTOS = [
   {
@@ -64,7 +63,7 @@ export default function ProjectGallery() {
             <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
               Our Work
             </span>
-            <h2 className={`${playfair.className} text-3xl md:text-4xl font-bold text-[#0d1b2e]`}>
+            <h2 className="font-furore text-3xl md:text-4xl text-[#0d1b2e]">
               Recent Projects
             </h2>
           </div>

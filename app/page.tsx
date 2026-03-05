@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/65" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto w-full">
-          <h1 className="font-furore text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-none mb-4 sm:mb-6 tracking-wide uppercase">
+          <h1 className="font-furore text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-none mb-4 sm:mb-6 tracking-wide uppercase">
             Modern approach,<br className="hidden sm:block" /> old fashioned values.
           </h1>
           <p className="text-gray-300 text-sm sm:text-lg mb-6 sm:mb-10 max-w-xl mx-auto leading-relaxed">
@@ -201,8 +201,8 @@ export default function HomePage() {
             
             <div className="relative z-10 flex flex-col items-center justify-center gap-3">
               <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[#4a9ebb]/70 mb-2">Our Services</span>
-              <span className="text-3xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">We can do</span>
-              <div className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#4a9ebb]">
+              <span className="font-furore text-3xl md:text-6xl lg:text-7xl text-white tracking-tight">We can do</span>
+              <div className="font-furore text-3xl md:text-6xl lg:text-7xl tracking-tight text-[#4a9ebb]">
                 <AnimatedService />
               </div>
             </div>
@@ -332,7 +332,7 @@ export default function HomePage() {
             <span className="text-[#1a6e8a] font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">
               Coverage
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="font-furore text-3xl md:text-4xl text-gray-900 mb-4">
               Areas We Serve Across Kent
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
