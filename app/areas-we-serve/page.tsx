@@ -60,6 +60,7 @@ export default function AreasWeServePage() {
         subtitle="Based in Canterbury, we deliver professional building and trade services to homes and businesses throughout the surrounding Kent towns and villages."
         breadcrumbs={[{ label: "Areas we serve" }]}
         badge="Kent coverage"
+        heroImage="/images/areas/builders-in-canterbury-kent.jpg"
       />
 
       {/* Areas grid */}
