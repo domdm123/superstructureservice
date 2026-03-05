@@ -92,13 +92,6 @@ const localBusinessSchema = {
     { "@type": "Place", name: "Wye" },
     { "@type": "Place", name: "Chartham" },
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    reviewCount: "47",
-    bestRating: "5",
-    worstRating: "1",
-  },
   sameAs: [
     "https://www.instagram.com/superstructureservices",
     "https://www.google.com/maps/place/Superstructure+Services+Ltd",

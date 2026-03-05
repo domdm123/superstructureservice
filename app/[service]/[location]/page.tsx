@@ -86,12 +86,6 @@ export default async function ServiceLocationPage({ params }: Props) {
       { "@type": "City", name: "Canterbury" },
       { "@type": "Place", name: area.name },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "47",
-      bestRating: "5",
-    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: service.name,

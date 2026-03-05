@@ -85,12 +85,6 @@ export default async function ServicePage({ params }: Props) {
         latitude: 51.2802,
         longitude: 1.078,
       },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5",
-        reviewCount: "47",
-        bestRating: "5",
-      },
     },
     areaServed: [
       { "@type": "City", name: "Canterbury" },
