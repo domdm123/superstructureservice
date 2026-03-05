@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import { PROJECTS } from "@/lib/projects";
 import { SERVICES } from "@/lib/services";
@@ -12,6 +12,7 @@ interface Props {
 
 export default function ServiceGallery({ serviceSlug }: Props) {
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [fading, setFading] = useState(false);
 
   const service = SERVICES.find((s) => s.slug === serviceSlug);
   const canonicalSlug = service?.canonicalSlug.replace("services/", "") ?? serviceSlug;
@@ -24,25 +25,62 @@ export default function ServiceGallery({ serviceSlug }: Props) {
   );
 
   const source = related.length > 0 ? related : PROJECTS;
-
   const all = source.flatMap((p) => p.images.map((src) => ({ src, title: p.title })));
   const tiles = all.slice(0, 8);
 
   if (tiles.length === 0) return null;
 
-  const prev = () => setLightbox((i) => (i === null ? null : (i - 1 + all.length) % all.length));
-  const next = () => setLightbox((i) => (i === null ? null : (i + 1) % all.length));
+  const navigate = useCallback((dir: 1 | -1) => {
+    setFading(true);
+    setTimeout(() => {
+      setLightbox((i) => (i === null ? null : (i + dir + all.length) % all.length));
+      setFading(false);
+    }, 120);
+  }, [all.length]);
+
+  const close = useCallback(() => setLightbox(null), []);
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (lightbox === null) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") navigate(1);
+      else if (e.key === "ArrowLeft") navigate(-1);
+      else if (e.key === "Escape") close();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [lightbox, navigate, close]);
+
+  // Preload adjacent images
+  useEffect(() => {
+    if (lightbox === null) return;
+    const preload = (src: string) => {
+      const img = new window.Image();
+      img.src = src;
+    };
+    preload(all[(lightbox + 1) % all.length].src);
+    preload(all[(lightbox - 1 + all.length) % all.length].src);
+  }, [lightbox, all]);
+
+  // Lock body scroll when open
+  useEffect(() => {
+    if (lightbox !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [lightbox]);
 
   const Tile = ({
     index,
     className,
     sizes,
-    featured = false,
   }: {
     index: number;
     className: string;
     sizes: string;
-    featured?: boolean;
   }) => {
     const photo = tiles[index];
     if (!photo) return null;
@@ -59,7 +97,7 @@ export default function ServiceGallery({ serviceSlug }: Props) {
           sizes={sizes}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <span className="flex items-center gap-1.5 bg-black/80 text-white px-3 py-1.5 rounded-lg text-sm font-semibold border border-white/20">
             <Eye size={14} /> View
           </span>
@@ -71,7 +109,6 @@ export default function ServiceGallery({ serviceSlug }: Props) {
   return (
     <>
       <div className="mb-8">
-        {/* Header */}
         <div className="mb-4">
           <span className="text-[#4a9ebb] font-semibold text-xs uppercase tracking-[0.2em] mb-1 block">Our Work</span>
           <h3 className="font-furore text-xl text-[#1a2e44]">Recent Projects</h3>
@@ -91,9 +128,9 @@ export default function ServiceGallery({ serviceSlug }: Props) {
           ))}
         </div>
 
-        {/* Desktop: bento grid — matches ProjectGallery style */}
+        {/* Desktop: bento grid */}
         <div className="hidden md:grid grid-cols-12 gap-3 auto-rows-[180px]">
-          <Tile index={0} className="col-span-6 row-span-2" sizes="50vw" featured />
+          <Tile index={0} className="col-span-6 row-span-2" sizes="50vw" />
           <Tile index={1} className="col-span-3 row-span-2" sizes="25vw" />
           <Tile index={2} className="col-span-3 row-span-1" sizes="25vw" />
           <Tile index={3} className="col-span-3 row-span-1" sizes="25vw" />
@@ -106,45 +143,68 @@ export default function ServiceGallery({ serviceSlug }: Props) {
       {/* Lightbox */}
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
-          onClick={() => setLightbox(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          style={{ backgroundColor: "rgba(0,0,0,0.96)" }}
+          onClick={close}
         >
+          {/* Close */}
           <button
-            className="absolute top-4 right-4 text-white/70 hover:text-white p-2 transition-colors"
-            onClick={() => setLightbox(null)}
+            className="absolute top-4 right-4 text-white/60 hover:text-white p-2 transition-colors z-10"
+            onClick={close}
             aria-label="Close"
           >
-            <X size={28} />
+            <X size={30} />
           </button>
+
+          {/* Prev */}
           <button
-            className="absolute left-3 md:left-8 text-white/70 hover:text-white p-3 transition-colors"
-            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-white/60 hover:text-white p-4 transition-colors z-10 rounded-full hover:bg-white/10"
+            onClick={(e) => { e.stopPropagation(); navigate(-1); }}
             aria-label="Previous"
           >
-            <ChevronLeft size={40} />
+            <ChevronLeft size={44} strokeWidth={1.5} />
           </button>
+
+          {/* Image */}
           <div
-            className="relative w-[90vw] max-w-4xl"
-            style={{ aspectRatio: "4/3" }}
+            className="relative flex items-center justify-center w-full h-full px-16 md:px-24"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              key={lightbox}
               src={all[lightbox].src}
               alt={all[lightbox].title}
-              fill
-              className="object-contain"
-              sizes="90vw"
+              className="max-h-[85vh] max-w-full w-auto h-auto object-contain rounded-lg select-none"
+              style={{
+                opacity: fading ? 0 : 1,
+                transition: "opacity 0.12s ease",
+              }}
+              draggable={false}
             />
           </div>
-          <p className="absolute bottom-6 left-0 right-0 text-center text-white/50 text-sm px-4">
-            {lightbox + 1} / {all.length}
-          </p>
+
+          {/* Counter */}
+          <div className="absolute bottom-5 left-0 right-0 flex items-center justify-center gap-2 pointer-events-none">
+            {all.map((_, i) => (
+              <span
+                key={i}
+                className={`inline-block rounded-full transition-all duration-200 ${
+                  i === lightbox
+                    ? "w-5 h-1.5 bg-white"
+                    : "w-1.5 h-1.5 bg-white/30"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Next */}
           <button
-            className="absolute right-3 md:right-8 text-white/70 hover:text-white p-3 transition-colors"
-            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-white/60 hover:text-white p-4 transition-colors z-10 rounded-full hover:bg-white/10"
+            onClick={(e) => { e.stopPropagation(); navigate(1); }}
             aria-label="Next"
           >
-            <ChevronRight size={40} />
+            <ChevronRight size={44} strokeWidth={1.5} />
           </button>
         </div>
       )}
