@@ -86,7 +86,7 @@ export default function Footer() {
                 Follow us on Instagram
               </a>
               <a
-                href="https://www.google.com/maps/place/Superstructure+Services+Ltd"
+                href="https://maps.app.goo.gl/F2hE8LhvAQoVUkYs7"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View us on Google"
