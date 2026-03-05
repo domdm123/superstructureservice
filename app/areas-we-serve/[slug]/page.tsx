@@ -4,11 +4,20 @@ import Link from "next/link";
 import { MapPin, ArrowRight, CheckCircle } from "lucide-react";
 import { AREAS } from "@/lib/areas";
 import { SERVICES, DOMAIN, PHONE } from "@/lib/services";
+
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import TrustBadges from "@/components/TrustBadges";
 import MapEmbed from "@/components/MapEmbed";
 import ServiceCard from "@/components/ServiceCard";
+
+const AREAS_WITH_PHOTOS = new Set([
+  "adisham", "barham", "bekesbourne", "blean", "bridge",
+  "canterbury", "chartham", "chilham", "faversham", "folkestone",
+  "fordwich", "harbledown", "ickham", "littlebourne", "petham",
+  "sandwich", "sturry", "waltham", "whitstable", "wickhambreaux",
+  "wingham", "wye",
+]);
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -86,6 +95,7 @@ export default async function AreaPage({ params }: Props) {
           { label: area.name },
         ]}
         badge={`${area.name}, ${area.county}`}
+        heroImage={AREAS_WITH_PHOTOS.has(area.slug) ? `/images/areas/builders-in-${area.slug}-kent.jpg` : undefined}
       />
 
       {/* About the area + map */}
