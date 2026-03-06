@@ -37,19 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.2,
     },
-    // Legacy URL redirects – keep indexed
-    {
-      url: `${DOMAIN}/new-bathroom-fitter-canterbury`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${DOMAIN}/facility-building-management`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
   ];
 
   // Canterbury service pages (existing URLs preserved)
@@ -70,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Service + location combination pages
   const serviceLocationPages: MetadataRoute.Sitemap = SERVICES.flatMap((s) =>
-    AREAS.map((a) => ({
+    AREAS.filter((a) => a.slug !== "canterbury").map((a) => ({
       url: `${DOMAIN}/${s.slug}/${a.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,

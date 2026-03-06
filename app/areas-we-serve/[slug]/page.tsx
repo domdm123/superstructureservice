@@ -51,8 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     other: {
       "geo.region": "GB-KEN",
       "geo.placename": area.name,
-      "geo.position": "51.2802;1.0780",
-      "ICBM": "51.2802, 1.0780",
+      "geo.position": `${area.lat};${area.lng}`,
+      "ICBM": `${area.lat}, ${area.lng}`,
     },
   };
 }

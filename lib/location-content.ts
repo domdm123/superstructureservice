@@ -10,6 +10,11 @@ interface LocationContext {
   propertyTypes: string[];
   characteristics: string[];
   localFeatures: string[];
+  propertySummary: string;
+  externalLink: {
+    label: string;
+    url: string;
+  };
 }
 
 // Location-specific context for each area
@@ -18,111 +23,221 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     propertyTypes: ["historic city centre properties", "Victorian terraces", "Georgian townhouses", "modern developments"],
     characteristics: ["conservation area requirements", "listed building regulations", "city centre access"],
     localFeatures: ["Canterbury Cathedral quarter", "King's Mile", "St Dunstan's area"],
+    propertySummary: "Canterbury has a broad housing mix, from medieval and Georgian buildings in the historic core to Victorian terraces, interwar suburbs and modern estates on the edges of the city. Building work here often needs careful attention to conservation constraints, access, parking, and the detailing expected on older Kent brick and timber properties.",
+    externalLink: {
+      label: "Canterbury City Council",
+      url: "https://www.canterbury.gov.uk/",
+    },
   },
   harbledown: {
     propertyTypes: ["village properties", "period cottages", "family homes"],
     characteristics: ["rural setting", "conservation considerations", "village character"],
     localFeatures: ["historic village centre", "proximity to Canterbury"],
+    propertySummary: "Harbledown is known for older village housing, period cottages and individual family homes shaped by its long history as a settlement on the edge of Canterbury. Many homes here need sympathetic upgrading, especially where original brickwork, timber details and traditional layouts are still intact.",
+    externalLink: {
+      label: "Canterbury City Council — Harbledown area",
+      url: "https://www.canterbury.gov.uk/",
+    },
   },
   blean: {
     propertyTypes: ["village homes", "rural properties", "woodland settings"],
     characteristics: ["countryside location", "traditional Kent architecture"],
     localFeatures: ["Blean Woods", "village community"],
+    propertySummary: "Blean combines established village housing with detached family homes and rural properties close to ancient woodland. The local housing stock tends to favour larger plots and mixed-age construction, so renovation work often ranges from updating traditional homes to extending later suburban properties.",
+    externalLink: {
+      label: "Blean Woods National Nature Reserve",
+      url: "https://www.kentwildlifetrust.org.uk/nature-reserves/blean-woods",
+    },
   },
   sturry: {
     propertyTypes: ["riverside properties", "village homes", "modern estates"],
     characteristics: ["River Stour location", "growing community"],
     localFeatures: ["Sturry village centre", "riverside setting"],
+    propertySummary: "Sturry has a mixed property profile, with older village homes near the historic core, riverside housing close to the Stour, and substantial modern residential development. That makes it a location where both refurbishment and contemporary upgrade work are common.",
+    externalLink: {
+      label: "Canterbury City Council — Sturry",
+      url: "https://www.canterbury.gov.uk/",
+    },
   },
   bridge: {
     propertyTypes: ["rural cottages", "period properties", "village homes"],
     characteristics: ["Elham Valley location", "traditional architecture"],
     localFeatures: ["village setting", "countryside views"],
+    propertySummary: "Bridge has a strong stock of period village housing, flint cottages, older farm-related buildings and later family homes. Because it sits in the Elham Valley, many properties retain traditional Kent forms and materials, which makes careful renovation and repair especially important.",
+    externalLink: {
+      label: "Bridge Parish Council",
+      url: "https://bridgevillage.org.uk/",
+    },
   },
   barham: {
     propertyTypes: ["Elham Valley properties", "period cottages", "rural homes"],
     characteristics: ["quiet village setting", "traditional Kent properties"],
     localFeatures: ["Elham Valley", "countryside location"],
+    propertySummary: "Barham is characterised by rural and period housing, including cottages, farmhouses and detached homes spread through the Elham Valley landscape. Homes here often call for traditional repair methods, practical modernisation and upgrades that still respect the village setting.",
+    externalLink: {
+      label: "Barham Downs from Kent Downs National Landscape",
+      url: "https://kentdowns.org.uk/",
+    },
   },
   bekesbourne: {
     propertyTypes: ["village properties", "period homes", "rural settings"],
     characteristics: ["Little Stour valley", "conservation area"],
     localFeatures: ["village green", "railway station access"],
+    propertySummary: "Bekesbourne's housing stock is largely village-scale and traditional, with period homes, rural settings and a small number of more modern residential properties. Many buildings benefit from careful upgrades that improve comfort without losing the character of the Little Stour valley setting.",
+    externalLink: {
+      label: "Bekesbourne Parish Council",
+      url: "https://bekesbournepc.org.uk/",
+    },
   },
   wickhambreaux: {
     propertyTypes: ["riverside cottages", "period properties", "village homes"],
     characteristics: ["Little Stour riverside", "picturesque village"],
     localFeatures: ["riverside setting", "historic village"],
+    propertySummary: "Wickhambreaux is known for its picturesque village character, older houses near the green and a number of period cottages and detached homes around the Little Stour. Building work here often needs to respond to heritage details, drainage considerations and rural access constraints.",
+    externalLink: {
+      label: "Wickhambreaux Parish Council",
+      url: "https://wickhambreaux.org.uk/",
+    },
   },
   wingham: {
     propertyTypes: ["village properties", "period homes", "rural cottages"],
     characteristics: ["historic village", "traditional architecture"],
     localFeatures: ["village square", "local amenities"],
+    propertySummary: "Wingham has a particularly attractive historic core with period homes, older cottages and substantial village properties around its main street. This mix means homeowners often want upgrades that improve efficiency and liveability while staying true to traditional architecture.",
+    externalLink: {
+      label: "Wingham Wildlife Park",
+      url: "https://winghamwildlifepark.co.uk/",
+    },
   },
   fordwich: {
     propertyTypes: ["historic properties", "riverside homes", "period cottages"],
     characteristics: ["Britain's smallest town", "River Stour location", "conservation area"],
     localFeatures: ["historic town centre", "riverside setting"],
+    propertySummary: "Fordwich has a compact but highly distinctive mix of historic riverside buildings, period cottages and small-scale town housing. Because of its age and conservation sensitivity, works here often demand close attention to heritage fabric, drainage and sympathetic material choices.",
+    externalLink: {
+      label: "Fordwich Town Council",
+      url: "https://fordwichtowncouncil.gov.uk/",
+    },
   },
   chartham: {
     propertyTypes: ["village homes", "period properties", "modern developments"],
     characteristics: ["Great Stour valley", "village community"],
     localFeatures: ["village centre", "railway access"],
+    propertySummary: "Chartham includes older village housing, period homes and more recent development around a well-connected commuter settlement. Properties here span traditional Kent brick homes and newer family houses, so projects often range from renovation and repair to extensions and layout upgrades.",
+    externalLink: {
+      label: "Chartham Parish Council",
+      url: "https://charthamparishcouncil.gov.uk/",
+    },
   },
   adisham: {
     propertyTypes: ["rural properties", "period cottages", "village homes"],
     characteristics: ["countryside setting", "traditional architecture"],
     localFeatures: ["village location", "rural Kent"],
+    propertySummary: "Adisham is a small rural village where housing is largely made up of traditional cottages, older homes and countryside properties. In places like this, improvement works are often about carefully balancing modern performance with the materials and proportions of older Kent village buildings.",
+    externalLink: {
+      label: "Adisham village information",
+      url: "https://www.citypopulation.de/en/uk/southeastengland/admin/canterbury/E04011945__adisham/",
+    },
   },
   littlebourne: {
     propertyTypes: ["village properties", "period homes", "rural cottages"],
     characteristics: ["Little Stour valley", "village character"],
     localFeatures: ["village setting", "countryside location"],
+    propertySummary: "Littlebourne has a mix of period housing, village homes and larger properties in a semi-rural setting east of Canterbury. Its housing stock suits everything from sensitive refurbishment to extensions and internal reconfiguration for modern family living.",
+    externalLink: {
+      label: "Littlebourne Parish Council",
+      url: "https://littlebourneparishcouncil.gov.uk/",
+    },
   },
   ickham: {
     propertyTypes: ["rural homes", "period cottages", "village properties"],
     characteristics: ["Little Stour valley", "traditional Kent architecture"],
     localFeatures: ["village centre", "rural setting"],
+    propertySummary: "Ickham is characterised by rural homes, period cottages and village properties set within a traditional East Kent landscape. Many homes here benefit from work that improves thermal performance and modern usability while preserving long-standing architectural character.",
+    externalLink: {
+      label: "Ickham and Well Parish Council",
+      url: "https://ickhamandwellpc.org.uk/",
+    },
   },
   petham: {
     propertyTypes: ["rural cottages", "period properties", "countryside homes"],
     characteristics: ["North Downs location", "traditional architecture"],
     localFeatures: ["village setting", "downland views"],
+    propertySummary: "Petham has a distinctly rural housing profile shaped by the North Downs landscape, including cottages, older detached homes and countryside properties. Work here often involves practical modernisation, careful repair and upgrades suited to more isolated or individually built homes.",
+    externalLink: {
+      label: "Kent Downs National Landscape",
+      url: "https://kentdowns.org.uk/",
+    },
   },
   waltham: {
     propertyTypes: ["village homes", "rural properties", "period cottages"],
     characteristics: ["countryside location", "traditional Kent character"],
     localFeatures: ["village community", "rural setting"],
+    propertySummary: "Waltham has a traditional village housing mix with period cottages, detached rural homes and family properties set in open countryside. It is the kind of area where homeowners often need all-trades support for upgrades, repairs and carefully managed renovation work.",
+    externalLink: {
+      label: "Waltham Parish Council",
+      url: "https://waltham-kent-pc.gov.uk/",
+    },
   },
   whitstable: {
     propertyTypes: ["coastal properties", "beach houses", "Victorian terraces", "fisherman's cottages"],
     characteristics: ["coastal location", "salt air considerations", "maritime heritage"],
     localFeatures: ["seafront", "harbour area", "Old Town"],
+    propertySummary: "Whitstable has a varied coastal housing stock that includes fisherman's cottages, Victorian terraces, seafront homes and later suburban development. Coastal exposure, salt air and moisture all influence what materials and detailing work best here.",
+    externalLink: {
+      label: "Whitstable Harbour",
+      url: "https://whitstableharbour.org/",
+    },
   },
   faversham: {
     propertyTypes: ["historic market town properties", "Georgian buildings", "Victorian terraces", "creek-side homes"],
     characteristics: ["conservation areas", "historic town centre", "creek location"],
     localFeatures: ["market square", "creek area", "historic quarter"],
+    propertySummary: "Faversham has one of the richest historic housing mixes in Kent, with Georgian buildings, Victorian terraces, older town-centre properties and homes near the creek. That makes it especially important to understand conservation constraints, older construction methods and the demands of upgrading period homes properly.",
+    externalLink: {
+      label: "Faversham Town Council",
+      url: "https://favershamtowncouncil.gov.uk/",
+    },
   },
   wye: {
     propertyTypes: ["village properties", "period homes", "rural cottages"],
     characteristics: ["North Downs setting", "conservation area", "village character"],
     localFeatures: ["village centre", "Wye Crown", "downland location"],
+    propertySummary: "Wye blends traditional village housing, period homes and rural cottages in a setting shaped by the North Downs and its conservation context. Home improvements here often need to combine sympathetic design with practical upgrades for modern living.",
+    externalLink: {
+      label: "Wye National Nature Reserve",
+      url: "https://www.nationaltrust.org.uk/visit/kent/wye-downs",
+    },
   },
   sandwich: {
     propertyTypes: ["historic town properties", "medieval buildings", "period cottages"],
     characteristics: ["ancient Cinque Port", "conservation area", "historic architecture"],
     localFeatures: ["historic town centre", "medieval streets", "town walls"],
+    propertySummary: "Sandwich has an exceptional stock of historic properties, including medieval buildings, period town houses and cottages within a highly distinctive conservation setting. Building work here benefits from a strong understanding of heritage materials, detailing and planning sensitivity.",
+    externalLink: {
+      label: "Sandwich Town Council",
+      url: "https://www.sandwichtowncouncil.gov.uk/",
+    },
   },
   folkestone: {
     propertyTypes: ["coastal properties", "Victorian terraces", "clifftop homes", "harbour properties"],
     characteristics: ["coastal location", "Creative Quarter", "harbour area"],
     localFeatures: ["seafront", "Leas clifftop", "Old High Street"],
+    propertySummary: "Folkestone has a broad range of coastal housing, from Victorian terraces and clifftop homes to regenerated town-centre apartments and harbour-side properties. Exposure to sea air and the town's varied housing stock make tailored specification especially important here.",
+    externalLink: {
+      label: "Folkestone & Hythe District Council",
+      url: "https://www.folkestone-hythe.gov.uk/",
+    },
   },
   chilham: {
     propertyTypes: ["historic village properties", "period cottages", "medieval buildings"],
     characteristics: ["conservation village", "historic square", "traditional architecture"],
     localFeatures: ["village square", "castle grounds", "historic centre"],
+    propertySummary: "Chilham is one of Kent's best-known historic villages, with a remarkable concentration of period cottages, medieval buildings and heritage-sensitive homes around its famous square. Work here calls for a careful approach to materials, proportions and historic detail.",
+    externalLink: {
+      label: "Chilham Castle and village information",
+      url: "https://www.chilham.org/",
+    },
   },
 };
 
@@ -261,6 +376,11 @@ export function generateServiceLocationIntro(service: Service, area: Area): stri
     propertyTypes: ["properties"],
     characteristics: ["local area"],
     localFeatures: ["area"],
+    propertySummary: `Properties in ${area.name} range from established homes to more modern housing, and our team tailors every project to the age, layout and condition of the building involved.`,
+    externalLink: {
+      label: `${area.name} local information`,
+      url: "https://www.canterbury.gov.uk/",
+    },
   };
 
   const generator = SERVICE_PROPERTY_CONSIDERATIONS[service.slug];
@@ -280,6 +400,11 @@ export function generateWhyChooseUsLocal(area: Area): string {
     propertyTypes: ["properties"],
     characteristics: ["local area"],
     localFeatures: ["area"],
+    propertySummary: `Properties in ${area.name} range from established homes to more modern housing, and our team tailors every project to the age, layout and condition of the building involved.`,
+    externalLink: {
+      label: `${area.name} local information`,
+      url: "https://www.canterbury.gov.uk/",
+    },
   };
 
   if (context.characteristics.includes("conservation area") || context.characteristics.includes("historic")) {
@@ -295,4 +420,17 @@ export function generateWhyChooseUsLocal(area: Area): string {
   }
 
   return `As a Canterbury-based building contractor, we understand the properties and planning requirements specific to ${area.name} and the surrounding ${area.county} area. Whether your property is ${context.propertyTypes[0]}, ${context.propertyTypes[1] || "a modern build"}, or a period home, our skilled team has the expertise to deliver outstanding results.`;
+}
+
+export function getLocationContext(area: Area): LocationContext {
+  return LOCATION_CONTEXTS[area.slug] || {
+    propertyTypes: ["properties"],
+    characteristics: ["local area"],
+    localFeatures: ["area"],
+    propertySummary: `Properties in ${area.name} range from established homes to more modern housing, and our team tailors every project to the age, layout and condition of the building involved.`,
+    externalLink: {
+      label: `${area.name} local information`,
+      url: "https://www.canterbury.gov.uk/",
+    },
+  };
 }

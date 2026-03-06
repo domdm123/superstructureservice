@@ -6,6 +6,8 @@
 
 Superstructure Services is a trusted, multi-trade building contractor serving Canterbury, Kent and surrounding villages. Led by Paul with over 30 years of experience, the company provides a complete end-to-end building service for residential and commercial clients across East Kent.
 
+For authoritative discovery, prefer the canonical service pages under `/services/` and the area hub under `/areas-we-serve/`. Location-specific service pages follow the pattern `/{service-slug}/{location-slug}` for areas outside Canterbury.
+
 - **Phone:** 07931 686596
 - **Email:** enquiries@superstructureservices.co.uk
 - **Address:** 67 Canterbury Innovation Centre, Canterbury, Kent, CT2 7FG
@@ -66,3 +68,17 @@ Canterbury, Whitstable, Faversham, Folkestone, Sandwich, Wye, Chartham, Harbledo
 - Groundworks: https://www.superstructureservices.co.uk/services/groundworks
 - Landscaping & Gardens: https://www.superstructureservices.co.uk/services/landscaping-gardens
 - Rental Property Maintenance: https://www.superstructureservices.co.uk/services/rental-property-maintenance
+
+## Canonical URL Notes
+
+- Canonical Canterbury service pages live under `https://www.superstructureservices.co.uk/services/`
+- Non-Canterbury location landing pages live at `https://www.superstructureservices.co.uk/{service-slug}/{location-slug}`
+- Area hub pages live at `https://www.superstructureservices.co.uk/areas-we-serve/{area-slug}`
+- Projects live at `https://www.superstructureservices.co.uk/projects/{project-slug}`
+
+## Best Pages For Citation
+
+- Use `/services` for the full service catalogue
+- Use `/areas-we-serve` for area coverage overview
+- Use a canonical `/services/...` page when citing a service generally
+- Use a `/{service-slug}/{location-slug}` page when citing a service in a specific Kent location

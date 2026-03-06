@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone, MapPin } from "lucide-react";
 import { SERVICES, PHONE, EMAIL, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
-import { generateServiceLocationIntro, generateWhyChooseUsLocal } from "@/lib/location-content";
+import { generateServiceLocationIntro, generateWhyChooseUsLocal, getLocationContext } from "@/lib/location-content";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import TrustBadges from "@/components/TrustBadges";
@@ -61,8 +61,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     other: {
       "geo.region": "GB-KEN",
       "geo.placename": area.name,
-      "geo.position": "51.2802;1.0780",
-      "ICBM": "51.2802, 1.0780",
+      "geo.position": `${area.lat};${area.lng}`,
+      "ICBM": `${area.lat}, ${area.lng}`,
     },
   };
 }
@@ -76,6 +76,29 @@ export default async function ServiceLocationPage({ params }: Props) {
   const pageTitle = `${service.name} in ${area.name}, ${area.county}`;
 
   const canonical = `${DOMAIN}/${service.slug}/${area.slug}`;
+  const locationContext = getLocationContext(area);
+  const faqs = [
+    {
+      q: `Do you provide ${service.shortName.toLowerCase()} services in ${area.name}?`,
+      a: `Yes, Superstructure Services provides professional ${service.shortName.toLowerCase()} services throughout ${area.name} and the surrounding ${area.county} area. We are based in Canterbury and regularly work across all of East Kent. Contact us for a free quote.`,
+    },
+    {
+      q: `How much does ${service.shortName.toLowerCase()} cost in ${area.name}?`,
+      a: `The cost of ${service.shortName.toLowerCase()} in ${area.name} depends on the scope, size and specification of your project. We provide free, detailed and itemised quotes with no hidden costs. Contact us today to discuss your requirements.`,
+    },
+    {
+      q: `How far is ${area.name} from your base in Canterbury?`,
+      a: `Our team is based in Canterbury, ${area.county} and ${area.name} is within our core service area. We cover all areas within and surrounding Canterbury, ensuring prompt response times and local knowledge of your area.`,
+    },
+    {
+      q: `What types of properties do you usually work on in ${area.name}?`,
+      a: `We regularly work on ${locationContext.propertyTypes.join(", ")} in ${area.name}. Because the area includes ${locationContext.characteristics.join(", ")}, we tailor each project to the age, construction method and setting of the property rather than taking a one-size-fits-all approach.`,
+    },
+    {
+      q: `Can you adapt your ${service.shortName.toLowerCase()} work to older or period homes in ${area.name}?`,
+      a: `Yes. Many homes in ${area.name} are period or character properties, so we plan our ${service.shortName.toLowerCase()} work carefully around existing structure, materials, access and any conservation considerations. That allows us to improve comfort, performance and appearance without compromising the character of the building.`,
+    },
+  ];
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -97,8 +120,8 @@ export default async function ServiceLocationPage({ params }: Props) {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 51.2802,
-      longitude: 1.078,
+      latitude: area.lat,
+      longitude: area.lng,
     },
     areaServed: [
       { "@type": "City", name: "Canterbury" },
@@ -126,6 +149,7 @@ export default async function ServiceLocationPage({ params }: Props) {
     url: canonical,
     provider: {
       "@type": "LocalBusiness",
+      "@id": `${DOMAIN}/#organization`,
       name: "Superstructure Services",
       telephone: PHONE,
       url: DOMAIN,
@@ -140,9 +164,26 @@ export default async function ServiceLocationPage({ params }: Props) {
     areaServed: {
       "@type": "Place",
       name: area.name,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: area.lat,
+        longitude: area.lng,
+      },
       containedInPlace: { "@type": "AdministrativeArea", name: "Kent" },
     },
     serviceType: service.name,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${service.name} in ${area.name}`,
+      itemListElement: service.features.map((feature, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: feature.split("–")[0].trim(),
+        },
+      })),
+    },
   };
 
   const breadcrumbSchema = {
@@ -159,32 +200,14 @@ export default async function ServiceLocationPage({ params }: Props) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: `Do you provide ${service.shortName.toLowerCase()} services in ${area.name}?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `Yes, Superstructure Services provides professional ${service.shortName.toLowerCase()} services throughout ${area.name} and the surrounding ${area.county} area. Contact us for a free quote.`,
-        },
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
       },
-      {
-        "@type": "Question",
-        name: `How much does ${service.shortName.toLowerCase()} cost in ${area.name}?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `The cost of ${service.shortName.toLowerCase()} in ${area.name} varies depending on the scope and specification of the project. Contact Superstructure Services for a free, no-obligation quote tailored to your requirements.`,
-        },
-      },
-      {
-        "@type": "Question",
-        name: `Are you a local ${service.shortName.toLowerCase()} company near ${area.name}?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `Yes, we are based in Canterbury, just a short drive from ${area.name}. Our team regularly works throughout ${area.name} and the wider Kent area, providing local expertise and knowledge.`,
-        },
-      },
-    ],
+    })),
   };
 
   return (
@@ -243,6 +266,18 @@ export default async function ServiceLocationPage({ params }: Props) {
                 </p>
               </div>
 
+              <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                <h3 className="text-xl font-bold text-[#1a2e44] mb-4">
+                  Property Types & Building Character in {area.name}
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  {locationContext.propertySummary}
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  That is why our work in {area.name} is planned around the actual building type involved — whether that means sensitive upgrades to {locationContext.propertyTypes[0]}, practical improvements in {locationContext.propertyTypes[1] || "family homes"}, or modernisation work in newer residential properties.
+                </p>
+              </div>
+
               {/* Features */}
               <div>
                 <h3 className="text-xl font-bold text-[#1a2e44] mb-5">
@@ -267,7 +302,7 @@ export default async function ServiceLocationPage({ params }: Props) {
               {/* Why choose us local */}
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
                 <h3 className="text-xl font-bold text-[#1a2e44] mb-4">
-                  Why Choose Superstructure Services in {area.name}?
+                  Why customers in {area.name} choose us
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-5">
                   {generateWhyChooseUsLocal(area)}
@@ -295,6 +330,18 @@ export default async function ServiceLocationPage({ params }: Props) {
                   <MapPin size={20} className="text-[#4a9ebb]" />
                   Serving {area.name}, {area.county}
                 </h3>
+                <p className="text-sm text-gray-500 mb-4">
+                  Learn more about {area.name} from{" "}
+                  <a
+                    href={locationContext.externalLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#4a9ebb] font-medium hover:underline"
+                  >
+                    {locationContext.externalLink.label}
+                  </a>
+                  .
+                </p>
                 <MapEmbed embedUrl={area.mapEmbed} title={area.name} lat={area.lat} lng={area.lng} />
                 {area.nearbyAreas.length > 0 && (
                   <p className="mt-4 text-sm text-gray-500">
@@ -310,20 +357,7 @@ export default async function ServiceLocationPage({ params }: Props) {
                   Frequently Asked Questions
                 </h3>
                 <div className="flex flex-col gap-5">
-                  {[
-                    {
-                      q: `Do you provide ${service.shortName.toLowerCase()} services in ${area.name}?`,
-                      a: `Yes, Superstructure Services provides professional ${service.shortName.toLowerCase()} services throughout ${area.name} and the surrounding ${area.county} area. We are based in Canterbury and regularly work across all of East Kent. Contact us for a free quote.`,
-                    },
-                    {
-                      q: `How much does ${service.shortName.toLowerCase()} cost in ${area.name}?`,
-                      a: `The cost of ${service.shortName.toLowerCase()} in ${area.name} depends on the scope, size and specification of your project. We provide free, detailed and itemised quotes with no hidden costs. Contact us today to discuss your requirements.`,
-                    },
-                    {
-                      q: `How far is ${area.name} from your base in Canterbury?`,
-                      a: `Our team is based in Canterbury, ${area.county} and ${area.name} is within our core service area. We cover all areas within and surrounding Canterbury, ensuring prompt response times and local knowledge of your area.`,
-                    },
-                  ].map((faq) => (
+                  {faqs.map((faq) => (
                     <div
                       key={faq.q}
                       className="border border-gray-100 rounded-xl p-6 bg-white shadow-sm"
