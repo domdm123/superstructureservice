@@ -149,7 +149,7 @@ export default function RootLayout({
         <LoadingScreen />
         <Header />
         <main>{children}</main>
-        <div className="hidden lg:block"><GoogleReviews /></div>
+        <GoogleReviews />
         <Footer />
         <MobileCTABar />
         <BackToTop />
