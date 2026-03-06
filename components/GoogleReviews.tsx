@@ -81,10 +81,11 @@ function GoogleIcon() {
 }
 
 export default function GoogleReviews() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const mobileScrollRef = useRef<HTMLDivElement>(null);
+  const desktopScrollRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (dir: "left" | "right") => {
-    const el = scrollRef.current;
+  const scroll = (ref: React.RefObject<HTMLDivElement | null>, dir: "left" | "right") => {
+    const el = ref.current;
     if (!el) return;
     const cardWidth = el.querySelector("div")?.offsetWidth ?? 280;
     el.scrollBy({ left: dir === "right" ? cardWidth + 16 : -(cardWidth + 16), behavior: "smooth" });
@@ -115,14 +116,14 @@ export default function GoogleReviews() {
 
             <div className="flex items-center justify-end gap-2">
               <button
-                onClick={() => scroll("left")}
+                onClick={() => scroll(mobileScrollRef, "left")}
                 aria-label="Previous reviews"
                 className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white active:bg-white/10 transition-all duration-200"
               >
                 <ChevronLeft size={18} strokeWidth={1.5} />
               </button>
               <button
-                onClick={() => scroll("right")}
+                onClick={() => scroll(mobileScrollRef, "right")}
                 aria-label="Next reviews"
                 className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white active:bg-white/10 transition-all duration-200"
               >
@@ -132,7 +133,7 @@ export default function GoogleReviews() {
           </div>
 
           <div
-            ref={scrollRef}
+            ref={mobileScrollRef}
             className="flex gap-3 overflow-x-auto pb-1 scrollbar-hide"
             style={{
               scrollSnapType: "x mandatory",
@@ -193,14 +194,14 @@ export default function GoogleReviews() {
             </div>
             <div className="flex items-center gap-3">
               <button
-                onClick={() => scroll("left")}
+                onClick={() => scroll(desktopScrollRef, "left")}
                 aria-label="Previous reviews"
                 className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
               >
                 <ChevronLeft size={18} strokeWidth={1.5} />
               </button>
               <button
-                onClick={() => scroll("right")}
+                onClick={() => scroll(desktopScrollRef, "right")}
                 aria-label="Next reviews"
                 className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200"
               >
@@ -210,7 +211,7 @@ export default function GoogleReviews() {
           </div>
 
           <div
-            ref={scrollRef}
+            ref={desktopScrollRef}
             className="flex-1 min-w-0 flex gap-4 overflow-x-auto pb-4"
             style={{
               scrollSnapType: "x mandatory",
