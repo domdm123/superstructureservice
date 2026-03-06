@@ -91,9 +91,90 @@ export default function GoogleReviews() {
   };
 
   return (
-    <section className="bg-[#1a1a2e] pt-6 pb-0 lg:pt-14">
+    <section className="bg-[#1a1a2e] pt-6 pb-24 lg:pt-14 lg:pb-0">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-start lg:items-stretch gap-6 lg:gap-10">
+        <div className="lg:hidden">
+          <div className="rounded-2xl border border-white/10 bg-[#111111] p-4 mb-4 shadow-[0_12px_40px_rgba(0,0,0,0.22)]">
+            <div className="flex items-center justify-between gap-4 mb-3">
+              <div>
+                <p className="text-white font-black text-base tracking-[0.16em] uppercase mb-1">Google Reviews</p>
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-0.5">
+                    {[1,2,3,4,5].map((i) => (
+                      <Star key={i} size={14} className="fill-[#f5a623] text-[#f5a623]" />
+                    ))}
+                  </div>
+                  <span className="text-white font-semibold text-sm">Excellent</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                <GoogleIcon />
+                <span className="text-white text-sm font-semibold">12 reviews</span>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-end gap-2">
+              <button
+                onClick={() => scroll("left")}
+                aria-label="Previous reviews"
+                className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white active:bg-white/10 transition-all duration-200"
+              >
+                <ChevronLeft size={18} strokeWidth={1.5} />
+              </button>
+              <button
+                onClick={() => scroll("right")}
+                aria-label="Next reviews"
+                className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white active:bg-white/10 transition-all duration-200"
+              >
+                <ChevronRight size={18} strokeWidth={1.5} />
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={scrollRef}
+            className="flex gap-3 overflow-x-auto pb-1 scrollbar-hide"
+            style={{
+              scrollSnapType: "x mandatory",
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {reviews.map((review) => (
+              <div
+                key={review.name}
+                className="bg-[#111111] rounded-2xl p-4 flex flex-col gap-3 border border-white/10 flex-shrink-0 w-[82vw] shadow-[0_10px_30px_rgba(0,0,0,0.18)]"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className={`w-10 h-10 rounded-full ${review.color} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
+                      {review.initials}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-white font-semibold text-sm leading-tight truncate">{review.name}</p>
+                      <p className="text-gray-500 text-xs">{review.date}</p>
+                    </div>
+                  </div>
+                  <GoogleIcon />
+                </div>
+
+                <div className="flex gap-0.5">
+                  {Array.from({ length: review.rating }).map((_, i) => (
+                    <Star key={i} size={13} className="fill-[#f5a623] text-[#f5a623]" />
+                  ))}
+                </div>
+
+                <p className="text-gray-300 text-xs leading-relaxed line-clamp-3">
+                  {review.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden lg:flex flex-col lg:flex-row items-start lg:items-stretch gap-6 lg:gap-10">
 
           {/* Left — rating summary */}
           <div className="w-full lg:w-auto flex flex-row lg:flex-col items-center justify-between lg:justify-center text-center lg:min-w-[180px] lg:border-r lg:border-white/10 lg:pr-10 pb-4 lg:pb-0 border-b lg:border-b-0 border-white/10">
@@ -110,7 +191,6 @@ export default function GoogleReviews() {
                 <span className="text-white font-bold text-base lg:text-lg tracking-tight">Google</span>
               </div>
             </div>
-            {/* Arrow controls — always visible */}
             <div className="flex items-center gap-3">
               <button
                 onClick={() => scroll("left")}
@@ -129,7 +209,6 @@ export default function GoogleReviews() {
             </div>
           </div>
 
-          {/* Right — review cards scrollable row */}
           <div
             ref={scrollRef}
             className="flex-1 min-w-0 flex gap-4 overflow-x-auto pb-4"
@@ -146,7 +225,6 @@ export default function GoogleReviews() {
                 className="bg-[#111111] rounded-xl p-4 flex flex-col gap-3 border border-white/5 flex-shrink-0 w-[85vw] sm:w-[300px] lg:w-[260px]"
                 style={{ scrollSnapAlign: "start" }}
               >
-                {/* Header */}
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex items-center gap-2.5">
                     <div className={`w-9 h-9 rounded-full ${review.color} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
@@ -160,18 +238,15 @@ export default function GoogleReviews() {
                   <GoogleIcon />
                 </div>
 
-                {/* Stars */}
                 <div className="flex gap-0.5">
                   {Array.from({ length: review.rating }).map((_, i) => (
                     <Star key={i} size={13} className="fill-[#f5a623] text-[#f5a623]" />
                   ))}
                 </div>
 
-                {/* Text — no clamp so full review is readable */}
                 <p className="text-gray-400 text-xs leading-relaxed">
                   {review.text}
                 </p>
-
               </div>
             ))}
           </div>
