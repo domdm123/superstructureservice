@@ -100,47 +100,6 @@ export default async function ServiceLocationPage({ params }: Props) {
     },
   ];
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-    "@id": `${DOMAIN}/#organization`,
-    name: "Superstructure Services",
-    description: `${service.name} in ${area.name}, Kent — ${service.tagline}`,
-    telephone: PHONE,
-    email: EMAIL,
-    url: DOMAIN,
-    priceRange: "££",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "67 Canterbury Innovation Centre",
-      addressLocality: "Canterbury",
-      addressRegion: "Kent",
-      postalCode: "CT2 7FG",
-      addressCountry: "GB",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: area.lat,
-      longitude: area.lng,
-    },
-    areaServed: [
-      { "@type": "City", name: "Canterbury" },
-      { "@type": "Place", name: area.name },
-    ],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: service.name,
-      itemListElement: service.features.map((f, i) => ({
-        "@type": "Offer",
-        position: i + 1,
-        itemOffered: {
-          "@type": "Service",
-          name: f.split("–")[0].trim(),
-        },
-      })),
-    },
-  };
-
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -212,10 +171,6 @@ export default async function ServiceLocationPage({ params }: Props) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -297,6 +252,9 @@ export default async function ServiceLocationPage({ params }: Props) {
               </div>
 
               {/* Service Gallery */}
+              <h3 className="text-xl font-bold text-[#1a2e44] mb-5">
+                Our Related Projects
+              </h3>
               <ServiceGallery serviceSlug={service.slug} />
 
               {/* Why choose us local */}
