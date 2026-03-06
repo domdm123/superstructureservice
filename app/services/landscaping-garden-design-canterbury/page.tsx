@@ -25,6 +25,7 @@ export default function LandscapingPage() {
           { label: "Landscaping & Garden Design" },
         ]}
         badge="🌿 Landscaping"
+        heroImage="/images/services/landscaping-gardens.webp"
       />
 
       <section className="py-20 bg-white">
