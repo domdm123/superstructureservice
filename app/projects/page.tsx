@@ -18,6 +18,7 @@ const CATEGORIES = [
   "Home Office",
   "Kitchen Installation",
   "Listed Building Restoration",
+  "New Bathrooms",
   "Plumbing and Drainage",
   "Refurbishments and Conversions",
   "Roofing",

@@ -60,6 +60,7 @@ export default function FacilityBuildingManagementPage() {
           { label: "Services", href: "/services" },
           { label: "Facility Building Management" },
         ]}
+        heroImage="/images/facilities-management/building-management-company-in-canterbury-kent-professional-maintanence-hero.webp"
       />
 
       <section className="py-20 bg-white">
