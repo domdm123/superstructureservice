@@ -12,7 +12,6 @@ interface Props {
 
 export default function ServiceGallery({ serviceSlug }: Props) {
   const [lightbox, setLightbox] = useState<number | null>(null);
-  const [fading, setFading] = useState(false);
 
   const service = SERVICES.find((s) => s.slug === serviceSlug);
   const canonicalSlug = service?.canonicalSlug.replace("services/", "") ?? serviceSlug;
@@ -31,11 +30,7 @@ export default function ServiceGallery({ serviceSlug }: Props) {
   if (tiles.length === 0) return null;
 
   const navigate = useCallback((dir: 1 | -1) => {
-    setFading(true);
-    setTimeout(() => {
-      setLightbox((i) => (i === null ? null : (i + dir + all.length) % all.length));
-      setFading(false);
-    }, 120);
+    setLightbox((i) => (i === null ? null : (i + dir + all.length) % all.length));
   }, [all.length]);
 
   const close = useCallback(() => setLightbox(null), []);
@@ -52,15 +47,25 @@ export default function ServiceGallery({ serviceSlug }: Props) {
     return () => window.removeEventListener("keydown", handler);
   }, [lightbox, navigate, close]);
 
-  // Preload adjacent images
+  // Preload gallery tile images on mount for fast grid display
+  useEffect(() => {
+    tiles.forEach(({ src }) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Preload 2 images ahead and behind current lightbox position
   useEffect(() => {
     if (lightbox === null) return;
     const preload = (src: string) => {
       const img = new window.Image();
       img.src = src;
     };
-    preload(all[(lightbox + 1) % all.length].src);
-    preload(all[(lightbox - 1 + all.length) % all.length].src);
+    [-2, -1, 1, 2].forEach((offset) => {
+      preload(all[(lightbox + offset + all.length) % all.length].src);
+    });
   }, [lightbox, all]);
 
   // Lock body scroll when open
@@ -95,6 +100,7 @@ export default function ServiceGallery({ serviceSlug }: Props) {
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           sizes={sizes}
+          priority={index === 0}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -174,16 +180,14 @@ export default function ServiceGallery({ serviceSlug }: Props) {
             className="relative flex items-center justify-center w-full h-full px-16 md:px-24"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               key={lightbox}
               src={all[lightbox].src}
               alt={all[lightbox].title}
-              className="max-h-[85vh] max-w-full w-auto h-auto object-contain rounded-lg select-none"
-              style={{
-                opacity: fading ? 0 : 1,
-                transition: "opacity 0.12s ease",
-              }}
+              fill
+              className="object-contain rounded-lg select-none"
+              sizes="100vw"
+              priority
               draggable={false}
             />
           </div>
