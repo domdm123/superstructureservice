@@ -60,7 +60,6 @@ export default function FacilityBuildingManagementPage() {
           { label: "Services", href: "/services" },
           { label: "Facility Building Management" },
         ]}
-        badge="Facilities Management"
       />
 
       <section className="py-20 bg-white">
