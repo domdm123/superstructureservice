@@ -226,7 +226,7 @@ export default function ProjectPage() {
                     {service ? `Need a ${service.shortName.toLowerCase()}?` : `Interested in this type of work?`}
                   </h2>
                   <p className="text-white/80 text-base leading-relaxed mb-6">
-                    {service ? truncateWords(service.description, 280) : `We deliver expert building and renovation services across Canterbury and Kent. Get in touch for a free, no-obligation quote.`}
+                    {service ? service.description : `We deliver expert building and renovation services across Canterbury and Kent. Get in touch for a free, no-obligation quote.`}
                   </p>
                   <div className="flex flex-wrap gap-3 text-sm text-white/60">
                     <span className="flex items-center gap-1.5">
