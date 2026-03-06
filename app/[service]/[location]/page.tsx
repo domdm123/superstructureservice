@@ -295,7 +295,7 @@ export default async function ServiceLocationPage({ params }: Props) {
                   <MapPin size={20} className="text-[#4a9ebb]" />
                   Serving {area.name}, {area.county}
                 </h3>
-                <MapEmbed embedUrl={area.mapEmbed} title={area.name} />
+                <MapEmbed embedUrl={area.mapEmbed} title={area.name} lat={area.lat} lng={area.lng} />
                 {area.nearbyAreas.length > 0 && (
                   <p className="mt-4 text-sm text-gray-500">
                     We also cover nearby areas including{" "}

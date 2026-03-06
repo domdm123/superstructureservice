@@ -8,6 +8,8 @@ export interface Area {
   nearbyAreas: string[];
   population?: string;
   type: "city" | "town" | "village";
+  lat: number;
+  lng: number;
 }
 
 export const AREAS: Area[] = [
@@ -15,6 +17,8 @@ export const AREAS: Area[] = [
     slug: "canterbury",
     name: "Canterbury",
     county: "Kent",
+    lat: 51.2802,
+    lng: 1.0780,
     description:
       "Canterbury is a historic cathedral city in Kent, home to the world-famous Canterbury Cathedral and a vibrant mix of period and modern properties. Our team is based here and has deep knowledge of the local architecture, planning requirements and building regulations.",
     secondParagraph: "Being Canterbury-based ourselves, we know this city inside out — from conservation area restrictions around the city walls to the planning policies governing listed properties. Whether you're updating a Victorian terrace in Wincheap, refurbishing a townhouse in St Dunstan's, or fitting a new kitchen in a modern development, we're your local team.",
@@ -27,6 +31,8 @@ export const AREAS: Area[] = [
     slug: "harbledown",
     name: "Harbledown",
     county: "Kent",
+    lat: 51.2802,
+    lng: 1.0480,
     description:
       "Harbledown is a picturesque village on the western outskirts of Canterbury, known for its historic Norman church and beautiful period cottages. We regularly work on property renovations and improvements throughout this sought-after village.",
     secondParagraph: "Many properties in Harbledown are older builds requiring thoughtful renovation. Our team specialises in upgrading heating systems, kitchens, bathrooms and energy efficiency measures while preserving the charm of these traditional Kent homes.",
@@ -39,6 +45,8 @@ export const AREAS: Area[] = [
     slug: "blean",
     name: "Blean",
     county: "Kent",
+    lat: 51.3002,
+    lng: 1.0430,
     description:
       "Blean is a charming village to the north-west of Canterbury, nestled alongside the ancient Blean Woods. With a mix of period properties and modern homes, our building team provides expert services to homeowners throughout the Blean area.",
     secondParagraph: "We work on a wide variety of projects in Blean — from full property refurbishments and garage conversions to solar panel installations and underfloor heating. With easy access from the A290, our team can typically be with you quickly, making Blean one of our most regularly served villages.",
@@ -51,6 +59,8 @@ export const AREAS: Area[] = [
     slug: "sturry",
     name: "Sturry",
     county: "Kent",
+    lat: 51.2952,
+    lng: 1.1180,
     description:
       "Sturry is a growing village to the north-east of Canterbury, with a mix of established period properties and newer residential developments. Our team provides comprehensive building services throughout Sturry and the surrounding area.",
     secondParagraph: "Sturry has seen considerable residential growth in recent years, bringing demand for kitchen installations, bathroom fitting, electrical upgrades and landscaping across both new and older properties. Our team delivers consistent, high-quality results whether it's a small repair or a major refurbishment.",
@@ -63,6 +73,8 @@ export const AREAS: Area[] = [
     slug: "bridge",
     name: "Bridge",
     county: "Kent",
+    lat: 51.2402,
+    lng: 1.1280,
     description:
       "Bridge is a charming village just south of Canterbury along the A2, featuring beautiful period homes and a strong community feel. We have carried out numerous renovation and building projects for homeowners in Bridge and the surrounding villages.",
     secondParagraph: "Bridge's mix of flint cottages, farmhouses and modern family homes means no two jobs are the same here. We're experienced in everything from damp-proofing and roof repairs on older properties to full kitchen and bathroom renovations on newer builds.",
@@ -75,6 +87,8 @@ export const AREAS: Area[] = [
     slug: "barham",
     name: "Barham",
     county: "Kent",
+    lat: 51.2002,
+    lng: 1.1580,
     description:
       "Barham is a quiet village in the Elham Valley south of Canterbury, popular for its countryside setting and traditional Kent properties. Our skilled builders and tradespeople are experienced in working on both historic and modern properties in Barham.",
     secondParagraph: "The Elham Valley is dotted with beautiful period properties that require sensitive, skilled building work. In Barham we frequently undertake roofing repairs, period window restoration, bathroom refurbishments and whole-house renovations. We understand the importance of maintaining the character of these homes while bringing them up to modern standards of comfort.",
@@ -87,6 +101,8 @@ export const AREAS: Area[] = [
     slug: "bekesbourne",
     name: "Bekesbourne",
     county: "Kent",
+    lat: 51.2552,
+    lng: 1.1680,
     description:
       "Bekesbourne is a peaceful village lying between Canterbury and Sandwich, known for its rural character and attractive properties. We provide high-quality building services to homeowners throughout Bekesbourne and the surrounding Kent countryside.",
     secondParagraph: "Rural villages like Bekesbourne often have properties extended and modified over generations, requiring a builder who can work sensitively across different eras of construction. We're experienced in matching materials, navigating planning constraints and delivering work that feels at home in the local landscape.",
@@ -99,6 +115,8 @@ export const AREAS: Area[] = [
     slug: "wickhambreaux",
     name: "Wickhambreaux",
     county: "Kent",
+    lat: 51.2852,
+    lng: 1.1780,
     description:
       "Wickhambreaux is a beautiful and historic village east of Canterbury, centred around a picturesque village green and medieval church. Our team is experienced in sympathetic restoration and renovation work for the unique period properties found in Wickhambreaux.",
     secondParagraph: "Working in conservation villages like Wickhambreaux demands care, craftsmanship and an understanding of heritage building techniques. Our director Paul has over 30 years of experience across listed and historic buildings — you can trust us to handle your Wickhambreaux property with the respect it deserves.",
@@ -111,6 +129,8 @@ export const AREAS: Area[] = [
     slug: "wingham",
     name: "Wingham",
     county: "Kent",
+    lat: 51.2702,
+    lng: 1.2180,
     description:
       "Wingham is one of the most attractive villages in East Kent, with a long main street lined with historic buildings. We regularly carry out building and renovation work in Wingham, with particular expertise in period property improvements and listed building work.",
     secondParagraph: "Wingham's high street is one of the finest in rural Kent, and many of its properties carry listed status or sit within the conservation area. Our experience with listed building consent, traditional materials and period-appropriate finishes makes us a trusted choice for homeowners who want quality work done without compromising their home's character.",
@@ -123,6 +143,8 @@ export const AREAS: Area[] = [
     slug: "fordwich",
     name: "Fordwich",
     county: "Kent",
+    lat: 51.3052,
+    lng: 1.1080,
     description:
       "Fordwich is England's smallest town, located just outside Canterbury on the River Stour. With its unique historic character and range of period properties, we are proud to provide sensitive and high-quality building services throughout Fordwich.",
     secondParagraph: "Every building project in Fordwich comes with its own story — whether it's a medieval timber-framed house requiring structural repairs or a riverside cottage in need of a modern kitchen and bathroom. We approach each project here with the care it demands, bringing both traditional craft skills and up-to-date building knowledge to achieve outstanding results.",
@@ -135,6 +157,8 @@ export const AREAS: Area[] = [
     slug: "chartham",
     name: "Chartham",
     county: "Kent",
+    lat: 51.2402,
+    lng: 1.0080,
     description:
       "Chartham is a thriving village to the south-west of Canterbury in the Stour Valley, with excellent transport links and a range of property types. Our team covers all building services throughout Chartham, from kitchen installations to full property refurbishments.",
     secondParagraph: "Chartham is one of our most active areas for home improvement projects. Its popularity with commuters and families means there's always demand for quality building work — we've carried out kitchen renovations, loft and garage conversions, full refurbishments and driveways throughout the village.",
@@ -147,6 +171,8 @@ export const AREAS: Area[] = [
     slug: "adisham",
     name: "Adisham",
     county: "Kent",
+    lat: 51.2202,
+    lng: 1.1980,
     description:
       "Adisham is a quiet, leafy village south of Canterbury, known for its historic church and attractive rural properties. We provide expert building services to homeowners in Adisham and the surrounding East Kent villages.",
     secondParagraph: "Adisham's rural setting and traditional properties make it a rewarding place to work. We regularly help homeowners here improve both the comfort and value of their homes — from installing air source heat pumps and solar panels to full bathroom suites, carpentry and driveways.",
@@ -159,6 +185,8 @@ export const AREAS: Area[] = [
     slug: "littlebourne",
     name: "Littlebourne",
     county: "Kent",
+    lat: 51.2702,
+    lng: 1.1480,
     description:
       "Littlebourne is a well-regarded village east of Canterbury, popular with families and professionals who appreciate its rural setting with easy access to the city. Our building team regularly works in Littlebourne, covering all trades from plumbing to full renovations.",
     secondParagraph: "Homeowners in Littlebourne often come to us for mid-to-large renovation projects — converting an outbuilding into a home office, fitting a new kitchen, or refurbishing a bathroom. We manage the full project from start to finish, coordinating all trades so you have just one point of contact throughout.",
@@ -171,6 +199,8 @@ export const AREAS: Area[] = [
     slug: "ickham",
     name: "Ickham",
     county: "Kent",
+    lat: 51.2802,
+    lng: 1.1680,
     description:
       "Ickham is a peaceful village in the heart of the East Kent countryside, not far from Canterbury. With many beautiful period farmhouses and cottages in the area, our team has extensive experience carrying out sympathetic renovation and building works in Ickham.",
     secondParagraph: "The older farmhouses and rural cottages around Ickham often need specialist attention — from structural repairs and replacement roofing to new windows, full interior refurbishments and energy efficiency upgrades. Our director's 30+ years of experience across all building types means we know how to work on these properties properly.",
@@ -183,6 +213,8 @@ export const AREAS: Area[] = [
     slug: "petham",
     name: "Petham",
     county: "Kent",
+    lat: 51.2102,
+    lng: 1.0780,
     description:
       "Petham is a charming village nestled in a valley south of Canterbury, surrounded by rolling Kent countryside. We serve homeowners throughout Petham, delivering high-quality building and renovation services to both traditional and modern properties.",
     secondParagraph: "Petham's countryside setting attracts homeowners who value space and quality of life. We help those homeowners make the most of their properties — whether that means a new extension, a cinema room conversion, a fully tiled bathroom, or a heat pump installation. Whatever your vision for your Petham home, we have the skills to deliver it.",
@@ -195,6 +227,8 @@ export const AREAS: Area[] = [
     slug: "waltham",
     name: "Waltham",
     county: "Kent",
+    lat: 51.1702,
+    lng: 1.1280,
     description:
       "Waltham is a quiet rural village in the Elham Valley, between Canterbury and Folkestone. Known for its beautiful countryside and traditional Kent properties, our team provides expert building services throughout Waltham and the surrounding Elham Valley villages.",
     secondParagraph: "The Elham Valley has a distinct rural identity and its properties often require the kind of skilled, all-trades builder that larger firms can't provide. We work closely with Waltham homeowners on renovations that suit the character of the area — from energy-efficient upgrades and new bathrooms to carpentry, driveways and full refurbishments.",
@@ -207,6 +241,8 @@ export const AREAS: Area[] = [
     slug: "whitstable",
     name: "Whitstable",
     county: "Kent",
+    lat: 51.3602,
+    lng: 1.0280,
     description:
       "Whitstable is a vibrant coastal town north of Canterbury, famous for its oysters, colourful beach huts and artistic community. With a mix of Victorian terraces, period cottages and modern developments, our team is well-versed in all types of building work throughout Whitstable.",
     secondParagraph: "Whitstable's coastal environment comes with its own building challenges — salt air, older Victorian stock, and properties that need robust, weather-resistant finishes. We're experienced in tackling all of this, from re-roofing and damp treatment to full kitchen and bathroom renovations, making us a reliable choice for Whitstable homeowners.",
@@ -219,6 +255,8 @@ export const AREAS: Area[] = [
     slug: "faversham",
     name: "Faversham",
     county: "Kent",
+    lat: 51.3152,
+    lng: 0.8880,
     description:
       "Faversham is one of Kent's most historic market towns, with a wealth of medieval and Georgian architecture. We regularly work on properties throughout Faversham, with specialist expertise in listed building work, period property renovation and modern home improvements.",
     secondParagraph: "Faversham's rich architectural heritage demands builders who understand conservation principles and traditional craft. We have the knowledge and experience to work on Faversham's listed properties sympathetically, while also delivering fully modern kitchens, bathrooms and energy systems that make historic homes a pleasure to live in today.",
@@ -231,6 +269,8 @@ export const AREAS: Area[] = [
     slug: "wye",
     name: "Wye",
     county: "Kent",
+    lat: 51.1852,
+    lng: 0.9380,
     description:
       "Wye is a charming village on the River Great Stour, between Canterbury and Ashford, best known for its historic college buildings and stunning North Downs backdrop. We provide expert building and renovation services for properties throughout Wye and the surrounding area.",
     secondParagraph: "Wye attracts buyers who want North Downs beauty with good transport links to both Canterbury and Ashford. We work on everything from cottage renovations and barn conversions to solar panel installations and full property refurbishments — always taking care to respect the quality and character of buildings in this special village.",
@@ -243,6 +283,8 @@ export const AREAS: Area[] = [
     slug: "sandwich",
     name: "Sandwich",
     county: "Kent",
+    lat: 51.2752,
+    lng: 1.3380,
     description:
       "Sandwich is one of the original Cinque Ports, a beautifully preserved medieval town in East Kent with an extraordinary collection of historic buildings. Our team has significant experience working on period and listed properties in Sandwich, as well as modern homes in the surrounding area.",
     secondParagraph: "Few towns in England have as much historic building stock as Sandwich. Working here requires deep respect for heritage, a thorough understanding of listed building regulations, and the skill to work with traditional materials. Our team brings all of that — plus the full range of modern building trades — to every project we undertake in Sandwich.",
@@ -255,6 +297,8 @@ export const AREAS: Area[] = [
     slug: "folkestone",
     name: "Folkestone",
     county: "Kent",
+    lat: 51.0802,
+    lng: 1.1780,
     description:
       "Folkestone is a dynamic coastal town in Kent with a growing arts scene and significant regeneration activity. From Victorian terraces on the Leas to modern apartments and the Creative Quarter, our team covers all building services throughout Folkestone.",
     secondParagraph: "Folkestone's regeneration has driven strong demand for high-quality building work across the town. Whether you're renovating a Victorian property on the Leas, fitting out a modern apartment, or upgrading a family home with solar panels and a new kitchen, our Canterbury-based team provides the expertise and reliability Folkestone homeowners trust.",
@@ -267,6 +311,8 @@ export const AREAS: Area[] = [
     slug: "chilham",
     name: "Chilham",
     county: "Kent",
+    lat: 51.2302,
+    lng: 0.9780,
     description:
       "Chilham is widely regarded as one of the most beautiful villages in England, with its perfectly preserved medieval square and castle. We are proud to serve homeowners in Chilham with sensitive, high-quality building work that respects the unique historic character of this exceptional village.",
     secondParagraph: "Chilham is a privilege to work in. The properties here are extraordinary — many dating back centuries — and they deserve builders who approach their work with genuine respect and skill. Our director Paul's three decades of experience with historic and listed buildings makes Superstructure Services the natural choice for Chilham homeowners seeking the very best.",
@@ -279,6 +325,8 @@ export const AREAS: Area[] = [
     slug: "maidstone",
     name: "Maidstone",
     county: "Kent",
+    lat: 51.2720,
+    lng: 0.5217,
     description:
       "Maidstone is the county town of Kent, a thriving commercial and residential hub on the River Medway. With a wide variety of property types — from Victorian townhouses and Edwardian semis to modern new-builds — our team delivers expert building and trade services across Maidstone and its surrounding neighbourhoods.",
     secondParagraph: "Maidstone's diverse housing stock means our team works across a broad spectrum of projects here — from full property refurbishments and kitchen renovations in period homes to air source heat pump installations and bathroom suites in modern developments. Our Canterbury base puts us well within reach of Maidstone, and we bring the same high standards of craftsmanship and project management that our clients across Kent have come to expect.",
@@ -291,6 +339,8 @@ export const AREAS: Area[] = [
     slug: "deal",
     name: "Deal",
     county: "Kent",
+    lat: 51.2220,
+    lng: 1.4020,
     description:
       "Deal is a charming coastal town on the East Kent coast, rich in maritime history with a picturesque seafront and a wealth of Georgian and Victorian architecture. Our team provides high-quality building and renovation services throughout Deal, from period property refurbishments to modern home improvements.",
     secondParagraph: "Deal's historic character and coastal setting create specific building challenges — salt air, older building stock and conservation sensitivities. We're experienced in working with these conditions, delivering everything from roof repairs and damp treatment to bespoke kitchen and bathroom renovations. Whether your property is a Georgian townhouse steps from the seafront or a modern family home, we deliver the quality craftsmanship Deal homeowners deserve.",
@@ -303,6 +353,8 @@ export const AREAS: Area[] = [
     slug: "broadstairs",
     name: "Broadstairs",
     county: "Kent",
+    lat: 51.3620,
+    lng: 1.4380,
     description:
       "Broadstairs is a picturesque seaside town on the Isle of Thanet, beloved for its sandy bays, Dickensian heritage and strong community spirit. With a mix of Victorian villas, period cottages and modern homes, our team delivers expert building services throughout Broadstairs and the surrounding Thanet area.",
     secondParagraph: "Broadstairs' coastal Victorian and Edwardian housing stock comes with its own set of building demands — weatherproofing, period-sensitive renovation and energy efficiency upgrades are all common requests from homeowners here. We bring the full range of our building and trade services to Broadstairs, offering reliable, high-quality work from a team that understands the demands of coastal properties.",
@@ -315,6 +367,8 @@ export const AREAS: Area[] = [
     slug: "ramsgate",
     name: "Ramsgate",
     county: "Kent",
+    lat: 51.3360,
+    lng: 1.4160,
     description:
       "Ramsgate is a vibrant harbour town on the Isle of Thanet, home to the only Royal Harbour in England and a fine collection of Regency and Victorian architecture. Our team serves homeowners and businesses across Ramsgate with the full range of building and trade services.",
     secondParagraph: "Ramsgate has seen significant regeneration in recent years, driving demand for quality building work across all property types. From refurbishing Victorian terraces in the town centre to fitting modern kitchens and bathrooms in harbourside apartments, our team brings the same attention to detail and project management expertise to every job in Ramsgate that we deliver across Kent.",
@@ -327,6 +381,8 @@ export const AREAS: Area[] = [
     slug: "ashford",
     name: "Ashford",
     county: "Kent",
+    lat: 51.1465,
+    lng: 0.8742,
     description:
       "Ashford is one of Kent's fastest-growing towns, a major transport hub with excellent High Speed rail links to London and Europe. With a booming residential sector and mix of period and modern properties, our team delivers the full range of building and trade services across Ashford and its surrounding villages.",
     secondParagraph: "Ashford's rapid growth has created strong demand for quality building work — from new kitchen and bathroom installations in modern developments to full refurbishments of older properties in the town's established residential areas. We've worked extensively across the Ashford area, and our experience in projects at Wye, Waltham and Chilham means our team knows this corner of Kent extremely well.",

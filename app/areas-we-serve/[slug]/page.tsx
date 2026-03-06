@@ -157,7 +157,7 @@ export default async function AreaPage({ params }: Props) {
               )}
             </div>
             <div>
-              <MapEmbed embedUrl={area.mapEmbed} title={area.name} />
+              <MapEmbed embedUrl={area.mapEmbed} title={area.name} lat={area.lat} lng={area.lng} />
               <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
                 <MapPin size={14} className="text-[#4a9ebb]" />
                 {area.name}, {area.county} — within our Canterbury service area
