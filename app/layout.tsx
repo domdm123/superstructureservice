@@ -51,6 +51,9 @@ export const metadata: Metadata = {
     description: "Your trusted builders in Canterbury, Kent. Kitchen fitting, roofing, electrical, plumbing, solar panels, heat pumps and more.",
     images: [`${DOMAIN}/images/og-image.jpg`],
   },
+  verification: {
+    google: "iQUDyTpyuUB1hAUaQXhKt7BMAkn8wxU-Wv5VGVGNiXE",
+  },
 };
 
 export default function RootLayout({
