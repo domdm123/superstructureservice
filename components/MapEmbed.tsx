@@ -56,6 +56,17 @@ export default function MapEmbed({ title, className = "", lat = 51.2802, lng = 1
         scrollwheel: false,
       });
 
+      new window.google.maps.Circle({
+        strokeColor: "#9ca3af",
+        strokeOpacity: 0.75,
+        strokeWeight: 1.5,
+        fillColor: "#9ca3af",
+        fillOpacity: 0.12,
+        map,
+        center: { lat, lng },
+        radius: 1800,
+      });
+
       new window.google.maps.Marker({
         position: { lat, lng },
         map,
