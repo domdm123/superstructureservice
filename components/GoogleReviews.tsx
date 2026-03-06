@@ -69,6 +69,8 @@ const reviews = [
   },
 ];
 
+const GOOGLE_LISTING_URL = "https://maps.app.goo.gl/F2hE8LhvAQoVUkYs7";
+
 function GoogleIcon() {
   return (
     <svg viewBox="0 0 24 24" className="w-5 h-5 flex-shrink-0" aria-label="Google">
@@ -108,10 +110,16 @@ export default function GoogleReviews() {
                   <span className="text-white font-semibold text-sm">Excellent</span>
                 </div>
               </div>
-              <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
+              <a
+                href={GOOGLE_LISTING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View our Google reviews"
+                className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10 transition-colors"
+              >
                 <GoogleIcon />
                 <span className="text-white text-sm font-semibold">12 reviews</span>
-              </div>
+              </a>
             </div>
 
             <div className="flex items-center justify-end gap-2">
