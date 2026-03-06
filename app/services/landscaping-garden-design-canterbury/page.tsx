@@ -115,6 +115,7 @@ export default function LandscapingPage() {
       <CTASection
         heading="Transform Your Garden in Canterbury & Kent"
         subheading="Contact our team today for professional landscaping and garden design. Free, no-obligation quotes for all projects."
+        backgroundImage="/images/services/landscaping-gardens.webp"
       />
     </>
   );

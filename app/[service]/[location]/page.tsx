@@ -261,6 +261,9 @@ export default async function ServiceLocationPage({ params }: Props) {
                 </ul>
               </div>
 
+              {/* Service Gallery */}
+              <ServiceGallery serviceSlug={service.slug} />
+
               {/* Why choose us local */}
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
                 <h3 className="text-xl font-bold text-[#1a2e44] mb-4">
@@ -331,9 +334,6 @@ export default async function ServiceLocationPage({ params }: Props) {
                   ))}
                 </div>
               </div>
-
-              {/* Service Gallery */}
-              <ServiceGallery serviceSlug={service.slug} />
 
               {/* Other services in this area */}
               <div>
@@ -447,6 +447,7 @@ export default async function ServiceLocationPage({ params }: Props) {
         heading={`Start your ${service.shortName.toLowerCase()} project in ${area.name}`}
         subheading={`Contact our Canterbury-based team today for a free, no-obligation quote. We cover ${area.name} and all of ${area.county}.`}
         ctaSubject={`${service.name} in ${area.name} - Superstructure Services`}
+        backgroundImage={service.heroImage}
       />
     </>
   );

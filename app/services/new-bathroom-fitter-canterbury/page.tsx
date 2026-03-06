@@ -150,6 +150,7 @@ export default function NewBathroomPage() {
       <CTASection
         heading="Ready for Your New Bathroom?"
         subheading="Contact our Canterbury-based team today for a free, no-obligation bathroom quote anywhere in Kent."
+        backgroundImage="/images/new-bathroom/bathroom-fitters-canterbury-hero.jpg"
       />
     </>
   );

@@ -259,6 +259,7 @@ export default async function ServicePage({ params }: Props) {
         heading={`Ready for your ${service.shortName.toLowerCase()} project?`}
         subheading={`Contact our Canterbury-based team today for a free, no-obligation quote on your ${service.shortName.toLowerCase()} project anywhere in Kent.`}
         ctaSubject={`${service.name} enquiry - Superstructure Services`}
+        backgroundImage={service.heroImage}
       />
     </>
   );

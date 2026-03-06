@@ -9,6 +9,7 @@ interface CTASectionProps {
   subheading?: string;
   dark?: boolean;
   ctaSubject?: string;
+  backgroundImage?: string;
 }
 
 export default function CTASection({
@@ -16,14 +17,15 @@ export default function CTASection({
   subheading = "Get a free, no-obligation quote from Canterbury's most trusted builders, serving Kent and surrounding villages.",
   dark = false,
   ctaSubject = "Free Quote Enquiry - Superstructure Services",
+  backgroundImage = "/images/cta-bg-bathroom.jpg",
 }: CTASectionProps) {
   return (
     <section className="relative overflow-hidden py-24 px-4">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/cta-bg-bathroom.jpg"
-          alt="Bathroom renovation Canterbury Kent"
+          src={backgroundImage}
+          alt="Background"
           fill
           className="object-cover"
           sizes="100vw"

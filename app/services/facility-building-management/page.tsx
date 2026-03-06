@@ -161,6 +161,7 @@ export default function FacilityBuildingManagementPage() {
       <CTASection
         heading="Need a Facilities Management Partner?"
         subheading="Contact our Canterbury-based team for a free consultation on your building management requirements across Kent."
+        backgroundImage="/images/facilities-management/building-management-company-in-canterbury-kent-professional-maintanence-hero.webp"
       />
     </>
   );

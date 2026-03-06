@@ -25,6 +25,7 @@ export default function RentalPropertyMaintenancePage() {
           { label: "Rental Property Maintenance" },
         ]}
         badge="🏠 Landlord Services"
+        heroImage="/images/rental-property-maintenance-hero.JPG"
       />
 
       <section className="py-20 bg-white">
@@ -118,6 +119,7 @@ export default function RentalPropertyMaintenancePage() {
       <CTASection
         heading="Need a rental property maintained?"
         subheading="Contact our Canterbury-based team for a free consultation on maintaining your rental properties across Kent."
+        backgroundImage="/images/rental-property-maintenance-hero.JPG"
       />
     </>
   );

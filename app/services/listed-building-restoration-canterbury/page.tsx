@@ -122,6 +122,7 @@ export default function ListedBuildingRestorationPage() {
       <CTASection
         heading="Listed Building Specialists in Canterbury & Kent"
         subheading="Contact our experienced team for sensitive, compliant restoration of your historic or listed property."
+        backgroundImage="/images/listed-building-new/canterbury-listed-building-refurbishment.jpg.jpg"
       />
     </>
   );
