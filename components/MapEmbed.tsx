@@ -54,7 +54,6 @@ export default function MapEmbed({ title, className = "", lat = 51.2802, lng = 1
         streetViewControl: false,
         fullscreenControl: false,
         scrollwheel: false,
-        mapId: "DARK_MONOCHROME_MAP",
       });
 
       // Use AdvancedMarkerElement (modern API) instead of deprecated Marker
