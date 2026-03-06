@@ -54,20 +54,15 @@ export default function MapEmbed({ title, className = "", lat = 51.2802, lng = 1
         streetViewControl: false,
         fullscreenControl: false,
         scrollwheel: false,
+        mapId: "DARK_MONOCHROME_MAP",
       });
 
-      new window.google.maps.Marker({
+      // Use AdvancedMarkerElement (modern API) instead of deprecated Marker
+      const { AdvancedMarkerElement } = window.google.maps.marker;
+      new AdvancedMarkerElement({
         position: { lat, lng },
         map,
         title,
-        icon: {
-          path: window.google.maps.SymbolPath.CIRCLE,
-          scale: 10,
-          fillColor: "#ffffff",
-          fillOpacity: 1,
-          strokeColor: "#888888",
-          strokeWeight: 2,
-        },
       });
     };
 
@@ -80,7 +75,7 @@ export default function MapEmbed({ title, className = "", lat = 51.2802, lng = 1
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
       script.id = scriptId;
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=__initGoogleMap`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&loading=async&libraries=marker&callback=__initGoogleMap`;
       script.async = true;
       script.defer = true;
       (window as Window & { __initGoogleMap?: () => void }).__initGoogleMap = initMap;
