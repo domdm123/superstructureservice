@@ -50,10 +50,30 @@ export default function ProjectPage() {
   const nextCarousel = () => setCarouselIndex((carouselIndex + 1) % project.images.length);
   const prevCarousel = () => setCarouselIndex((carouselIndex - 1 + project.images.length) % project.images.length);
 
-  const truncateWords = (text: string, maxChars: number) => {
-    if (text.length <= maxChars) return text;
-    const cut = text.lastIndexOf(" ", maxChars);
-    return text.substring(0, cut > 0 ? cut : maxChars) + "…";
+  const getCtaHeading = (shortName: string): string => {
+    const map: Record<string, string> = {
+      "Kitchen Installation": "Need a new kitchen?",
+      "Flooring & Underfloor Heating": "Need new flooring or underfloor heating?",
+      "Facilities Management": "Need a facilities management partner?",
+      "Electrician": "Need an electrician?",
+      "Air Source Heat Pumps": "Need an air source heat pump?",
+      "Solar Panels": "Interested in solar panels?",
+      "Air Conditioning": "Need air conditioning installed?",
+      "New Bathrooms": "Need a new bathroom?",
+      "Refurbishments": "Need a refurbishment or renovation?",
+      "Plumbing & Drainage": "Need a plumber?",
+      "Carpentry": "Need a carpenter?",
+      "Garage Conversions": "Need a garage conversion?",
+      "Roofing": "Need roofing work done?",
+      "Home Office": "Need a home office?",
+      "Cinema Rooms": "Want a cinema room?",
+      "Driveways & Paving": "Need a new driveway or paving?",
+      "Listed Building Restoration": "Working on a listed building?",
+      "Groundworks": "Need groundworks carried out?",
+      "Landscaping & Gardens": "Need landscaping or garden design?",
+      "Rental Property Maintenance": "Need rental property maintenance?",
+    };
+    return map[shortName] ?? `Interested in our ${shortName.toLowerCase()} services?`;
   };
 
   return (
@@ -223,7 +243,7 @@ export default function ProjectPage() {
                     <Hammer size={32} className="text-[#0d1b2e]" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
-                    {service ? `Need a ${service.shortName.toLowerCase()}?` : `Interested in this type of work?`}
+                    {service ? getCtaHeading(service.shortName) : `Interested in this type of work?`}
                   </h2>
                   <p className="text-white/80 text-base leading-relaxed mb-6">
                     {service ? service.description : `We deliver expert building and renovation services across Canterbury and Kent. Get in touch for a free, no-obligation quote.`}

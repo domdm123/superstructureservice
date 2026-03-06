@@ -511,23 +511,6 @@ export const PROJECTS: Project[] = [
     metaTitle: "Rental Property Maintenance in Canterbury | Superstructure Services",
     metaDescription: "Rental property maintenance in Canterbury, Kent.",
   },
-  {
-    slug: "solar-panel-installation-canterbury",
-    title: "Solar Panel Installation",
-    category: "Solar Panels",
-    location: "Canterbury",
-    image: "/images/solar-panel/solar-panel-installer-near-me-in-kent.jpg",
-    images: [
-      "/images/solar-panel/solar-panel-installer-near-me-in-kent.jpg",
-      "/images/solar-panel/solar-panel-installer-in-canterbury-kent-england.jpg",
-    ],
-    description: "MCS-accredited solar panel installation across Canterbury and Kent.",
-    longDescription: "",
-    tags: ["Solar Panels", "Canterbury", "Kent", "Renewable Energy"],
-    serviceSlug: "solar-panel-installation",
-    metaTitle: "Solar Panel Installation in Canterbury | Superstructure Services",
-    metaDescription: "MCS-accredited solar panel installation in Canterbury, Kent.",
-  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
