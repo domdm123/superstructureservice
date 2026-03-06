@@ -116,7 +116,7 @@ export default function RentalPropertyMaintenancePage() {
 
       <TrustBadges />
       <CTASection
-        heading="Reliable Rental Property Maintenance in Kent"
+        heading="Need a rental property maintained?"
         subheading="Contact our Canterbury-based team for a free consultation on maintaining your rental properties across Kent."
       />
     </>
