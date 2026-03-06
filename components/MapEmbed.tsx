@@ -56,12 +56,18 @@ export default function MapEmbed({ title, className = "", lat = 51.2802, lng = 1
         scrollwheel: false,
       });
 
-      // Use AdvancedMarkerElement (modern API) instead of deprecated Marker
-      const { AdvancedMarkerElement } = window.google.maps.marker;
-      new AdvancedMarkerElement({
+      new window.google.maps.Marker({
         position: { lat, lng },
         map,
         title,
+        icon: {
+          path: window.google.maps.SymbolPath.CIRCLE,
+          scale: 8,
+          fillColor: "#ffffff",
+          fillOpacity: 1,
+          strokeColor: "#4a4a4a",
+          strokeWeight: 2,
+        },
       });
     };
 
@@ -74,7 +80,7 @@ export default function MapEmbed({ title, className = "", lat = 51.2802, lng = 1
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
       script.id = scriptId;
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&loading=async&libraries=marker&callback=__initGoogleMap`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=__initGoogleMap`;
       script.async = true;
       script.defer = true;
       (window as Window & { __initGoogleMap?: () => void }).__initGoogleMap = initMap;
