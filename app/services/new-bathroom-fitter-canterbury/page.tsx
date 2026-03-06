@@ -33,7 +33,6 @@ export default function NewBathroomPage() {
           { label: "Services", href: "/services" },
           { label: "New Bathrooms" },
         ]}
-        badge="New Bathrooms"
         heroImage="/images/new-bathroom/bathroom-fitters-canterbury-hero.jpg"
       />
 

@@ -31,7 +31,7 @@ export default function ObfuscatedEmail({
   if (!email) {
     return (
       <span className={`inline-flex items-center gap-2 ${className}`}>
-        {showIcon && <Mail size={15} className="flex-shrink-0" />}
+        {showIcon && <Mail size={15} className="text-white flex-shrink-0" />}
         <span className="text-sm text-gray-300">Loading contact...</span>
       </span>
     );
@@ -42,7 +42,7 @@ export default function ObfuscatedEmail({
       href={`mailto:${email}?subject=${encodeURIComponent(subject)}`}
       className={className}
     >
-      {showIcon && <Mail size={15} className="flex-shrink-0" />}
+      {showIcon && <Mail size={15} className="text-white flex-shrink-0" />}
       <span>{label ?? email}</span>
     </a>
   );

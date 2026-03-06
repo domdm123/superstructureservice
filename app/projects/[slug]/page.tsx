@@ -134,11 +134,7 @@ export default function ProjectPage() {
 
       {/* World-class Image Gallery - Portrait-friendly */}
       {project.images.length > 1 && (
-        <section 
-          className="py-0 bg-[#0a0a0a]"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
+        <section className="py-0 bg-[#0a0a0a]">
           {/* Main large featured image - portrait optimized */}
           <div className="relative w-full h-[85vh] min-h-[600px] overflow-hidden">
             {project.images.map((img, i) => (
@@ -227,10 +223,10 @@ export default function ProjectPage() {
                     <Hammer size={32} className="text-[#0d1b2e]" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
-                    {service ? `Need ${service.shortName.toLowerCase()}?` : `Interested in this type of work?`}
+                    {service ? `Need a ${service.shortName.toLowerCase()}?` : `Interested in this type of work?`}
                   </h2>
                   <p className="text-white/80 text-base leading-relaxed mb-6">
-                    {service ? truncateWords(service.description, 160) : `We deliver expert building and renovation services across Canterbury and Kent. Get in touch for a free, no-obligation quote.`}
+                    {service ? truncateWords(service.description, 280) : `We deliver expert building and renovation services across Canterbury and Kent. Get in touch for a free, no-obligation quote.`}
                   </p>
                   <div className="flex flex-wrap gap-3 text-sm text-white/60">
                     <span className="flex items-center gap-1.5">

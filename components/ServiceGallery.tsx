@@ -125,13 +125,22 @@ export default function ServiceGallery({ serviceSlug }: Props) {
 
         {/* Desktop: bento grid */}
         <div className="hidden md:grid grid-cols-12 gap-3 auto-rows-[180px]">
-          <Tile index={0} className="col-span-6 row-span-2" sizes="50vw" />
-          <Tile index={1} className="col-span-3 row-span-2" sizes="25vw" />
-          <Tile index={2} className="col-span-3 row-span-1" sizes="25vw" />
-          <Tile index={3} className="col-span-3 row-span-1" sizes="25vw" />
-          <Tile index={4} className="col-span-4 row-span-1" sizes="33vw" />
-          <Tile index={5} className="col-span-4 row-span-1" sizes="33vw" />
-          <Tile index={6} className="col-span-4 row-span-1" sizes="33vw" />
+          {tiles.length === 2 ? (
+            <>
+              <Tile index={0} className="col-span-6 row-span-2" sizes="50vw" />
+              <Tile index={1} className="col-span-6 row-span-2" sizes="50vw" />
+            </>
+          ) : (
+            <>
+              <Tile index={0} className="col-span-6 row-span-2" sizes="50vw" />
+              <Tile index={1} className="col-span-3 row-span-2" sizes="25vw" />
+              <Tile index={2} className="col-span-3 row-span-1" sizes="25vw" />
+              <Tile index={3} className="col-span-3 row-span-1" sizes="25vw" />
+              <Tile index={4} className="col-span-4 row-span-1" sizes="33vw" />
+              <Tile index={5} className="col-span-4 row-span-1" sizes="33vw" />
+              <Tile index={6} className="col-span-4 row-span-1" sizes="33vw" />
+            </>
+          )}
         </div>
       </div>
 
