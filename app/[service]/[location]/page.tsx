@@ -330,7 +330,7 @@ export default async function ServiceLocationPage({ params }: Props) {
               {/* Other services in this area */}
               <div>
                 <h3 className="text-xl font-bold text-[#1a2e44] mb-4">
-                  Other Services We Offer in {area.name}
+                  Other services we offer in {area.name}
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {SERVICES.filter((s) => s.slug !== service.slug).map((s) => {

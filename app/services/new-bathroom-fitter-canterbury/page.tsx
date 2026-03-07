@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone, MapPin } from "lucide-react";
-import { SERVICES, PHONE, DOMAIN } from "@/lib/services";
+import { SERVICES, PHONE, EMAIL, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
@@ -110,7 +110,7 @@ export default function NewBathroomPage() {
                     Interested in a new bathroom? Contact us for a free, no-obligation quote.
                   </p>
                   <a
-                    href="mailto:enquiries@superstructureservices.co.uk?subject=New%20Bathroom%20Enquiry%20-%20Superstructure%20Services"
+                    href={`mailto:${EMAIL}?subject=${encodeURIComponent("New Bathroom Fitting Enquiry - Superstructure Services")}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Request a Quote <ArrowRight size={16} />
@@ -150,6 +150,7 @@ export default function NewBathroomPage() {
       <CTASection
         heading="Ready for Your New Bathroom?"
         subheading="Contact our Canterbury-based team today for a free, no-obligation bathroom quote anywhere in Kent."
+        ctaSubject="New Bathroom Fitting Enquiry - Superstructure Services"
         backgroundImage="/images/new-bathroom/bathroom-fitters-canterbury-hero.jpg"
       />
     </>

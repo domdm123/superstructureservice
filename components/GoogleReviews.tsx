@@ -7,7 +7,7 @@ const reviews = [
     name: "Fiona Batchelor",
     date: "3 years ago",
     rating: 5,
-    text: "I can't recommend Superstructures services high enough. They have been absolutely brilliant. We are so delighted with our kitchen. Everyone — carpenter, painters, plumbers, tilers and electricians were so professional and very patient with me. A big thanks to Paul — he was always there on the day, guiding and overseeing the work. You couldn't find anyone better to fit your kitchen.",
+    text: "I can't recommend Superstructures services high enough. They have been absolutely brilliant. We are so delighted with our kitchen. Everyone — carpenter, painters, plumbers, tilers and electricians were so professional and were all very patient with me. Listening to my ideas and giving me expert advice. Nothing was too much bother and I am so relieved I booked them. A big thanks to Paul — he was always there on the day, guiding and overseeing the work. He even was caught washing the floor lol. I have recommended this company to all my friends. You couldn't find anyone better to fit your kitchen.",
     initials: "F",
     color: "bg-red-500",
   },
@@ -15,7 +15,7 @@ const reviews = [
     name: "Suzanne Knight",
     date: "2 years ago",
     rating: 5,
-    text: "I can't thank Superstructure Services Ltd enough for what they did to my house — they were amazing! He took on the job of undoing inferior work and finished all rooms to a very high standard. The carpenters, kitchen fitters, bathroom fitters, electrician, decorators and plumber were each so experienced and knowledgeable. I love my home now.",
+    text: "I can't thank Superstructure Services Ltd enough for what they did to my house — they were amazing! I had had a really bad experience with a local Deal tradesman, who messed up my new kitchen, bathroom and shower room. He took on the job of undoing all the inferior work and finished all rooms to a very high standard. It was an extremely professional job with the nicest people, who were tidy, respectful and above all very capable. The carpenters, kitchen fitters, bathroom fitters, electrician, decorators and plumber were each so experienced and knowledgeable in their field. Paul and his team gave me confidence from day one — I love my home now. I can not recommend this company enough.",
     initials: "S",
     color: "bg-blue-500",
   },
@@ -23,7 +23,7 @@ const reviews = [
     name: "Katrin Niewerth",
     date: "3 years ago",
     rating: 5,
-    text: "We renovated an entire house with Paul and his team — completely new electrics, floors, windows/doors, kitchen and bathroom installation, carpentry and decorating. The quality of work was outstanding in every aspect. He is responding on messages within minutes, is very knowledgeable, helpful and friendly. I can highly recommend Paul and his company.",
+    text: "We have renovated an entire house — completely new electrics, floors, new windows/doors, partly new roof, kitchen and bathroom installation, carpentry and decorating inside and exterior — with Paul and his team. The quality of the work was outstanding in every aspect. He is responding on messages and emails within minutes, is very knowledgeable, helpful and friendly and the coordination of his team was seamless. The project was also finished very quickly. I can highly recommend Paul and his company.",
     initials: "K",
     color: "bg-green-600",
   },
@@ -39,7 +39,7 @@ const reviews = [
     name: "Alison Hicks",
     date: "9 months ago",
     rating: 5,
-    text: "Paul and his team at Superstructure Services have been brilliant at helping maintain our buildings. They've undertaken plumbing, carpentry, decorating, electrical work and a variety of small maintenance tasks, and the standard of work is consistently high, with Paul giving sound advice on the best way forward.",
+    text: "Paul and his team at Superstructure Services have been brilliant at helping maintain our buildings. They've undertaken plumbing, carpentry, decorating, electrical work and a variety of small maintenance tasks, and the standard of work is consistently high, with Paul giving sound advice on the best way forward. His team are professional, courteous, tidy and show great attention to detail.",
     initials: "A",
     color: "bg-orange-500",
   },
@@ -55,9 +55,25 @@ const reviews = [
     name: "Stuart Axford",
     date: "3 years ago",
     rating: 5,
-    text: "Paul did an excellent job building and installing some bespoke bookshelves for us. Not only did he do an excellent job, but he treated our house with respect, used clean dustsheets and cleaned thoroughly up after himself. We already have him down for another job.",
+    text: "Paul did an excellent job building and installing some bespoke bookshelves for us. Having had some very poor experiences with others in the past, we were really impressed by Paul. He was extremely responsive when we first contacted him. Not only did he do an excellent job, but he treated our house with respect, used clean dustsheets and cleaned thoroughly up after himself. We already have him down for another job.",
     initials: "S",
     color: "bg-indigo-600",
+  },
+  {
+    name: "Bill Dunnet",
+    date: "4 years ago",
+    rating: 5,
+    text: "Paul Clay has completed a first class refurbishment of our library. Every step of the project was completed in a professional fashion. He was the only builder who insisted on doing some investigative excavation works before providing a quote — his costings were accurate and the subsequent works had few surprises. The project involved investigating damp and rotten floorboards, re-tanking the walls, constructing a reinforced concrete screed with insulation, damp-proofing, re-wiring, plastering and decorating, refurbishment of the oak windows, and renewing the oak door and skirting. He is, undoubtedly, a perfectionist. Available seven days a week, he would reply on WhatsApp within a short period of time. We plan to use him again.",
+    initials: "B",
+    color: "bg-yellow-600",
+  },
+  {
+    name: "Rosanna Davies",
+    date: "3 years ago",
+    rating: 5,
+    text: "We wanted to replace our bath for a walk-in shower. From the start, Paul was very professional and gave great advice on our options. Very easy to communicate with throughout and wonderful finished result. Would highly recommend.",
+    initials: "R",
+    color: "bg-rose-500",
   },
   {
     name: "Danielle Luckhurst",
@@ -66,6 +82,14 @@ const reviews = [
     text: "Just wanted to say a big thank you to Paul and his team. We are so happy with our new kitchen and the installation went very smoothly. Hope to see you all again on our next project!",
     initials: "D",
     color: "bg-pink-600",
+  },
+  {
+    name: "Jena Budd",
+    date: "4 years ago",
+    rating: 5,
+    text: "Thank you so much for acting so quickly in regards to our roof which was leaking. Luckily it saved us having to replace our carpets and furniture from damage. Great job of the works too, we are more than pleased.",
+    initials: "J",
+    color: "bg-cyan-600",
   },
 ];
 
@@ -118,7 +142,7 @@ export default function GoogleReviews() {
                 className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10 transition-colors"
               >
                 <GoogleIcon />
-                <span className="text-white text-sm font-semibold">12 reviews</span>
+                <span className="text-white text-sm font-semibold">11 reviews</span>
               </a>
             </div>
 
@@ -194,7 +218,7 @@ export default function GoogleReviews() {
                   <Star key={i} size={20} className="fill-[#f5a623] text-[#f5a623]" />
                 ))}
               </div>
-              <p className="text-gray-400 text-xs lg:text-sm mb-2 lg:mb-3">Based on 12 reviews</p>
+              <p className="text-gray-400 text-xs lg:text-sm mb-2 lg:mb-3">Based on 11 reviews</p>
               <div className="flex items-center gap-1.5">
                 <GoogleIcon />
                 <span className="text-white font-bold text-base lg:text-lg tracking-tight">Google</span>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone } from "lucide-react";
-import { SERVICES, PHONE, DOMAIN } from "@/lib/services";
+import { SERVICES, PHONE, EMAIL, DOMAIN } from "@/lib/services";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import TrustBadges from "@/components/TrustBadges";
@@ -81,7 +81,7 @@ export default function RentalPropertyMaintenancePage() {
                     Canterbury or Kent?
                   </p>
                   <a
-                    href="mailto:enquiries@superstructureservices.co.uk?subject=Rental%20Property%20Maintenance%20Enquiry%20-%20Superstructure%20Services"
+                    href={`mailto:${EMAIL}?subject=${encodeURIComponent("Rental Property Maintenance Enquiry - Superstructure Services")}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Get in Touch <ArrowRight size={16} />
@@ -119,6 +119,7 @@ export default function RentalPropertyMaintenancePage() {
       <CTASection
         heading="Need a rental property maintained?"
         subheading="Contact our Canterbury-based team for a free consultation on maintaining your rental properties across Kent."
+        ctaSubject="Rental Property Maintenance Enquiry - Superstructure Services"
         backgroundImage="/images/rental-property-maintenance-hero.JPG"
       />
     </>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone } from "lucide-react";
-import { SERVICES, PHONE, DOMAIN } from "@/lib/services";
+import { SERVICES, PHONE, EMAIL, DOMAIN } from "@/lib/services";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import TrustBadges from "@/components/TrustBadges";
@@ -84,7 +84,7 @@ export default function ListedBuildingRestorationPage() {
                     specialists for expert advice and a free quote.
                   </p>
                   <a
-                    href="mailto:enquiries@superstructureservices.co.uk?subject=Listed%20Building%20Restoration%20Enquiry%20-%20Superstructure%20Services"
+                    href={`mailto:${EMAIL}?subject=${encodeURIComponent("Listed Building Restoration Enquiry - Superstructure Services")}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Get a Free Quote <ArrowRight size={16} />
@@ -122,6 +122,7 @@ export default function ListedBuildingRestorationPage() {
       <CTASection
         heading="Listed Building Specialists in Canterbury & Kent"
         subheading="Contact our experienced team for sensitive, compliant restoration of your historic or listed property."
+        ctaSubject="Listed Building Restoration Enquiry - Superstructure Services"
         backgroundImage="/images/listed-building-new/canterbury-listed-building-refurbishment.jpg.jpg"
       />
     </>

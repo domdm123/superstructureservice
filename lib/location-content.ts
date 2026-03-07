@@ -46,7 +46,7 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     propertySummary: "Blean combines established village housing with detached family homes and rural properties close to ancient woodland. The local housing stock tends to favour larger plots and mixed-age construction, so renovation work often ranges from updating traditional homes to extending later suburban properties.",
     externalLink: {
       label: "Blean Woods National Nature Reserve",
-      url: "https://www.kentwildlifetrust.org.uk/nature-reserves/blean-woods",
+      url: "https://www.kentwildlifetrust.org.uk/nature-reserves/west-blean-and-thornden-woods",
     },
   },
   sturry: {
@@ -66,7 +66,7 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     propertySummary: "Bridge has a strong stock of period village housing, flint cottages, older farm-related buildings and later family homes. Because it sits in the Elham Valley, many properties retain traditional Kent forms and materials, which makes careful renovation and repair especially important.",
     externalLink: {
       label: "Bridge Parish Council",
-      url: "https://bridgevillage.org.uk/",
+      url: "https://www.bridgevillage.org.uk/parish-council/",
     },
   },
   barham: {
@@ -86,7 +86,7 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     propertySummary: "Bekesbourne's housing stock is largely village-scale and traditional, with period homes, rural settings and a small number of more modern residential properties. Many buildings benefit from careful upgrades that improve comfort without losing the character of the Little Stour valley setting.",
     externalLink: {
       label: "Bekesbourne Parish Council",
-      url: "https://bekesbournepc.org.uk/",
+      url: "https://www.bekesbournewithpatrixbourneparishcouncil.gov.uk/",
     },
   },
   wickhambreaux: {
@@ -96,7 +96,7 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     propertySummary: "Wickhambreaux is known for its picturesque village character, older houses near the green and a number of period cottages and detached homes around the Little Stour. Building work here often needs to respond to heritage details, drainage considerations and rural access constraints.",
     externalLink: {
       label: "Wickhambreaux Parish Council",
-      url: "https://wickhambreaux.org.uk/",
+      url: "https://wickhambreaux-pc.gov.uk/",
     },
   },
   wingham: {
@@ -116,7 +116,7 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     propertySummary: "Fordwich has a compact but highly distinctive mix of historic riverside buildings, period cottages and small-scale town housing. Because of its age and conservation sensitivity, works here often demand close attention to heritage fabric, drainage and sympathetic material choices.",
     externalLink: {
       label: "Fordwich Town Council",
-      url: "https://fordwichtowncouncil.gov.uk/",
+      url: "https://www.fordwichtowncouncil.gov.uk/",
     },
   },
   chartham: {
@@ -126,7 +126,7 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     propertySummary: "Chartham includes older village housing, period homes and more recent development around a well-connected commuter settlement. Properties here span traditional Kent brick homes and newer family houses, so projects often range from renovation and repair to extensions and layout upgrades.",
     externalLink: {
       label: "Chartham Parish Council",
-      url: "https://charthamparishcouncil.gov.uk/",
+      url: "https://chartham-pc.gov.uk/",
     },
   },
   adisham: {
@@ -135,8 +135,8 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     localFeatures: ["village location", "rural Kent"],
     propertySummary: "Adisham is a small rural village where housing is largely made up of traditional cottages, older homes and countryside properties. In places like this, improvement works are often about carefully balancing modern performance with the materials and proportions of older Kent village buildings.",
     externalLink: {
-      label: "Adisham village information",
-      url: "https://www.citypopulation.de/en/uk/southeastengland/admin/canterbury/E04011945__adisham/",
+      label: "Adisham Parish Council",
+      url: "https://adisham-pc.gov.uk/",
     },
   },
   littlebourne: {
@@ -156,7 +156,7 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     propertySummary: "Ickham is characterised by rural homes, period cottages and village properties set within a traditional East Kent landscape. Many homes here benefit from work that improves thermal performance and modern usability while preserving long-standing architectural character.",
     externalLink: {
       label: "Ickham and Well Parish Council",
-      url: "https://ickhamandwellpc.org.uk/",
+      url: "https://www.ickhamandwell-pc.gov.uk/",
     },
   },
   petham: {
@@ -176,7 +176,7 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     propertySummary: "Waltham has a traditional village housing mix with period cottages, detached rural homes and family properties set in open countryside. It is the kind of area where homeowners often need all-trades support for upgrades, repairs and carefully managed renovation work.",
     externalLink: {
       label: "Waltham Parish Council",
-      url: "https://waltham-kent-pc.gov.uk/",
+      url: "https://waltham-pc.gov.uk/",
     },
   },
   whitstable: {
@@ -185,8 +185,8 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     localFeatures: ["seafront", "harbour area", "Old Town"],
     propertySummary: "Whitstable has a varied coastal housing stock that includes fisherman's cottages, Victorian terraces, seafront homes and later suburban development. Coastal exposure, salt air and moisture all influence what materials and detailing work best here.",
     externalLink: {
-      label: "Whitstable Harbour",
-      url: "https://whitstableharbour.org/",
+      label: "Visit Whitstable",
+      url: "https://www.whitstable.co.uk/",
     },
   },
   faversham: {
@@ -235,8 +235,8 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     localFeatures: ["village square", "castle grounds", "historic centre"],
     propertySummary: "Chilham is one of Kent's best-known historic villages, with a remarkable concentration of period cottages, medieval buildings and heritage-sensitive homes around its famous square. Work here calls for a careful approach to materials, proportions and historic detail.",
     externalLink: {
-      label: "Chilham Castle and village information",
-      url: "https://www.chilham.org/",
+      label: "Chilham — Kent Downs National Landscape",
+      url: "https://kentdowns.org.uk/top-downs/chilham/",
     },
   },
 };

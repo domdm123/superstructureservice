@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone, MapPin } from "lucide-react";
-import { SERVICES, PHONE, DOMAIN } from "@/lib/services";
+import { SERVICES, PHONE, EMAIL, DOMAIN } from "@/lib/services";
 import { AREAS } from "@/lib/areas";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
@@ -121,7 +121,7 @@ export default function FacilityBuildingManagementPage() {
                     Looking for a reliable facilities management partner? Contact us today.
                   </p>
                   <a
-                    href="mailto:enquiries@superstructureservices.co.uk?subject=Facilities%20Management%20Enquiry%20-%20Superstructure%20Services"
+                    href={`mailto:${EMAIL}?subject=${encodeURIComponent("Facilities Building Management Enquiry - Superstructure Services")}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162d4a] transition-all mb-3 w-full"
                   >
                     Request a Quote <ArrowRight size={16} />
@@ -161,6 +161,7 @@ export default function FacilityBuildingManagementPage() {
       <CTASection
         heading="Need a Facilities Management Partner?"
         subheading="Contact our Canterbury-based team for a free consultation on your building management requirements across Kent."
+        ctaSubject="Facilities Building Management Enquiry - Superstructure Services"
         backgroundImage="/images/facilities-management/building-management-company-in-canterbury-kent-professional-maintanence-hero.webp"
       />
     </>
