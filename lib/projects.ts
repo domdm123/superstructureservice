@@ -451,6 +451,23 @@ export const PROJECTS: Project[] = [
     metaDescription: "Professional groundworks in Canterbury, Kent.",
   },
   {
+    slug: "air-source-heat-pump-canterbury",
+    title: "Air Source Heat Pump Installation",
+    category: "Air Source Heat Pumps",
+    location: "Canterbury, Kent",
+    image: "/images/air-source-heat-pump/air-source-heat-pumps-and-conditioning.jpg",
+    images: [
+      "/images/air-source-heat-pump/air-source-heat-pumps-and-conditioning.jpg",
+      "/images/air-source-heat-pump/air-conditioning-installer-in-canterbury-kent.jpg",
+    ],
+    description: "MCS-accredited air source heat pump installation in Canterbury and Kent.",
+    longDescription: "Our MCS-registered team installed an air source heat pump system for a client in Canterbury, carrying out a full home energy assessment, bespoke system design, supply, installation and commissioning — including integration with the existing heating system.",
+    tags: ["Air Source Heat Pump", "MCS Accredited", "Canterbury", "Kent", "Renewable Energy"],
+    serviceSlug: "air-source-heat-pump",
+    metaTitle: "Air Source Heat Pump Installation in Canterbury | Superstructure Services",
+    metaDescription: "MCS-accredited air source heat pump installation in Canterbury, Kent. Eco-friendly heating by Superstructure Services.",
+  },
+  {
     slug: "facilities-management-canterbury",
     title: "Facilities Building Management",
     category: "Facilities Management",
