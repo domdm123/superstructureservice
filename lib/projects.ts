@@ -451,6 +451,23 @@ export const PROJECTS: Project[] = [
     metaDescription: "Professional groundworks in Canterbury, Kent.",
   },
   {
+    slug: "air-conditioning-canterbury",
+    title: "Air Conditioning Installation",
+    category: "Air Conditioning",
+    location: "Canterbury, Kent",
+    image: "/images/air-conditioning/air-conditioning-installation-canterbury-kent.jpg",
+    images: [
+      "/images/air-conditioning/air-conditioning-installation-canterbury-kent.jpg",
+      "/images/air-conditioning/air-conditioning-specialists-contractor-near-me-in-kent.jpg",
+    ],
+    description: "F-Gas certified air conditioning installation in Canterbury and Kent.",
+    longDescription: "Our F-Gas certified engineers installed a tailored climate control system for a client in Canterbury, handling system design, supply, installation and commissioning for both residential and commercial premises.",
+    tags: ["Air Conditioning", "F-Gas Certified", "Canterbury", "Kent", "Climate Control"],
+    serviceSlug: "air-conditioning",
+    metaTitle: "Air Conditioning Installation in Canterbury | Superstructure Services",
+    metaDescription: "F-Gas certified air conditioning installation in Canterbury, Kent. Supply, fit & servicing by Superstructure Services.",
+  },
+  {
     slug: "air-source-heat-pump-canterbury",
     title: "Air Source Heat Pump Installation",
     category: "Air Source Heat Pumps",
