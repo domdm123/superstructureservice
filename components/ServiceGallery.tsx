@@ -23,8 +23,9 @@ export default function ServiceGallery({ serviceSlug }: Props) {
       p.serviceSlug === service?.canonicalSlug
   );
 
-  const source = related.length > 0 ? related : PROJECTS;
-  const all = source.flatMap((p) => p.images.map((src) => ({ src, title: p.title })));
+  if (related.length === 0) return null;
+
+  const all = related.flatMap((p) => p.images.map((src) => ({ src, title: p.title })));
   const tiles = all.slice(0, 8);
 
   if (tiles.length === 0) return null;
