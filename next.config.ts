@@ -4,6 +4,13 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
 
   images: {
+    // Restrict to only the sizes actually rendered on screen — reduces transformations per image
+    deviceSizes: [640, 1080, 1920],
+    imageSizes: [256, 512],
+    // webp only — skipping avif halves the number of transformations (avif + webp = 2x per image)
+    formats: ["image/webp"],
+    // Cache transformed images for 1 year — minimises repeat transformations
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
         protocol: "https",
