@@ -105,8 +105,8 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     localFeatures: ["village square", "local amenities"],
     propertySummary: "Wingham has a particularly attractive historic core with period homes, older cottages and substantial village properties around its main street. This mix means homeowners often want upgrades that improve efficiency and liveability while staying true to traditional architecture.",
     externalLink: {
-      label: "Wingham Wildlife Park",
-      url: "https://winghamwildlifepark.co.uk/",
+      label: "Wingham Parish Council",
+      url: "https://www.winghamparishcouncil.org.uk/",
     },
   },
   fordwich: {
@@ -185,8 +185,8 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     localFeatures: ["seafront", "harbour area", "Old Town"],
     propertySummary: "Whitstable has a varied coastal housing stock that includes fisherman's cottages, Victorian terraces, seafront homes and later suburban development. Coastal exposure, salt air and moisture all influence what materials and detailing work best here.",
     externalLink: {
-      label: "Visit Whitstable",
-      url: "https://www.whitstable.co.uk/",
+      label: "Whitstable Town Council",
+      url: "https://www.whitstabletowncouncil.gov.uk/",
     },
   },
   faversham: {
@@ -237,6 +237,56 @@ const LOCATION_CONTEXTS: Record<string, LocationContext> = {
     externalLink: {
       label: "Chilham — Kent Downs National Landscape",
       url: "https://kentdowns.org.uk/top-downs/chilham/",
+    },
+  },
+  ashford: {
+    propertyTypes: ["modern developments", "period town properties", "suburban homes", "rural village homes"],
+    characteristics: ["major transport hub", "growing town", "mixed residential areas"],
+    localFeatures: ["town centre", "high speed rail links", "surrounding villages"],
+    propertySummary: "Ashford is one of Kent's fastest-growing towns with a broad mix of housing — from modern new-build estates and town-centre apartments to older period homes and village properties in its surrounding parishes. Projects range from contemporary kitchen and bathroom installations in new-builds to full refurbishments of older residential properties.",
+    externalLink: {
+      label: "Ashford Borough Council",
+      url: "https://www.ashford.gov.uk/",
+    },
+  },
+  maidstone: {
+    propertyTypes: ["Victorian townhouses", "Edwardian semis", "modern developments", "riverside properties"],
+    characteristics: ["county town", "River Medway location", "diverse housing stock"],
+    localFeatures: ["town centre", "River Medway", "surrounding villages"],
+    propertySummary: "Maidstone is Kent's county town with a wide variety of property types — from Victorian townhouses and Edwardian semis in established residential areas to modern new-builds across the borough. Building work here spans the full range from sympathetic period renovation to contemporary home improvement.",
+    externalLink: {
+      label: "Maidstone Borough Council",
+      url: "https://www.maidstone.gov.uk/",
+    },
+  },
+  deal: {
+    propertyTypes: ["Georgian townhouses", "Victorian terraces", "coastal properties", "seafront homes"],
+    characteristics: ["coastal location", "maritime heritage", "conservation area"],
+    localFeatures: ["seafront", "Deal Castle", "historic town centre"],
+    propertySummary: "Deal has a fine collection of Georgian and Victorian architecture, with a historic town centre, seafront properties and terraced housing throughout. Coastal exposure and the town's conservation sensitivity mean building work here benefits from careful material selection and an understanding of heritage construction.",
+    externalLink: {
+      label: "Dover District Council — Deal area",
+      url: "https://www.dover.gov.uk/",
+    },
+  },
+  broadstairs: {
+    propertyTypes: ["Victorian villas", "period cottages", "seafront properties", "modern homes"],
+    characteristics: ["coastal location", "Dickensian heritage", "Isle of Thanet"],
+    localFeatures: ["Viking Bay", "seafront", "historic town centre"],
+    propertySummary: "Broadstairs has a charming mix of Victorian villas, period cottages and seafront properties along with more modern residential development on the Isle of Thanet. Coastal exposure and the town's heritage character inform much of the building work carried out here.",
+    externalLink: {
+      label: "Thanet District Council — Broadstairs",
+      url: "https://www.thanet.gov.uk/",
+    },
+  },
+  ramsgate: {
+    propertyTypes: ["Regency terraces", "Victorian properties", "harbour-side apartments", "modern homes"],
+    characteristics: ["Royal Harbour", "coastal location", "Regency architecture"],
+    localFeatures: ["Royal Harbour", "town centre", "seafront"],
+    propertySummary: "Ramsgate has a fine collection of Regency and Victorian architecture, a Royal Harbour and a varied mix of residential properties across the town. Regeneration activity and a strong heritage character make quality building work — from period renovation to modern home improvement — particularly valued here.",
+    externalLink: {
+      label: "Thanet District Council — Ramsgate",
+      url: "https://www.thanet.gov.uk/",
     },
   },
 };
