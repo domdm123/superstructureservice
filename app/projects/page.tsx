@@ -28,9 +28,10 @@ const CATEGORIES = [
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
+  const visibleProjects = PROJECTS.filter(p => !p.galleryOnly);
   const filteredProjects = activeCategory === "All" 
-    ? PROJECTS 
-    : PROJECTS.filter(p => p.category === activeCategory);
+    ? visibleProjects 
+    : visibleProjects.filter(p => p.category === activeCategory);
   return (
     <>
       <PageHero

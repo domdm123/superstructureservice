@@ -13,7 +13,13 @@ export default function ProjectPage() {
   const slug = params.slug as string;
   
   const project = getProjectBySlug(slug);
-  
+
+  useEffect(() => {
+    if (!project || project.galleryOnly) {
+      window.location.replace("/not-found");
+    }
+  }, [project]);
+
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 

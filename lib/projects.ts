@@ -13,6 +13,7 @@ export interface Project {
   serviceSlug: string;
   metaTitle: string;
   metaDescription: string;
+  galleryOnly?: boolean;
 }
 
 export const PROJECTS: Project[] = [
@@ -464,6 +465,7 @@ export const PROJECTS: Project[] = [
     serviceSlug: "air-conditioning",
     metaTitle: "Air Conditioning Installation in Canterbury | Superstructure Services",
     metaDescription: "F-Gas certified air conditioning installation in Canterbury, Kent. Supply, fit & servicing by Superstructure Services.",
+    galleryOnly: true,
   },
   {
     slug: "air-source-heat-pump-canterbury",
@@ -481,6 +483,7 @@ export const PROJECTS: Project[] = [
     serviceSlug: "air-source-heat-pump",
     metaTitle: "Air Source Heat Pump Installation in Canterbury | Superstructure Services",
     metaDescription: "MCS-accredited air source heat pump installation in Canterbury, Kent. Eco-friendly heating by Superstructure Services.",
+    galleryOnly: true,
   },
   {
     slug: "facilities-management-canterbury",
@@ -499,6 +502,7 @@ export const PROJECTS: Project[] = [
     serviceSlug: "facility-building-management",
     metaTitle: "Facilities Building Management in Canterbury | Superstructure Services",
     metaDescription: "Professional facilities building management in Canterbury, Kent. Planned & reactive maintenance by Superstructure Services.",
+    galleryOnly: true,
   },
   {
     slug: "solar-panel-installation-canterbury",
@@ -516,6 +520,7 @@ export const PROJECTS: Project[] = [
     serviceSlug: "solar-panel-installation",
     metaTitle: "Solar Panel Installation in Canterbury | Superstructure Services",
     metaDescription: "MCS-accredited solar panel installation in Canterbury, Kent. High-efficiency PV systems by Superstructure Services.",
+    galleryOnly: true,
   },
   {
     slug: "rental-property-maintenance-canterbury",
@@ -541,6 +546,7 @@ export const PROJECTS: Project[] = [
     serviceSlug: "rental-property-maintenance",
     metaTitle: "Rental Property Maintenance in Canterbury | Superstructure Services",
     metaDescription: "Rental property maintenance in Canterbury, Kent.",
+    galleryOnly: true,
   },
 ];
 
