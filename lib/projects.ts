@@ -451,6 +451,23 @@ export const PROJECTS: Project[] = [
     metaDescription: "Professional groundworks in Canterbury, Kent.",
   },
   {
+    slug: "solar-panel-installation-canterbury",
+    title: "Solar Panel Installation",
+    category: "Solar Panels",
+    location: "Canterbury, Kent",
+    image: "/images/solar-panel/solar-panel-installer-in-canterbury-kent-england.jpg",
+    images: [
+      "/images/solar-panel/solar-panel-installer-in-canterbury-kent-england.jpg",
+      "/images/solar-panel/solar-panel-installer-near-me-in-kent.jpg",
+    ],
+    description: "Professional solar panel installation in Canterbury and Kent by MCS-accredited installers.",
+    longDescription: "Our MCS-accredited team installed a high-efficiency solar PV system for a client in Canterbury, handling everything from initial survey and design through to UKPN grid connection. The installation included monocrystalline panels and full commissioning.",
+    tags: ["Solar Panels", "MCS Accredited", "Canterbury", "Kent", "Renewable Energy"],
+    serviceSlug: "solar-panel-installation",
+    metaTitle: "Solar Panel Installation in Canterbury | Superstructure Services",
+    metaDescription: "MCS-accredited solar panel installation in Canterbury, Kent. High-efficiency PV systems by Superstructure Services.",
+  },
+  {
     slug: "rental-property-maintenance-canterbury",
     title: "Rental Property Maintenance",
     category: "Rental Property Maintenance",
