@@ -33,7 +33,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <span className="hidden lg:flex items-center gap-1.5 text-gray-300 tracking-wide text-xs uppercase">
               <MapPin size={13} />
-              Serving Canterbury, Kent &amp; Surrounding Villages
+              Based in Canterbury, serving Kent and its villages.
             </span>
             <span className="flex lg:hidden items-center gap-1.5 text-gray-300 tracking-wide text-xs">
               <MapPin size={12} />

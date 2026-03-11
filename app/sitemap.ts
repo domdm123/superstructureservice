@@ -65,8 +65,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Project pages (exclude galleryOnly entries)
-  const projectPages: MetadataRoute.Sitemap = PROJECTS.filter((p) => !p.galleryOnly).map((p) => ({
+  // Project pages
+  const projectPages: MetadataRoute.Sitemap = PROJECTS.map((p) => ({
     url: `${DOMAIN}/projects/${p.slug}`,
     lastModified: now,
     changeFrequency: "yearly" as const,

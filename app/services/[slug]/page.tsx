@@ -177,6 +177,9 @@ export default async function ServicePage({ params }: Props) {
               </ul>
 
               {/* Service Gallery */}
+              <h3 className="text-xl font-bold text-[#1a2e44] mb-5">
+                Our Related Projects
+              </h3>
               <ServiceGallery serviceSlug={service.slug} />
 
               {/* Areas for this service */}
