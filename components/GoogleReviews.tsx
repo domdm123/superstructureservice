@@ -4,6 +4,14 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
   {
+    name: "Gwen Christie",
+    date: "4 hours ago",
+    rating: 5,
+    text: "Great job, good price, everything was done to a high standard and on time. Would highly recommend!",
+    initials: "G",
+    color: "bg-lime-600",
+  },
+  {
     name: "Fiona Batchelor",
     date: "3 years ago",
     rating: 5,
@@ -142,7 +150,7 @@ export default function GoogleReviews() {
                 className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10 transition-colors"
               >
                 <GoogleIcon />
-                <span className="text-white text-sm font-semibold">11 reviews</span>
+                <span className="text-white text-sm font-semibold">12 reviews</span>
               </a>
             </div>
 
@@ -218,7 +226,7 @@ export default function GoogleReviews() {
                   <Star key={i} size={20} className="fill-[#f5a623] text-[#f5a623]" />
                 ))}
               </div>
-              <p className="text-gray-400 text-xs lg:text-sm mb-2 lg:mb-3">Based on 11 reviews</p>
+              <p className="text-gray-400 text-xs lg:text-sm mb-2 lg:mb-3">Based on 12 reviews</p>
               <div className="flex items-center gap-1.5">
                 <GoogleIcon />
                 <span className="text-white font-bold text-base lg:text-lg tracking-tight">Google</span>
